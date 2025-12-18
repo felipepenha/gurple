@@ -1,3 +1,3 @@
-# <span style="color:var(--aurora)">Prompt Injection</span>
+# <span style="color:var(--aurora)">**Prompt Injection**</span>
 
 *Content coming soon...*
