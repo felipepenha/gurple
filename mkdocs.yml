@@ -94,8 +94,8 @@ nav:
       - jailbreaking/index.md
   - Prompt Injection:
       - prompt_injection/index.md
-  - Information Leaking:
-      - information_leaking/index.md
+  - Exfiltration:
+      - exfiltration/index.md
   - Poisoning:
       - poisoning/index.md
   - Model Inversion:
