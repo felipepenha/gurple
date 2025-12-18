@@ -42,12 +42,12 @@ theme:
   custom_dir: docs/.overrides
 repo_url: https://github.com/felipepenha/gurple
 repo_name: gurple
-site_author: Felipe Penha
+site_author: Felipe Campos Penha
 site_url: https://felipepenha.github.io/gurple/
 site_dir: site
 site_description: Documentation for Gurple.
 copyright: >
-  Copyright &copy; 2024 Felipe Penha.
+  Copyright &copy; 2024 Felipe Campos Penha.
   Licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="license noopener">CC BY-NC-ND 4.0</a>.
 markdown_extensions:
   - admonition
