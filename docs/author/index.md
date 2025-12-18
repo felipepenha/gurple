@@ -1,5 +1,5 @@
-# <span style="color:var(--aurora)">About the Author</span>
+# <span style="color:var(--aurora)">**About the Author**</span>
 
-**Felipe Campos Penha**
+## **Felipe Campos Penha**
 
 *Bio coming soon...*

@@ -79,10 +79,26 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/felipepenha/gurple
 nav:
-  - Home: index.md
-  - About the Author:
-      - author/index.md
   # - Template Examples: template_examples.md
   # - Major Section Example:
   #     - major_section_example/index.md
   #     - First Page: major_section_example/page_1.md
+  - Home: index.md
+  - About the Author:
+      - author/index.md
+  - Preface:
+      - preface/index.md
+  - Introduction:
+      - introduction/index.md
+  - Jailbreaking:
+      - jailbreaking/index.md
+  - Prompt Injection:
+      - prompt_injection/index.md
+  - Information Leaking:
+      - information_leaking/index.md
+  - Poisoning:
+      - poisoning/index.md
+  - Model Inversion:
+      - model_inversion/index.md
+  - Model Tampering:
+      - model_tampering/index.md
