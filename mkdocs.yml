@@ -1,4 +1,4 @@
-site_name: uv
+site_name: gurple
 theme:
   name: material
   logo: assets/logo-letter.svg
@@ -40,12 +40,12 @@ theme:
         icon: material/brightness-4
         name: Switch to system preference
   custom_dir: docs/.overrides
-repo_url: https://github.com/astral-sh/uv
-repo_name: uv
-site_author: charliermarsh
-site_url: https://docs.astral.sh/uv/
-site_dir: site/uv
-site_description: uv is an extremely fast Python package and project manager, written in Rust.
+repo_url: https://github.com/felipepenha/gurple
+repo_name: gurple
+site_author: Felipe Penha
+site_url: https://felipepenha.github.io/gurple/
+site_dir: site
+site_description: Documentation for Gurple.
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -70,72 +70,7 @@ plugins:
   - search
 # git-revision-date-localized removed
 # redirects removed
-  - llmstxt:
-      markdown_description: |
-        You can use uv to install Python dependencies, run scripts, manage virtual environments,
-        build and publish packages, and even install Python itself. uv is capable of replacing
-        `pip`, `pip-tools`, `pipx`, `poetry`, `pyenv`, `twine`, `virtualenv`, and more.
 
-        uv includes both a pip-compatible CLI (prepend `uv` to a pip command, e.g., `uv pip install ruff`)
-        and a first-class project interface (e.g., `uv add ruff`) complete with lockfiles and
-        workspace support.
-      sections:
-        Getting started:
-          - getting-started/installation.md
-          - getting-started/first-steps.md
-          - getting-started/features.md
-        Guides:
-          - guides/install-python.md
-          - guides/scripts.md
-          - guides/tools.md
-          - guides/projects.md
-          - guides/package.md
-        Integrations:
-          - guides/integration/docker.md
-          - guides/integration/jupyter.md
-          - guides/integration/marimo.md
-          - guides/integration/github.md
-          - guides/integration/gitlab.md
-          - guides/integration/pre-commit.md
-          - guides/integration/pytorch.md
-          - guides/integration/fastapi.md
-          - guides/integration/alternative-indexes.md
-          - guides/integration/dependency-bots.md
-          - guides/integration/aws-lambda.md
-          - guides/integration/coiled.md
-        Projects:
-          - concepts/projects/layout.md
-          - concepts/projects/init.md
-          - concepts/projects/dependencies.md
-          - concepts/projects/run.md
-          - concepts/projects/sync.md
-          - concepts/projects/config.md
-          - concepts/projects/build.md
-          - concepts/projects/export.md
-          - concepts/projects/workspaces.md
-        Features:
-          - concepts/tools.md
-          - concepts/python-versions.md
-          - concepts/configuration-files.md
-          - concepts/indexes.md
-          - concepts/resolution.md
-          - concepts/build-backend.md
-          - concepts/authentication/index.md
-          - concepts/cache.md
-          - concepts/preview.md
-        The pip interface:
-          - pip/environments.md
-          - pip/packages.md
-          - pip/inspection.md
-          - pip/dependencies.md
-          - pip/compile.md
-          - pip/compatibility.md
-        Reference:
-          - reference/cli.md
-          - reference/settings.md
-          - reference/storage.md
-          - reference/environment.md
-          - reference/installer.md
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
@@ -145,13 +80,7 @@ extra:
     provider: fathom
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/astral-sh/uv
-    - icon: fontawesome/brands/discord
-      link: https://discord.com/invite/astral-sh
-    - icon: fontawesome/brands/python
-      link: https://pypi.org/project/uv/
-    - icon: fontawesome/brands/x-twitter
-      link: https://x.com/astral_sh
+      link: https://github.com/felipepenha/gurple
 nav:
   - Home: index.md
   - Template Examples: template_examples.md
