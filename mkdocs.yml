@@ -41,7 +41,7 @@ site_url: https://felipepenha.github.io/gurple/
 site_dir: site
 site_description: Documentation for Gurple.
 copyright: >
-  Copyright &copy; 2024 Felipe Campos Penha.
+  Copyright &copy; 2025 Felipe Campos Penha.
   Licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="license noopener">CC BY-NC-ND 4.0</a>.
 markdown_extensions:
   - admonition
