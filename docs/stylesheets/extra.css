@@ -258,3 +258,8 @@ modifications */
 .md-source-file__fact {
   visibility: hidden;
 }
+/* Custom Header Styling */
+.md-header__title .md-header__topic {
+  color: var(--aurora) !important;
+  font-weight: bold;
+}

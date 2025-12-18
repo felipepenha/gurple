@@ -1,4 +1,4 @@
-site_name: gurple
+site_name: Gurple - GenAI Purple Team Book
 theme:
   name: material
   logo: assets/logo_light.jpeg
@@ -18,27 +18,21 @@ theme:
     - content.code.copy
     - content.tabs.link
   palette:
-    # Custom Deep Purple Theme
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
+    # Default to Dark Mode
+    - scheme: astral-dark
       primary: custom
       accent: custom
-    - media: "(prefers-color-scheme: light)"
-      scheme: astral-light
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    # Toggle to Light Mode
+    - scheme: astral-light
       primary: custom
       accent: custom
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: astral-dark
-      primary: custom
-      accent: custom
-      toggle:
-        icon: material/brightness-4
-        name: Switch to system preference
   custom_dir: docs/.overrides
 repo_url: https://github.com/felipepenha/gurple
 repo_name: gurple
