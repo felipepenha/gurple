@@ -98,6 +98,12 @@ nav:
       - exfiltration/index.md
   - Poisoning:
       - poisoning/index.md
+  - Unbounded Consumption:
+      - unbounded_consumption/index.md
+  - Supply Chain Exploitation:
+      - supply_chain_exploitation/index.md
+  - Model Replication:
+      - model_replication/index.md
   - Model Inversion:
       - model_inversion/index.md
   - Model Tampering:
