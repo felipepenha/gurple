@@ -2,10 +2,10 @@
   --black: #261230;
   --white: #ffffff;
   --radiate: #d7ff64;
-  --flare: #511A84;
+  --flare: #6340ac;
   --rock: #78876e;
   --galaxy: #261230;
-  --space: #511A84;
+  --space: #30173d;
   --comet: #6f5d6f;
   --cosmic: #de5fe9;
   --sun: #ffac2f;
@@ -41,7 +41,7 @@
   --md-accent-fg-color: var(--cosmic);
 
   --md-typeset-color: var(--white);
-  --md-typeset-a-color: var(--radiate);
+  --md-typeset-a-color: var(--aurora);
   --md-typeset-mark-color: var(--sun);
 
   --md-code-fg-color: var(--white);
@@ -51,13 +51,13 @@
   --md-code-hl-punctuation-color: var(--asteroid);
   --md-code-hl-generic-color: var(--supernova);
   --md-code-hl-variable-color: var(--starlight);
-  --md-code-hl-string-color: var(--radiate);
+  --md-code-hl-string-color: var(--aurora);
   --md-code-hl-keyword-color: var(--supernova);
   --md-code-hl-operator-color: var(--supernova);
   --md-code-hl-number-color: var(--electron);
   --md-code-hl-special-color: var(--electron);
   --md-code-hl-function-color: var(--neutron);
-  --md-code-hl-constant-color: var(--radiate);
+  --md-code-hl-constant-color: var(--aurora);
   --md-code-hl-name-color: var(--md-code-fg-color);
 
   --md-typeset-del-color: hsla(6, 90%, 60%, 0.15);
@@ -109,6 +109,17 @@
 [data-md-color-scheme="astral-dark"] div.admonition {
   color: var(--md-code-fg-color);
   background-color: var(--md-code-bg-color);
+}
+
+/* Force Note Admonition color to Aurora */
+[data-md-color-scheme="astral-dark"] .md-typeset .admonition.note,
+[data-md-color-scheme="astral-dark"] .md-typeset details.note {
+  border-color: var(--aurora) !important;
+}
+
+[data-md-color-scheme="astral-dark"] .md-typeset .admonition.note>.md-typeset__scrollwrap>.md-typeset__table>thead>tr>th:before,
+[data-md-color-scheme="astral-dark"] .md-typeset details.note>summary:before {
+  color: var(--aurora) !important;
 }
 
 /* Prevent the shadow from the nav title from blurring the top link.
