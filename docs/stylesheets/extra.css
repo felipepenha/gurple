@@ -111,17 +111,6 @@
   background-color: var(--md-code-bg-color);
 }
 
-/* Force Note Admonition color to Aurora */
-[data-md-color-scheme="astral-dark"] .md-typeset .admonition.note,
-[data-md-color-scheme="astral-dark"] .md-typeset details.note {
-  border-color: var(--aurora) !important;
-}
-
-[data-md-color-scheme="astral-dark"] .md-typeset .admonition.note>.md-typeset__scrollwrap>.md-typeset__table>thead>tr>th:before,
-[data-md-color-scheme="astral-dark"] .md-typeset details.note>summary:before {
-  color: var(--aurora) !important;
-}
-
 /* Prevent the shadow from the nav title from blurring the top link.
 The box shadow isn't really doing anything anyway.
 

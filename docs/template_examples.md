@@ -46,7 +46,7 @@ print(os.getcwd())
 
 Standard image syntax (ensure assets are in `docs/assets/`):
 
-![Logo](assets/logo-letter.svg)
+![Logo](assets/logo_dark.jpeg)
 
 ## Links
 

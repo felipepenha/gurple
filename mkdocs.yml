@@ -1,8 +1,8 @@
 site_name: gurple
 theme:
   name: material
-  logo: assets/logo-letter.svg
-  favicon: assets/favicon.ico
+  logo: assets/logo_light.jpeg
+  favicon: assets/logo_light.jpeg
   features:
     - navigation.path
     - navigation.instant
