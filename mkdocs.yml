@@ -69,24 +69,7 @@ markdown_extensions:
 plugins:
   - search
 # git-revision-date-localized removed
-  - redirects:
-      # Note that redirecting an anchor, e.g., `concepts/projects/#managing-dependencies` must be done
-      # client-side and is implemented in `extra.js` instead.
-      redirect_maps:
-        "guides/publish.md": "guides/package.md"
-        "concepts/workspaces.md": "concepts/projects/workspaces.md"
-        "concepts/dependencies.md": "concepts/projects/dependencies.md"
-        "reference/versioning.md": "reference/policies/versioning.md"
-        "reference/platforms.md": "reference/policies/platforms.md"
-        "reference/build_failures.md": "reference/troubleshooting/build-failures.md"
-        "reference/resolver-internals.md": "reference/internals/resolver.md"
-        "configuration/installer.md": "reference/installer.md"
-        "configuration/authentication.md": "concepts/authentication/index.md"
-        "configuration/build-backend.md": "concepts/build-backend.md"
-        "configuration/files.md": "concepts/configuration-files.md"
-        "configuration/indexes.md": "concepts/indexes.md"
-        "configuration/environment.md": "reference/environment.md"
-        "guides/export.md": "concepts/projects/export.md"
+# redirects removed
   - llmstxt:
       markdown_description: |
         You can use uv to install Python dependencies, run scripts, manage virtual environments,
@@ -170,96 +153,8 @@ extra:
     - icon: fontawesome/brands/x-twitter
       link: https://x.com/astral_sh
 nav:
-  - Introduction: index.md
-  - Getting started:
-      - getting-started/index.md
-      - Installation: getting-started/installation.md
-      - First steps: getting-started/first-steps.md
-      - Features: getting-started/features.md
-      - Getting help: getting-started/help.md
-  - Guides:
-      - guides/index.md
-      - Installing Python: guides/install-python.md
-      - Running scripts: guides/scripts.md
-      - Using tools: guides/tools.md
-      - Working on projects: guides/projects.md
-      - Publishing packages: guides/package.md
-      - Migration:
-          - guides/migration/index.md
-          - From pip to a uv project: guides/migration/pip-to-project.md
-      - Integrations:
-          - guides/integration/index.md
-          - Docker: guides/integration/docker.md
-          - Jupyter: guides/integration/jupyter.md
-          - marimo: guides/integration/marimo.md
-          - GitHub Actions: guides/integration/github.md
-          - GitLab CI/CD: guides/integration/gitlab.md
-          - Pre-commit: guides/integration/pre-commit.md
-          - PyTorch: guides/integration/pytorch.md
-          - FastAPI: guides/integration/fastapi.md
-          - Alternative indexes: guides/integration/alternative-indexes.md
-          - Dependency bots: guides/integration/dependency-bots.md
-          - AWS Lambda: guides/integration/aws-lambda.md
-          - Coiled: guides/integration/coiled.md
-  - Concepts:
-      - concepts/index.md
-      - Projects:
-          - concepts/projects/index.md
-          - Structure and files: concepts/projects/layout.md
-          - Creating projects: concepts/projects/init.md
-          - Managing dependencies: concepts/projects/dependencies.md
-          - Running commands: concepts/projects/run.md
-          - Locking and syncing: concepts/projects/sync.md
-          - Configuring projects: concepts/projects/config.md
-          - Building distributions: concepts/projects/build.md
-          - Exporting lockfiles: concepts/projects/export.md
-          - Using workspaces: concepts/projects/workspaces.md
-      - Tools: concepts/tools.md
-      - Python versions: concepts/python-versions.md
-      - Configuration files: concepts/configuration-files.md
-      - Package indexes: concepts/indexes.md
-      - Resolution: concepts/resolution.md
-      - Build backend: concepts/build-backend.md
-      - Authentication:
-          - concepts/authentication/index.md
-          - The auth CLI: concepts/authentication/cli.md
-          - HTTP credentials: concepts/authentication/http.md
-          - Git credentials: concepts/authentication/git.md
-          - TLS certificates: concepts/authentication/certificates.md
-          - Third-party services: concepts/authentication/third-party.md
-      - Caching: concepts/cache.md
-      - Preview features: concepts/preview.md
-      # Note:  The `pip` section was moved to the `concepts/` section but the
-      # top-level directory structure was retained to ease the transition.
-      - The pip interface:
-          - pip/index.md
-          - Using environments: pip/environments.md
-          - Managing packages: pip/packages.md
-          - Inspecting environments: pip/inspection.md
-          - Declaring dependencies: pip/dependencies.md
-          - Locking environments: pip/compile.md
-          - Compatibility with pip: pip/compatibility.md
-  - Reference:
-      - reference/index.md
-      - Commands: reference/cli.md
-      - Settings: reference/settings.md
-      - Environment variables: reference/environment.md
-      - Storage: reference/storage.md
-      - Installer options: reference/installer.md
-      - Troubleshooting:
-          - reference/troubleshooting/index.md
-          - Build failures: reference/troubleshooting/build-failures.md
-          - Reproducible examples: reference/troubleshooting/reproducible-examples.md
-      - Internals:
-          - reference/internals/index.md
-          - Resolver: reference/internals/resolver.md
-      - Benchmarks: reference/benchmarks.md
-      - Policies:
-          - reference/policies/index.md
-          - Versioning: reference/policies/versioning.md
-          - Platform support: reference/policies/platforms.md
-          - License: reference/policies/license.md
-validation:
-  omitted_files: warn
-  absolute_links: warn
-  unrecognized_links: warn
+  - Home: index.md
+  - Template Examples: template_examples.md
+  - Major Section Example:
+      - major_section_example/index.md
+      - First Page: major_section_example/page_1.md
