@@ -80,7 +80,9 @@ extra:
       link: https://github.com/felipepenha/gurple
 nav:
   - Home: index.md
-  - Template Examples: template_examples.md
-  - Major Section Example:
-      - major_section_example/index.md
-      - First Page: major_section_example/page_1.md
+  - About the Author:
+      - author/index.md
+  # - Template Examples: template_examples.md
+  # - Major Section Example:
+  #     - major_section_example/index.md
+  #     - First Page: major_section_example/page_1.md
