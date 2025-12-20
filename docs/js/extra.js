@@ -44,12 +44,36 @@ function setCopyText() {
   });
 }
 
+// Display the project version in the repository facts
+// This is a one-time setup that reads the version from window.projectVersion
+function displayVersion() {
+  if (!window.projectVersion) {
+    return;
+  }
+
+  // Find the repository facts container
+  const repoFacts = document.querySelector(".md-source__facts");
+  if (!repoFacts) {
+    return;
+  }
+
+  // Create the version item
+  const versionItem = document.createElement("li");
+  versionItem.classList.add("md-source__fact");
+  versionItem.classList.add("md-source__fact--version");
+  versionItem.textContent = "v" + window.projectVersion;
+
+  // Append to the list
+  repoFacts.appendChild(versionItem);
+}
+
 // Using the document$ observable is particularly important if you are using instant loading since
 // it will not result in a page refresh in the browser
 // See `How to integrate with third-party JavaScript libraries` guideline:
 // https://squidfunk.github.io/mkdocs-material/customization/?h=javascript#additional-javascript
 document$.subscribe(function () {
   setCopyText();
+  displayVersion();
 });
 
 // Use client-side redirects for anchors that have moved.

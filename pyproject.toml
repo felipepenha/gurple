@@ -3,14 +3,12 @@ requires = ["maturin>=1.0,<2.0"]
 build-backend = "maturin"
 
 [project]
-name = "uv"
-version = "0.9.18"
-description = "An extremely fast Python package and project manager, written in Rust."
-authors = [{ name = "Astral Software Inc.", email = "hey@astral.sh" }]
+name = "gurple"
+version = "0.0.1"
+description = "GenAI Security Purple Team Book"
+authors = [{ name = "Felipe Campos Penha", email = "felipe.penha@owasp.org" }]
 requires-python = ">=3.8"
-keywords = [
-  "uv", "requirements", "packaging"
-]
+keywords = ["uv", "requirements", "packaging"]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Environment :: Console",
@@ -35,11 +33,10 @@ classifiers = [
 readme = "README.md"
 
 [project.urls]
-Repository = "https://github.com/astral-sh/uv"
-Documentation = "https://docs.astral.sh/uv"
-Changelog = "https://github.com/astral-sh/uv/blob/main/CHANGELOG.md"
-Releases = "https://github.com/astral-sh/uv/releases"
-Discord = "https://discord.gg/astral-sh"
+Repository = "https://github.com/felipepenha/gurple"
+Documentation = "https://felipepenha.github.io/gurple/"
+Changelog = "https://github.com/felipepenha/gurple/commits/main/"
+Releases = "https://github.com/felipepenha/gurple/releases"
 
 [tool.maturin]
 bindings = "bin"
@@ -48,17 +45,23 @@ module-name = "uv"
 python-source = "python"
 strip = true
 include = [
-    { path = "rust-toolchain.toml", format = ["sdist", "wheel"] },
-    # this one isn't discovered by maturin because it's behind a feature flag
-    { path = "crates/uv-performance-memory-allocator/**/*", format = ["sdist", "wheel"] },
-    { path = "crates/uv-trampoline-builder/trampolines/*", format = "sdist" },
-    { path = "LICENSE-APACHE", format = "sdist" },
-    { path = "LICENSE-MIT", format = "sdist" },
+  { path = "rust-toolchain.toml", format = [
+    "sdist",
+    "wheel",
+  ] },
+  # this one isn't discovered by maturin because it's behind a feature flag
+  { path = "crates/uv-performance-memory-allocator/**/*", format = [
+    "sdist",
+    "wheel",
+  ] },
+  { path = "crates/uv-trampoline-builder/trampolines/*", format = "sdist" },
+  { path = "LICENSE-APACHE", format = "sdist" },
+  { path = "LICENSE-MIT", format = "sdist" },
 ]
 
 [tool.rooster]
-changelog-contributors = false  # We exclude contributors from the CHANGELOG file
-major-labels = []  # We do not use the major version number yet
+changelog-contributors = false # We exclude contributors from the CHANGELOG file
+major-labels = [] # We do not use the major version number yet
 minor-labels = ["breaking"]
 ignore-labels = ["internal", "ci", "testing"]
 version_files = [
@@ -94,10 +97,7 @@ version_files = [
 
 [tool.mypy]
 ignore_missing_imports = true
-files = [
-  "crates/uv-python/*.py",
-  "python/uv/*.py",
-]
+files = ["crates/uv-python/*.py", "python/uv/*.py"]
 
 [tool.uv]
 managed = false
