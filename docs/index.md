@@ -1,4 +1,4 @@
-# <span style="color:var(--aurora)">**Gurple &#151 GenAI Purple Team Book**</span>
+# <span style="color:var(--aurora)">**Gurple &mdash; GenAI Security Purple Team Book**</span>
 
 **Author**: _Felipe Campos Penha_
 
