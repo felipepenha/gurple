@@ -2,7 +2,7 @@ site_name: Gurple - GenAI Purple Team Book
 theme:
   name: material
   logo: assets/logo_light.jpeg
-  favicon: assets/logo_light.jpeg
+  favicon: assets/favicon.png
   features:
     - navigation.path
     - navigation.instant
@@ -78,6 +78,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/felipepenha/gurple
+  version: 0.0.1
 nav:
   # - Template Examples: template_examples.md
   # - Major Section Example:

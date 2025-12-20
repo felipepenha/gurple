@@ -51,7 +51,7 @@ Standard image syntax (ensure assets are in `docs/assets/`):
 ## Links
 
 - [Internal Link to Home](index.md)
-- [External Link to Astral](https://astral.sh)
+
 
 ## Formatting
 
