@@ -17,7 +17,12 @@
     Just because you can do something, it doesn’t mean you should!
 
 
-This book will cover GenAI Security from the perspective of isolating each threat to GenAI systems and providing:
+<br />
+
+---
+# **About the Content of This Book**
+
+**Gurple** explores GenAI Security by isolating individual **threats** to GenAI systems and providing for each:
 
 * In-depth information, including references from existing literature.
 
@@ -31,10 +36,13 @@ This book will cover GenAI Security from the perspective of isolating each threa
 
     * Purple Team: Steps to verify.
 
-But, what are all these colors we keep mentioning? See the next section for a detailed explanation.
+But, what are all these colors? See the next section for a detailed explanation.
+
+
+<br />
 
 ---
-# **A Rainbow of Colors**
+# 🌈 **Rainbow of Colors**
 
 ...
 
@@ -44,7 +52,7 @@ But, what are all these colors we keep mentioning? See the next section for a de
 ...
 
 
-### **Ethical and White Hat Hackers**
+### **White Hat and Ethical Hackers**
 
 ...
 
@@ -63,6 +71,16 @@ But, what are all these colors we keep mentioning? See the next section for a de
 
 ...
 
+### **Gurple**
+
+A wordplay on GenAI (letter "G") and "Purple Team" fused to become "Gurple".
+
+At the same time, **gurple** is a mysterious and unusual color which is a mix of green and purple.
+
+That's it! Just a book about GenAI Security with a fun and memorable name.
+
+
+<br />
 
 ---
 # **Structure of the _Threat_ Chapter**
