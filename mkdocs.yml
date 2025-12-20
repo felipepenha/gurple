@@ -90,21 +90,33 @@ nav:
       - preface/index.md
   - Introduction:
       - introduction/index.md
-  - Jailbreaking:
-      - jailbreaking/index.md
-  - Prompt Injection:
-      - prompt_injection/index.md
-  - Exfiltration:
-      - exfiltration/index.md
-  - Poisoning:
-      - poisoning/index.md
-  - Unbounded Consumption:
-      - unbounded_consumption/index.md
-  - Supply Chain Exploitation:
-      - supply_chain_exploitation/index.md
-  - Model Replication:
-      - model_replication/index.md
-  - Model Inversion:
-      - model_inversion/index.md
-  - Model Tampering:
-      - model_tampering/index.md
+  - Threat, Vulnerability & Risk Frameworks:
+    - threat_vulnerability_frameworks/index.md
+    - C|P-RMM: threat_vulnerability_frameworks/cp_rmm.md
+    - MITRE ATLAS: threat_vulnerability_frameworks/mitre_atlas.md
+    - OWASP Top 10: threat_vulnerability_frameworks/owasp_top_10.md
+    - OWASP Top 10 for LLM: threat_vulnerability_frameworks/owasp_top_10_llm.md
+    - OWASP Top 10 for Agentic: threat_vulnerability_frameworks/owasp_top_10_agentic.md
+    - Taxonomy of Prompt Injection: threat_vulnerability_frameworks/taxonomy_prompt_injection.md
+  - Threats:
+    - threats/index.md
+    - Jailbreaking:
+      - threats/jailbreaking/index.md
+      - threats/jailbreaking/optimized.md
+    - Prompt Injection:
+      - threats/prompt_injection/index.md
+    - Exfiltration:
+      - threats/exfiltration/index.md
+    - Poisoning:
+      - threats/poisoning/index.md
+    - Unbounded Consumption:
+      - threats/unbounded_consumption/index.md
+    - Supply Chain Exploitation:
+      - threats/supply_chain_exploitation/index.md
+    - Model Replication:
+      - threats/model_replication/index.md
+    - Model Inversion:
+      - threats/model_inversion/index.md
+    - Model Tampering:
+      - threats/model_tampering/index.md
+
