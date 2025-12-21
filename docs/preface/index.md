@@ -48,6 +48,8 @@ Adversarial attacks demonstrate this connection. A successful jailbreak is techn
 
 Gurple moves beyond the typical focus on Foundational Models. Research often concentrates on model weights, steering or fine-tuning, yet production GenAI exists within complex software systems. This approach addresses vulnerabilities in the model alongside the surrounding infrastructure, including API endpoints, MCP servers, A2A protocols, memory caching, persistent databases, and other components.
 
+See [Introduction / GenAI Attack Entry Points](../introduction/index.md#genai-attack-entry-points) section for more details.
+
 
 ## **The Purple Team Approach**
 
