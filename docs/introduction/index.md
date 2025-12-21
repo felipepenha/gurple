@@ -31,5 +31,6 @@
 
 ### **Purple Teams**
 
-...
+* Validation: How to safely simulate this attack against the production defenses to prove they are working (e.g., specific evaluation test cases).
+
 

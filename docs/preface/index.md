@@ -34,19 +34,31 @@ That's it! Just a book about GenAI Security with a fun and memorable name.
 ---
 # **Purpose**
 
-- Discuss differences between AI safety and security.
 
-- Discuss holistic view of system, not simply foundational models. Criticism of academic coverage of GenAI Security, which is mainly focused on foundational models and their modifications (steering, fine-tuning, model merging, etc).
+## **GenAI Security Vs. GenAI Safety**
 
-- Most materials only discuss red teaming, but not blue teaming or purple teaming.
+Gurple focuses on **GenAI Security** rather than GenAI Safety.
 
+**GenAI Security** and **GenAI Safety** are two distinct disciplines that frequently converge. Safety generally targets unintentional failures, such as bias or hallucination, ensuring the system aligns with human intent. Security focuses on intentional malice, protecting the system from theft, disruption, or subversion. The boundary blurs when malicious actors weaponize safety failures or exploit security gaps to force unsafe outputs.
+
+Adversarial attacks demonstrate this connection. A successful jailbreak is technically a security breach because it bypasses established access controls. The result is often a safety violation, such as the generation of instructions for illegal acts or hate speech. In this context, the security vulnerability serves as the vector for the safety failure. Defending against these attacks requires techniques from both fields.
+
+
+## **Beyond Foundational Models**
+
+Gurple moves beyond the typical focus on Foundational Models. Research often concentrates on model weights, steering or fine-tuning, yet production GenAI exists within complex software systems. This approach addresses vulnerabilities in the model alongside the surrounding infrastructure, including API endpoints, MCP servers, A2A protocols, memory caching, persistent databases, and other components.
+
+
+## **The Purple Team Approach**
+
+Existing academic literature usually addresses Red Teaming (offense) and Blue Teaming (defense) separately. Gurple integrates them into a Purple strategy. This approach treats offense and defense as interconnected components, creating a feedback loop where attacks directly verify the efficacy of security controls.
 
 <br />
 
 ---
 # **Content**
 
-**Gurple** explores GenAI Security by isolating individual **threats** to GenAI systems and providing for each:
+**Gurple** explores GenAI Security by isolating individual **Threats** to GenAI systems and providing for each:
 
 * In-depth information, including references from existing literature.
 
@@ -60,7 +72,9 @@ That's it! Just a book about GenAI Security with a fun and memorable name.
 
     * Purple Team: Steps to verify.
 
-But, what are all these colors? See the [Introduction](../introduction/index.md) for a detailed explanation.
+You will have a better understanding of what **Threats** are in the [Threat, Vulnerability & Risk Frameworks](../threat_vulnerability_frameworks/index.md) chapter, primarily by studying the [C|P-RMM](https://cp-rmm.com) framework.
+
+And, by the way, what's up with all these hat and team colors? Please, see the [Introduction](../introduction/index.md) for a detailed explanation.
 
 
 <br />
@@ -120,11 +134,6 @@ Provides the summary and reference to a case study.
 * Detection: Logs, alerts, or keywords to monitor.
 
 * Example [if any]: Prompt or script.
-
-
-## 🟣 <span style="color:var(--cosmic)">**Purple Team**</span>
-
-* Verification: How to safely simulate this attack against the production defenses to prove they are working (e.g., specific evaluation test cases).
 
 
 ## **References**
