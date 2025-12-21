@@ -20,7 +20,31 @@
 <br />
 
 ---
-# **About the Content of This Book**
+# **Gurple**
+
+A wordplay on GenAI (letter "G") and "Purple Team" fused to become "Gurple".
+
+At the same time, **gurple** is a mysterious and unusual color which is a mix of green and purple.
+
+That's it! Just a book about GenAI Security with a fun and memorable name.
+
+
+<br />
+
+---
+# **Purpose**
+
+- Discuss differences between AI safety and security.
+
+- Discuss holistic view of system, not simply foundational models. Criticism of academic coverage of GenAI Security, which is mainly focused on foundational models and their modifications (steering, fine-tuning, model merging, etc).
+
+- Most materials only discuss red teaming, but not blue teaming or purple teaming.
+
+
+<br />
+
+---
+# **Content**
 
 **Gurple** explores GenAI Security by isolating individual **threats** to GenAI systems and providing for each:
 
@@ -36,48 +60,7 @@
 
     * Purple Team: Steps to verify.
 
-But, what are all these colors? See the next section for a detailed explanation.
-
-
-<br />
-
----
-# 🌈 **Rainbow of Colors**
-
-...
-
-
-### **Black Hat Hackers**
-
-...
-
-
-### **White Hat and Ethical Hackers**
-
-...
-
-
-### **Red Teams**
-
-...
-
-
-### **Blue Teams**
-
-...
-
-
-### **Purple Teams**
-
-...
-
-### **Gurple**
-
-A wordplay on GenAI (letter "G") and "Purple Team" fused to become "Gurple".
-
-At the same time, **gurple** is a mysterious and unusual color which is a mix of green and purple.
-
-That's it! Just a book about GenAI Security with a fun and memorable name.
+But, what are all these colors? See the [Introduction](../introduction/index.md) for a detailed explanation.
 
 
 <br />
