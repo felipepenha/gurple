@@ -1,4 +1,7 @@
-# <span style="color:var(--aurora)">**Attack Entry Points**</span>
+<div style="text-align: center; color:var(--aurora)">
+  <p style="font-size: 8em; margin-top: 0px; margin-bottom: 0px; font-weight: bold;">2</p>
+  <h1 style="color:var(--aurora); font-size: 3em; font-weight: bold;">Attack Entry Points</h1>
+</div>
 
 Production GenAI systems are complex applications with a broad attack surface that extends well beyond the foundational models. Attackers can exploit numerous entry points to introduce malicious inputs, manipulate context, or compromise infrastructure. These vectors range from direct interactions via the User Interface (UI) and Application Programming Interface (API) endpoints to less obvious channels like supply chain dependencies and integrations to observability software:
 

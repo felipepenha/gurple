@@ -1,4 +1,6 @@
-# <span style="color:var(--aurora)">**Introduction**</span>
+<div style="text-align: center; color:var(--aurora)">
+  <h1 style="color:var(--aurora); font-size: 3em; font-weight: bold;">Introduction</h1>
+</div>
 
 This introduction sets the stage by defining traditional security roles and relating them to the Generative AI (GenAI) context.
 

@@ -1,4 +1,6 @@
-# <span style="color:var(--aurora)">**Preface**</span>
+<div style="text-align: center; color:var(--aurora)">
+  <h1 style="color:var(--aurora); font-size: 3em; font-weight: bold;">Preface</h1>
+</div>
 
 !!! note
     Gurple focuses on <span style="color:var(--constellation)">**Security of GenAI systems**</span> rather than GenAI-Assisted Security of traditional systems.
