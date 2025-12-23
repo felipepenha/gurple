@@ -3,70 +3,112 @@
   <h1 style="color:var(--aurora); font-size: 3em; font-weight: bold;">Attack Entry Points</h1>
 </div>
 
-Production GenAI systems are complex applications with a broad attack surface that extends well beyond the foundational models. Attackers can exploit numerous entry points to introduce malicious inputs, manipulate context, or compromise infrastructure. These vectors range from direct interactions via the User Interface (UI) and Application Programming Interface (API) endpoints to less obvious channels like supply chain dependencies and integrations to observability software:
+Production GenAI systems are complex applications with a broad Attack Surface that extends well beyond the GenAI models. Attackers can exploit numerous entry points to introduce malicious inputs, manipulate context, or compromise infrastructure.
 
 
-## **User Interface (UI)**
+<br />
 
-Attackers may input data via the UI, which is then processed by the GenAI system.
+---
+# **The Front Door** 🚪 <br /> **&mdash; Network & Application Interfaces**
 
-Examples of data: forms, prompts, documents, code, feedback, images, videos, audio, etc.
+These are the primary interaction points where the system accepts multimodal input for inference.
 
+<br />
 
-## **Application Programming Interface (API) Endpoints**
+* **Application Programming Interface (API) Endpoints**
+
+    Attackers may input data via the application's API endpoints, directly accessing the model or orchestration layer.
+
+    **Examples of structured data:** structured data (JSON, XML, etc), inputs to forms (name, address, etc), feedback (thumbs up, thumbs down, etc).
+
+    **Examples of unstructured data:** prompts, documents (PDF, Doc, etc), free text, images, videos, audio, code (SQL, Python, etc).
+
+<br />
     
-Attackers may input data via the application's API endpoints, which is then processed by the GenAI system.
+* **User Interface (UI)**
 
-Examples of data: forms, prompts, documents, code, feedback, images, videos, audio, etc.
+    Attackers may input either structured or unstructured data via the UI, which is then processed by the GenAI system.
 
+    Examples for UI input data would be exactly the same as for API Endpoints, since UI interactions are ultimately translated into API calls.
 
-## **Sensors**
+<br />
 
-Attackers may present malicious signals to sensors such as cameras and microphones, which is then processed by the GenAI system.
+* **Sensors**
 
-Examples of malicious signals: noise, going beyond the sensor's range, evading identification,inducing misclassification, etc.
+    Attackers may present malicious signals to physical sensors (cameras, microphones, motion sensors, etc), which are then processed by the GenAI system.
 
+    **Examples of malicious signals:** noise (adversarial examples), signals going beyond the sensor's range, evading identification, inducing misclassification.
 
-## **Indirect Sources**
+<br />
 
-Data retrieved from indirect sources that may contain hidden malicious content.
+* **Observability Integration Interfaces**
 
-Examples of indirect sources: websites, emails, code versioning repositories, etc.
+    Attackers may target the observability integration protocols to blind defenders or exfiltrate sensitive model inputs/outputs.
 
+    **Examples of integration protocols:** OpenTelemetry (OTel), HTTPS logging streams.
 
-## **Agentic Tools**
+<br />
 
-External tools that perform actions on behalf of agents.
+---
+# **The Side Door** 🚪 <br /> **&mdash; Supply Chain**
 
-Examples of tools: executes code, sends email, etc.
+Attackers may compromise the foundational components upon which the GenAI system is built to introduce backdoors or bias. Supply chain attacks often bypass traditional perimeter defenses because the compromised component is invited inside the trusted environment by the developers themselves.
 
+**Examples of components:** model files, system libraries, packages, container images, codebase hosted in code version control platforms.
 
-## **Model Context Protocol (MCP)**
-
-Attackers may exploit the MCP client or the MCP server, e.g. to inject malicious context into the model.
-
-
-## **Agent2Agent Protocol (A2A)**
-
-Attackers may exploit the A2A client or the A2A server, e.g. to intercept or manipulate communications between autonomous agents.
+<br />
 
 
-## **Supply Chain**
+---
+# **The Back Door** 🚪 <br /> **&mdash; Data Storage**
 
-Attackers may compromise the foundational components upon which the GenAI system is built.
+In GenAI systems, data storage form the basis for functional aspects, such as Memory and Knowledge Base. It differs from traditional systems in that it is not only used for directly retrieving information to be displayed to the user, but also for retrieving context for the model layer.
 
-Examples of components: models, libraries, packages container images, etc.
+**Examples of data storage:** Cache databases for session memory, persistent databases for logging conversation history, persistent vector databases for semantic search, cloud storage with raw data.
 
+<br />
 
-## **Cache and Persistent Storage**
+---
+# **The Hidden Door** 🚪 <br /> **&mdash; Event-Driven & Serverless Triggers**
 
-Attackers may poison or compromise the data storage that the model accesses.
+GenAI agents often act autonomously based on external triggers or indirect data, creating invisible entry points.
 
-Examples of data storage: cache databases for memory, persistent databases for logging conversation history and feedback, persistent vector databases for semantic search, etc.
+<br />
 
+* **Indirect Sources**
 
-## **Observability Integration Protocols**
+    Data retrieved from indirect sources that may contain hidden malicious content (Indirect Prompt Injection).
 
-Attackers may target the observability integration protocols to blind defenders or exfiltrate information.
+    **Examples of indirect sources:** scraped websites, ingested emails, reviewed code.
 
-Examples of integration protocols: OpenTelemetry (OTel), HTTPS, etc.
+<br />
+
+* **Agentic Tools**
+
+    External tools that perform actions on behalf of agents. Attackers may exploit the tool's output to hijack the agent's control flow.
+
+    **Examples of tools:** code execution sandboxes, email sending APIs, file system access tools.
+
+<br />
+
+* **Model Context Protocol (MCP)**
+
+    Attackers may exploit the MCP client or the MCP server.
+
+    **Examples of vectors:** Injecting malicious context into the model, manipulating context handover.
+
+<br />
+
+* **Agent2Agent Protocol (A2A)**
+
+    Attackers may exploit the A2A client or the A2A server.
+
+    **Examples of vectors:** Intercepting or manipulating communications between autonomous agents.
+
+<br />
+
+* **Infrastructure Events**
+
+    Attackers may trigger GenAI processing pipelines via backend events.
+
+    **Examples of events:** File upload triggers (initiating embedding generation), Message Queue injection (forcing the model to process a malicious payload).
