@@ -24,11 +24,24 @@
 ---
 # **Gurple**
 
+```python3
+
+      /$$$$$$  /$$   /$$ /$$$$$$$  /$$$$$$$  /$$       /$$$$$$$$
+     /$$__  $$| $$  | $$| $$__  $$| $$__  $$| $$      | $$_____/
+    | $$  \__/| $$  | $$| $$  \ $$| $$  \ $$| $$      | $$      
+    | $$ /$$$$| $$  | $$| $$$$$$$/| $$$$$$$/| $$      | $$$$$   
+    | $$|_  $$| $$  | $$| $$__  $$| $$____/ | $$      | $$__/   
+    | $$  \ $$| $$  | $$| $$  \ $$| $$      | $$      | $$      
+    |  $$$$$$/|  $$$$$$/| $$  | $$| $$      | $$$$$$$$| $$$$$$$$
+     \______/  \______/ |__/  |__/|__/      |________/|________/
+                                                                
+```
+
 A wordplay on GenAI (letter "G") and "Purple Team" fused to become "Gurple".
 
 At the same time, **gurple** is a mysterious and unusual color which is a mix of green and purple.
 
-That's it! Just a book about GenAI Security with a fun and memorable name.
+That's it! Just a book about GenAI Security and Purple Teaming, with a fun and memorable name.
 
 
 <br />
@@ -41,21 +54,26 @@ That's it! Just a book about GenAI Security with a fun and memorable name.
 
 Gurple focuses on **GenAI Security** rather than GenAI Safety.
 
-**GenAI Security** and **GenAI Safety** are two distinct disciplines that frequently converge. Safety generally targets unintentional failures, such as bias or hallucination, ensuring the system aligns with human intent. Security focuses on intentional malice, protecting the system from theft, disruption, or subversion. The boundary blurs when malicious actors weaponize safety failures or exploit security gaps to force unsafe outputs.
+**GenAI Security** and **GenAI Safety** are two distinct disciplines that frequently intersect. Safety generally targets unintentional failures, such as bias or hallucination, ensuring the system aligns with human intent. Security focuses on intentional malice, protecting the system from theft, disruption, or subversion. The boundary blurs when malicious actors weaponize safety failures or exploit security gaps to force unsafe outputs.
 
 Adversarial attacks demonstrate this connection. A successful jailbreak is technically a security breach because it bypasses established access controls. The result is often a safety violation, such as the generation of instructions for illegal acts or hate speech. In this context, the security vulnerability serves as the vector for the safety failure. Defending against these attacks requires techniques from both fields.
 
 
-## **Beyond Foundational Models**
+## **Beyond Foundational Models and Towards Production-grade GenAI**
 
-Gurple moves beyond the typical focus on Foundational Models. Academic research often concentrates on model weights, steering or fine-tuning, yet production GenAI exists within complex software systems. This approach addresses vulnerabilities in the model alongside the surrounding infrastructure, including API endpoints, MCP servers, A2A protocols, memory caching, persistent databases, and other components.
+Gurple moves beyond the typical focus on Foundational Models. Academic research often concentrates on model weights, steering or fine-tuning, yet production-grade GenAI exists within complex software systems. This approach addresses vulnerabilities in the models alongside the surrounding infrastructure which provides it with the means to communicate with the external world (UI, API endpoints, etc).
 
-See [Attack Entry Points](../attack_entry_points/index.md) section for more details.
+See [Attack Entry Points](../attack_entry_points/index.md) section to have a better understanding of the "doors" which attackers can use to exploit GenAI Systems.
 
 
 ## **Focus on Threats**
 
-Gurple centers its analysis on [Threats](../threats/index.md) to GenAI systems, using the [`C|P-RMM`](threat_vulnerability_frameworks/cp_rmm.md) framework to distinguish them from **Vulnerabilities** and **Risks**. For instance, we treat Jailbreaking as a distinct **Threat** that exploits system **Vulnerabilities** (such as Improper Output Handling) to introduce specific **Risks** (like malware generation), ensuring a clear separation of concerns.
+Gurple centers its analysis on [Threats](../threats/index.md) to GenAI systems, using the [`SCF C|P-RMM`](../threat_vulnerability_frameworks/scf_cp_rmm.md) framework to distinguish them from **Vulnerabilities** and **Risks**. For instance, **Prompt Injection** is treated as a distinct **Threat** that exploits system **Vulnerabilities** (such as Improper Output Handling) to introduce specific **Risks** (like malware generation), ensuring a clear separation of concerns.
+
+
+## **Mapping to Popular Frameworks**
+
+Gurple explains each of the most popular **Threat, Vulnerability and Risk** frameworks, and maps each of the **Threats** listed in this book to these frameworks by referencing unique IDs. While any attempt to map is imperfect, Gruple's map tables provide a quick way to navigate between frameworks and allows for more in-depth study of each threat. For example, Prompt Injection / Exfiltration Through Deserialization is mapped to [OWASP LLM02:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/), giving the reader a broader idea of Deserialization of Untrusted Data beyond just GenAI. A mapping as extensive as this is certainly unique content not found anywhere else in the literature.
 
 
 ## **The Purple Team Approach**
@@ -93,27 +111,21 @@ You will see a _References_ section at the end of each page.
 
 And, by the way, what's up with all these hat and team colors? Please, see the [Introduction](../introduction/index.md) for a detailed explanation.
 
-See, next, how we systematically structure the main chapter of this book, the [Threat](../threats/index.md) chapter.
+See, next, how the main chapter of this book, the [Threat](../threats/index.md) chapter, is structured.
 
 
 <br />
 
 ---
-# **Structure of the _Threat_ Chapter**
+# **Structure of the _Threats_ Chapter**
 
-# <span style="color:var(--aurora)">**[G-e.x.y] &mdash; [Section or Subsection Name]**</span>
+# <span style="color:var(--aurora)">**[Section or Subsection Name]**</span>
 
-Threat chapter's sections and subsections are numbered based on custom threat IDs of the form `G-e.x.y`, to facilitate referrencing these later.
+# **Description**
 
-The IDs imply a hierarchy:
+A short description of the threat.
 
-* `e`: book edition number.
-* `x`: Threat Type (section) number.
-* `y`: Threat Name (subsection) number.
-
-The order of the IDs is not significant, and reflects simply the order in which the sections were written.
-
-## **Map**
+# **Map**
 
 Maps the Gurple ID to various other IDs found in different GenAI threats and vulnerabilities frameworks.
 
@@ -123,30 +135,79 @@ Maps the Gurple ID to various other IDs found in different GenAI threats and vul
 | **A** | A001 | Description |
 | **B** | B001 | Description |
 
+Gurple's Threat IDs follow the pattern `G-e.x.y`, which implies the following hierarchy:
 
-## **Mechanism**
+* `e`: book edition number.
+* `x`: Threat Type (section) number.
+* `y`: Threat Subtype (subsection) number.
+
+The order of the IDs is not significant, and reflects simply the order in which the sections were written.
+
+# **Mechanism**
 
 Describes the mechanism of the threat.
 
+## **Attack Entry Points**
 
-## **Impact**
+Basically, any Entry Point where a serialized object could be passed on to the system, even if disguised as regular text or data, to be later deserialized.
+
+* [x] **The Front Door** 🚪 — **Network & Application Interfaces**
+    * [x] **Application Programming Interface (API) Endpoints**
+    * [x] **User Interface (UI)**
+    * [x] **Sensors**
+
+    _Note: Nothing really prevents an attacker from writing a serialized object on a sign or a t-shirt and presenting it to a camera, or dictating it to a voice-activated assistant._
+
+    * [ ] **Observability Integration Interfaces**
+* [x] **The Side Door** 🚪 — **Supply Chain**
+
+    _Note: Exploitation of deserialization vulnerabilities in dependencies._
+
+* [x] **The Back Door** 🚪 — **Data Storage**
+* [x] **The Hidden Door** 🚪 — **Event-Driven & Serverless Triggers**
+    * [x] **Indirect Sources**
+    * [x] **Agentic Tools**
+    * [x] **Model Context Protocol (MCP)**
+    * [x] **Agent2Agent Protocol (A2A)**
+    * [x] **Infrastructure Events**
+
+# **Impact**
 
 Explains the impact of the threat.
 
+## **System Impact**
 
-## **Case Study** [if any]
+How it impacts the system.
+
+## **Business Impact**
+
+How it impacts the business.
+
+### **Financial Impact**
+
+### **Legal Impact**
+
+### **Operational Impact**
+
+### **Regulatory Impact**
+
+### **Reputational Impact**
+
+### **Etc ...**
+
+# **Case Study** [if any]
 
 Provides the summary and reference to a case study.
 
 
-## 🔴 <span style="color:var(--red)">**Red Team**</span>
+# 🔴 <span style="color:var(--red)">**Red Team**</span>
 
 * Methodology: Steps to exploit.
 
 * Example [if any]: Prompt or script.
 
 
-## 🔵 <span style="color:var(--constellation)">**Blue Team**</span>
+# 🔵 <span style="color:var(--constellation)">**Blue Team**</span>
 
 * Mitigation: Configuration changes, guardrails, or code fixes to prevent the attack.
 
@@ -155,7 +216,7 @@ Provides the summary and reference to a case study.
 * Example [if any]: Prompt or script.
 
 
-## **References**
+# **References**
 
 1. ...
 2. ...
