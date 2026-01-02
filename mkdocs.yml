@@ -39,6 +39,7 @@ repo_name: gurple
 site_author: Felipe Campos Penha
 site_url: https://felipepenha.github.io/gurple/
 site_dir: site
+docs_dir: processed
 site_description: Documentation for Gurple.
 copyright: >
   Copyright &copy; 2025 Felipe Campos Penha.

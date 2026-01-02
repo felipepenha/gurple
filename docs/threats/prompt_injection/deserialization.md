@@ -5,7 +5,6 @@
 
 Deserialization of untrusted data occurs when an application deserializes data from an untrusted source without sufficient validation. In the context of GenAI, this vulnerability can be exploited when the model processes serialized objects (e.g., `JSON`, `pickle`) provided via prompts or attached data. Specifically for **Exfiltration**, the adversarial prompt is designed to coerce the system into reading sensitive data from the system's environment or filesystem (e.g., API keys, user credentials) and transmitting it back as chat answers or logs that may be further exploited.
 
-
 <br />
 
 ---
@@ -32,7 +31,7 @@ Starting from a safe serialized object in the expected format, the attacker perf
 <p align="center">
   <img src="../images/CWE-502-Diagram.png" alt="CWE-502 Deserialization Diagram" />
   <br />
-  <em>Figure 1: Deserialization of Untrusted Data (<a href="https://cwe.mitre.org/data/definitions/502.html">CWE-502</a>).</em>
+  <em>Figure 1: Deserialization of Untrusted Data [@CWE502:Deserialization].</em>
 </p>
 
 To result in **Exfiltration**, the payload is specifically engineered to output information from files (e.g., `/etc/passwd`, `.env` files), databases, or environment variables.
@@ -145,13 +144,3 @@ Additional mapping, for this specific case study:
 * Detection: Logs, alerts, or keywords to monitor.
 
 * Example [if any]: Prompt or script.
-
-
-<br />
-
----
-# **References**
-
-1. ...
-2. ...
-3. ...
