@@ -264,3 +264,9 @@ modifications */
   color: var(--aurora) !important;
   font-weight: bold;
 }
+
+/* Center mermaid diagrams */
+.mermaid {
+  display: flex !important;
+  justify-content: center !important;
+}
