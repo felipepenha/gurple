@@ -3,7 +3,7 @@
 ---
 # **Description**
 
-Deserialization of untrusted data occurs when an application deserializes data from an untrusted source without sufficient validation. In the context of GenAI, this vulnerability can be exploited when the model processes serialized objects (e.g., `JSON`, `pickle`) provided via prompts or attached data. Specifically for **Exfiltration**, the adversarial prompt is designed to coerce the system into reading sensitive data from the system's environment or filesystem (e.g., API keys, user credentials) and transmitting it back as chat answers or logs that may be further exploited.
+Deserialization of untrusted data occurs when an application deserializes data from an untrusted source without sufficient validation. In the context of GenAI, this vulnerability can be exploited when the model processes serialized objects (e.g., `JSON`, `pickle`, `joblib`) [@NIST:AI:100-2e2023] provided via prompts or attached data. Specifically for **Exfiltration**, the adversarial prompt is designed to coerce the system into reading sensitive data from the system's environment or filesystem (e.g., API keys, user credentials) and transmitting it back as chat answers or logs that may be further exploited.
 
 <br />
 
@@ -31,7 +31,7 @@ Starting from a safe serialized object in the expected format, the attacker perf
 <p align="center">
   <img src="../images/CWE-502-Diagram.png" alt="CWE-502 Deserialization Diagram" />
   <br />
-  <em>Figure 1: Deserialization of Untrusted Data [@CWE502:Deserialization].</em>
+  <em>Figure 1: Deserialization of Untrusted Data [@MITRE:CWE502:Deserialization].</em>
 </p>
 
 To result in **Exfiltration**, the payload is specifically engineered to output information from files (e.g., `/etc/passwd`, `.env` files), databases, or environment variables.
@@ -101,14 +101,14 @@ Reputational impact may be caused by the hackers exposing the successful attack 
 
 ## **LangGrinch**
 
-LangGrinch is a vulnerability that has already been reported and resolved. There are no known reports of successful attacks impacting businesses. Therefore, this case study is for illustrative purposes only.
+LangGrinch [@Cyata:LangGrinch:WEB] [@CybersecurityNews:LangGrinch:WEB] [@TheHackerNews:LangGrinch:WEB] [@WebProNews:LangGrinch:WEB] is a vulnerability that has already been reported and resolved. There are no known reports of successful attacks impacting businesses. Therefore, this case study is for illustrative purposes only.
 
 Reported vulnerabilities:
 
-| **Vulnerability ID** | **Description** | **References** |
-| --- | --- | --- |
-[CVE-2025-68664](https://nvd.nist.gov/vuln/detail/CVE-2025-68664) | LangChain serialization injection vulnerability enables secret extraction in dumps/loads APIs | [GHSA-c67j-w6g6-q2cm](https://github.com/advisories/GHSA-c67j-w6g6-q2cm)<br />[CVE-2025-68664](https://nvd.nist.gov/vuln/detail/CVE-2025-68664) |
-[CVE-2025-68665](https://nvd.nist.gov/vuln/detail/CVE-2025-68665) | LangChain serialization injection vulnerability enables secret extraction | [GHSA-r399-636x-v7f6](https://github.com/advisories/GHSA-r399-636x-v7f6)<br />[CVE-2025-68665](https://nvd.nist.gov/vuln/detail/CVE-2025-68665) |
+| **Vulnerability IDs** | **Description** |
+| --- | --- |
+- [CVE-2025-68664](https://nvd.nist.gov/vuln/detail/CVE-2025-68664)<br />- [GHSA-c67j-w6g6-q2cm](https://github.com/advisories/GHSA-c67j-w6g6-q2cm) | LangChain serialization injection vulnerability enables secret extraction in dumps/loads APIs |
+- [CVE-2025-68665](https://nvd.nist.gov/vuln/detail/CVE-2025-68665)<br />- [GHSA-r399-636x-v7f6](https://github.com/advisories/GHSA-r399-636x-v7f6) | LangChain serialization injection vulnerability enables secret extraction |
 
 Additional mapping, for this specific case study:
 
@@ -123,6 +123,8 @@ Additional mapping, for this specific case study:
 | **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM03:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Supply Chain |
 | **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-SC-3](https://securecontrolsframework.com/free/risk-management-model/) | Third-party supply chain relationships, visibility and controls |
 
+
+An attack based on LangGrinch would 
 
 <br />
 

@@ -1,8 +1,65 @@
-@misc{CWE502:Deserialization,
+@misc{Cyata:LangGrinch:WEB,
+  title = {All {{I Want}} for {{Christmas}} Is {{Your Secrets}}: {{LangGrinch}} Hits {{LangChain Core}} ({{CVE-2025-68664}})},
+  shorttitle = {All {{I Want}} for {{Christmas}} Is {{Your Secrets}}},
+  author = {Yarden, Porat},
+  year = 2025,
+  month = dec,
+  journal = {Cyata \textbar{} The Control Plane for Agentic Identity},
+  urldate = {2026-01-03},
+  abstract = {Cyata discloses LangGrinch (CVE-2025-68664), a critical LangChain Core serialization injection bug where untrusted, LLM-influenced metadata can be rehydrated as objects, enabling secret leaks and unsafe instantiation. Patch guidance included.},
+  howpublished = {https://cyata.ai/blog/langgrinch-langchain-core-cve-2025-68664/},
+  langid = {american},
+  file = {/Users/fcpenha/Zotero/storage/V86QK7M8/langgrinch-langchain-core-cve-2025-68664.html}
+}
+
+@misc{CybersecurityNews:LangGrinch:WEB,
+  title = {Critical {{Langchain Vulnerability Let}} Attackers {{Exfiltrate Sensitive Secrets}} from {{AI}} Systems},
+  author = {Baran, Guru},
+  year = 2025,
+  month = dec,
+  journal = {Cyber Security News},
+  urldate = {2026-01-03},
+  abstract = {A critical vulnerability in LangChain's core library (CVE-2025-68664) allows attackers to exfiltrate sensitive environment variables and potentially execute code through deserialization flaws.},
+  howpublished = {https://cybersecuritynews.com/langchain-vulnerability/},
+  langid = {american},
+  file = {/Users/fcpenha/Zotero/storage/HZNQ9E5X/langchain-vulnerability.html}
+}
+
+@misc{MITRE:CWE502:Deserialization,
   title = {{{CWE}} - {{CWE-502}}: {{Deserialization}} of {{Untrusted Data}} (4.19)},
   urldate = {2025-12-30},
   howpublished = {https://cwe.mitre.org/data/definitions/502.html},
   file = {/Users/fcpenha/Zotero/storage/QVM5J2I4/502.html}
+}
+
+@techreport{NIST:AI:100-2e2023,
+  title = {Adversarial {{Machine Learning}}: {{A Taxonomy}} and {{Terminology}} of {{Attacks}} and {{Mitigations}}},
+  shorttitle = {Adversarial {{Machine Learning}}},
+  author = {Vassilev, Apostol and Oprea, Alina and Fordyce, Alie and Anderson, Hyrum},
+  year = 2024,
+  month = jan,
+  number = {NIST Artificial Intelligence (AI) 100-2 E2023},
+  institution = {{National Institute of Standards and Technology}},
+  doi = {10.6028/NIST.AI.100-2e2023},
+  urldate = {2026-01-03},
+  abstract = {This NIST Trustworthy and Responsible AI report develops a taxonomy of concepts and defines terminology in the field of adversarial machine learning (AML). The taxonomy is built on surveying the AML literature and is arranged in a conceptual hierarchy that includes key types of ML methods and lifecycle stages of attack, attacker goals and objectives, and attacker capabilities and knowledge of the learning process. The report also provides corresponding methods for mitigating and managing the consequences of attacks and points out relevant open challenges to take into account in the lifecycle of AI systems. The terminology used in the report is consistent with the literature on AML and is complemented by a glossary that defines key terms associated with the security of AI systems and is intended to assist non-expert readers. Taken together, the taxonomy and terminology are meant to inform other standards and future practice guides for assessing and managing the security of AI systems,...},
+  langid = {english},
+  file = {/Users/fcpenha/Zotero/storage/MLR67TCF/Vassilev et al. - 2024 - Adversarial Machine Learning A Taxonomy and Terminology of Attacks and Mitigations.pdf}
+}
+
+@techreport{NIST:AI:100-2e2025,
+  title = {Adversarial {{Machine Learning}}: {{A Taxonomy}} and {{Terminology}} of {{Attacks}} and {{Mitigations}}},
+  shorttitle = {Adversarial {{Machine Learning}}},
+  author = {Vassilev, Apostol and Oprea, Alina and Fordyce, Alie and Anderson, Hyrum and Davies, Xander and Hamin, Maia},
+  year = 2025,
+  month = mar,
+  number = {NIST Artificial Intelligence (AI) 100-2 E2025},
+  institution = {{National Institute of Standards and Technology}},
+  doi = {10.6028/NIST.AI.100-2e2025},
+  urldate = {2026-01-03},
+  abstract = {This NIST Trustworthy and Responsible AI report provides a taxonomy of concepts and defines terminology in the field of adversarial machine learning (AML). The taxonomy is arranged in a conceptual hierarchy that includes key types of ML methods, life cycle stages of attack, and attacker goals, objectives, capabilities, and knowledge. This report also identifies current challenges in the life cycle of AI systems and describes corresponding methods for mitigating and managing the consequences of those attacks. The terminology used in this report is consistent with the literature on AML and is complemented by a glossary of key terms associated with the security of AI systems. Taken together, the taxonomy and terminology are meant to inform other standards and future practice guides for assessing and managing the security of AI systems by establishing a common language for the rapidly developing AML landscape.},
+  langid = {english},
+  file = {/Users/fcpenha/Zotero/storage/3CIJ7YDE/Vassilev et al. - 2025 - Adversarial Machine Learning A Taxonomy and Terminology of Attacks and Mitigations.pdf}
 }
 
 @article{SCF:CP-RMM:PDF:v2025-2,
@@ -17,4 +74,28 @@
   urldate = {2026-01-02},
   howpublished = {https://securecontrolsframework.com/free/risk-management-model/},
   file = {/Users/fcpenha/Zotero/storage/EA8ISG8M/risk-management-model.html}
+}
+
+@misc{TheHackerNews:LangGrinch:WEB,
+  title = {Critical {{LangChain Core Vulnerability Exposes Secrets}} via {{Serialization Injection}}},
+  author = {Lakshmanan, Ravie},
+  journal = {The Hacker News},
+  urldate = {2026-01-03},
+  abstract = {A critical LangChain Core vulnerability (CVE-2025-68664, CVSS 9.3) allows secret theft and prompt injection through unsafe serialization; updates fix},
+  howpublished = {https://thehackernews.com/2025/12/critical-langchain-core-vulnerability.html},
+  langid = {english},
+  file = {/Users/fcpenha/Zotero/storage/SYIVGV86/critical-langchain-core-vulnerability.html}
+}
+
+@misc{WebProNews:LangGrinch:WEB,
+  title = {{{LangGrinch Vulnerability Exposes LangChain AI}} to {{Secret Theft Risks}}},
+  author = {Hastings, Eric},
+  year = 2025,
+  month = dec,
+  journal = {WebProNews},
+  urldate = {2026-01-03},
+  abstract = {A critical vulnerability dubbed "LangGrinch" (CVE-2025-68664) in LangChain Core exposes AI applications to secret theft via unsafe serialization and prompt injection attacks. With a CVSS score of 9.3, it risks data exfiltration in tools like chatbots. Patches are available, urging developers to update and adopt secure practices.},
+  howpublished = {https://www.webpronews.com/langgrinch-vulnerability-exposes-langchain-ai-to-secret-theft-risks/},
+  langid = {english},
+  file = {/Users/fcpenha/Zotero/storage/FBTWQIQI/langgrinch-vulnerability-exposes-langchain-ai-to-secret-theft-risks.html}
 }

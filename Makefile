@@ -1,7 +1,7 @@
 
 DOCS_DIR := docs
 
-.PHONY: help sync lock format install init build serve all
+.PHONY: help sync lock format install init clean build serve all
 
 help:
 	@echo "Project - Available Commands:"
@@ -51,22 +51,26 @@ $(BUILD_DIR)/%.md: $(SRC_DIR)/%.md
 	@mkdir -p $(dir $@)
 	@cp $< $@
 	@sed -i '' 's/^!!!/* !!!/g' $@
-	pandoc $@ -f markdown-simple_tables-multiline_tables-grid_tables --wrap=preserve --bibliography=Gurple.bib --csl=ieee.csl -M link-citations=true -M reference-section-title="References" --citeproc -t gfm -o $@
+	pandoc $@ -f markdown-simple_tables-multiline_tables-grid_tables --wrap=preserve --bibliography=Gurple.bib --csl=ieee.csl -M link-citations=true -M reference-section-title="References" --citeproc --lua-filter=docs/lua-filter.lua -t gfm -o $@
 	sed -i '' 's/\\\[/[/g' $@
 	sed -i '' 's/\\\]/]/g' $@
 	sed -i '' 's/^``` /```/g' $@
 	sed -i '' 's/<p align="center">/<p align="center" markdown="1">/g' $@
-	sed -i '' -E 's|(^\|[^"(])(https?://[^ <)]*[a-zA-Z0-9/])|\1\&nbsp;\&nbsp;\&nbsp;\&nbsp;<a href="\2">\2</a>|g' $@
+	sed -i '' -E 's|(^\|[^"(])(https?://[^ <)]*[a-zA-Z0-9/])|\1<a href="\2">\2</a>|g' $@
 	sed -i '' 's/^-   !!!/!!!/g' $@
 	sed -i '' 's/^\*   !!!/!!!/g' $@
+
+clean:
+	@echo "🧹 Cleaning build artifacts..."
+	rm -rf processed site
 
 build: init $(OBJECTS)
 	@echo "🏗️  Building site..."
 	mkdocs build
 	@echo "✅ Build complete!"
 
-serve: build
+serve:
 	@echo "🚀 Starting development server..."
 	mkdocs serve
 
-all: install build serve
+all: install clean build serve

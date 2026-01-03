@@ -4,7 +4,7 @@
 
 # **Description**
 
-Deserialization of untrusted data occurs when an application deserializes data from an untrusted source without sufficient validation. In the context of GenAI, this vulnerability can be exploited when the model processes serialized objects (e.g., `JSON`, `pickle`) provided via prompts or attached data. Specifically for **Exfiltration**, the adversarial prompt is designed to coerce the system into reading sensitive data from the system’s environment or filesystem (e.g., API keys, user credentials) and transmitting it back as chat answers or logs that may be further exploited.
+Deserialization of untrusted data occurs when an application deserializes data from an untrusted source without sufficient validation. In the context of GenAI, this vulnerability can be exploited when the model processes serialized objects (e.g., `JSON`, `pickle`, `joblib`) [[1]](#ref-NIST:AI:100-2e2023) provided via prompts or attached data. Specifically for **Exfiltration**, the adversarial prompt is designed to coerce the system into reading sensitive data from the system’s environment or filesystem (e.g., API keys, user credentials) and transmitting it back as chat answers or logs that may be further exploited.
 
 <br />
 
@@ -33,7 +33,7 @@ Starting from a safe serialized object in the expected format, the attacker perf
 <p align="center" markdown="1">
 <img src="../images/CWE-502-Diagram.png" alt="CWE-502 Deserialization Diagram" />
 <br />
-<em>Figure 1: Deserialization of Untrusted Data [[1]](#ref-CWE502:Deserialization).</em>
+<em>Figure 1: Deserialization of Untrusted Data [[2]](#ref-MITRE:CWE502:Deserialization).</em>
 </p>
 
 To result in **Exfiltration**, the payload is specifically engineered to output information from files (e.g., `/etc/passwd`, `.env` files), databases, or environment variables.
@@ -110,14 +110,14 @@ Reputational impact may be caused by the hackers exposing the successful attack 
 
 ## **LangGrinch**
 
-LangGrinch is a vulnerability that has already been reported and resolved. There are no known reports of successful attacks impacting businesses. Therefore, this case study is for illustrative purposes only.
+LangGrinch [[3]](#ref-Cyata:LangGrinch:WEB) [[4]](#ref-CybersecurityNews:LangGrinch:WEB) [[5]](#ref-TheHackerNews:LangGrinch:WEB) [[6]](#ref-WebProNews:LangGrinch:WEB) is a vulnerability that has already been reported and resolved. There are no known reports of successful attacks impacting businesses. Therefore, this case study is for illustrative purposes only.
 
 Reported vulnerabilities:
 
-| **Vulnerability ID**                                              | **Description**                                                                               | **References**                                                                                                                                  |
-|-------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| [CVE-2025-68664](https://nvd.nist.gov/vuln/detail/CVE-2025-68664) | LangChain serialization injection vulnerability enables secret extraction in dumps/loads APIs | [GHSA-c67j-w6g6-q2cm](https://github.com/advisories/GHSA-c67j-w6g6-q2cm)<br />[CVE-2025-68664](https://nvd.nist.gov/vuln/detail/CVE-2025-68664) |
-| [CVE-2025-68665](https://nvd.nist.gov/vuln/detail/CVE-2025-68665) | LangChain serialization injection vulnerability enables secret extraction                     | [GHSA-r399-636x-v7f6](https://github.com/advisories/GHSA-r399-636x-v7f6)<br />[CVE-2025-68665](https://nvd.nist.gov/vuln/detail/CVE-2025-68665) |
+| **Vulnerability IDs**                                                                                                                                | **Description**                                                                               |
+|------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| \- [CVE-2025-68664](https://nvd.nist.gov/vuln/detail/CVE-2025-68664)<br />- [GHSA-c67j-w6g6-q2cm](https://github.com/advisories/GHSA-c67j-w6g6-q2cm) | LangChain serialization injection vulnerability enables secret extraction in dumps/loads APIs |
+| \- [CVE-2025-68665](https://nvd.nist.gov/vuln/detail/CVE-2025-68665)<br />- [GHSA-r399-636x-v7f6](https://github.com/advisories/GHSA-r399-636x-v7f6) | LangChain serialization injection vulnerability enables secret extraction                     |
 
 Additional mapping, for this specific case study:
 
@@ -131,6 +131,8 @@ Additional mapping, for this specific case study:
 | **[OWASP Top 10](https://owasp.org/www-project-top-ten/)**                                                           | [A06:2021](https://owasp.org/Top10/2021/A08_2021-Software_and_Data_Integrity_Failures/) | Vulnerable and Outdated Components                              |
 | **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM03:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/)  | Supply Chain                                                    |
 | **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)**                                  | [R-SC-3](https://securecontrolsframework.com/free/risk-management-model/)               | Third-party supply chain relationships, visibility and controls |
+
+An attack based on LangGrinch would
 
 <br />
 
@@ -158,10 +160,52 @@ Additional mapping, for this specific case study:
 
 <div id="refs" class="references csl-bib-body">
 
-<div id="ref-CWE502:Deserialization" class="csl-entry">
+<div id="ref-NIST:AI:100-2e2023" class="csl-entry">
 
-<span class="csl-left-margin">[1] </span><span class="csl-right-inline">“CWE - CWE-502: Deserialization of Untrusted Data (4.19).” &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://cwe.mitre.org/data/definitions/502.html">https://cwe.mitre.org/data/definitions/502.html</a>.</span>
+<span class="csl-left-margin">[1] </span><span class="csl-right-inline">A. Vassilev, A. Oprea, A. Fordyce, and H. Anderson, “Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations,” National Institute of Standards and Technology, NIST Artificial Intelligence (AI) 100-2 E2023, Jan. 2024. doi: <a href="https://doi.org/10.6028/NIST.AI.100-2e2023">10.6028/NIST.AI.100-2e2023</a>.</span>
 
 </div>
+
+<br />
+
+<div id="ref-MITRE:CWE502:Deserialization" class="csl-entry">
+
+<span class="csl-left-margin">[2] </span><span class="csl-right-inline">“CWE - CWE-502: Deserialization of Untrusted Data (4.19).” <a href="https://cwe.mitre.org/data/definitions/502.html">https://cwe.mitre.org/data/definitions/502.html</a>.</span>
+
+</div>
+
+<br />
+
+<div id="ref-Cyata:LangGrinch:WEB" class="csl-entry">
+
+<span class="csl-left-margin">[3] </span><span class="csl-right-inline">P. Yarden, “All I Want for Christmas is Your Secrets: LangGrinch hits LangChain Core (CVE-2025-68664),” <em>Cyata  The Control Plane for Agentic Identity</em>. <a href="https://cyata.ai/blog/langgrinch-langchain-core-cve-2025-68664/">https://cyata.ai/blog/langgrinch-langchain-core-cve-2025-68664/</a>, Dec. 2025.</span>
+
+</div>
+
+<br />
+
+<div id="ref-CybersecurityNews:LangGrinch:WEB" class="csl-entry">
+
+<span class="csl-left-margin">[4] </span><span class="csl-right-inline">G. Baran, “Critical Langchain Vulnerability Let attackers Exfiltrate Sensitive Secrets from AI systems,” <em>Cyber Security News</em>. <a href="https://cybersecuritynews.com/langchain-vulnerability/">https://cybersecuritynews.com/langchain-vulnerability/</a>, Dec. 2025.</span>
+
+</div>
+
+<br />
+
+<div id="ref-TheHackerNews:LangGrinch:WEB" class="csl-entry">
+
+<span class="csl-left-margin">[5] </span><span class="csl-right-inline">R. Lakshmanan, “Critical LangChain Core Vulnerability Exposes Secrets via Serialization Injection,” <em>The Hacker News</em>. <a href="https://thehackernews.com/2025/12/critical-langchain-core-vulnerability.html">https://thehackernews.com/2025/12/critical-langchain-core-vulnerability.html</a>.</span>
+
+</div>
+
+<br />
+
+<div id="ref-WebProNews:LangGrinch:WEB" class="csl-entry">
+
+<span class="csl-left-margin">[6] </span><span class="csl-right-inline">E. Hastings, “LangGrinch Vulnerability Exposes LangChain AI to Secret Theft Risks,” <em>WebProNews</em>. <a href="https://www.webpronews.com/langgrinch-vulnerability-exposes-langchain-ai-to-secret-theft-risks/">https://www.webpronews.com/langgrinch-vulnerability-exposes-langchain-ai-to-secret-theft-risks/</a>, Dec. 2025.</span>
+
+</div>
+
+<br />
 
 </div>

@@ -259,6 +259,7 @@ modifications */
 .md-source-file__fact {
   visibility: hidden;
 }
+
 /* Custom Header Styling */
 .md-header__title .md-header__topic {
   color: var(--aurora) !important;
@@ -269,4 +270,22 @@ modifications */
 .mermaid {
   display: flex !important;
   justify-content: center !important;
+}
+
+/* Bibliography hanging indent */
+.csl-entry {
+  display: flex !important;
+  margin-bottom: 0.5em;
+  /* Fallback/Addition to <br> */
+}
+
+.csl-left-margin {
+  flex: 0 0 auto;
+  margin-right: 0.5em;
+  /* Ensures space between [N] and content */
+  text-align: right;
+}
+
+.csl-right-inline {
+  flex: 1 1 auto;
 }
