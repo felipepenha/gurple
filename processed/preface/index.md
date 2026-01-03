@@ -68,7 +68,7 @@ See [Attack Entry Points](../attack_entry_points/index.md) section to have a bet
 
 ## **Focus on Threats**
 
-Gurple centers its analysis on [Threats](../threats/index.md) to GenAI systems, using the [`SCF C|P-RMM`](../threat_vulnerability_frameworks/scf_cp_rmm.md) framework to distinguish them from **Vulnerabilities** and **Risks**. For instance, **Prompt Injection** is treated as a distinct **Threat** that exploits system **Vulnerabilities** (such as Improper Output Handling) to introduce specific **Risks** (like malware generation), ensuring a clear separation of concerns.
+Gurple centers its analysis on [Threats](../threats/index.md) to GenAI systems, using the [`SCF C|P-RMM`](../threat_vulnerability_risk/scf_cp_rmm.md) framework to distinguish them from **Vulnerabilities** and **Risks**. For instance, **Prompt Injection** is treated as a distinct **Threat** that exploits system **Vulnerabilities** (such as Improper Output Handling) to introduce specific **Risks** (like malware generation), ensuring a clear separation of concerns.
 
 ## **Mapping to Popular Frameworks**
 
@@ -213,11 +213,3 @@ Provides the summary and reference to a case study.
 -   Detection: Logs, alerts, or keywords to monitor.
 
 -   Example [if any]: Prompt or script.
-
-# **References**
-
-[1] …
-
-[2] …
-
-[3] …

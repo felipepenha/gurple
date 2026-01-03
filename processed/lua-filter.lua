@@ -34,3 +34,12 @@ function Div(div)
   end
   return nil
 end
+
+function Header(el)
+  if pandoc.utils.stringify(el.content) == "References" then
+    return {
+      pandoc.RawBlock('html', '<br />\n\n---\n'),
+      el
+    }
+  end
+end

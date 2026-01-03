@@ -9,7 +9,7 @@ Threats
 
 </div>
 
-This chapter provides a comprehensive overview of the Threats specific to GenAI Security. Please, refer to the [SCF C\|P-RMM](../threat_vulnerability_frameworks/scf_cp_rmm.md) section within the [Threat and Vulnerability Frameworks](../threat_vulnerability_frameworks/index.md) chapter, as a starting point to understand what a Threat is versus a Risk or a Vulnerability.
+This chapter provides a comprehensive overview of the Threats specific to GenAI Security. Please, refer to the [SCF C\|P-RMM](../threat_vulnerability_risk/scf_cp_rmm.md) section within the [Threat and Vulnerability Frameworks](../threat_vulnerability_risk/index.md) chapter, as a starting point to understand what a Threat is versus a Risk or a Vulnerability.
 
 The [SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/) Threat Catalogue presents two independent entries that fit GenAI Security: **MT-2** and **MT-13**, as seen in Figure 2.
 

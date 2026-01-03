@@ -156,6 +156,10 @@ An attack based on LangGrinch would
 
 -   Example [if any]: Prompt or script.
 
+<br />
+
+---
+
 # References
 
 <div id="refs" class="references csl-bib-body">
