@@ -60,7 +60,7 @@ For more information on the various possibilities of how these Threats can be de
 
 <div id="ref-SCF:CP-RMM:PDF:v2025-2" class="csl-entry">
 
-<span class="csl-left-margin">[2] </span><span class="csl-right-inline">“Cybersecurity & Data Privacy Risk Management Model (CP-RMM) Overview,” 2025.</span>
+<span class="csl-left-margin">[2] </span><span class="csl-right-inline">“Cybersecurity & Data Privacy Risk Management Model (CP-RMM) Overview.” <a href="https://securecontrolsframework.com/content/SCF-Risk-Management-Model.pdf">https://securecontrolsframework.com/content/SCF-Risk-Management-Model.pdf</a>, 2025.</span>
 
 </div>
 
