@@ -45,7 +45,7 @@ Basically, **Exfiltration Through Deserialization** attacks can be executed thro
     * [x] **User Interface (UI)**
     * [x] **Sensors**
 
-        _Note: Nothing really prevents an attacker from writing a serialized object on a sign or a t-shirt and presenting it to a camera, or dictating it to a voice-activated assistant._
+        _Note: Nothing really prevents an attacker from writing a serialized object on a QR code, a sign, or a t-shirt and presenting it to a camera, or dictating it to a voice-activated assistant._
 
     * [ ] **Observability Integration Interfaces**
 * [x] **The Side Door** 🚪 — **Supply Chain**
