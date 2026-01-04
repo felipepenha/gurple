@@ -52,7 +52,7 @@ That’s it! Just a book about GenAI Security and Purple Teaming, with a fun and
 
 # **Purpose**
 
-## **GenAI Security Vs. GenAI Safety**
+## **GenAI Security vs. GenAI Safety**
 
 Gurple focuses on **GenAI Security** rather than GenAI Safety.
 
@@ -60,7 +60,7 @@ Gurple focuses on **GenAI Security** rather than GenAI Safety.
 
 Adversarial attacks demonstrate this connection. A successful jailbreak is technically a security breach because it bypasses established access controls. The result is often a safety violation, such as the generation of instructions for illegal acts or hate speech. In this context, the security vulnerability serves as the vector for the safety failure. Defending against these attacks requires techniques from both fields.
 
-## **Beyond Foundational Models and Towards Production-grade GenAI**
+## **Beyond Foundational Models and Towards Production-Grade GenAI**
 
 Gurple moves beyond the typical focus on Foundational Models. Academic research often concentrates on model weights, steering or fine-tuning, yet production-grade GenAI exists within complex software systems. This approach addresses vulnerabilities in the models alongside the surrounding infrastructure which provides it with the means to communicate with the external world (UI, API endpoints, etc).
 

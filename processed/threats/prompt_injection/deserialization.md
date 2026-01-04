@@ -45,10 +45,12 @@ Basically, any Entry Point where a serialized object could be passed on to the s
 -   [x] **The Front Door** 🚪 — **Network & Application Interfaces**
 
     -   [x] **Application Programming Interface (API) Endpoints**
+
     -   [x] **User Interface (UI)**
+
     -   [x] **Sensors**
 
-    *Note: Nothing really prevents an attacker from writing a serialized object on a sign or a t-shirt and presenting it to a camera, or dictating it to a voice-activated assistant.*
+        *Note: Nothing really prevents an attacker from writing a serialized object on a sign or a t-shirt and presenting it to a camera, or dictating it to a voice-activated assistant.*
 
     -   [ ] **Observability Integration Interfaces**
 
