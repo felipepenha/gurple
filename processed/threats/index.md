@@ -11,7 +11,7 @@ Threats
 
 This chapter provides a comprehensive overview of the Threats specific to GenAI Security. Please, refer to the [SCF C\|P-RMM](../threat_vulnerability_risk/scf_cp_rmm.md) section within the [Threat and Vulnerability Frameworks](../threat_vulnerability_risk/index.md) chapter, as a starting point to understand what a Threat is versus a Risk or a Vulnerability.
 
-The [SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/) Threat Catalogue presents two independent entries that fit GenAI Security: **MT-2** and **MT-13**, as seen in Figure 2.
+The [SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/) [[1]](#ref-SCF:CP-RMM:Web) [[2]](#ref-SCF:CP-RMM:PDF:v2025-2) Threat Catalogue presents two independent entries that fit GenAI Security: **MT-2** and **MT-13**, as seen in Figure 2.
 
 <p align="center" markdown="1">
 <img src="./images/SCF-CPRMM-MT-2.png" alt="MT-2" style="background-color: white;" />
@@ -41,3 +41,29 @@ mindmap
 </p>
 
 For more information on the various possibilities of how these Threats can be delivered as attacks to GenAI systems, please refer to the [Attack Entry Points](../attack_entry_points/index.md) chapter.
+
+<br />
+
+---
+
+# References
+
+<div id="refs" class="references csl-bib-body">
+
+<div id="ref-SCF:CP-RMM:Web" class="csl-entry">
+
+<span class="csl-left-margin">[1] </span><span class="csl-right-inline">“Cybersecurity & Data Privacy Risk Management Model (C).” <a href="https://securecontrolsframework.com/free/risk-management-model/">https://securecontrolsframework.com/free/risk-management-model/</a>.</span>
+
+</div>
+
+<br />
+
+<div id="ref-SCF:CP-RMM:PDF:v2025-2" class="csl-entry">
+
+<span class="csl-left-margin">[2] </span><span class="csl-right-inline">“Cybersecurity & Data Privacy Risk Management Model (CP-RMM) Overview,” 2025.</span>
+
+</div>
+
+<br />
+
+</div>
