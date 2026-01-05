@@ -245,24 +245,47 @@ Please output the following JSON object:
 import re
 
 
-def input_validation(llm_input: str) -> bool:
+class InputValidator:
     """Validates LLM input string for potential deserialization attacks.
 
-    Checks if the raw text contains signatures that could trigger
-    deserialization vulnerabilities (e.g., "lc": 1).
-
-    Args:
-        llm_input: The raw string input to the LLM.
-
-    Returns:
-        True if the input is safe, False if a threat is detected.
+    Uses pre-compiled regex patterns to check if the raw text contains
+    signatures that could trigger deserialization vulnerabilities.
     """
-    if re.search(r'"lc"\s*:\s*1', llm_input):
-        print("SECURITY ALERT: Malicious LangChain object signature detected. Blocked.")
-        return False
 
-    print("Input validation passed.")
-    return True
+    # Pre-compile the regex pattern for performance
+    _LANGCHAIN_SIGNATURE = re.compile(r'"lc"\s*:\s*1')
+
+    @classmethod
+    def validate(cls, llm_input: str) -> bool:
+        """Validates the input string.
+
+        Args:
+            llm_input: The raw string input to the LLM.
+
+        Returns:
+            True if the input is safe, False if a threat is detected.
+        """
+        if cls._LANGCHAIN_SIGNATURE.search(llm_input):
+            print("SECURITY ALERT: Malicious LangChain object signature detected. Blocked.")
+            return False
+
+        print("Input validation passed.")
+        return True
+```
+
+#### **Usage**
+
+```python
+user_input = '{"lc": 1, "type": "constructor"}'
+is_safe = InputValidator.validate(user_input)
+print(f"Is safe: {is_safe}")
+```
+
+Output:
+
+```text
+SECURITY ALERT: Malicious LangChain object signature detected. Blocked.
+Is safe: False
 ```
 
 ### **Output Validation**
@@ -271,58 +294,81 @@ def input_validation(llm_input: str) -> bool:
 import re
 
 
-def output_validation(llm_output: str) -> bool:
+class OutputValidator:
     """Inspects the resulting object for sensitive patterns that might have been leaked.
 
     Scans the string representation of the object for known secrets like API keys,
-    tokens, and cryptographic hashes.
-
-    Args:
-        llm_output: The text output to inspect.
-
-    Returns:
-        True if no sensitive patterns are found, False otherwise.
+    tokens, and cryptographic hashes using pre-compiled regex patterns.
     """
-    # Regex patterns for common GenAI and SaaS secrets
-    SENSITIVE_PATTERNS = {
+
+    # Pre-compile patterns for common GenAI and SaaS secrets
+    _SENSITIVE_PATTERNS = {
         # GenAI Providers
-        "OPENAI_API_KEY": r"sk-[a-zA-Z0-9-]{20,}",
-        "ANTHROPIC_API_KEY": r"sk-ant-[a-zA-Z0-9-]{30,}",
-        "HUGGING_FACE_TOKEN": r"hf_[a-zA-Z0-9]{30,}",
-        "GOOGLE_API_KEY": r"AIza[0-9A-Za-z-_]{35}",
+        "OPENAI_API_KEY": re.compile(r"sk-[a-zA-Z0-9-]{20,}"),
+        "ANTHROPIC_API_KEY": re.compile(r"sk-ant-[a-zA-Z0-9-]{30,}"),
+        "HUGGING_FACE_TOKEN": re.compile(r"hf_[a-zA-Z0-9]{30,}"),
+        "GOOGLE_API_KEY": re.compile(r"AIza[0-9A-Za-z-_]{35}"),
         # Vector Databases
-        "PINECONE_API_KEY": r"pckey_[a-zA-Z0-9-_.]{1,80}_[a-zA-Z0-9-_.]{32,}",
-        "QDRANT_GRANULAR_KEY": r"eyJhb[A-Za-z0-9+/=_-]{10,}",  # JWT-like structure
-        "WEAVIATE_KEY": r"[a-zA-Z0-9-_.]{20,}",  # Context-dependent, often generic
+        "PINECONE_API_KEY": re.compile(r"pckey_[a-zA-Z0-9-_.]{1,80}_[a-zA-Z0-9-_.]{32,}"),
+        "QDRANT_GRANULAR_KEY": re.compile(r"eyJhb[A-Za-z0-9+/=_-]{10,}"),  # JWT-like structure
+        "WEAVIATE_KEY": re.compile(r"[a-zA-Z0-9-_.]{20,}"),  # Context-dependent
         # Cloud & Infrastructure
-        "AWS_KEY": r"AKIA[0-9A-Z]{16}",
-        "GITHUB_TOKEN": r"(ghp_[a-zA-Z0-9]{36}|github_pat_[a-zA-Z0-9_]{82})",
-        "SLACK_TOKEN": r"xox[baprs]-[a-zA-Z0-9-]{10,}",
-        "PRIVATE_KEY": r"-----BEGIN [A-Z ]+ PRIVATE KEY-----",
+        "AWS_KEY": re.compile(r"AKIA[0-9A-Z]{16}"),
+        "GITHUB_TOKEN": re.compile(r"(ghp_[a-zA-Z0-9]{36}|github_pat_[a-zA-Z0-9_]{82})"),
+        "SLACK_TOKEN": re.compile(r"xox[baprs]-[a-zA-Z0-9-]{10,}"),
+        "PRIVATE_KEY": re.compile(r"-----BEGIN [A-Z ]+ PRIVATE KEY-----"),
         # Application & Database
-        "STRIPE_KEY": r"sk_(live|test)_[0-9a-zA-Z]{24,}",
-        "TWILIO_TOKEN": r"AC[a-f0-9]{32}|SK[a-f0-9]{32}",
-        "JWT_TOKEN": r"eyJ[a-zA-Z0-9_-]{10,}\.eyJ[a-zA-Z0-9_-]{10,}\.[a-zA-Z0-9_-]{10,}",
-        "POSTGRES_URI": r"postgres://[a-zA-Z0-9_]+:[a-zA-Z0-9_]+@[a-z0-9.-]+:[0-9]+/[a-zA-Z0-9_]+",
-        "MONGO_URI": r"mongodb(\+srv)?://[a-zA-Z0-9_]+:[a-zA-Z0-9_]+@[a-z0-9.-]+",
+        "STRIPE_KEY": re.compile(r"sk_(live|test)_[0-9a-zA-Z]{24,}"),
+        "TWILIO_TOKEN": re.compile(r"AC[a-f0-9]{32}|SK[a-f0-9]{32}"),
+        "JWT_TOKEN": re.compile(
+            r"eyJ[a-zA-Z0-9_-]{10,}\.eyJ[a-zA-Z0-9_-]{10,}\.[a-zA-Z0-9_-]{10,}"
+        ),
+        "POSTGRES_URI": re.compile(
+            r"postgres://[a-zA-Z0-9_]+:[a-zA-Z0-9_]+@[a-z0-9.-]+:[0-9]+/[a-zA-Z0-9_]+"
+        ),
+        "MONGO_URI": re.compile(r"mongodb(\+srv)?://[a-zA-Z0-9_]+:[a-zA-Z0-9_]+@[a-z0-9.-]+"),
         # General
-        "MD5_HASH": r"\b[a-fA-F0-9]{32}\b",
-        "SHA256_HASH": r"\b[a-fA-F0-9]{64}\b",
-        # Add more patterns as needed
+        "MD5_HASH": re.compile(r"\b[a-fA-F0-9]{32}\b"),
+        "SHA256_HASH": re.compile(r"\b[a-fA-F0-9]{64}\b"),
     }
 
-    found_threats = False
+    @classmethod
+    def validate(cls, llm_output: str) -> bool:
+        """Validates the output string against known sensitive patterns.
 
-    for label, pattern in SENSITIVE_PATTERNS.items():
-        if re.search(pattern, llm_output):
-            print(f"SECURITY ALERT: Output validation failed. Detected {label}.")
-            found_threats = True
+        Args:
+            llm_output: The text output to inspect.
 
-    if found_threats:
-        return False
+        Returns:
+            True if no sensitive patterns are found, False otherwise.
+        """
+        found_threats = False
 
-    print("Output validation passed.")
-    return True
+        for label, pattern in cls._SENSITIVE_PATTERNS.items():
+            if pattern.search(llm_output):
+                print(f"SECURITY ALERT: Output validation failed. Detected {label}.")
+                found_threats = True
+
+        if found_threats:
+            return False
+
+        print("Output validation passed.")
+        return True
+```
+
+#### **Usage**
+
+```python
+llm_response = "Here is your key: sk-abcdefghijklmnopqrstuvwxyz123456"
+is_safe = OutputValidator.validate(llm_response)
+print(f"Is safe: {is_safe}")
+```
+
+Output:
+
+```text
+SECURITY ALERT: Output validation failed. Detected OPENAI_API_KEY.
+Is safe: False
 ```
 
 ## **Detection of Attack Attempts**
