@@ -10,6 +10,8 @@ Deserialization of untrusted data occurs when an application deserializes data f
 ---
 # **Map**
 
+Refer to the [Prompt Injection Map](./index.md#map) for a higher-level map.
+
 | **Framework** | **ID** | **Title** |
 | --- | --- | --- |
 | **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-1.1.1 | Prompt Injection & Exfiltration Through Deserialization |
