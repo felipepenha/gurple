@@ -1,4 +1,4 @@
-site_name: Gurple - GenAI Purple Team Book
+site_name: Gurple &mdash; GenAI Security for Purple Teams
 theme:
   name: material
   logo: assets/logo_light.jpeg
@@ -39,6 +39,7 @@ repo_name: gurple
 site_author: Felipe Campos Penha
 site_url: https://felipepenha.github.io/gurple/
 site_dir: site
+docs_dir: processed
 site_description: Documentation for Gurple.
 copyright: >
   Copyright &copy; 2025 Felipe Campos Penha.
@@ -55,6 +56,10 @@ markdown_extensions:
   - md_in_html:
   - pymdownx.inlinehilite:
   - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - markdown.extensions.attr_list:
   - pymdownx.keys:
   - pymdownx.tasklist:
@@ -63,6 +68,7 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.tabbed:
       alternate_style: true
+  - footnotes
 plugins:
   - search
 # git-revision-date-localized removed
@@ -92,32 +98,28 @@ nav:
   - Introduction:
       - introduction/index.md
   - Threat, Vulnerability & Risk Frameworks:
-    - threat_vulnerability_frameworks/index.md
-    - C|P-RMM: threat_vulnerability_frameworks/cp_rmm.md
-    - MITRE ATLAS: threat_vulnerability_frameworks/mitre_atlas.md
-    - OWASP Top 10: threat_vulnerability_frameworks/owasp_top_10.md
-    - OWASP Top 10 for LLM: threat_vulnerability_frameworks/owasp_top_10_llm.md
-    - OWASP Top 10 for Agentic: threat_vulnerability_frameworks/owasp_top_10_agentic.md
-    - Taxonomy of Prompt Injection: threat_vulnerability_frameworks/taxonomy_prompt_injection.md
+    - threat_vulnerability_risk/index.md
+    - SCF C|P-RMM: threat_vulnerability_risk/scf_cp_rmm.md
+    # - MITRE ATLAS: threat_vulnerability_frameworks/mitre_atlas.md
+    # - OWASP Top 10: threat_vulnerability_frameworks/owasp_top_10.md
+    # - OWASP Top 10 for LLM: threat_vulnerability_frameworks/owasp_top_10_llm.md
+    # - OWASP Top 10 for Agentic: threat_vulnerability_frameworks/owasp_top_10_agentic.md
+    # - Taxonomy of Prompt Injection: threat_vulnerability_frameworks/taxonomy_prompt_injection.md
+  - Attack Entry Points:
+      - attack_entry_points/index.md
   - Threats:
     - threats/index.md
-    - Jailbreaking:
-      - threats/jailbreaking/index.md
-      - threats/jailbreaking/optimized.md
     - Prompt Injection:
       - threats/prompt_injection/index.md
-    - Exfiltration:
-      - threats/exfiltration/index.md
-    - Poisoning:
-      - threats/poisoning/index.md
-    - Unbounded Consumption:
-      - threats/unbounded_consumption/index.md
-    - Supply Chain Exploitation:
-      - threats/supply_chain_exploitation/index.md
-    - Model Replication:
-      - threats/model_replication/index.md
-    - Model Inversion:
-      - threats/model_inversion/index.md
-    - Model Tampering:
-      - threats/model_tampering/index.md
-
+      - Exfiltration Through Deserialization: threats/prompt_injection/deserialization.md
+    # - Jailbreaking:
+    #   - threats/jailbreaking/index.md
+    #   - Optimized Jailbreaking: threats/jailbreaking/optimized.md
+    # # - Poisoning:
+    #   - threats/poisoning/index.md
+    # - Model Replication:
+    #   - threats/model_replication/index.md
+    # - Model Inversion:
+    #   - threats/model_inversion/index.md
+    # - Model Tampering:
+    #   - threats/model_tampering/index.md

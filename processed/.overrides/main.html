@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block htmltitle %}
+{% if page.meta and page.meta.title %}
+<title>{{ page.meta.title }} | {{ config.site_name }}</title>
+{% elif page.title and not page.is_homepage %}
+<title>{{ page.title | striptags }} | {{ config.site_name }}</title>
+{% else %}
+<title>{{ config.site_name }}</title>
+{% endif %}
+{% endblock %}
+
+{% block extrahead %}
+<link rel="apple-touch-icon" sizes="180x180" href="{{base_url}}/assets/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="{{base_url}}/assets/favicon.png" />
+<meta name="theme-color" content="#ffffff" />
+<meta name="robots" content="index,follow" />
+<script>
+    window.projectVersion = "{{ config.extra.version }}";
+</script>
+<script type="application/ld+json">
+    {
+        {% if page and page.meta.git_revision_date_localized_raw_iso_datetime %}
+        "datePublished": "{{ page.meta.git_revision_date_localized_raw_iso_datetime }}Z",
+        "dateModified": "{{ page.meta.git_revision_date_localized_raw_iso_datetime  }}Z",
+        {% endif %}
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Astral Docs",
+        "url": "https://docs.astral.sh"
+    }
+</script>
+{% endblock %}

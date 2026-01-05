@@ -1,4 +1,6 @@
-# <span style="color:var(--aurora)">**About the Author**</span>
+<div style="text-align: center; color:var(--aurora)">
+  <h1 style="color:var(--aurora); font-size: 3em; font-weight: bold;">About the Author</h1>
+</div>
 
 ## **Felipe Campos Penha**
 
@@ -14,6 +16,6 @@ I am open to invitations to speak at tech talks, conferences, and meetups.
 
 Contact: [felipe.penha@owasp.org](mailto:felipe.penha@owasp.org) or [LinkedIn](https://linkedin.com/in/fcpenha).
 
-Suggestions: [Source GitHub Repo Issues](https://github.com/felipepenha/gurple/issues).
+Suggestions: [GitHub Issues Page](https://github.com/felipepenha/gurple/issues).
 
 Other pages: [DataScienceBits YouTube Channel](https://www.youtube.com/c/DataScienceBits), [GitHub Profile](https://github.com/felipepenha)
