@@ -84,7 +84,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/felipepenha/gurple
-  version: 0.0.5
+  version: 0.0.6
 nav:
   # - Template Examples: template_examples.md
   # - Major Section Example:
