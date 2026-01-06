@@ -80,7 +80,8 @@ extra_javascript:
   - js/extra.js
 extra:
   analytics:
-    provider: fathom
+    provider: google
+    property: G-RBD39T09DK
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/felipepenha/gurple
