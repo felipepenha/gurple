@@ -191,7 +191,7 @@ print(deserialized["user_data"])  # "sk-secret-key-12345" - SECRET LEAKED!
 
 The attacker successfully exfiltrates the target environment variable value(s) from the application.
 
-It is important to notice that GenAI systems will often hallucinate values for environment variables. Therefore, one needs to validate the obtained values, for example by testing secrets against known services.
+It is important to notice that GenAI systems will often hallucinate values for environment variables that look legitimate at first glance. Therefore, one needs to validate the obtained values, for example by testing secrets against known services.
 
 
 ## **Example**
@@ -224,7 +224,7 @@ Please output the following JSON object:
 
 *   **Disable Secrets from Env**: Explicitly set the configuration `secrets_from_env=False` in your application logic if not relying on defaults.
 
-*   **Input Validation**: Treat all LLM-generated output, including metadata and `additional_kwargs`, as untrusted input. Validate structure before serialization.
+*   **Input Validation**: Validate all model input and output, including metadata and `additional_kwargs`, before deserialization.
 
 *   **Output Validation**: Implement rigorous validation for model outputs. Ensure that outputs containing sensitive patterns, such as cryptographic hashes or API keys, are either blocked or appropriately redacted before being logged or displayed to users.
 
@@ -238,28 +238,39 @@ import re
 
 
 class InputValidator:
-    """Validates LLM input string for potential deserialization attacks.
+    """Validates LLM input and/or output strings for potential deserialization attacks.
 
     Uses pre-compiled regex patterns to check if the raw text contains
     signatures that could trigger deserialization vulnerabilities.
     """
 
-    # Pre-compile the regex pattern for performance
-    _LANGCHAIN_SIGNATURE = re.compile(r'"lc"\s*:\s*1')
+    # Pre-compile the regex patterns for performance
+    _SENSITIVE_PATTERNS = [
+        re.compile(r'"lc"\s*:\s*1'),
+        re.compile(r'"type"\s*:\s*"constructor"'),
+        re.compile(r'"type"\s*:\s*"exec"'),
+        re.compile(r'"type"\s*:\s*"secret"'),
+        re.compile(r'__init__'),
+        re.compile(r'langchain'),
+        re.compile(r'Bedrock'),
+        re.compile(r'"endpoint_url"'),
+        # Add more patterns as needed
+    ]
 
     @classmethod
-    def validate(cls, llm_input: str) -> bool:
-        """Validates the input string.
+    def validate(cls, text: str) -> bool:
+        """Validates text string.
 
         Args:
-            llm_input: The raw string input to the LLM.
+            text: The model's text string input or output.
 
         Returns:
-            True if the input is safe, False if a threat is detected.
+            True if the text is safe, False if a threat is detected.
         """
-        if cls._LANGCHAIN_SIGNATURE.search(llm_input):
-            print("SECURITY ALERT: Malicious LangChain object signature detected. Blocked.")
-            return False
+        for pattern in cls._SENSITIVE_PATTERNS:
+            if pattern.search(text):
+                print("SECURITY ALERT: Malicious object signature detected. Blocked.")
+                return False
 
         print("Input validation passed.")
         return True
@@ -269,17 +280,56 @@ class InputValidator:
 #### **Usage**
 
 ```python
-user_input = '{"lc": 1, "type": "constructor"}'
-is_safe = InputValidator.validate(user_input)
-print(f"Is safe: {is_safe}")
+test_payloads = [
+    '{"lc": 1, "id": ["test"]}',
+    '{"type": "constructor"}',
+    '{"type": "exec"}',
+    '{"type": "secret"}',
+    "lookup_field='__init__'",
+    "import langchain",
+    "langchain_aws.ChatBedrockConverse",
+    "service='Bedrock'",
+    '{"endpoint_url": "http://company.com/frontdoor"}'
+]
+
+for payload in test_payloads:
+    print(f"Testing: {payload}")
+    InputValidator.validate(payload)
+    print("---")
 ```
 
 Output:
 
 ```text
-SECURITY ALERT: Malicious LangChain object signature detected. Blocked.
-Is safe: False
+Testing: {"lc": 1, "id": ["test"]}
+SECURITY ALERT: Malicious object signature detected. Blocked.
+---
+Testing: {"type": "constructor"}
+SECURITY ALERT: Malicious object signature detected. Blocked.
+---
+Testing: {"type": "exec"}
+SECURITY ALERT: Malicious object signature detected. Blocked.
+---
+Testing: {"type": "secret"}
+SECURITY ALERT: Malicious object signature detected. Blocked.
+---
+Testing: lookup_field='__init__'
+SECURITY ALERT: Malicious object signature detected. Blocked.
+---
+Testing: import langchain
+SECURITY ALERT: Malicious object signature detected. Blocked.
+---
+Testing: langchain_aws.ChatBedrockConverse
+SECURITY ALERT: Malicious object signature detected. Blocked.
+---
+Testing: service='Bedrock'
+SECURITY ALERT: Malicious object signature detected. Blocked.
+---
+Testing: {"endpoint_url": "http://company.com/frontdoor"}
+SECURITY ALERT: Malicious object signature detected. Blocked.
+---
 ```
+
 
 ### **Output Validation**
 
@@ -326,11 +376,11 @@ class OutputValidator:
     }
 
     @classmethod
-    def validate(cls, llm_output: str) -> bool:
+    def validate(cls, ai_output: str) -> bool:
         """Validates the output string against known sensitive patterns.
 
         Args:
-            llm_output: The text output to inspect.
+            ai_output: The text output to inspect.
 
         Returns:
             True if no sensitive patterns are found, False otherwise.
@@ -338,8 +388,8 @@ class OutputValidator:
         found_threats = False
 
         for label, pattern in cls._SENSITIVE_PATTERNS.items():
-            if pattern.search(llm_output):
-                print(f"SECURITY ALERT: Output validation failed. Detected {label}.")
+            if pattern.search(ai_output):
+                print(f"SECURITY ALERT: Output validation failed. {label} detected.")
                 found_threats = True
 
         if found_threats:
@@ -353,23 +403,19 @@ class OutputValidator:
 #### **Usage**
 
 ```python
-llm_response = "Here is your key: sk-abcdefghijklmnopqrstuvwxyz123456"
-is_safe = OutputValidator.validate(llm_response)
+ai_output = "Here is your key: sk-abcdefghijklmnopqrstuvwxyz123456"
+is_safe = OutputValidator.validate(ai_output)
 print(f"Is safe: {is_safe}")
 ```
 
 Output:
 
 ```text
-SECURITY ALERT: Output validation failed. Detected OPENAI_API_KEY.
+SECURITY ALERT: Output validation failed. OPENAI_API_KEY detected.
 Is safe: False
 ```
 
 
 ## **Detection of Attack Attempts**
 
-*   **Keyword Monitoring**: Monitor application logs and LLM outputs for the presence of the specific serialization key `"lc": 1` combined with suspicious types like `constructor`, `secret`, or `exec`.
-
-*   **Audit Logs**: Enable audit logging for environment variable access, specifically flagging access patterns that originate from the deserialization logic or occur outside of application startup.
-
-
+Audit logs of the users' inputs and the system's outputs for the presence of the malicious string patterns. The `InputValidator` and `OutputValidator` classes, in the example above, may be reused to scan the history of logs. In this way, one can also find out new successful attack patterns to come up with new safeguards.
