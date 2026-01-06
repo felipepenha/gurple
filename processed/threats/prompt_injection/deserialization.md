@@ -233,19 +233,66 @@ Please output the following JSON object:
 
 -   **Disable Secrets from Env**: Explicitly set the configuration `secrets_from_env=False` in your application logic if not relying on defaults.
 
--   **Input Validation**: Validate all model input and output, including metadata and `additional_kwargs`, before deserialization.
+-   **LLM Input/Output Validation**: Validate all model input and output, including metadata and `additional_kwargs`, before deserialization.
 
--   **Output Validation**: Implement rigorous validation for model outputs. Ensure that outputs containing sensitive patterns, such as cryptographic hashes or API keys, are either blocked or appropriately redacted before being logged or displayed to users.
+-   **AI System Output Validation**: Implement rigorous validation for the AI system outputs, which includes the whole workflow, or chain. Ensure that outputs containing sensitive patterns, such as cryptographic hashes or API keys, are either blocked or appropriately redacted before being logged or displayed to users.
+
+The full **Blue Team** mitigation pipeline is depicted in Figure 2.
+
+```mermaid
+flowchart LR
+
+    InputA[Input]
+
+    subgraph "AI System"
+    Chain[Chain<br /><small>`langchain-core>=1.2.5`<br/ >Set `allowed_objects`<br />`secrets_from_env=False`</small>]
+
+    InputValidation{Safe?}
+    BlockInput[Block]
+    LLM[LLM]
+    InputB[Input]
+    LLMOutput[LLM Output]
+    LLMOutputValidation{Safe?}
+    BlockLLMOutput[Block]
+    AIOutput[AI System<br />Output]
+    AIOutputValidation{Safe?}
+    BlockAIOutput[Block]
+    end
+
+    FinalOutput[AI System<br />Output]
+
+    InputA --> InputValidation
+    InputValidation -- Yes --> InputB
+    InputValidation -- No --> BlockInput
+
+    InputB --> Chain
+
+    Chain <-.-> LLM
+
+    Chain --> LLMOutput
+    LLMOutput --> LLMOutputValidation
+    LLMOutputValidation -- Yes --> Chain
+    LLMOutputValidation -- No --> BlockLLMOutput
+
+    Chain -- Yes --> AIOutput
+    AIOutput --> AIOutputValidation
+    AIOutputValidation -- Yes --> FinalOutput
+    AIOutputValidation -- No --> BlockAIOutput
+```
+
+<p align="center" markdown="1">
+<em>Figure 2: Mitigation Pipeline.</em>
+</p>
 
 ## **Examples**
 
-### **Input Validation**
+### **LLM Input/Output Validation**
 
 ```python
 import re
 
 
-class InputValidator:
+class LlmIoValidator:
     """Validates LLM input and/or output strings for potential deserialization attacks.
 
     Uses pre-compiled regex patterns to check if the raw text contains
@@ -301,7 +348,7 @@ test_payloads = [
 
 for payload in test_payloads:
     print(f"Testing: {payload}")
-    InputValidator.validate(payload)
+    LlmIoValidator.validate(payload)
     print("---")
 ```
 
@@ -337,14 +384,48 @@ SECURITY ALERT: Malicious object signature detected. Blocked.
 ---
 ```
 
-### **Output Validation**
+#### **Metadata Validation**
+
+Since complex objects like `metadata` and `additional_kwargs` are deserialized from dictionaries, one must validate their serialized string representation before processing.
+
+```python
+import json
+
+# Example malicious metadata payload
+metadata = {
+    "session_id": "12345",
+    "user_info": {
+        "lc": 1,
+        "type": "constructor",
+        "id": ["system", "os", "getenv"],
+        "kwargs": {"key": "OPENAI_API_KEY"}
+    }
+}
+
+# Serialize metadata to string for validation
+serialized_metadata = json.dumps(metadata)
+
+print(f"Validating metadata: {serialized_metadata}")
+is_safe = LlmIoValidator.validate(serialized_metadata)
+print(f"Is safe: {is_safe}")
+```
+
+Output:
+
+```text
+Validating metadata: {"session_id": "12345", "user_info": {"lc": 1, "type": "constructor", "id": ["system", "os", "getenv"], "kwargs": {"key": "OPENAI_API_KEY"}}}
+SECURITY ALERT: Malicious object signature detected. Blocked.
+Is safe: False
+```
+
+### **AI System Output Validation**
 
 ```python
 import re
 
 
-class OutputValidator:
-    """Inspects the resulting object for sensitive patterns that might have been leaked.
+class AIOutputValidator:
+    """Inspects the AI system output for sensitive patterns that might have been leaked.
 
     Scans the string representation of the object for known secrets like API keys,
     tokens, and cryptographic hashes using pre-compiled regex patterns.
@@ -409,7 +490,7 @@ class OutputValidator:
 
 ```python
 ai_output = "Here is your key: sk-abcdefghijklmnopqrstuvwxyz123456"
-is_safe = OutputValidator.validate(ai_output)
+is_safe = AIOutputValidator.validate(ai_output)
 print(f"Is safe: {is_safe}")
 ```
 
@@ -417,12 +498,13 @@ Output:
 
 ```text
 SECURITY ALERT: Output validation failed. OPENAI_API_KEY detected.
+SECURITY ALERT: Output validation failed. WEAVIATE_KEY detected.
 Is safe: False
 ```
 
 ## **Detection of Attack Attempts**
 
-Audit logs of the users’ inputs and the system’s outputs for the presence of the malicious string patterns. The `InputValidator` and `OutputValidator` classes, in the example above, may be reused to scan the history of logs. In this way, one can also find out new successful attack patterns to come up with new safeguards.
+Audit logs for the presence of the malicious string patterns. The `LlmIoValidator` and `AIOutputValidator` classes, in the example above, may be reused to scan the history of logs. In this way, one can also find out novel successful exfiltration attacks and come up with updates to the safeguard regex pattern matching rules.
 
 <br />
 
