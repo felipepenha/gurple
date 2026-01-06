@@ -81,6 +81,11 @@ Gurple explains each of the most popular **Threat, Vulnerability and Risk** fram
 Existing literature usually addresses Red Teaming (offense) and Blue Teaming (defense) separately. Gurple integrates them into a Purple strategy. This approach treats offense and defense as interconnected components, creating a feedback loop where attacks directly verify the efficacy of security controls.
 
 
+## **Example Code**
+
+Gurple provides a variety of example code to help readers implement the concepts discussed in the book. Code is presented through embedded code blocks or links to GitHub repositories. While other resources may offer simplified snippets to illustrate concepts, Gurple provides functional, realistic code designed for real-world application.
+
+
 ## **Extensive Literature and Tech Stack Review**
 
 Gurple is, at the same time, grounded in reality and in the literature, be it academic research papers, books, case studies, whitepapers, or industry reports. It provides analysis of real-world **Threats** to GenAI systems, with their proper references.
