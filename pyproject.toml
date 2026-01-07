@@ -4,7 +4,7 @@ build-backend = "maturin"
 
 [project]
 name = "gurple"
-version = "0.0.8"
+version = "0.0.9"
 description = "GenAI Security Purple Team Book"
 authors = [{ name = "Felipe Campos Penha", email = "felipe.penha@owasp.org" }]
 requires-python = ">=3.8"
