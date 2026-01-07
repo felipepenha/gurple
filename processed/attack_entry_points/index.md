@@ -145,7 +145,7 @@ GenAI agents often act autonomously based on external triggers or indirect data,
     ``` mermaid
     graph LR
 
-        subgraph GenAI System
+        subgraph dashed_box [GenAI System]
             Agents[Agents]
             Tools[Tools]
         end
@@ -154,6 +154,8 @@ GenAI agents often act autonomously based on external triggers or indirect data,
         Attacker([Attacker]) -.-> |Malicious Context<br /> Malicious Instructions| Tools
 
         Tools -->|Execute| Tasks[Tasks]
+
+        style dashed_box stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
     ```
 
 <br />
@@ -167,11 +169,11 @@ GenAI agents often act autonomously based on external triggers or indirect data,
     ``` mermaid
     graph LR
 
-        subgraph GenAI System
+        subgraph dashed_box_genai [GenAI System]
             Agents[Agents]
         end
 
-        subgraph MCP Server
+        subgraph dashed_box_mcp [MCP Server]
             Tools[Tools]
             Client[MCP Client]
         end
@@ -183,6 +185,10 @@ GenAI agents often act autonomously based on external triggers or indirect data,
 
 
         Tools -->|Execute| Tasks[Tasks]
+
+        style dashed_box_genai stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
+
+        style dashed_box_mcp stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
     ```
 
 <br />
@@ -196,11 +202,11 @@ GenAI agents often act autonomously based on external triggers or indirect data,
     ``` mermaid
     graph LR
 
-        subgraph GenAI System
+        subgraph dashed_box_genai [GenAI System]
             SourceAgent[Source Agent]
         end
 
-        subgraph A2A Server
+        subgraph dashed_box_a2a [A2A Server]
             Client[A2A Client]
             Card[Agents Cards]
         end
@@ -212,16 +218,20 @@ GenAI agents often act autonomously based on external triggers or indirect data,
 
 
         Card -->|Interacts| TargetAgents[Target Agents]
+
+        style dashed_box_genai stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
+
+        style dashed_box_a2a stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
     ```
 
     ``` mermaid
     graph LR
 
-        subgraph GenAI System
+        subgraph dashed_box_genai [GenAI System]
             SourceAgent[Source Agent]
         end
 
-        subgraph A2A Server
+        subgraph dashed_box_a2a [A2A Server]
             Client[A2A Client]
             TaskMng[Task Manager]
         end
@@ -233,6 +243,10 @@ GenAI agents often act autonomously based on external triggers or indirect data,
 
 
         TaskMng -->|Interacts| TargetAgents[Target Agents]
+
+        style dashed_box_genai stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
+
+        style dashed_box_a2a stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
     ```
 
 <br />
