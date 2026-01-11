@@ -91,13 +91,14 @@ nav:
   # - Major Section Example:
   #     - major_section_example/index.md
   #     - First Page: major_section_example/page_1.md
-  - Home: index.md
+  - Home: 
+    - index.md
   - About the Author:
-      - author/index.md
+    - author/index.md
   - Preface:
-      - preface/index.md
+    - preface/index.md
   - Introduction:
-      - introduction/index.md
+    - introduction/index.md
   - Threat, Vulnerability & Risk Frameworks:
     - threat_vulnerability_risk/index.md
     - SCF C|P-RMM: threat_vulnerability_risk/scf_cp_rmm.md
@@ -107,7 +108,7 @@ nav:
     # - OWASP Top 10 for Agentic: threat_vulnerability_frameworks/owasp_top_10_agentic.md
     # - Taxonomy of Prompt Injection: threat_vulnerability_frameworks/taxonomy_prompt_injection.md
   - Attack Entry Points:
-      - attack_entry_points/index.md
+    - attack_entry_points/index.md
   - Threats:
     - threats/index.md
     - Prompt Injection:
@@ -124,3 +125,5 @@ nav:
     #   - threats/model_inversion/index.md
     # - Model Tampering:
     #   - threats/model_tampering/index.md
+  - Bibliography:
+    - bibliography/index.md

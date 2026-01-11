@@ -64,7 +64,12 @@ clean:
 	@echo "🧹 Cleaning build artifacts..."
 	rm -rf processed site
 
-build: init $(OBJECTS)
+# Prep target for bibliography ordering
+prep-bib:
+	@echo "📚 Ordering bibliography by invocation..."
+	python3 bibliography.py
+
+build: prep-bib init $(OBJECTS)
 	@echo "🏗️  Building site..."
 	mkdocs build
 	@echo "✅ Build complete!"
