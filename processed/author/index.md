@@ -18,8 +18,28 @@ Experienced speaker, both online and offline, having accumulated 45,000+ views o
 
 I am open to invitations to speak at tech talks, conferences, and meetups.
 
-Contact: <felipe.penha@owasp.org> or [LinkedIn](https://linkedin.com/in/fcpenha).
+</br>
 
-Suggestions: [GitHub Issues Page](https://github.com/felipepenha/gurple/issues).
+## **Cybersecurity Publications**
 
-Other pages: [DataScienceBits YouTube Channel](https://www.youtube.com/c/DataScienceBits), [GitHub Profile](https://github.com/felipepenha)
+-   [OWASP GenAI Data Security Risks & Mitigations 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/)
+
+-   [OWASP Vendor Evaluation Criteria for AI Red Teaming Providers & Tooling v1.0](https://genai.owasp.org/resource/owasp-vendor-evaluation-criteria-for-ai-red-teaming-providers-tooling-v1-0/)
+
+## **Cybersecurity Open Source Code**
+
+-   [OWASP GenAI-Security-Project/GenAI-Red-Team-Lab](https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab)
+
+## **Other Pages**
+
+-   [DataScienceBits YouTube Channel](https://www.youtube.com/c/DataScienceBits)
+-   [GitHub Profile](https://github.com/felipepenha)
+
+## **Suggestions for the Book**
+
+Feel free to open new entries at the [GitHub Issues Page](https://github.com/felipepenha/gurple/issues).
+
+## **Contact**
+
+-   <felipe.penha@owasp.org>
+-   [LinkedIn](https://linkedin.com/in/fcpenha)
