@@ -8,7 +8,7 @@
 
 Hi! My name is Felipe. I hold a Physics Doctorate Degree from the State University of Campinas (UNICAMP) and I have 8+ years of industry experience in the AI Engineering and Data Science area, amounting to 12+ years of hands-on data-related work.
 
-I am an active OWASP Contributor, in special to the [GenAI Security Project](https://genai.owasp.org/), formerly known as OWASP Top 10 for Large Language Model Applications, and the [GenAI Red Team](https://genai.owasp.org/initiatives/#ai-redteaming) sub-project.
+I am an active OWASP Contributor, in special to the [OWASP GenAI Security Project](https://genai.owasp.org/), formerly known as OWASP Top 10 for Large Language Model Applications, and the [Red Teaming Initiative](https://genai.owasp.org/initiatives/#ai-redteaming).
 
 Experienced speaker, both online and offline, having accumulated 45,000+ views on YouTube and Twitch and presented to 3,000 people in the same online workshop session.
 
