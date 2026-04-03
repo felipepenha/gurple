@@ -6,6 +6,8 @@ title: Bibliography
 
 [@SCF:CP-RMM:Web]
 [@SCF:CP-RMM:PDF:v2025-2]
+[@MITRE:ATLAS:WEB]
+[@MITRE:ATLAS:Matrix:WEB]
 [@NIST:AI:100-2e2023]
 [@MITRE:CWE502:Deserialization]
 [@Cyata:LangGrinch:WEB]
