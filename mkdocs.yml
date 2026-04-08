@@ -102,11 +102,12 @@ nav:
   - Threat, Vulnerability & Risk Frameworks:
     - threat_vulnerability_risk/index.md
     - SCF C|P-RMM: threat_vulnerability_risk/scf_cp_rmm.md
+    - MITRE ATT&CK&reg;: threat_vulnerability_risk/mitre_attack.md
+    - MITRE CWE&trade;: threat_vulnerability_risk/mitre_cwe.md
     - MITRE ATLAS&trade;: threat_vulnerability_risk/mitre_atlas.md
-    # - OWASP Top 10: threat_vulnerability_risk/owasp_top_10.md
-    # - OWASP Top 10 for LLM: threat_vulnerability_risk/owasp_top_10_llm.md
-    # - OWASP Top 10 for Agentic: threat_vulnerability_risk/owasp_top_10_agentic.md
-    # - Taxonomy of Prompt Injection: threat_vulnerability_risk/taxonomy_prompt_injection.md
+    - OWASP Top 10: threat_vulnerability_risk/owasp_top_10.md
+    - OWASP Top 10 for LLM: threat_vulnerability_risk/owasp_top_10_llm.md
+    - OWASP Top 10 for Agentic: threat_vulnerability_risk/owasp_top_10_agentic.md
   - Attack Entry Points:
     - attack_entry_points/index.md
   - Threats:
