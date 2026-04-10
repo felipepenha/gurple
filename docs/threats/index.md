@@ -27,7 +27,7 @@ mindmap
     ((MT-2 + MT-13))
       Prompt Injection
       Model Tampering
-      Poisoning
+      Workflow Injection
       ...
 ```
 
