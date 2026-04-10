@@ -104,6 +104,7 @@ nav:
     - SCF C|P-RMM: threat_vulnerability_risk/scf_cp_rmm.md
     - MITRE ATT&CK&reg;: threat_vulnerability_risk/mitre_attack.md
     - MITRE CWE&trade;: threat_vulnerability_risk/mitre_cwe.md
+    - MITRE CAPEC&trade;: threat_vulnerability_risk/mitre_capec.md
     - MITRE ATLAS&trade;: threat_vulnerability_risk/mitre_atlas.md
     - OWASP Top 10: threat_vulnerability_risk/owasp_top_10.md
     - OWASP Top 10 for LLM: threat_vulnerability_risk/owasp_top_10_llm.md
@@ -115,6 +116,8 @@ nav:
     - Prompt Injection:
       - threats/prompt_injection/index.md
       - Exfiltration Through Deserialization: threats/prompt_injection/deserialization.md
+    - Workflow Injection:
+      - threats/workflow_injection/index.md
     # - Jailbreaking:
     #   - threats/jailbreaking/index.md
     #   - Optimized Jailbreaking: threats/jailbreaking/optimized.md
