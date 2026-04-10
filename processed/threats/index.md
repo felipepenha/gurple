@@ -17,7 +17,7 @@ The [SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-mode
 <img src="./images/SCF-CPRMM-MT-2.png" alt="MT-2" style="background-color: white;" />
 <img src="./images/SCF-CPRMM-MT-13.png" alt="MT-13" style="background-color: white;" />
 <br />
-<em>Figure 2: GenAI Security-reated risks found in <a href="https://securecontrolsframework.com/free/risk-management-model/">SCF C\|P-RMM</a>.</em>
+<em>Figure 2: GenAI Security-related Threats found in <a href="https://securecontrolsframework.com/free/risk-management-model/">SCF C\|P-RMM</a>.</em>
 </p>
 
 These two entries cover the full breadth of GenAI Security Threats, but they do not provide the necessary depth to be able to discuss the specificities of such domain. Gurple extends the [SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/) Threat Catalogue to detail it more granularly for GenAI Security, as seen in Figure 3.
