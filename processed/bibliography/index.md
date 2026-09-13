@@ -20,7 +20,8 @@
 [[18]](#ref-GitHubAdvisoryDatabase:LangGrinch:CVE-2025-68665)
 [[19]](#ref-NVD:LangGrinch:CVE-2025-68664)
 [[20]](#ref-NVD:LangGrinch:CVE-2025-68665)
-[[21]](#ref-NIST:AI:100-2e2025)
+[[21]](#ref-MITRE:CWE:78)
+[[22]](#ref-NIST:AI:100-2e2025)
 
 </div>
 
@@ -192,9 +193,17 @@
 
 <br />
 
+<div id="ref-MITRE:CWE:78" class="csl-entry">
+
+<span class="csl-left-margin">[21] </span><span class="csl-right-inline">“CWE - CWE-78: Improper Neutralization of Special Elements used in an OS Command (’OS Command Injection’) (4.20).” <a href="https://cwe.mitre.org/data/definitions/78.html">https://cwe.mitre.org/data/definitions/78.html</a>.</span>
+
+</div>
+
+<br />
+
 <div id="ref-NIST:AI:100-2e2025" class="csl-entry">
 
-<span class="csl-left-margin">[21] </span><span class="csl-right-inline">A. Vassilev, A. Oprea, A. Fordyce, H. Anderson, X. Davies, and M. Hamin, “Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations,” National Institute of Standards and Technology, NIST Artificial Intelligence (AI) 100-2 E2025, Mar. 2025. doi: <a href="https://doi.org/10.6028/NIST.AI.100-2e2025">10.6028/NIST.AI.100-2e2025</a>.</span>
+<span class="csl-left-margin">[22] </span><span class="csl-right-inline">A. Vassilev, A. Oprea, A. Fordyce, H. Anderson, X. Davies, and M. Hamin, “Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations,” National Institute of Standards and Technology, NIST Artificial Intelligence (AI) 100-2 E2025, Mar. 2025. doi: <a href="https://doi.org/10.6028/NIST.AI.100-2e2025">10.6028/NIST.AI.100-2e2025</a>.</span>
 
 </div>
 

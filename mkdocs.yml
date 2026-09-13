@@ -118,6 +118,7 @@ nav:
       - Exfiltration Through Deserialization: threats/prompt_injection/deserialization.md
     - Workflow Injection:
       - threats/workflow_injection/index.md
+      - Remote Code Execution: threats/workflow_injection/remote_code_execution.md
     # - Jailbreaking:
     #   - threats/jailbreaking/index.md
     #   - Optimized Jailbreaking: threats/jailbreaking/optimized.md
