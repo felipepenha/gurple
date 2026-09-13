@@ -153,7 +153,7 @@ graph LR
     subgraph dashed_box_target ["n8n Workflow Engine"]
         API[Webhook Node]
         AI[LLM Call Node]
-        FileNode[Write Binary File Node<br />(Vulnerable)]
+        FileNode["Write Binary File Node<br />(Vulnerable)"]
         ExecNode[Execute Command Node]
     end
 
@@ -191,11 +191,11 @@ flowchart LR
 
     InputA[Input]
 
-    subgraph dashed_box [Hardened n8n Environment]
+    subgraph dashed_box ["Hardened n8n Environment"]
     Webhook[Webhook Node]
     LLM[LLM Node]
 
-    OutputValidation{Path / Code Regex Safe?}
+    OutputValidation{"Path / Code Regex Safe?"}
     BlockValidation[Block Workflow]
     
     FileWrite[Write File Node<br /><small>`RESTRICTED_PATH` enforced</small>]

@@ -24,6 +24,7 @@ title: Bibliography
 [@GitHubAdvisoryDatabase:LangGrinch:CVE-2025-68665]
 [@NVD:LangGrinch:CVE-2025-68664]
 [@NVD:LangGrinch:CVE-2025-68665]
+[@MITRE:CWE:78]
 [@NIST:AI:100-2e2025]
 
 </div>
