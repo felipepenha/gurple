@@ -271,7 +271,11 @@ prompt = [
 ]
 ```
 
-🚧 _... Coming Soon: Reference to a GitHub repo with the example code ..._ 🚧 
+The complete, runnable implementation of this attack scenario, including the containerized sandbox environment, Red Team exploitation script, and Blue Team defense pipeline, is available in the repository under [`code/`](https://github.com/felipepenha/gurple/tree/main/code):
+
+* [**Vulnerable Sandbox**](https://github.com/felipepenha/gurple/tree/main/code/sandbox/prompt_injection/deserialization): Containerized environment exposing the vulnerable `langchain-core` service on port `7860`.
+* [**Red Team Exploitation**](https://github.com/felipepenha/gurple/tree/main/code/red-team/prompt_injection/deserialization): Client attack script (`attack.py`) submitting crafted serialization injection payloads.
+* [**Blue Team Mitigation**](https://github.com/felipepenha/gurple/tree/main/code/blue-team/prompt_injection/deserialization): Canonical defense module (`defend.py`), inline gateway proxy (`proxy.py` on port `8080`), and detection test suite.
 
 
 <br />
