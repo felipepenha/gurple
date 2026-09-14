@@ -196,7 +196,7 @@ It is important to notice that GenAI systems will often hallucinate values for e
 
 ## **Example**
 
-### **Prompting The Production Application**
+### **Prompting the Production Application**
 
 The attacker submits a malicious prompt directly to the production application. The prompt is designed to coerce the LLM into returning a specially crafted JSON object (containing the `"lc": 1` key) as part of its output that will be passed to `langchain-core`'s `load()` or `loads()` functions:
 
