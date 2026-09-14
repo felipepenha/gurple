@@ -200,7 +200,7 @@ How it impacts the business.
 
 ### **Etc …**
 
-# **Case Study** [if any]
+# **Case Study** [If Any]
 
 Provides the summary and reference to a case study.
 
