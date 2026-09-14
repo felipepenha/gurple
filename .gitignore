@@ -21,4 +21,5 @@ node_modules/
 dist/
 
 # Agent
+.agents
 .agents/
