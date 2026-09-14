@@ -3,12 +3,18 @@ import re
 import subprocess
 import sys
 
+from defend import AIOutputValidator, LlmIoValidator
+
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger("blue_team_detect")
 
 
 def audit_logs(container_name: str = "gradio_container") -> int:
-    """Audit sandbox container traces for exploit markers and security alerts."""
+    """Audit sandbox container traces for exploit markers and security alerts.
+
+    Reuses LlmIoValidator and AIOutputValidator to scan the history of logs,
+    identifying deserialization injection attempts and sensitive output leaks.
+    """
     logs = ""
     for cmd in [
         ["podman", "logs", container_name],
@@ -24,17 +30,32 @@ def audit_logs(container_name: str = "gradio_container") -> int:
         logger.info("[-] No container logs available from '%s'.", container_name)
         return 0
 
-    alert_patterns = [
-        re.compile(r"LEAKED SECRET:.*"),
-        re.compile(r"SECURITY ALERT:.*"),
-        re.compile(r"Deserialization (?:error|failed):.*"),
-    ]
-
     findings = []
     for line in logs.splitlines():
-        for pattern in alert_patterns:
-            if pattern.search(line):
-                findings.append(line.strip())
+        line_clean = line.strip()
+        if not line_clean:
+            continue
+
+        # Check for deserialization attack patterns using LlmIoValidator patterns
+        for pattern in LlmIoValidator._SENSITIVE_PATTERNS:
+            if pattern.search(line_clean):
+                findings.append(
+                    f"Malicious input signature [{pattern.pattern}]: {line_clean}"
+                )
+                break
+
+        # Check for sensitive data leakage using AIOutputValidator patterns
+        for label, pattern in AIOutputValidator._SENSITIVE_PATTERNS.items():
+            if pattern.search(line_clean):
+                findings.append(f"Sensitive output leak [{label}]: {line_clean}")
+                break
+
+        # Check for general exploit markers and alerts
+        if re.search(
+            r"(LEAKED SECRET:|SECURITY ALERT:|Deserialization (?:error|failed):)",
+            line_clean,
+        ) and not any(line_clean in f for f in findings):
+            findings.append(f"Security event: {line_clean}")
 
     logger.info("==================================================")
     logger.info(" Container Log Security Audit: %s", container_name)
