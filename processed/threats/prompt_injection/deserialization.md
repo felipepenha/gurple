@@ -42,7 +42,7 @@ To result in **Exfiltration**, the payload is specifically engineered to output 
 
 ## **Attack Entry Points**
 
-Basically, **Exfiltration Through Deserialization** attacks can be executed through any **Entry Point** where a serialized object could be passed on to the system, even if disguised as regular text or data, to be later deserialized.
+**Exfiltration Through Deserialization** attacks can be executed through any **Entry Point** where a serialized object could be passed on to the system, even if disguised as regular text or data, to be later deserialized.
 
 -   [x] **The Front Door** 🚪 — **Network & Application Interfaces**
 
@@ -88,23 +88,23 @@ Sensitive information is exfiltrated from the system, impacting Business Continu
 
 ### **Financial Impact**
 
-Financial impact may be caused by gaining access to financial data, such as credit card numbers, bank account numbers, or other sensitive information. Alternatively, the attacker may harvest resources by gaining access to the integrated services via the exfiltrated secrets.
+Attackers can gain access to financial data, such as credit card numbers, bank account numbers, or other sensitive records. They can also harvest resources across integrated services using the exfiltrated secrets.
 
 ### **Legal Impact**
 
-Legal impact may be caused by users seeking compensation for the loss of data, or other damages resulting from the attack.
+Data breaches expose the organization to civil litigation, customer breach-of-contract claims, and liability for downstream compromise.
 
 ### **Operational Impact**
 
-Operational impact may be caused by the need to shut down systems for urgent remediation (e.g., rotating compromised secrets/keys).
+Remediation requires emergency downtime to revoke credentials, rotate infrastructure secrets, and inspect pipeline logs.
 
 ### **Regulatory Impact**
 
-Regulatory impact may be caused by non-compliance to regulations, such as GDPR, HIPAA, or PCI DSS. This can result in fines, legal action, or other penalties.
+Leaking unencrypted user data or personal identifiable information violates GDPR, HIPAA, and PCI DSS, leading to statutory fines and mandatory audits.
 
 ### **Reputational Impact**
 
-Reputational impact may be caused by the hackers exposing the successful attack to the public, and / or by leaking sensitive information.
+Public disclosure of sensitive data exfiltration damages brand credibility and erodes customer trust.
 
 <br />
 
@@ -201,7 +201,7 @@ print(deserialized["user_data"])  # "sk-secret-key-12345" - SECRET LEAKED!
 
 The attacker successfully exfiltrates the target environment variable value(s) from the application.
 
-It is important to notice that GenAI systems will often hallucinate values for environment variables that look legitimate at first glance. Therefore, one needs to validate the obtained values, for example by testing secrets against known services.
+GenAI systems frequently hallucinate plausible environment variable strings. Operators must validate captured values against live services to confirm authenticity.
 
 ## **Example**
 

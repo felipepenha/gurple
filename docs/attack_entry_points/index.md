@@ -95,7 +95,7 @@ graph LR
 ---
 # **The Back Door** 🚪 <br /> **&mdash; Data Storage**
 
-In GenAI systems, data storage form the basis for functional aspects, such as Memory and Knowledge Base. It differs from traditional systems in that it is not only used for directly retrieving information to be displayed to the user, but also for retrieving context for the model layer.
+In GenAI systems, data storage forms the basis for functional aspects, such as Memory and Knowledge Base. Unlike traditional systems that query storage primarily to display output to users, GenAI architectures also query storage to construct context for the model layer.
 
 **Examples of data storage:** Cache databases for session memory, persistent databases for logging conversation history, persistent vector databases for semantic search, cloud storage with raw data.
 
