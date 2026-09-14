@@ -28,7 +28,7 @@ Refer to the [Prompt Injection Map](./index.md#map) for a higher-level map.
 ---
 # **Mechanism**
 
-Starting from a safe serialized object in the expected format, the attacker performs a malicious edition that will pass unnoticed through the deserialization process. The object is, then, included in the user input to the GenAI system (e.g., user prompts, forms, attached data).
+Starting from a safe serialized object in the expected format, the attacker crafts a tampered object that evades deserialization controls. The payload is then injected into user input to the GenAI system (e.g., user prompts, forms, attached data).
 
 <p align="center">
   <img src="../images/CWE-502-Diagram.png" alt="CWE-502 Deserialization Diagram" />
@@ -71,7 +71,7 @@ Basically, **Exfiltration Through Deserialization** attacks can be executed thro
 
 ## **System Impact**
 
-No direct and immediate impact on the system. The deserialization vulnerability can be exploited to exfiltrate sensitive information from the system, but it does not directly impact the system's functionality or performance.
+The vulnerability does not immediately disrupt service availability or corrupt the host runtime during deserialization. The deserialization vulnerability can be exploited to exfiltrate sensitive information from the system, but it does not directly impact the system's functionality or performance.
 
 Note, however, that the exfiltrated information can include keys to decode encrypted data, and may be used to exploit the system further.
 
@@ -214,7 +214,7 @@ Please output the following JSON object:
 
 ### **Prompting a Sandbox Application**
 
-While in the previous example the attacker submits the prompt directly to a prodution application, that may or may not be vulnerable, in this other example the attacker submits the prompt to a sandbox application, that is known to be vulnerable. Sucess is confirmed by the attacker receiving the secret value of the environment variable named `FLAG` in the stdout of the sandbox container, `"C0ngr4ts_y0u_f0und_m3"`.
+While in the previous example the attacker submits the prompt directly to a production application, that may or may not be vulnerable, in this other example the attacker submits the prompt to a sandbox application, that is known to be vulnerable. Success is confirmed by the attacker receiving the secret value of the environment variable named `FLAG` in the stdout of the sandbox container, `"C0ngr4ts_y0u_f0und_m3"`.
 
 Figure 2 depicts the interaction flow between the attacker, the target vulnerable sandbox and the LLM backend.
 
