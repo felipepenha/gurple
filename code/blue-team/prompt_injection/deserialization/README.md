@@ -22,8 +22,8 @@ flowchart LR
 
     subgraph BlueGateway["Blue Team Guardrail Gateway (:8080)"]
         Proxy["proxy.py (FastAPI Reverse Proxy)"]
-        InputVal["LlmIoValidator.is_valid()"]
-        EgressVal["AIOutputValidator.is_safe()"]
+        InputVal["LlmIoValidator.validate()"]
+        EgressVal["AIOutputValidator.validate()"]
     end
 
     subgraph TargetLayer["Target Sandbox (:7860)"]

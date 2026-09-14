@@ -16,7 +16,7 @@ async def inspect_and_forward(request: Request, path: str):
     text_content = body.decode("utf-8", errors="ignore")
 
     # Ingress Inspection: Evaluate input text for deserialization injection signatures
-    if text_content and not LlmIoValidator.is_valid(text_content):
+    if text_content and not LlmIoValidator.validate(text_content):
         raise HTTPException(
             status_code=403,
             detail="SECURITY ALERT: Request blocked by Blue Team Guardrail Gateway (Deserialization signature detected).",
@@ -44,7 +44,7 @@ async def inspect_and_forward(request: Request, path: str):
     response_text = resp.content.decode("utf-8", errors="ignore")
 
     # Egress Inspection: Redact or block responses leaking sensitive environment secrets
-    if response_text and not AIOutputValidator.is_safe(response_text):
+    if response_text and not AIOutputValidator.validate(response_text):
         raise HTTPException(
             status_code=403,
             detail="SECURITY ALERT: Upstream response blocked by Blue Team Egress Gateway (Secret leak detected).",
