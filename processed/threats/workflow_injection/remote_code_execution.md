@@ -44,7 +44,7 @@ To result in **Remote Code Execution**, the payload is typically designed to lev
 
 ## **Attack Entry Points**
 
-Basically, **Remote Code Execution** via workflow injection can be initiated anywhere the orchestrator accepts configuration state or external parameters that route through file-system or shell-execution nodes.
+**Remote Code Execution** via workflow injection can be initiated anywhere the orchestrator accepts configuration state or external parameters that route through file-system or shell-execution nodes.
 
 -   [x] **The Front Door** 🚪 — **Network & Application Interfaces**
     -   [x] **Application Programming Interface (API) Endpoints**
@@ -91,7 +91,7 @@ Regulatory bodies (under frameworks like GDPR, HIPAA, or CCPA) enforce steep fin
 
 ### **Reputational Impact**
 
-A full system compromise, particularly when leveraged through an orchestrated GenAI process, can cause a massive erosion of user trust and significant brand damage once publicly disclosed.
+A full system compromise, particularly when executed through an orchestrated GenAI workflow, impairs customer trust and damages organizational credibility upon disclosure.
 
 <br />
 
@@ -109,7 +109,7 @@ n8n is an open-source workflow automation tool. In typical configurations, users
 
 The vulnerability involves two stages:
 
-1.  **Injection and Malicious File Creation**: The attacker exploits a prompt injection flaw in the facing LLM, directing the AI model to output a malicious configuration intended for a downstream “Write Binary File” n8n node. Because the node allowed absolute path paths, the attacker bypasses intended directories and orchestrates the creation of a malicious JavaScript file (e.g., `backdoor.js`) within the node app’s execution path or directly in `/tmp/`.
+1.  **Injection and Malicious File Creation**: The attacker exploits a prompt injection flaw in the facing LLM, directing the AI model to output a malicious configuration intended for a downstream “Write Binary File” n8n node. Because the node allowed absolute file paths, the attacker bypasses intended directories and orchestrates the creation of a malicious JavaScript file (e.g., `backdoor.js`) within the node app’s execution path or directly in `/tmp/`.
 
 2.  **Execution**: Leveraging a subsequent misconfiguration or an adjacent “Execute Command” node in the workflow, the attacker manages to execute the loaded payload (`node /tmp/backdoor.js`). This establishes a reverse shell and achieves Remote Code Execution constrained solely by the container’s privileges.
 
@@ -129,9 +129,9 @@ The vulnerability involves two stages:
 ## **Methodology**
 
 1.  **Reconnaissance & Injection**: The attacker probes the application interacting with the GenAI agent to determine how inputs are cascaded into backend workflows (specifically looking for text that manifests as a file on the server).
-2.  **Payload Delivery**: The attacker submits a carefully crafted prompt designed to coerce the LLM to output a dict/JSON structure containing specific keys (like `file_name` and `data`). The injected payload usually contains a simple reverse shell or a command to grab sensitive flags.
+2.  **Payload Delivery**: The attacker submits a prompt engineered to force the LLM to output a JSON object containing specific target keys (such as `file_name` and `data`). The injected payload usually contains a simple reverse shell or a command to grab sensitive flags.
 3.  **Path Manipulation**: The injection targets a path traversal string (e.g., `../../../tmp/pwn.js`).
-4.  **Exploitation**: The attacker triggers a subsequent route in the workflow designed to run the file (often via an “Execute Command” node or a chron job), which executes the arbitrary JS or Shell script under the workflow orchestrator’s context.
+4.  **Exploitation**: The attacker triggers a subsequent route in the workflow designed to run the file (often via an “Execute Command” node or a cron job), which executes the arbitrary JS or Shell script under the workflow orchestrator’s context.
 
 ## **Success Criteria**
 
@@ -249,7 +249,7 @@ N8N_FILE_ACCESS_LOCAL_FILES_STRICT=true
 
 ## **Detection of Attack Attempts**
 
-Monitor system logs for file writes executing out of bounds, such as inside `/tmp/`, and trigger alerts on attempts to utilize specific disabled nodes. Since workflow engines output logs for execution pipelines, look for excessive utilization of structural path traversal characters (`../`) originating directly from LLM execution nodes.
+Monitor system logs for file writes executing out of bounds, such as inside `/tmp/`, and trigger alerts on attempts to utilize specific disabled nodes. Since workflow engines output logs for execution pipelines, look out for excessive use of structural path traversal characters (`../`) originating directly from LLM execution nodes.
 
 <br />
 
