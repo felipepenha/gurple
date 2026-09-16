@@ -1,6 +1,7 @@
 import logging
 import subprocess
 import sys
+import time
 import tomllib
 from pathlib import Path
 
@@ -16,6 +17,19 @@ def load_config() -> dict:
     config_path = Path(__file__).parent / "config" / "config.toml"
     with open(config_path, "rb") as f:
         return tomllib.load(f)
+
+
+def wait_for_target(base_url: str, timeout: float = 20.0) -> bool:
+    """Polls target endpoint until ready or timeout expires."""
+    start = time.time()
+    while time.time() - start < timeout:
+        try:
+            resp = httpx.get(base_url, timeout=2.0)
+            if resp.status_code in (200, 302, 404):
+                return True
+        except (httpx.HTTPError, OSError):
+            time.sleep(0.5)
+    return False
 
 
 def check_container_logs(container_name: str = "gradio_container") -> str:
@@ -44,6 +58,14 @@ def main():
         prompts = [prompts]
 
     logger.info("[*] Target sandbox endpoint: %s", target_url)
+    logger.info("[*] Awaiting target service readiness at %s...", target_url)
+    if not wait_for_target(target_url, timeout=20.0):
+        logger.warning(
+            "[-] Warning: Target endpoint %s did not respond, proceeding...", target_url
+        )
+    else:
+        logger.info("[+] Target service is online and ready.")
+
     compromised = False
 
     # Attempt connecting via Gradio client
