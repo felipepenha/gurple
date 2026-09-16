@@ -9,7 +9,11 @@ attack:
 stop:
 	$(MAKE) -C ../../../sandbox/prompt_injection/deserialization stop-gradio
 
-all: stop setup attack stop
+all:
+	$(MAKE) stop
+	$(MAKE) setup
+	-$(MAKE) attack
+	$(MAKE) stop
 
 format:
 	uv run ruff format .
