@@ -10,9 +10,13 @@ build:
 	podman build -f Containerfile -t $(IMAGE_NAME) .
 
 up:
+	podman network exists $(NETWORK) || podman network create $(NETWORK)
+	podman image exists $(IMAGE_NAME) || $(MAKE) build
 	podman run -d --rm --name $(BACKEND_CONTAINER) --network $(NETWORK) -p 8000:8000 $(IMAGE_NAME)
 
 run-gradio-headless:
+	podman network exists $(NETWORK) || podman network create $(NETWORK)
+	podman image exists $(IMAGE_NAME) || $(MAKE) build
 	podman run -d --rm --name $(GRADIO_CONTAINER) --network $(NETWORK) -p 7860:7860 \
 		-e BACKEND_URL="http://$(BACKEND_CONTAINER):8000/v1" \
 		-e FLAG="C0ngr4ts_y0u_f0und_m3" \
