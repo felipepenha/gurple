@@ -568,7 +568,7 @@ Audit logs for the presence of the malicious string patterns. The `LlmIoValidato
 
 ---
 
-# **Red and Blue Team Test Code**
+# **Runnable Companion Code**
 
 The complete, runnable implementation of this attack scenario, including the containerized sandbox environment, Red Team exploitation script, and Blue Team defense pipeline, is available in the repository under [`code/`](https://github.com/felipepenha/gurple/tree/main/code):
 
