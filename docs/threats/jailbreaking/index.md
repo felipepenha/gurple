@@ -20,7 +20,7 @@ Adversaries achieve jailbreaks by exploiting the fundamental tension between hel
 
 | **Framework** | **ID** | **Title** |
 | :--- | :--- | :--- |
-| **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-1.2 | Jailbreaking |
+| **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-0.2 | Jailbreaking |
 | **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.TA0007](https://atlas.mitre.org/tactics/AML.TA0007) | Defense Evasion |
 | **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.T0054](https://atlas.mitre.org/techniques/AML.T0054) | LLM Jailbreak |
 | **[MITRE ATT&CK](https://attack.mitre.org/)** | [TA0005](https://attack.mitre.org/tactics/TA0005/) | Defense Evasion |
