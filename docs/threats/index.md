@@ -36,3 +36,18 @@ mindmap
 </p>
 
 For more information on the various possibilities of how these Threats can be delivered as attacks to GenAI systems, please refer to the [Attack Entry Points](../attack_entry_points/index.md) chapter.
+
+<br />
+
+---
+# **Threat Index**
+
+The table below catalogs the threat categories and specific threat variants published in Gurple.
+
+| **ID** | **Category** | **Threat** | **Type** |
+| :--- | :--- | :--- | :--- |
+| G-0.1 | Prompt Injection | [Prompt Injection](./prompt_injection/index.md) | Category Overview |
+| G-0.1.1 | Prompt Injection | [Exfiltration Through Deserialization](./prompt_injection/deserialization.md) | Threat Variant |
+| G-0.2 | Jailbreaking | [Jailbreaking](./jailbreaking/index.md) | Category Overview |
+| G-0.3 | Workflow Injection | [Workflow Injection](./workflow_injection/index.md) | Category Overview |
+| G-0.3.1 | Workflow Injection | [Remote Code Execution](./workflow_injection/remote_code_execution.md) | Threat Variant |
