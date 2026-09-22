@@ -13,7 +13,7 @@ Workflow Injection differs from prompt injection by targeting the workflow engin
 
 | **Framework** | **ID** | **Title** |
 | :--- | :--- | :--- |
-| **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-1.2 | Workflow Injection |
+| **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-0.3 | Workflow Injection |
 | **[MITRE CAPEC](https://capec.mitre.org/)** | [CAPEC-152](https://capec.mitre.org/data/definitions/152.html) | CAPEC CATEGORY: Inject Unexpected Items |
 | **[MITRE CAPEC](https://capec.mitre.org/)** | [CAPEC-176](https://capec.mitre.org/data/definitions/176.html) | Configuration/Environment Manipulation |
 | **[MITRE CWE](https://cwe.mitre.org/)** | [CWE-15](https://cwe.mitre.org/data/definitions/15.html) | External Control of System or Configuration Setting |
