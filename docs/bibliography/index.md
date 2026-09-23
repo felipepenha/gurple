@@ -12,6 +12,7 @@ title: Bibliography
 [@MITRE:ATLAS:WEB]
 [@MITRE:ATLAS:Matrix:WEB]
 [@NIST:AI:100-2e2023]
+[@NIST:AI:100-2e2025]
 [@OWASP:TOP10:WEB]
 [@OWASP:TOP10:LLM:WEB]
 [@OWASP:TOP10:Agentic:2026:WEB]
@@ -30,6 +31,5 @@ title: Bibliography
 [@NVD:LangGrinch:CVE-2025-68664]
 [@NVD:LangGrinch:CVE-2025-68665]
 [@MITRE:CWE:78]
-[@NIST:AI:100-2e2025]
 
 </div>

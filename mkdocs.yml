@@ -107,6 +107,7 @@ nav:
     - MITRE CAPEC&trade;: threat_vulnerability_risk/mitre_capec.md
     - MITRE ATLAS&trade;: threat_vulnerability_risk/mitre_atlas.md
     - NIST AI 100-2 E2023: threat_vulnerability_risk/nist_ai_100_2_e2023.md
+    - NIST AI 100-2 E2025: threat_vulnerability_risk/nist_ai_100_2_e2025.md
     - OWASP Top 10: threat_vulnerability_risk/owasp_top_10.md
     - OWASP Top 10 for LLM: threat_vulnerability_risk/owasp_top_10_llm.md
     - OWASP Top 10 for Agentic: threat_vulnerability_risk/owasp_top_10_agentic.md
