@@ -2,19 +2,19 @@
 
 [[1]](#ref-SCF:CP-RMM:Web)
 [[2]](#ref-SCF:CP-RMM:PDF:v2025-2)
-[[3]](#ref-MITRE:ATTACK:WEB)
-[[4]](#ref-MITRE:CWE:WEB)
-[[5]](#ref-MITRE:CAPEC:WEB)
+[[3]](#ref-CSA:MAESTRO:2025:WEB)
+[[4]](#ref-FIRST:CVSS:WEB)
+[[5]](#ref-FIRST:CVSS:v4:SPEC)
 [[6]](#ref-MITRE:ATLAS:WEB)
 [[7]](#ref-MITRE:ATLAS:Matrix:WEB)
-[[8]](#ref-NIST:AI:100-2e2023)
-[[9]](#ref-NIST:AI:100-2e2025)
-[[10]](#ref-OWASP:TOP10:WEB)
-[[11]](#ref-OWASP:TOP10:LLM:WEB)
-[[12]](#ref-OWASP:TOP10:Agentic:2026:WEB)
-[[13]](#ref-CSA:MAESTRO:2025:WEB)
-[[14]](#ref-FIRST:CVSS:WEB)
-[[15]](#ref-FIRST:CVSS:v4:SPEC)
+[[8]](#ref-MITRE:ATTACK:WEB)
+[[9]](#ref-MITRE:CAPEC:WEB)
+[[10]](#ref-MITRE:CWE:WEB)
+[[11]](#ref-NIST:AI:100-2e2023)
+[[12]](#ref-NIST:AI:100-2e2025)
+[[13]](#ref-OWASP:TOP10:WEB)
+[[14]](#ref-OWASP:TOP10:Agentic:2026:WEB)
+[[15]](#ref-OWASP:TOP10:LLM:WEB)
 [[16]](#ref-OWASP:AIVSS:WEB)
 [[17]](#ref-OWASP:AIVSS:v0.8:PDF)
 [[18]](#ref-MITRE:CWE502:Deserialization)
@@ -54,25 +54,25 @@
 
 <br />
 
-<div id="ref-MITRE:ATTACK:WEB" class="csl-entry">
+<div id="ref-CSA:MAESTRO:2025:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[3] </span><span class="csl-right-inline">“MITRE ATT&CK.” <a href="https://attack.mitre.org/">https://attack.mitre.org/</a>.</span>
-
-</div>
-
-<br />
-
-<div id="ref-MITRE:CWE:WEB" class="csl-entry">
-
-<span class="csl-left-margin">[4] </span><span class="csl-right-inline">“CWE - Common Weakness Enumeration.” <a href="https://cwe.mitre.org/">https://cwe.mitre.org/</a>.</span>
+<span class="csl-left-margin">[3] </span><span class="csl-right-inline">Cloud Security Alliance, “Agentic AI Threat Modeling Framework: MAESTRO.” <a href="https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro">https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro</a>, Feb. 2025.</span>
 
 </div>
 
 <br />
 
-<div id="ref-MITRE:CAPEC:WEB" class="csl-entry">
+<div id="ref-FIRST:CVSS:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[5] </span><span class="csl-right-inline">“CAPEC - Common Attack Pattern Enumeration and Classification (CAPEC™).” <a href="https://capec.mitre.org/index.html">https://capec.mitre.org/index.html</a>.</span>
+<span class="csl-left-margin">[4] </span><span class="csl-right-inline">Forum of Incident Response and Security Teams, “Common Vulnerability Scoring System (CVSS).” <a href="https://www.first.org/cvss/">https://www.first.org/cvss/</a>, 2023.</span>
+
+</div>
+
+<br />
+
+<div id="ref-FIRST:CVSS:v4:SPEC" class="csl-entry">
+
+<span class="csl-left-margin">[5] </span><span class="csl-right-inline">Forum of Incident Response and Security Teams, “Common Vulnerability Scoring System v4.0: Specification Document.” <a href="https://www.first.org/cvss/v4.0/specification-document">https://www.first.org/cvss/v4.0/specification-document</a>, 2023.</span>
 
 </div>
 
@@ -94,9 +94,33 @@
 
 <br />
 
+<div id="ref-MITRE:ATTACK:WEB" class="csl-entry">
+
+<span class="csl-left-margin">[8] </span><span class="csl-right-inline">“MITRE ATT&CK.” <a href="https://attack.mitre.org/">https://attack.mitre.org/</a>.</span>
+
+</div>
+
+<br />
+
+<div id="ref-MITRE:CAPEC:WEB" class="csl-entry">
+
+<span class="csl-left-margin">[9] </span><span class="csl-right-inline">“CAPEC - Common Attack Pattern Enumeration and Classification (CAPEC™).” <a href="https://capec.mitre.org/index.html">https://capec.mitre.org/index.html</a>.</span>
+
+</div>
+
+<br />
+
+<div id="ref-MITRE:CWE:WEB" class="csl-entry">
+
+<span class="csl-left-margin">[10] </span><span class="csl-right-inline">“CWE - Common Weakness Enumeration.” <a href="https://cwe.mitre.org/">https://cwe.mitre.org/</a>.</span>
+
+</div>
+
+<br />
+
 <div id="ref-NIST:AI:100-2e2023" class="csl-entry">
 
-<span class="csl-left-margin">[8] </span><span class="csl-right-inline">A. Vassilev, A. Oprea, A. Fordyce, and H. Anderson, “Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations,” National Institute of Standards and Technology, NIST Artificial Intelligence (AI) 100-2 E2023, Jan. 2024. doi: <a href="https://doi.org/10.6028/NIST.AI.100-2e2023">10.6028/NIST.AI.100-2e2023</a>.</span>
+<span class="csl-left-margin">[11] </span><span class="csl-right-inline">A. Vassilev, A. Oprea, A. Fordyce, and H. Anderson, “Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations,” National Institute of Standards and Technology, NIST Artificial Intelligence (AI) 100-2 E2023, Jan. 2024. doi: <a href="https://doi.org/10.6028/NIST.AI.100-2e2023">10.6028/NIST.AI.100-2e2023</a>.</span>
 
 </div>
 
@@ -104,7 +128,7 @@
 
 <div id="ref-NIST:AI:100-2e2025" class="csl-entry">
 
-<span class="csl-left-margin">[9] </span><span class="csl-right-inline">A. Vassilev, A. Oprea, A. Fordyce, H. Anderson, X. Davies, and M. Hamin, “Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations,” National Institute of Standards and Technology, NIST Artificial Intelligence (AI) 100-2 E2025, Mar. 2025. doi: <a href="https://doi.org/10.6028/NIST.AI.100-2e2025">10.6028/NIST.AI.100-2e2025</a>.</span>
+<span class="csl-left-margin">[12] </span><span class="csl-right-inline">A. Vassilev, A. Oprea, A. Fordyce, H. Anderson, X. Davies, and M. Hamin, “Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations,” National Institute of Standards and Technology, NIST Artificial Intelligence (AI) 100-2 E2025, Mar. 2025. doi: <a href="https://doi.org/10.6028/NIST.AI.100-2e2025">10.6028/NIST.AI.100-2e2025</a>.</span>
 
 </div>
 
@@ -112,15 +136,7 @@
 
 <div id="ref-OWASP:TOP10:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[10] </span><span class="csl-right-inline">“OWASP Top Ten Web Application Security Risks OWASP Foundation.” <a href="https://owasp.org/www-project-top-ten/">https://owasp.org/www-project-top-ten/</a>.</span>
-
-</div>
-
-<br />
-
-<div id="ref-OWASP:TOP10:LLM:WEB" class="csl-entry">
-
-<span class="csl-left-margin">[11] </span><span class="csl-right-inline">“OWASP Top 10 for Large Language Model Applications OWASP Foundation.” <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">https://owasp.org/www-project-top-10-for-large-language-model-applications/</a>.</span>
+<span class="csl-left-margin">[13] </span><span class="csl-right-inline">“OWASP Top Ten Web Application Security Risks OWASP Foundation.” <a href="https://owasp.org/www-project-top-ten/">https://owasp.org/www-project-top-ten/</a>.</span>
 
 </div>
 
@@ -128,31 +144,15 @@
 
 <div id="ref-OWASP:TOP10:Agentic:2026:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[12] </span><span class="csl-right-inline">“OWASP Top 10 for Agentic Applications for 2026,” <em>OWASP Gen AI Security Project</em>. <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/</a>.</span>
+<span class="csl-left-margin">[14] </span><span class="csl-right-inline">“OWASP Top 10 for Agentic Applications for 2026,” <em>OWASP Gen AI Security Project</em>. <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/</a>.</span>
 
 </div>
 
 <br />
 
-<div id="ref-CSA:MAESTRO:2025:WEB" class="csl-entry">
+<div id="ref-OWASP:TOP10:LLM:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[13] </span><span class="csl-right-inline">Cloud Security Alliance, “Agentic AI Threat Modeling Framework: MAESTRO.” <a href="https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro">https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro</a>, Feb. 2025.</span>
-
-</div>
-
-<br />
-
-<div id="ref-FIRST:CVSS:WEB" class="csl-entry">
-
-<span class="csl-left-margin">[14] </span><span class="csl-right-inline">Forum of Incident Response and Security Teams, “Common Vulnerability Scoring System (CVSS).” <a href="https://www.first.org/cvss/">https://www.first.org/cvss/</a>, 2023.</span>
-
-</div>
-
-<br />
-
-<div id="ref-FIRST:CVSS:v4:SPEC" class="csl-entry">
-
-<span class="csl-left-margin">[15] </span><span class="csl-right-inline">Forum of Incident Response and Security Teams, “Common Vulnerability Scoring System v4.0: Specification Document.” <a href="https://www.first.org/cvss/v4.0/specification-document">https://www.first.org/cvss/v4.0/specification-document</a>, 2023.</span>
+<span class="csl-left-margin">[15] </span><span class="csl-right-inline">“OWASP Top 10 for Large Language Model Applications OWASP Foundation.” <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">https://owasp.org/www-project-top-10-for-large-language-model-applications/</a>.</span>
 
 </div>
 

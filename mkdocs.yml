@@ -102,17 +102,17 @@ nav:
   - Threat, Vulnerability & Risk Frameworks:
     - threat_vulnerability_risk/index.md
     - SCF C|P-RMM: threat_vulnerability_risk/scf_cp_rmm.md
-    - MITRE ATT&CK&reg;: threat_vulnerability_risk/mitre_attack.md
-    - MITRE CWE&trade;: threat_vulnerability_risk/mitre_cwe.md
-    - MITRE CAPEC&trade;: threat_vulnerability_risk/mitre_capec.md
+    - CSA MAESTRO: threat_vulnerability_risk/csa_maestro.md
+    - FIRST CVSS: threat_vulnerability_risk/first_cvss.md
     - MITRE ATLAS&trade;: threat_vulnerability_risk/mitre_atlas.md
+    - MITRE ATT&CK&reg;: threat_vulnerability_risk/mitre_attack.md
+    - MITRE CAPEC&trade;: threat_vulnerability_risk/mitre_capec.md
+    - MITRE CWE&trade;: threat_vulnerability_risk/mitre_cwe.md
     - NIST AI 100-2 E2023: threat_vulnerability_risk/nist_ai_100_2_e2023.md
     - NIST AI 100-2 E2025: threat_vulnerability_risk/nist_ai_100_2_e2025.md
     - OWASP Top 10: threat_vulnerability_risk/owasp_top_10.md
-    - OWASP Top 10 for LLM: threat_vulnerability_risk/owasp_top_10_llm.md
     - OWASP Top 10 for Agentic: threat_vulnerability_risk/owasp_top_10_agentic.md
-    - CSA MAESTRO: threat_vulnerability_risk/csa_maestro.md
-    - FIRST CVSS: threat_vulnerability_risk/first_cvss.md
+    - OWASP Top 10 for LLM: threat_vulnerability_risk/owasp_top_10_llm.md
     - OWASP AIVSS: threat_vulnerability_risk/owasp_aivss.md
   - Attack Entry Points:
     - attack_entry_points/index.md
