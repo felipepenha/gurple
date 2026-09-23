@@ -13,16 +13,21 @@ Remote Code Execution (RCE) via Workflow Injection occurs when an attacker manip
 Refer to the [Workflow Injection Map](./index.md#map) for a higher-level map.
 
 | **Framework** | **ID** | **Title** |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-0.3.1 | Workflow Injection & Remote Code Execution |
+| **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-BC-4](https://securecontrolsframework.com/free/risk-management-model/) | Business Continuity & Information loss / corruption or system compromise due to technical attack |
+| **[CSA MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)** | [L2](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro) | Agent Operations Layer (Execution Environment & Runtime Integrity) |
 | **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.TA0005](https://atlas.mitre.org/tactics/AML.TA0005) | Execution |
+| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.T0053](https://atlas.mitre.org/techniques/AML.T0053) | LLM Prompt Injection via Workflow |
 | **[MITRE ATT&CK](https://attack.mitre.org/)** | [TA0002](https://attack.mitre.org/tactics/TA0002/) | Execution |
+| **[MITRE ATT&CK](https://attack.mitre.org/)** | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter |
 | **[MITRE CAPEC](https://capec.mitre.org/)** | [CAPEC-88](https://capec.mitre.org/data/definitions/88.html) | OS Command Injection |
 | **[MITRE CWE](https://cwe.mitre.org/)** | [CWE-78](https://cwe.mitre.org/data/definitions/78.html) | Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') |
+| **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)** | [3.3.2](https://doi.org/10.6028/NIST.AI.100-2e2023) | Indirect Prompt Injection |
+| **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)** | [NISTAML.015:2025](https://doi.org/10.6028/NIST.AI.100-2e2025) | Indirect Prompt Injection |
 | **[OWASP Top 10](https://owasp.org/www-project-top-ten/)** | [A03:2021](https://owasp.org/Top10/2021/A03_2021-Injection/) | Injection |
-| **[OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** | [ASI05](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | Unexpected Code Execution (RCE) |
+| **[OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** | [ASI05:2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | Unexpected Code Execution (RCE) |
 | **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM08:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Agency and Autonomous Action |
-| **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-BC-4](https://securecontrolsframework.com/free/risk-management-model/) | Business Continuity & Information loss / corruption or system compromise due to technical attack |
 
 <br />
 

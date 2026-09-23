@@ -13,14 +13,21 @@ Deserialization of untrusted data occurs when an application deserializes data f
 Refer to the [Prompt Injection Map](./index.md#map) for a higher-level map.
 
 | **Framework** | **ID** | **Title** |
-| --- | --- | --- |
+| :--- | :--- | :--- |
 | **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-0.1.1 | Prompt Injection & Exfiltration Through Deserialization |
-| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.TA0010](https://atlas.mitre.org/tactics/AML.TA0010) | Exfiltration |
-| **[MITRE ATT&CK](https://attack.mitre.org/)** | [TA0010](https://attack.mitre.org/tactics/TA0010/) | Exfiltration |
-| **[MITRE CWE](https://cwe.mitre.org/)** | [CWE-502](https://cwe.mitre.org/data/definitions/502.html) | Deserialization of Untrusted Data |
-| **[OWASP Top 10](https://owasp.org/www-project-top-ten/)** | [A08:2021](https://owasp.org/Top10/2021/A08_2021-Software_and_Data_Integrity_Failures/) | Software and Data Integrity Failures |
-| **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM02:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Sensitive Information Disclosure |
 | **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-BC-4](https://securecontrolsframework.com/free/risk-management-model/) | Business Continuity & Information loss / corruption or system compromise due to technical attack |
+| **[CSA MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)** | [L2](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro) | Agent Operations Layer (State & Tool Deserialization Integrity) |
+| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.TA0010](https://atlas.mitre.org/tactics/AML.TA0010) | Exfiltration |
+| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.T0048](https://atlas.mitre.org/techniques/AML.T0048) | Exfiltration via User Interface |
+| **[MITRE ATT&CK](https://attack.mitre.org/)** | [TA0010](https://attack.mitre.org/tactics/TA0010/) | Exfiltration |
+| **[MITRE ATT&CK](https://attack.mitre.org/)** | [T1041](https://attack.mitre.org/techniques/T1041/) | Exfiltration Over C2 Channel |
+| **[MITRE CAPEC](https://capec.mitre.org/)** | [CAPEC-586](https://capec.mitre.org/data/definitions/586.html) | Object Deserialization Execution |
+| **[MITRE CWE](https://cwe.mitre.org/)** | [CWE-502](https://cwe.mitre.org/data/definitions/502.html) | Deserialization of Untrusted Data |
+| **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)** | [3.2.1](https://doi.org/10.6028/NIST.AI.100-2e2023) | Deserialization Vulnerability |
+| **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)** | [NISTAML.013:2025](https://doi.org/10.6028/NIST.AI.100-2e2025) | AI Supply Chain and Deserialization |
+| **[OWASP Top 10](https://owasp.org/www-project-top-ten/)** | [A08:2021](https://owasp.org/Top10/2021/A08_2021-Software_and_Data_Integrity_Failures/) | Software and Data Integrity Failures |
+| **[OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** | [ASI05:2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | Unexpected Code Execution (RCE) |
+| **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM02:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Sensitive Information Disclosure |
 
 
 <br />
@@ -112,22 +119,30 @@ There are no known reports of successful attacks impacting businesses. Therefore
 Reported vulnerabilities:
 
 | **Vulnerability IDs** | **Description** |
-| --- | --- |
-- [CVE-2025-68664](https://nvd.nist.gov/vuln/detail/CVE-2025-68664)<br />- [GHSA-c67j-w6g6-q2cm](https://github.com/advisories/GHSA-c67j-w6g6-q2cm) | LangChain serialization injection vulnerability enables secret extraction in dumps/loads APIs |
-- [CVE-2025-68665](https://nvd.nist.gov/vuln/detail/CVE-2025-68665)<br />- [GHSA-r399-636x-v7f6](https://github.com/advisories/GHSA-r399-636x-v7f6) | LangChain serialization injection vulnerability enables secret extraction |
+| :--- | :--- |
+| - [CVE-2025-68664](https://nvd.nist.gov/vuln/detail/CVE-2025-68664)<br />- [GHSA-c67j-w6g6-q2cm](https://github.com/advisories/GHSA-c67j-w6g6-q2cm) | LangChain serialization injection vulnerability enables secret extraction in dumps/loads APIs |
+| - [CVE-2025-68665](https://nvd.nist.gov/vuln/detail/CVE-2025-68665)<br />- [GHSA-r399-636x-v7f6](https://github.com/advisories/GHSA-r399-636x-v7f6) | LangChain serialization injection vulnerability enables secret extraction |
+
+Vulnerability scoring:
+
+| **Framework** | **Vector / ID** | **Score / Decision** |
+| :--- | :--- | :--- |
+| **[FIRST CVSS](https://www.first.org/cvss/)** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N` | 7.5 (High) |
+| **[OWASP AIVSS](https://aivss.owasp.org/)** | `AIVSS:0.8/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/AT:N/L:D/DG:H/AC:E/T:O/D:S/M:A/E:D` | 8.8 / Act |
 
 Additional mapping, for this specific case study:
 
 | **Framework** | **ID** | **Title** |
-| --- | --- | --- |
+| :--- | :--- | :--- |
+| **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-SC-3](https://securecontrolsframework.com/free/risk-management-model/) | Third-party supply chain relationships, visibility and controls |
 | **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.T0010](https://atlas.mitre.org/techniques/AML.T0010) | AI Supply Chain Compromise |
 | **[MITRE ATT&CK](https://attack.mitre.org/)** | [T1195](https://attack.mitre.org/techniques/T1195/) | Supply Chain Compromise |
 | **[MITRE CWE](https://cwe.mitre.org/)** | [CWE-1357](https://cwe.mitre.org/data/definitions/1357.html) | Reliance on Insufficiently Trustworthy Component |
 | **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)** | [3.2](https://doi.org/10.6028/NIST.AI.100-2e2023) | AI Supply Chain Attacks and Mitigations |
 | **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)** | [3.2.1](https://doi.org/10.6028/NIST.AI.100-2e2023) | Deserialization Vulnerability |
+| **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)** | [NISTAML.013:2025](https://doi.org/10.6028/NIST.AI.100-2e2025) | AI Supply Chain and Deserialization |
 | **[OWASP Top 10](https://owasp.org/www-project-top-ten/)** | [A06:2021](https://owasp.org/Top10/2021/A08_2021-Software_and_Data_Integrity_Failures/) | Vulnerable and Outdated Components |
 | **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM03:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Supply Chain |
-| **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-SC-3](https://securecontrolsframework.com/free/risk-management-model/) | Third-party supply chain relationships, visibility and controls |
 
 <br />
 
