@@ -109,6 +109,8 @@ nav:
     - OWASP Top 10: threat_vulnerability_risk/owasp_top_10.md
     - OWASP Top 10 for LLM: threat_vulnerability_risk/owasp_top_10_llm.md
     - OWASP Top 10 for Agentic: threat_vulnerability_risk/owasp_top_10_agentic.md
+    - CVSS: threat_vulnerability_risk/cvss.md
+    - AIVSS: threat_vulnerability_risk/aivss.md
   - Attack Entry Points:
     - attack_entry_points/index.md
   - Threats:
