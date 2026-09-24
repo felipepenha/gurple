@@ -168,7 +168,7 @@
 
 <div id="ref-OWASP:AIVSS:v0.8:PDF" class="csl-entry">
 
-<span class="csl-left-margin">[17] </span><span class="csl-right-inline">OWASP GenAI Security Project, “AIVSS Scoring System For OWASP Agentic AI Core Security Risks v0.8,” OWASP Foundation; <a href="https://aivss.owasp.org/assets/publications/AIVSS">https://aivss.owasp.org/assets/publications/AIVSS</a>, Technical Report, 2026.</span>
+<span class="csl-left-margin">[17] </span><span class="csl-right-inline">OWASP GenAI Security Project, “AIVSS Scoring System For OWASP Agentic AI Core Security Risks v0.8,” OWASP Foundation; <a href="https://aivss.owasp.org/assets/publications/AIVSS%20Scoring%20System%20For%20OWASP%20Agentic%20AI%20Core%20Security%20Risks%20v0.8.pdf">https://aivss.owasp.org/assets/publications/AIVSS%20Scoring%20System%20For%20OWASP%20Agentic%20AI%20Core%20Security%20Risks%20v0.8.pdf</a>, Technical Report, 2026.</span>
 
 </div>
 

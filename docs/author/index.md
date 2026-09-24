@@ -18,9 +18,11 @@ I am open to invitations to speak at tech talks, conferences, and meetups.
 
 ## **Cybersecurity Publications**
 
-* [OWASP GenAI Data Security Risks & Mitigations 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/)
+* [OWASP GenAI Data Security Risks & Mitigations 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/) [Co-Author]
 
-* [OWASP Vendor Evaluation Criteria for AI Red Teaming Providers & Tooling v1.0](https://genai.owasp.org/resource/owasp-vendor-evaluation-criteria-for-ai-red-teaming-providers-tooling-v1-0/)
+* [OWASP Vendor Evaluation Criteria for AI Red Teaming Providers & Tooling v1.0](https://genai.owasp.org/resource/owasp-vendor-evaluation-criteria-for-ai-red-teaming-providers-tooling-v1-0/) [Co-Author]
+
+* OWASP GenAI Red Teaming Manual [Upcoming - Co-Author]
 
 ## **Cybersecurity Open Source Code**
 
