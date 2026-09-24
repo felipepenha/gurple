@@ -105,6 +105,7 @@ nav:
     - CSA LLM Threats Taxonomy: threat_vulnerability_risk/csa_llm_taxonomy.md
     - CSA MAESTRO: threat_vulnerability_risk/csa_maestro.md
     - FIRST CVSS: threat_vulnerability_risk/first_cvss.md
+    - ISO/IEC 23894:2023: threat_vulnerability_risk/iso_iec_23894_2023.md
     - MITRE ATLAS&trade;: threat_vulnerability_risk/mitre_atlas.md
     - MITRE ATT&CK&reg;: threat_vulnerability_risk/mitre_attack.md
     - MITRE CAPEC&trade;: threat_vulnerability_risk/mitre_capec.md
