@@ -22,6 +22,7 @@ Adversaries achieve jailbreaks by exploiting the fundamental tension between hel
 | :--- | :--- | :--- |
 | **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-0.2 | Jailbreaking |
 | **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-BC-4](https://securecontrolsframework.com/free/risk-management-model/) | Business Continuity & Information loss / corruption or system compromise due to technical attack |
+| **[CSA LLM Threats Taxonomy](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy)** | [Model Manipulation](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy) | Model Manipulation |
 | **[CSA MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)** | [L5](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro) | Agent Interface Layer (Adversarial Jailbreak & Persona Manipulation) |
 | **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.TA0007](https://atlas.mitre.org/tactics/AML.TA0007) | Defense Evasion |
 | **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.T0054](https://atlas.mitre.org/techniques/AML.T0054) | LLM Jailbreak |

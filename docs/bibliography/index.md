@@ -6,6 +6,7 @@ title: Bibliography
 
 [@SCF:CP-RMM:Web]
 [@SCF:CP-RMM:PDF:v2025-2]
+[@CSA:LLM:Taxonomy:2024:PDF]
 [@CSA:MAESTRO:2025:WEB]
 [@FIRST:CVSS:WEB]
 [@FIRST:CVSS:v4:SPEC]

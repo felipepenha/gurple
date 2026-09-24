@@ -16,6 +16,7 @@ Refer to the [Workflow Injection Map](./index.md#map) for a higher-level map.
 | :--- | :--- | :--- |
 | **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-0.3.1 | Workflow Injection & Remote Code Execution |
 | **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-BC-4](https://securecontrolsframework.com/free/risk-management-model/) | Business Continuity & Information loss / corruption or system compromise due to technical attack |
+| **[CSA LLM Threats Taxonomy](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy)** | [Insecure Apps/Plugins](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy) | Insecure Apps/Plugins |
 | **[CSA MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)** | [L2](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro) | Agent Operations Layer (Execution Environment & Runtime Integrity) |
 | **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.TA0005](https://atlas.mitre.org/tactics/AML.TA0005) | Execution |
 | **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.T0053](https://atlas.mitre.org/techniques/AML.T0053) | LLM Prompt Injection via Workflow |

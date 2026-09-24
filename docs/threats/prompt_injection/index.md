@@ -26,6 +26,7 @@ Prompt Injection is a threat where an attacker manipulates the inputs to alter t
 | :--- | :--- | :--- |
 | **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-0.1 | Prompt Injection |
 | **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-BC-4](https://securecontrolsframework.com/free/risk-management-model/) | Business Continuity & Information loss / corruption or system compromise due to technical attack |
+| **[CSA LLM Threats Taxonomy](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy)** | [Model Manipulation](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy) | Model Manipulation |
 | **[CSA MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)** | [L5](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro) | Agent Interface Layer (Direct Prompt Injection) |
 | **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.TA0005](https://atlas.mitre.org/tactics/AML.TA0005) | Execution |
 | **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.T0051](https://atlas.mitre.org/techniques/AML.T0051) | LLM Prompt Injection |

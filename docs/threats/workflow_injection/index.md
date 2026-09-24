@@ -15,6 +15,8 @@ Workflow Injection differs from prompt injection by targeting the workflow engin
 | :--- | :--- | :--- |
 | **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-0.3 | Workflow Injection |
 | **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-BC-4](https://securecontrolsframework.com/free/risk-management-model/) | Business Continuity & Information loss / corruption or system compromise due to technical attack |
+| **[CSA LLM Threats Taxonomy](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy)** | [Model Manipulation](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy) | Model Manipulation |
+| **[CSA LLM Threats Taxonomy](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy)** | [Insecure Apps/Plugins](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy) | Insecure Apps/Plugins |
 | **[CSA MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)** | [L3](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro) | Agent Orchestration Layer (Task Execution & Workflow State Hijack) |
 | **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.TA0005](https://atlas.mitre.org/tactics/AML.TA0005) | Execution |
 | **[MITRE ATT&CK](https://attack.mitre.org/)** | [TA0002](https://attack.mitre.org/tactics/TA0002/) | Execution |
