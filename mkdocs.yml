@@ -102,6 +102,7 @@ nav:
   - Threat, Vulnerability & Risk Frameworks:
     - threat_vulnerability_risk/index.md
     - SCF C|P-RMM: threat_vulnerability_risk/scf_cp_rmm.md
+    - CSA LLM Threats Taxonomy: threat_vulnerability_risk/csa_llm_taxonomy.md
     - CSA MAESTRO: threat_vulnerability_risk/csa_maestro.md
     - FIRST CVSS: threat_vulnerability_risk/first_cvss.md
     - MITRE ATLAS&trade;: threat_vulnerability_risk/mitre_atlas.md
