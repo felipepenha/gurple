@@ -26,7 +26,7 @@ mindmap
   root((SCF C|P-RMM))
     ((MT-2 + MT-13))
       Prompt Injection
-      Model Tampering
+      Jailbreaking
       Workflow Injection
       ...
 ```

@@ -7,7 +7,7 @@ Preface
 </div>
 
 !!! note
-    Gurple focuses on <span style="color:var(--constellation)">**Security of GenAI systems**</span> rather than GenAI-Assisted Security of traditional systems.
+    Gurple focuses on <span style="color:var(--constellation)">**Security of GenAI Systems**</span> rather than GenAI-Assisted Security of Traditional Systems.
 
 !!! warning
     Gurple is a <span style="color:var(--sun)">**White Hat**</span> and <span style="color:var(--sun)">**Ethical Hacking**</span> guidebook, meaning that it is NOT intended to be used for malicious purposes.
@@ -68,7 +68,9 @@ See [Attack Entry Points](../attack_entry_points/index.md) section to have a bet
 
 ## **Focus on Threats**
 
-Gurple centers its analysis on [Threats](../threats/index.md) to GenAI systems, using the [SCF C\|P-RMM](../threat_vulnerability_risk/scf_cp_rmm.md) framework to distinguish them from **Vulnerabilities** and **Risks**. For instance, **Prompt Injection** is treated as a distinct **Threat** that exploits system **Vulnerabilities** (such as Improper Output Handling) to introduce specific **Risks** (such as automated malware generation).
+Gurple centers its analysis on [Threats](../threats/index.md) to GenAI systems, using the [SCF C\|P-RMM](../threat_vulnerability_risk/scf_cp_rmm.md) framework to distinguish them from **Vulnerabilities** and **Risks**. For instance, **Prompt Injection** is treated as a distinct **Threat** category that exploits system **Vulnerabilities** (such as Improper Output Handling) to introduce specific **Risks** (such as automated malware generation).
+
+While Gurple aims at covering most Threat categories, it deliberately avoids covering all possible Threats under each category. We have prioritized those which are most relevant to real-world GenAI systems and for which there is sufficient evidence of exploitation in the wild, or that could exploit reported vulnerabilities. We deliberately omit Threats which are mostly academic, anecdotal, or specific to certain LLMs.
 
 ## **Mapping to Popular Frameworks**
 
@@ -80,7 +82,9 @@ Existing literature usually addresses Red Teaming (offense) and Blue Teaming (de
 
 ## **Example Code**
 
-Gurple provides a variety of example code to help readers implement the concepts discussed in the book. Code is presented through embedded code blocks or links to GitHub repositories. While other resources may offer simplified snippets to illustrate concepts, Gurple provides functional, realistic code designed for real-world application.
+Gurple provides a variety of example code to help readers implement the concepts discussed in the book. Code is presented through embedded code blocks or links to GitHub repository code. While other resources may offer simplified snippets to illustrate concepts, Gurple provides functional, realistic code designed for real-world application.
+
+**Note:** You can find the full code repository at [github.com/felipepenha/gurple/tree/main/code](https://github.com/felipepenha/gurple/tree/main/code).
 
 ## **Extensive Literature and Tech Stack Review**
 
@@ -102,7 +106,11 @@ You will see a *References* section at the end of each page.
 
 -   In-depth information, including mapping to other frameworks and references from existing literature.
 
--   Examples and case studies.
+-   Mechanism and Attack Entry Points.
+
+-   System and Business Impact.
+
+-   Real-world case studies.
 
 -   Ethical Hacking and White Hat methodology:
 
@@ -124,11 +132,13 @@ See, next, how the main chapter of this book, the [Threat](../threats/index.md) 
 
 # **Description**
 
-A short description of the threat.
+A short technical description of the threat.
 
 # **Map**
 
-Maps the Gurple ID to various other IDs found in different GenAI threats and vulnerabilities frameworks.
+Maps the Gurple ID to various other IDs found in different GenAI Threat, Vulnerability and Risk frameworks.
+
+Note that any mapping is an approximation and the reader should refer to the original frameworks for the most accurate information.
 
 | **Framework** | **ID** | **Title**   |
 |---------------|--------|-------------|
@@ -151,6 +161,8 @@ Describes the mechanism of the threat.
 ## **Attack Entry Points**
 
 Basically, any Entry Point where a serialized object could be passed on to the system, even if disguised as regular text or data, to be later deserialized.
+
+See the [Attack Entry Points](../attack_entry_points/index.md) page for a detailed explanation.
 
 -   [ ] **The Front Door** 🚪 — **Network & Application Interfaces**
 
@@ -202,18 +214,36 @@ How it impacts the business.
 
 # **Case Study** [If Any]
 
-Provides the summary and reference to a case study.
+Real-world incident or documented vulnerability (CVE, GHSA, etc.) illustrating the threat in production software.
 
 # 🔴 <span style="color:var(--red)">**Red Team**</span>
 
--   Methodology: Steps to exploit.
+Tactical offensive perspective providing reproducible exploit materials:
 
--   Example [if any]: Prompt or script.
+## **Methodology**
+
+Numbered step-by-step phases from reconnaissance to exploitation.
+\#\# **Success Criteria**
+Observable indicators verifying successful compromise.
+\#\# **Example**
+Exploit scripts, payload definitions, execution logs, and Mermaid sequence diagrams.
 
 # 🔵 <span style="color:var(--constellation)">**Blue Team**</span>
 
--   Mitigation: Configuration changes, guardrails, or code fixes to prevent the attack.
+Tactical defensive perspective providing concrete protections:
+\#\# **Mitigation**
+Architectural hardening controls and defensive pipeline flowcharts.
+\#\# **Examples**
+Production-grade input/output validators, regex guardrails, and environment policies.
+\#\# **Detection of Attack Attempts**
+SIEM queries, audit logging strategies, and anomaly signatures.
 
--   Detection: Logs, alerts, or keywords to monitor.
+<br />
 
--   Example [if any]: Prompt or script.
+---
+
+# References
+
+[1] …
+
+[2] …
