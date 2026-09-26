@@ -97,6 +97,8 @@ nav:
     - author/index.md
   - Preface:
     - preface/index.md
+  - List of Abbreviations:
+    - abbreviations/index.md
   - Introduction:
     - introduction/index.md
   - Threat, Vulnerability & Risk Frameworks:
