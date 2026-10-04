@@ -126,10 +126,12 @@ Reported vulnerabilities:
 
 Vulnerability scoring:
 
-| **Framework** | **Vector / ID** | **Score / Decision** |
-| :--- | :--- | :--- |
-| **[FIRST CVSS](https://www.first.org/cvss/)** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N` | 7.5 (High) |
-| **[OWASP AIVSS](https://aivss.owasp.org/)** | `AIVSS:0.8/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N/AT:N/L:D/DG:H/AC:E/T:O/D:S/M:A/E:D` | 8.8 / Act |
+| **Vulnerability** | **Framework** | **Vector / ID** | **Score / Decision** |
+| :--- | :--- | :--- | :--- |
+| **CVE-2025-68664** | **[FIRST CVSS](https://www.first.org/cvss/)** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N` | 9.3 (Critical) |
+| **CVE-2025-68664** | **[OWASP AIVSS](https://aivss.owasp.org/)** | `AIVSS:0.8/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N/AT:P/L:D/DG:H/AC:E/T:O/D:S/M:A/E:D` | 10.0 / Immediate |
+| **CVE-2025-68665** | **[FIRST CVSS](https://www.first.org/cvss/)** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N` | 8.6 (High) |
+| **CVE-2025-68665** | **[OWASP AIVSS](https://aivss.owasp.org/)** | `AIVSS:0.8/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N/AT:P/L:D/DG:H/AC:E/T:O/D:S/M:A/E:D` | 10.0 / Immediate |
 
 Additional mapping, for this specific case study:
 
