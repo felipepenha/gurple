@@ -84,9 +84,12 @@ Existing literature usually addresses Red Teaming (offense) and Blue Teaming (de
 
 ## **Example Code**
 
-Gurple provides a variety of example code to help readers implement the concepts discussed in the book. Code is presented through embedded code blocks or links to GitHub repository code. While other resources may offer simplified snippets to illustrate concepts, Gurple provides functional, realistic code designed for real-world application.
+Gurple provides a variety of example code to help readers implement the concepts discussed in the book. Code is presented both in the form of embedded code blocks throughout the text and as standalone scripts and tools in the repository, under [`code/`](https://github.com/felipepenha/gurple/tree/main/code/). While other resources may offer simplified snippets to illustrate concepts, Gurple provides functional, realistic code designed for real-world application.
 
-**Note:** You can find the full code repository at [github.com/felipepenha/gurple/tree/main/code](https://github.com/felipepenha/gurple/tree/main/code).
+
+## **Ready-to-Use Agent Skills**
+
+Beyond companion code for specific threat scenarios, Gurple supplies ready-to-use agent skills designed for autonomous AI agents. Located under [`.agents/skills/`](https://github.com/felipepenha/gurple/tree/main/.agents/skills), these skills provide executable tools and operational procedures for GenAI security assessments and Purple Teaming engagements.
 
 
 ## **Extensive Literature and Tech Stack Review**
@@ -120,6 +123,8 @@ You will see a _References_ section at the end of each page.
     * Red Team: Steps to exploit.
 
     * Blue Team: Steps to detect and mitigate.
+
+* Ready-to-use agent skills for automated threat scoring and purple team evaluation.
 
 And, by the way, what's up with all these hat and team colors? Please, see the [Introduction](../introduction/index.md) for a detailed explanation.
 
