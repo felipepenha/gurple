@@ -1,0 +1,17 @@
+[project]
+name = "calculate-cvss"
+version = "0.1.0"
+description = "Calculates CVSS v2.0, v3.0, v3.1, and v4.0 metrics and vector scores"
+readme = "SKILL.md"
+requires-python = ">=3.11"
+dependencies = [
+    "cvss>=3.6",
+]
+
+[project.scripts]
+calculate-cvss = "scripts.calculate_cvss:main"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.0",
+]

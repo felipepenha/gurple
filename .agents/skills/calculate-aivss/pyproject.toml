@@ -1,0 +1,17 @@
+[project]
+name = "calculate-aivss"
+version = "0.1.0"
+description = "Calculates Artificial Intelligence Vulnerability Scoring System (AIVSS v0.8) and AIVSS-SSVC metrics"
+readme = "SKILL.md"
+requires-python = ">=3.11"
+dependencies = [
+    "cvss>=3.6",
+]
+
+[project.scripts]
+calculate-aivss = "scripts.calculate_aivss:main"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.0",
+]
