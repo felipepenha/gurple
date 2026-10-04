@@ -20,5 +20,14 @@ node_modules/
 .vite/
 dist/
 
-# Agent
-.agents/
+# 1. Allow Git to enter the top-level folder
+!.agents/
+
+# 2. Ignore everything directly inside .agents/, but allow the skills/ directory itself
+.agents/*
+!.agents/skills/
+
+# 3. Ignore everything inside skills/, but allow your two specific subfolders
+.agents/skills/*
+!.agents/skills/calculate-aivss/
+!.agents/skills/calculate-cvss/
