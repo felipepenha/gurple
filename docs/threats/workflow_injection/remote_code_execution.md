@@ -97,7 +97,18 @@ A full system compromise, particularly when executed through an orchestrated Gen
 
 ## **n8n Remote Code Execution via File Write**
 
-[CVE-2026-21877](https://nvd.nist.gov/vuln/detail/CVE-2026-21877)
+Reported vulnerabilities:
+
+| **Vulnerability IDs** | **Description** |
+| :--- | :--- |
+| - [CVE-2026-21877](https://nvd.nist.gov/vuln/detail/CVE-2026-21877)<br />- [GHSA-v364-rw7m-3263](https://github.com/n8n-io/n8n/security/advisories/GHSA-v364-rw7m-3263) | n8n arbitrary file write vulnerability enables authenticated remote code execution |
+
+Vulnerability scoring:
+
+| **Vulnerability** | **Framework** | **Vector / ID** | **Score / Decision** |
+| :--- | :--- | :--- | :--- |
+| **CVE-2026-21877** | **[FIRST CVSS](https://www.first.org/cvss/)** | `CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H` | 9.9 (Critical) |
+| **CVE-2026-21877** | **[OWASP AIVSS](https://aivss.owasp.org/)** | `AIVSS:0.8/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H/AT:P/L:D/DG:H/AC:E/T:O/D:S/M:A/E:D` | 10.0 / Immediate |
 
 This vulnerability highlights the severe consequences of granting workflow automation tools overly permissive access to their underlying filesystem, especially when those tools process AI-generated dynamic inputs. 
 

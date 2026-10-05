@@ -45,4 +45,4 @@ Blue Teams are White Hat security professionals dedicated to defense. They are r
 
 Purple Teaming represents a collaborative approach that bridges the gap between offensive (Red) and defensive (Blue) teams. Instead of operating in silos, these teams work together to maximize the organization's cyber resilience. In many cases, the Purple Team is not a distinct team but a role played by members of the Red and Blue Teams through collaboration.
 
-The primary goal of Purple Teaming is to safely simulate specific attacks against production defenses to prove they are working. This involves defining evaluation test cases, such as verifying if a specific guardrail blocks a known jailbreak prompt, and tuning detection logic based on the results.
+The primary goal of Purple Teaming is to safely simulate specific attacks against production defenses to prove they are working. This involves defining evaluation test cases, such as verifying if a specific guardrail blocks a known jailbreak prompt, and tuning detection logic based on the results
