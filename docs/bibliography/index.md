@@ -9,6 +9,7 @@ title: Bibliography
 [@CSA:LLM:Taxonomy:2024:PDF]
 [@ISO:IEC:5338:2023]
 [@NIST:AI:100-2e2023]
+[@HuggingFace:ModelCards:WEB]
 [@CSA:MAESTRO:2025:WEB]
 [@FIRST:CVSS:WEB]
 [@FIRST:CVSS:v4:SPEC]
