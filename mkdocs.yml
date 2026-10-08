@@ -71,6 +71,11 @@ markdown_extensions:
   - footnotes
 plugins:
   - search
+  - blog:
+      blog_dir: blog
+      post_date_format: long
+      post_url_date_format: yyyy/MM/dd
+      post_url_format: "{date}/{slug}"
 # git-revision-date-localized removed
 # redirects removed
 
@@ -95,6 +100,8 @@ nav:
     - index.md
   - About the Author:
     - author/index.md
+  - Blog:
+    - blog/index.md
   - Preface:
     - preface/index.md
   - List of Abbreviations:

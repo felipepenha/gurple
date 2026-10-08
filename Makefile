@@ -59,6 +59,7 @@ $(BUILD_DIR)/%.md: $(SRC_DIR)/%.md
 	sed -i '' -E 's|(^\|[^"(])(https?://[^ <)]*[a-zA-Z0-9/])|\1<a href="\2">\2</a>|g' $@
 	sed -i '' 's/^-   !!!/!!!/g' $@
 	sed -i '' 's/^\*   !!!/!!!/g' $@
+	@uv run python -c "import sys, re; s=open('$<').read(); m=re.match(r'^(---\r?\n.*?\r?\n---(?:\r?\n|$$))', s, re.DOTALL); (lambda d: open('$@', 'w').write(m.group(1) + d) if m else None)(open('$@').read())"
 
 clean:
 	@echo "🧹 Cleaning build artifacts..."
@@ -67,15 +68,15 @@ clean:
 # Prep target for bibliography ordering
 prep-bib:
 	@echo "📚 Ordering bibliography by invocation..."
-	python3 bibliography.py
+	uv run python bibliography.py
 
 build: prep-bib init $(OBJECTS)
 	@echo "🏗️  Building site..."
-	mkdocs build
+	uv run mkdocs build
 	@echo "✅ Build complete!"
 
 serve:
 	@echo "🚀 Starting development server..."
-	mkdocs serve
+	uv run mkdocs serve
 
 all: install clean build serve
