@@ -28,6 +28,8 @@ I am open to invitations to speak at tech talks, conferences, and meetups.
 
 -   OWASP GenAI Red Teaming Manual [Upcoming - Co-Author]
 
+-   OWASP AI Red Teaming Scoping Guide [Upcoming - Co-Author]
+
 ## **Cybersecurity Open Source Code**
 
 -   [OWASP GenAI-Security-Project/GenAI-Red-Team-Lab](https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab)
