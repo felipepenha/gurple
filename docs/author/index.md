@@ -6,13 +6,13 @@
 
 <img src="../assets/headshot.jpg" alt="Felipe Campos Penha" width="35%" style="float: left; margin-right: 20px;">
 
-Hi! My name is Felipe. I hold a Physics Doctorate Degree from the State University of Campinas (UNICAMP) and I have 8+ years of industry experience in the AI Engineering and Data Science area, amounting to 12+ years of hands-on data-related work.
+Hi! My name is Felipe. I hold a Physics Doctorate Degree from the State University of Campinas (UNICAMP) and I have 9+ years of industry experience in the AI Engineering and Data Science area, amounting to 14+ years of hands-on data-related work.
 
 I am an active contributor and a Code Work Stream Leader for the [OWASP GenAI Security Project](https://genai.owasp.org/) – [Red Teaming Initiative](https://genai.owasp.org/initiatives/#ai-redteaming).
 
 Experienced speaker, both online and offline, having accumulated 45,000+ views on YouTube and Twitch and presented to 3,000 people in the same online workshop session.
 
-I am open to invitations to speak at tech talks, conferences, and meetups.
+**I am open to invitations to speak at tech talks, conferences, podcasts, and meetups.**
 
 </br>
 
@@ -23,6 +23,9 @@ I am open to invitations to speak at tech talks, conferences, and meetups.
 * [OWASP Vendor Evaluation Criteria for AI Red Teaming Providers & Tooling v1.0](https://genai.owasp.org/resource/owasp-vendor-evaluation-criteria-for-ai-red-teaming-providers-tooling-v1-0/) [Co-Author]
 
 * OWASP GenAI Red Teaming Manual [Upcoming - Co-Author]
+
+* OWASP AI Red Teaming Scoping Guide [Upcoming - Co-Author]
+
 
 ## **Cybersecurity Open Source Code**
 
