@@ -241,38 +241,45 @@ Figure 2 depicts the interaction flow between the attacker, the target vulnerabl
 ```mermaid
 graph LR
     subgraph dashed_box_attacker ["Attacker Environment (Local)"]
-        AttackScript[Attack Script<br/>attack.py]
-        Config[Attack Config<br/>config.toml]
+        AttackScript["<span style='color:#000'>Attack Script</span><br /><small style='color:#000'>attack.py</small>"]
+        Config["<span style='color:#000'>Attack Config</span><br /><small style='color:#000'>config.toml</small>"]
     end
 
     subgraph dashed_box_target ["Target Sandbox (Container)"]
-        Gradio[Gradio Interface<br/>:7860]
-        MockAPI[Mock API Gateway<br/>FastAPI :8000]
-        MockLogic[Mock App Logic]
+        Gradio["<span style='color:#000'>Gradio Interface</span><br /><small style='color:#000'>:7860</small>"]
+        MockAPI["<span style='color:#000'>Mock API Gateway</span><br /><small style='color:#000'>FastAPI :8000</small>"]
+        MockLogic["<span style='color:#000'>Mock App Logic</span>"]
     end
 
     subgraph dashed_box_llm ["LLM Backend (Local Host)"]
-        Ollama[Ollama Server<br/>:11434]
-        Model[gpt‑oss:20b Model]
+        Ollama["<span style='color:#000'>Ollama Server</span><br /><small style='color:#000'>:11434</small>"]
+        Model["<span style='color:#000'>LLM Model</span><br /><small style='color:#000'>gpt-oss:20b</small>"]
     end
 
     %% Interaction flow
     Config --> AttackScript
-    AttackScript -->|HTTP POST /api/predict| Gradio
-    Gradio -->|HTTP POST /v1/chat/completions| MockAPI
+    AttackScript -->|"HTTP POST /api/predict"| Gradio
+    Gradio -->|"HTTP POST /v1/chat/completions"| MockAPI
     MockAPI --> MockLogic
-    MockLogic -->|HTTP| Ollama
+    MockLogic -->|"HTTP"| Ollama
     Ollama --> Model
     Model --> Ollama
-    Ollama -->|Response| MockLogic
+    Ollama -->|"Response"| MockLogic
     MockLogic --> MockAPI
-    MockAPI -->|Response| Gradio
-    Gradio -->|Response| AttackScript
+    MockAPI -->|"Response"| Gradio
+    Gradio -->|"Response"| AttackScript
+
+    classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+    classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+    classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+    classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+    class AttackScript,Config red;
+    class Gradio,MockAPI,MockLogic yellow;
+    class Ollama,Model purple;
 
     style dashed_box_attacker stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
-
     style dashed_box_target stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
-
     style dashed_box_llm stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
 ```
 
@@ -312,28 +319,28 @@ The full **Blue Team** mitigation pipeline is depicted in Figure 3.
 ```mermaid
 flowchart LR
 
-    InputA[Input]
+    InputA["Input"]
 
-    subgraph dashed_box [GenAI System]
-    Chain[Chain<br /><small>`langchain-core>=1.2.5`<br/ >Set `allowed_objects`<br />`secrets_from_env=False`</small>]
+    subgraph dashed_box ["GenAI System"]
+    Chain["<span style='color:#000'>Chain</span><br /><small style='color:#000'>langchain-core &gt;= 1.2.5<br />Set allowed_objects<br />secrets_from_env=False</small>"]
 
-    InputValidation{Safe?}
-    BlockInput[Block]
-    LLM[LLM]
-    InputB[Input]
-    LLMOutput[LLM Output]
-    LLMOutputValidation{Safe?}
-    BlockLLMOutput[Block]
-    AIOutput[GenAI System<br />Output]
-    AIOutputValidation{Safe?}
-    BlockAIOutput[Block]
+    InputValidation{"Safe?"}
+    BlockInput["Block"]
+    LLM["LLM"]
+    InputB["Input"]
+    LLMOutput["LLM Output"]
+    LLMOutputValidation{"Safe?"}
+    BlockLLMOutput["Block"]
+    AIOutput["<span style='color:#000'>GenAI System<br />Output</span>"]
+    AIOutputValidation{"Safe?"}
+    BlockAIOutput["Block"]
     end
 
-    FinalOutput[GenAI System<br />Output]
+    FinalOutput["<span style='color:#000'>GenAI System<br />Output</span>"]
 
     InputA --> InputValidation
-    InputValidation -- Yes --> InputB
-    InputValidation -- No --> BlockInput
+    InputValidation -- "Yes" --> InputB
+    InputValidation -- "No" --> BlockInput
 
     InputB --> Chain
 
@@ -341,13 +348,23 @@ flowchart LR
 
     Chain --> LLMOutput
     LLMOutput --> LLMOutputValidation
-    LLMOutputValidation -- Yes --> Chain
-    LLMOutputValidation -- No --> BlockLLMOutput
+    LLMOutputValidation -- "Yes" --> Chain
+    LLMOutputValidation -- "No" --> BlockLLMOutput
 
-    Chain -- Yes --> AIOutput
+    Chain -- "Yes" --> AIOutput
     AIOutput --> AIOutputValidation
-    AIOutputValidation -- Yes --> FinalOutput
-    AIOutputValidation -- No --> BlockAIOutput
+    AIOutputValidation -- "Yes" --> FinalOutput
+    AIOutputValidation -- "No" --> BlockAIOutput
+
+    classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+    classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+    classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+    classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+    class InputA,InputB,FinalOutput purple;
+    class InputValidation,LLMOutputValidation,AIOutputValidation,Chain blue;
+    class BlockInput,BlockLLMOutput,BlockAIOutput red;
+    class LLM,AIOutput,LLMOutput yellow;
 
     style dashed_box stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
 ```

@@ -175,23 +175,31 @@ Figure 2 depicts the conceptual interaction flow.
 ```mermaid
 graph LR
     subgraph dashed_box_attacker ["Attacker Environment (Local)"]
-        AttackScript[Attack Script<br/>attack.py]
+        AttackScript["<span style='color:#000'>Attack Script</span><br /><small style='color:#000'>attack.py</small>"]
     end
 
     subgraph dashed_box_target ["n8n Workflow Engine"]
-        API[Webhook Node]
-        AI[LLM Call Node]
-        FileNode["Write Binary File Node<br />(Vulnerable)"]
-        ExecNode[Execute Command Node]
+        API["<span style='color:#000'>Webhook Node</span>"]
+        AI["<span style='color:#000'>LLM Call Node</span>"]
+        FileNode["<span style='color:#000'>Write Binary File Node</span><br /><small style='color:#000'>(Vulnerable)</small>"]
+        ExecNode["<span style='color:#000'>Execute Command Node</span>"]
     end
 
     %% Interaction flow
-    AttackScript -->|HTTP POST /trigger| API
+    AttackScript -->|"HTTP POST /trigger"| API
     API --> AI
-    AI -->|Malicious JSON Object| FileNode
-    FileNode -->|Writes payload.js| ExecNode
-    ExecNode -->|Runs node payload.js| FileNode
-    ExecNode -.->|Exfiltrates Flag| AttackScript
+    AI -->|"Malicious JSON Object"| FileNode
+    FileNode -->|"Writes payload.js"| ExecNode
+    ExecNode -->|"Runs node payload.js"| FileNode
+    ExecNode -.->|"Exfiltrates Flag"| AttackScript
+
+    classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+    classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+    classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+    classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+    class AttackScript red;
+    class API,AI,FileNode,ExecNode yellow;
 
     style dashed_box_attacker stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
     style dashed_box_target stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
@@ -218,29 +226,39 @@ The full **Blue Team** mitigation pipeline is depicted in Figure 3.
 ```mermaid
 flowchart LR
 
-    InputA[Input]
+    InputA["Input"]
 
     subgraph dashed_box ["Hardened n8n Environment"]
-    Webhook[Webhook Node]
-    LLM[LLM Node]
+    Webhook["Webhook Node"]
+    LLM["LLM Node"]
 
     OutputValidation{"Path / Code Regex Safe?"}
-    BlockValidation[Block Workflow]
+    BlockValidation["Block Workflow"]
     
-    FileWrite[Write File Node<br /><small>`RESTRICTED_PATH` enforced</small>]
-    ExecNode[Execute Command Node<br /><small>`DISABLED`</small>]
+    FileWrite["<span style='color:#000'>Write File Node</span><br /><small style='color:#000'>RESTRICTED_PATH enforced</small>"]
+    ExecNode["<span style='color:#000'>Execute Command Node</span><br /><small style='color:#000'>DISABLED</small>"]
     end
 
-    FinalOutput[Workflow Response]
+    FinalOutput["Workflow Response"]
 
     InputA --> Webhook
     Webhook --> LLM
     LLM --> OutputValidation
-    OutputValidation -- Yes --> FileWrite
-    OutputValidation -- No --> BlockValidation
+    OutputValidation -- "Yes" --> FileWrite
+    OutputValidation -- "No" --> BlockValidation
     
-    FileWrite -.->|Blocked by Env| ExecNode
+    FileWrite -.->|"Blocked by Env"| ExecNode
     FileWrite --> FinalOutput
+
+    classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+    classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+    classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+    classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+    class InputA,FinalOutput purple;
+    class OutputValidation,FileWrite blue;
+    class BlockValidation,ExecNode red;
+    class Webhook,LLM yellow;
 
     style dashed_box stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
 ```
