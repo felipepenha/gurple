@@ -23,17 +23,36 @@ The [SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-mode
 These two entries cover the full breadth of GenAI Security Threats, but they do not provide the necessary depth to be able to discuss the specificities of such domain. Gurple extends the [SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/) Threat Catalogue to detail it more granularly for GenAI Security, as seen in Figure 3.
 
 ```mermaid
----
-config:
-  theme: 'forest'
----
-mindmap
-  root((SCF C|P-RMM))
-    ((MT-2 + MT-13))
-      Prompt Injection
-      Jailbreaking
-      Workflow Injection
-      ...
+flowchart LR
+    subgraph dashed_box_scf ["SCF C|P-RMM Baseline"]
+        SCF["<span style='color:#000'>Threat Catalogue</span>"]
+        MT["<span style='color:#000'>MT-2 & MT-13</span><br /><small style='color:#000'>GenAI Security Threats</small>"]
+        SCF --> MT
+    end
+
+    subgraph dashed_box_gurple ["Gurple Threat Catalogue"]
+        PI["<span style='color:#000'>Prompt Injection</span>"]
+        JB["<span style='color:#000'>Jailbreaking</span>"]
+        WI["<span style='color:#000'>Workflow Injection</span>"]
+        MORE["<span style='color:#000'>...</span>"]
+    end
+
+    MT --> PI
+    MT --> JB
+    MT --> WI
+    MT -.-> MORE
+
+    classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+    classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+    classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+    classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+    class SCF purple;
+    class MT blue;
+    class PI,JB,WI,MORE yellow;
+
+    style dashed_box_scf stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
+    style dashed_box_gurple stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
 ```
 
 <p align="center" markdown="1">
