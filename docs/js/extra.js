@@ -71,10 +71,17 @@ function displayVersion() {
 // it will not result in a page refresh in the browser
 // See `How to integrate with third-party JavaScript libraries` guideline:
 // https://squidfunk.github.io/mkdocs-material/customization/?h=javascript#additional-javascript
-document$.subscribe(function () {
-  setCopyText();
-  displayVersion();
-});
+if (typeof document$ !== "undefined") {
+  document$.subscribe(function () {
+    setCopyText();
+    displayVersion();
+  });
+} else {
+  document.addEventListener("DOMContentLoaded", function () {
+    setCopyText();
+    displayVersion();
+  });
+}
 
 // Use client-side redirects for anchors that have moved.
 // Other redirects should use `redirect_maps` in the `mkdocs.yml` file instead.

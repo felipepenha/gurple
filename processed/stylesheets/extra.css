@@ -272,6 +272,18 @@ modifications */
   justify-content: center !important;
 }
 
+/* Enforce black font on light pastel Mermaid nodes across all theme modes */
+.md-typeset .node,
+.md-typeset .node *,
+.md-typeset .nodeLabel,
+.md-typeset .nodeLabel *,
+.md-typeset svg .node,
+.md-typeset svg .node * {
+  color: #000000 !important;
+  fill: #000000 !important;
+}
+
+
 /* Bibliography hanging indent */
 .csl-entry {
   display: flex !important;
