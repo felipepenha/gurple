@@ -25,8 +25,16 @@ These are the primary interaction points where the system accepts multimodal inp
 
     ```mermaid
     graph LR
-        Attacker([Attacker]) -->|Malicious Payload| API[API Endpoint]
-        API -->|Payload| Model[GenAI System]
+        Attacker(["Attacker"]) -->|"Malicious Payload"| API["API Endpoint"]
+        API -->|"Payload"| Model["GenAI System"]
+
+        classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+        classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+        classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+
+        class Attacker red;
+        class API blue;
+        class Model yellow;
     ```
 
 <br />
@@ -39,9 +47,17 @@ These are the primary interaction points where the system accepts multimodal inp
 
     ```mermaid
     graph LR
-        Attacker([Attacker]) -->|Input| UI[User Interface]
-        UI -->|API Call| API[API Endpoint]
-        API -->|Payload| Model[GenAI System]
+        Attacker(["Attacker"]) -->|"Input"| UI["User Interface"]
+        UI -->|"API Call"| API["API Endpoint"]
+        API -->|"Payload"| Model["GenAI System"]
+
+        classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+        classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+        classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+
+        class Attacker red;
+        class UI,API blue;
+        class Model yellow;
     ```
 
 <br />
@@ -54,8 +70,16 @@ These are the primary interaction points where the system accepts multimodal inp
 
     ```mermaid
     graph LR
-        Attacker([Attacker]) -->|Adversarial Signal| Sensor[Sensor]
-        Sensor -->|Digital Signal| Model[GenAI System]
+        Attacker(["Attacker"]) -->|"Adversarial Signal"| Sensor["Sensor"]
+        Sensor -->|"Digital Signal"| Model["GenAI System"]
+
+        classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+        classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+        classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+
+        class Attacker red;
+        class Sensor blue;
+        class Model yellow;
     ```
 
 <br />
@@ -68,9 +92,19 @@ These are the primary interaction points where the system accepts multimodal inp
 
     ```mermaid
     graph LR
-        Attacker([Attacker]) -.->|Exploits/Blinds| OTel[Observability System]
-        System[GenAI System] -->|Logs/Traces| OTel
-        OTel -->|Feeds| Dash[Dashboard]
+        Attacker(["Attacker"]) -.->|"Exploits/Blinds"| OTel["Observability System"]
+        System["GenAI System"] -->|"Logs/Traces"| OTel
+        OTel -->|"Feeds"| Dash["Dashboard"]
+
+        classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+        classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+        classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+        classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+        class Attacker red;
+        class System yellow;
+        class OTel blue;
+        class Dash purple;
     ```
 
 <br />
@@ -84,9 +118,17 @@ Attackers may compromise the foundational components upon which the GenAI system
 
 ```mermaid
 graph LR
-    Attacker([Attacker]) -->|Compromises| Comp[Component]
-    Comp -->|Enters| Build[CI/CD Pipeline]
-    Build -->|Deploys| Prod[Production <br /> GenAI System]
+    Attacker(["Attacker"]) -->|"Compromises"| Comp["Component"]
+    Comp -->|"Enters"| Build["CI/CD Pipeline"]
+    Build -->|"Deploys"| Prod["<span style='color:#000'>Production<br />GenAI System</span>"]
+
+    classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+    classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+    classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+
+    class Attacker red;
+    class Comp,Build blue;
+    class Prod yellow;
 ```
 
 <br />
@@ -101,8 +143,16 @@ In GenAI systems, data storage forms the basis for functional aspects, such as M
 
 ```mermaid
 graph LR
-    Attacker([Attacker]) -->|Compromises| DB[(Database/RAG)]
-    DB -->|Context Retrieval| Model[GenAI System]
+    Attacker(["Attacker"]) -->|"Compromises"| DB[("Database/RAG")]
+    DB -->|"Context Retrieval"| Model["GenAI System"]
+
+    classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+    classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+    classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+    class Attacker red;
+    class DB purple;
+    class Model yellow;
 ```
 
 <br />
@@ -122,8 +172,16 @@ GenAI agents often act autonomously based on external triggers or indirect data,
 
     ```mermaid
     graph LR
-        Attacker([Attacker]) -->|Malicious Content| Web[Website<br />Email <br />Code]
-        Web -->|Poisons| AI[GenAI System]
+        Attacker(["Attacker"]) -->|"Malicious Content"| Web["<span style='color:#000'>Website<br />Email<br />Code</span>"]
+        Web -->|"Poisons"| AI["GenAI System"]
+
+        classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+        classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+        classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+
+        class Attacker red;
+        class Web blue;
+        class AI yellow;
     ```
 
 <br />
@@ -137,15 +195,24 @@ GenAI agents often act autonomously based on external triggers or indirect data,
     ```mermaid
     graph LR
 
-        subgraph dashed_box [GenAI System]
-            Agents[Agents]
-            Tools[Tools]
+        subgraph dashed_box ["GenAI System"]
+            Agents["Agents"]
+            Tools["Tools"]
         end
 
-        Agents --> |Multi-step<br />Tool Calling| Tools
-        Attacker([Attacker]) -.-> |Malicious Context<br /> Malicious Instructions| Tools
+        Agents -->|"Multi-step<br />Tool Calling"| Tools
+        Attacker(["Attacker"]) -.->|"Malicious Context<br />Malicious Instructions"| Tools
 
-        Tools -->|Execute| Tasks[Tasks]
+        Tools -->|"Execute"| Tasks["Tasks"]
+
+        classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+        classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+        classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+        classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+        class Attacker red;
+        class Agents,Tools yellow;
+        class Tasks purple;
 
         style dashed_box stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
     ```
@@ -161,25 +228,33 @@ GenAI agents often act autonomously based on external triggers or indirect data,
     ```mermaid
     graph LR
 
-        subgraph dashed_box_genai [GenAI System]
-            Agents[Agents]
+        subgraph dashed_box_genai ["GenAI System"]
+            Agents["Agents"]
         end
 
-        subgraph dashed_box_mcp [MCP Server]
-            Tools[Tools]
-            Client[MCP Client]
+        subgraph dashed_box_mcp ["MCP Server"]
+            Tools["Tools"]
+            Client["MCP Client"]
         end
 
-        Agents --> |Discovery| Client
+        Agents -->|"Discovery"| Client
         Client --> Tools
 
-        Attacker([Attacker]) -.-> |Malicious Context<br /> Malicious Instructions| Tools
+        Attacker(["Attacker"]) -.->|"Malicious Context<br />Malicious Instructions"| Tools
 
+        Tools -->|"Execute"| Tasks["Tasks"]
 
-        Tools -->|Execute| Tasks[Tasks]
+        classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+        classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+        classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+        classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+        class Attacker red;
+        class Agents yellow;
+        class Client,Tools blue;
+        class Tasks purple;
         
         style dashed_box_genai stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
-
         style dashed_box_mcp stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
     ```
 
@@ -194,50 +269,66 @@ GenAI agents often act autonomously based on external triggers or indirect data,
     ```mermaid
     graph LR
 
-        subgraph dashed_box_genai [GenAI System]
-            SourceAgent[Source Agent]
+        subgraph dashed_box_genai ["GenAI System"]
+            SourceAgent["Source Agent"]
         end
 
-        subgraph dashed_box_a2a [A2A Server]
-            Client[A2A Client]
-            Card[Agents Cards]
+        subgraph dashed_box_a2a ["A2A Server"]
+            Client["A2A Client"]
+            Card["Agents Cards"]
         end
 
-        SourceAgent --> |Discovery| Client
+        SourceAgent -->|"Discovery"| Client
         Client --> Card
 
-        Attacker([Attacker]) -.-> |Malicious Context<br /> Malicious Instructions| Card
+        Attacker(["Attacker"]) -.->|"Malicious Context<br />Malicious Instructions"| Card
 
+        Card -->|"Interacts"| TargetAgents["Target Agents"]
 
-        Card -->|Interacts| TargetAgents[Target Agents]
+        classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+        classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+        classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+        classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+        class Attacker red;
+        class SourceAgent yellow;
+        class Client,Card blue;
+        class TargetAgents purple;
 
         style dashed_box_genai stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
-
         style dashed_box_a2a stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
     ```
 
     ```mermaid
     graph LR
 
-        subgraph dashed_box_genai [GenAI System]
-            SourceAgent[Source Agent]
+        subgraph dashed_box_genai ["GenAI System"]
+            SourceAgent["Source Agent"]
         end
 
-        subgraph dashed_box_a2a [A2A Server]
-            Client[A2A Client]
-            TaskMng[Task Manager]
+        subgraph dashed_box_a2a ["A2A Server"]
+            Client["A2A Client"]
+            TaskMng["Task Manager"]
         end
 
-        SourceAgent --> |Discovery| Client
+        SourceAgent -->|"Discovery"| Client
         Client --> TaskMng
 
-        Attacker([Attacker]) -.-> |Malicious Tasks| TaskMng
+        Attacker(["Attacker"]) -.->|"Malicious Tasks"| TaskMng
 
+        TaskMng -->|"Interacts"| TargetAgents["Target Agents"]
 
-        TaskMng -->|Interacts| TargetAgents[Target Agents]
+        classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+        classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+        classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+        classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+        class Attacker red;
+        class SourceAgent yellow;
+        class Client,TaskMng blue;
+        class TargetAgents purple;
 
         style dashed_box_genai stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
-
         style dashed_box_a2a stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
     ```
 
@@ -251,6 +342,14 @@ GenAI agents often act autonomously based on external triggers or indirect data,
 
     ```mermaid
     graph LR
-        Attacker([Attacker]) -->|Trigger Event| Queue[Message Queue/Bucket]
-        Queue -->|Auto-Process| Pipeline[GenAI Pipeline]
+        Attacker(["Attacker"]) -->|"Trigger Event"| Queue["Message Queue/Bucket"]
+        Queue -->|"Auto-Process"| Pipeline["GenAI Pipeline"]
+
+        classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+        classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+        classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+        class Attacker red;
+        class Queue purple;
+        class Pipeline yellow;
     ```
