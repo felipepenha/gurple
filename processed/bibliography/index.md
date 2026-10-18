@@ -23,8 +23,8 @@ title: Bibliography
 [[18]](#ref-MITRE:CWE:WEB)
 [[19]](#ref-NIST:AI:100-2e2025)
 [[20]](#ref-OWASP:TOP10:WEB)
-[[21]](#ref-OWASP:TOP10:Agentic:2026:WEB)
-[[22]](#ref-OWASP:TOP10:LLM:WEB)
+[[21]](#ref-OWASP:TOP10:LLM:WEB)
+[[22]](#ref-OWASP:TOP10:Agentic:2026:WEB)
 [[23]](#ref-OWASP:AIVSS:WEB)
 [[24]](#ref-OWASP:AIVSS:v0.8:PDF)
 [[25]](#ref-MITRE:CWE502:Deserialization)
@@ -208,17 +208,17 @@ title: Bibliography
 
 <br />
 
-<div id="ref-OWASP:TOP10:Agentic:2026:WEB" class="csl-entry">
+<div id="ref-OWASP:TOP10:LLM:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[21] </span><span class="csl-right-inline">“OWASP Top 10 for Agentic Applications for 2026,” <em>OWASP Gen AI Security Project</em>. <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/</a>.</span>
+<span class="csl-left-margin">[21] </span><span class="csl-right-inline">“OWASP Top 10 for Large Language Model Applications OWASP Foundation.” <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">https://owasp.org/www-project-top-10-for-large-language-model-applications/</a>.</span>
 
 </div>
 
 <br />
 
-<div id="ref-OWASP:TOP10:LLM:WEB" class="csl-entry">
+<div id="ref-OWASP:TOP10:Agentic:2026:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[22] </span><span class="csl-right-inline">“OWASP Top 10 for Large Language Model Applications OWASP Foundation.” <a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/">https://owasp.org/www-project-top-10-for-large-language-model-applications/</a>.</span>
+<span class="csl-left-margin">[22] </span><span class="csl-right-inline">“OWASP Top 10 for Agentic Applications for 2026,” <em>OWASP Gen AI Security Project</em>. <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/">https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/</a>.</span>
 
 </div>
 
