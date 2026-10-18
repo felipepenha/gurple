@@ -194,6 +194,31 @@ GenAI agents often act autonomously based on external triggers or indirect data,
 
 <br />
 
+-   **Rules, Skills & Memory Files**
+
+    Attackers may plant or tamper with instructions, operational skills, or persistent memory files loaded by autonomous agents, hijacking their reasoning loop and tool permissions without direct user interaction.
+
+    **Examples of files:** workspace rules (`.cursorrules`, `AGENTS.md`, `CLAUDE.md`), agent skills (`SKILL.md`), persistent memory files (`memory.json`, `MEMORY.md`), task history, project configurations.
+
+    ``` mermaid
+    graph LR
+        Attacker(["Attacker"]) -.->|"Poisons / Plants"| Files["<span style='color:#000'>Rules (AGENTS.md, .cursorrules)<br />Skills (SKILL.md)<br />Memory (MEMORY.md)</span>"]
+        Files -->|"Auto-Loaded into Context"| Agent["Autonomous Agent"]
+        Agent -->|"Compromised Execution"| Env["Workspace / Tools"]
+
+        classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
+        classDef yellow fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000;
+        classDef blue fill:#e0e7ff,stroke:#5f6de9,stroke-width:2px,color:#000;
+        classDef purple fill:#ffe1f5,stroke:#d946ef,stroke-width:2px,color:#000;
+
+        class Attacker red;
+        class Files blue;
+        class Agent yellow;
+        class Env purple;
+    ```
+
+<br />
+
 -   **Agentic Tools**
 
     Attackers may exploit the vulnerabilities of external tools that perform actions on behalf of agents, by providing malicious content (context and instructions) that hijack the agent’s control flow.
