@@ -16,11 +16,11 @@ title: Bibliography
 [[11]](#ref-Deng:2011:LINDDUN)
 [[12]](#ref-FIRST:CVSS:WEB)
 [[13]](#ref-FIRST:CVSS:v4:SPEC)
-[[14]](#ref-MITRE:ATLAS:WEB)
-[[15]](#ref-MITRE:ATLAS:Matrix:WEB)
-[[16]](#ref-MITRE:ATTACK:WEB)
-[[17]](#ref-MITRE:CAPEC:WEB)
-[[18]](#ref-MITRE:CWE:WEB)
+[[14]](#ref-MITRE:ATTACK:WEB)
+[[15]](#ref-MITRE:CAPEC:WEB)
+[[16]](#ref-MITRE:CWE:WEB)
+[[17]](#ref-MITRE:ATLAS:WEB)
+[[18]](#ref-MITRE:ATLAS:Matrix:WEB)
 [[19]](#ref-NIST:AI:100-2e2025)
 [[20]](#ref-OWASP:TOP10:WEB)
 [[21]](#ref-OWASP:TOP10:LLM:WEB)
@@ -152,25 +152,9 @@ title: Bibliography
 
 <br />
 
-<div id="ref-MITRE:ATLAS:WEB" class="csl-entry">
-
-<span class="csl-left-margin">[14] </span><span class="csl-right-inline">“MITRE ATLAS™.” <a href="https://atlas.mitre.org/">https://atlas.mitre.org/</a>.</span>
-
-</div>
-
-<br />
-
-<div id="ref-MITRE:ATLAS:Matrix:WEB" class="csl-entry">
-
-<span class="csl-left-margin">[15] </span><span class="csl-right-inline">“ATLAS Matrix MITRE ATLAS™.” <a href="https://atlas.mitre.org/matrices/ATLAS">https://atlas.mitre.org/matrices/ATLAS</a>.</span>
-
-</div>
-
-<br />
-
 <div id="ref-MITRE:ATTACK:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[16] </span><span class="csl-right-inline">“MITRE ATT&CK.” <a href="https://attack.mitre.org/">https://attack.mitre.org/</a>.</span>
+<span class="csl-left-margin">[14] </span><span class="csl-right-inline">“MITRE ATT&CK.” <a href="https://attack.mitre.org/">https://attack.mitre.org/</a>.</span>
 
 </div>
 
@@ -178,7 +162,7 @@ title: Bibliography
 
 <div id="ref-MITRE:CAPEC:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[17] </span><span class="csl-right-inline">“CAPEC - Common Attack Pattern Enumeration and Classification (CAPEC™).” <a href="https://capec.mitre.org/index.html">https://capec.mitre.org/index.html</a>.</span>
+<span class="csl-left-margin">[15] </span><span class="csl-right-inline">“CAPEC - Common Attack Pattern Enumeration and Classification (CAPEC™).” <a href="https://capec.mitre.org/index.html">https://capec.mitre.org/index.html</a>.</span>
 
 </div>
 
@@ -186,7 +170,23 @@ title: Bibliography
 
 <div id="ref-MITRE:CWE:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[18] </span><span class="csl-right-inline">“CWE - Common Weakness Enumeration.” <a href="https://cwe.mitre.org/">https://cwe.mitre.org/</a>.</span>
+<span class="csl-left-margin">[16] </span><span class="csl-right-inline">“CWE - Common Weakness Enumeration.” <a href="https://cwe.mitre.org/">https://cwe.mitre.org/</a>.</span>
+
+</div>
+
+<br />
+
+<div id="ref-MITRE:ATLAS:WEB" class="csl-entry">
+
+<span class="csl-left-margin">[17] </span><span class="csl-right-inline">“MITRE ATLAS™.” <a href="https://atlas.mitre.org/">https://atlas.mitre.org/</a>.</span>
+
+</div>
+
+<br />
+
+<div id="ref-MITRE:ATLAS:Matrix:WEB" class="csl-entry">
+
+<span class="csl-left-margin">[18] </span><span class="csl-right-inline">“ATLAS Matrix MITRE ATLAS™.” <a href="https://atlas.mitre.org/matrices/ATLAS">https://atlas.mitre.org/matrices/ATLAS</a>.</span>
 
 </div>
 
