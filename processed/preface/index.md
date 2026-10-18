@@ -86,7 +86,7 @@ Gurple provides a variety of example code to help readers implement the concepts
 
 ## **Ready-to-Use Agent Skills**
 
-Beyond companion code for specific threat scenarios, Gurple supplies ready-to-use agent skills designed for autonomous AI agents. Located under [`.agents/skills/`](https://github.com/felipepenha/gurple/tree/main/.agents/skills), these skills provide executable tools and operational procedures for GenAI security assessments and Purple Teaming engagements.
+Beyond companion code for specific threat scenarios, Gurple supplies ready-to-use agent skills designed for autonomous AI agents. Located under [`.agents/skills/`](https://github.com/felipepenha/gurple/tree/main/.agents/skills), these skills provide executable tools and operational procedures for GenAI security assessments and Purple Teaming engagements. Detailed installation and lifecycle instructions using `npx skills` are available in the [skills README](https://github.com/felipepenha/gurple/blob/main/.agents/skills/README.md).
 
 ## **Extensive Literature and Tech Stack Review**
 
