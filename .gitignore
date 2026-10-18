@@ -27,7 +27,8 @@ dist/
 .agents/*
 !.agents/skills/
 
-# 3. Ignore everything inside skills/, but allow your two specific subfolders
+# 3. Ignore everything inside skills/, but allow specific subfolders and documentation
 .agents/skills/*
+!.agents/skills/README.md
 !.agents/skills/calculate-aivss/
 !.agents/skills/calculate-cvss/
