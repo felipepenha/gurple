@@ -22,7 +22,7 @@ Experienced speaker, both online and offline, having accumulated 45,000+ views o
 
 * [OWASP Vendor Evaluation Criteria for AI Red Teaming Providers & Tooling v1.0](https://genai.owasp.org/resource/owasp-vendor-evaluation-criteria-for-ai-red-teaming-providers-tooling-v1-0/) [Co-Author]
 
-* OWASP GenAI Red Teaming Manual [Upcoming - Co-Author]
+* [OWASP GenAI Red Teaming Manual](https://genai.owasp.org/resource/genai-red-teaming-manual-version-1-0/) [Co-Author]
 
 * OWASP AI Red Teaming Scoping Guide [Upcoming - Co-Author]
 
