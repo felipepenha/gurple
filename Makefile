@@ -51,7 +51,8 @@ $(BUILD_DIR)/%.md: $(SRC_DIR)/%.md
 	@mkdir -p $(dir $@)
 	@cp $< $@
 	@sed -i '' 's/^!!!/* !!!/g' $@
-	pandoc $@ -f markdown-simple_tables-multiline_tables-grid_tables --wrap=preserve --bibliography=Gurple.bib --csl=ieee.csl -M link-citations=true -M reference-section-title="References" --citeproc --lua-filter=docs/lua-filter.lua -t gfm -o $@
+	@uv run python -c "import re; p='$@'; s=open(p).read(); open(p, 'w').write(re.sub(r'^---\r?\n.*?\r?\n---(?:\r?\n|$$)', '', s, flags=re.DOTALL))"
+	pandoc $@ -f markdown-simple_tables-multiline_tables-grid_tables-yaml_metadata_block --wrap=preserve --bibliography=Gurple.bib --csl=ieee.csl -M link-citations=true -M reference-section-title="References" --citeproc --lua-filter=docs/lua-filter.lua -t gfm -o $@
 	sed -i '' 's/\\\[/[/g' $@
 	sed -i '' 's/\\\]/]/g' $@
 	sed -i '' 's/^``` /```/g' $@
