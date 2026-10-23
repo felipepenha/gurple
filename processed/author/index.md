@@ -1,6 +1,7 @@
 <div style="text-align: center; color:var(--aurora)">
 
 <h1 style="color:var(--aurora); font-size: 3em; font-weight: bold;">
+
 About the Author
 </h1>
 
@@ -22,22 +23,22 @@ Experienced speaker, both online and offline, having accumulated 45,000+ views o
 
 ## **Cybersecurity Publications**
 
--   [OWASP GenAI Data Security Risks & Mitigations 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/) [Co-Author]
+- [OWASP GenAI Data Security Risks & Mitigations 2026](https://genai.owasp.org/resource/owasp-genai-data-security-risks-mitigations-2026/) [Co-Author]
 
--   [OWASP Vendor Evaluation Criteria for AI Red Teaming Providers & Tooling v1.0](https://genai.owasp.org/resource/owasp-vendor-evaluation-criteria-for-ai-red-teaming-providers-tooling-v1-0/) [Co-Author]
+- [OWASP Vendor Evaluation Criteria for AI Red Teaming Providers & Tooling v1.0](https://genai.owasp.org/resource/owasp-vendor-evaluation-criteria-for-ai-red-teaming-providers-tooling-v1-0/) [Co-Author]
 
--   OWASP GenAI Red Teaming Manual [Upcoming - Co-Author]
+- [OWASP GenAI Red Teaming Manual](https://genai.owasp.org/resource/genai-red-teaming-manual-version-1-0/) [Co-Author]
 
--   OWASP AI Red Teaming Scoping Guide [Upcoming - Co-Author]
+- OWASP AI Red Teaming Scoping Guide [Upcoming - Co-Author]
 
 ## **Cybersecurity Open Source Code**
 
--   [OWASP GenAI-Security-Project/GenAI-Red-Team-Lab](https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab)
+- [OWASP GenAI-Security-Project/GenAI-Red-Team-Lab](https://github.com/GenAI-Security-Project/GenAI-Red-Team-Lab)
 
 ## **Other Pages**
 
--   [DataScienceBits YouTube Channel](https://www.youtube.com/c/DataScienceBits)
--   [GitHub Profile](https://github.com/felipepenha)
+- [DataScienceBits YouTube Channel](https://www.youtube.com/c/DataScienceBits)
+- [GitHub Profile](https://github.com/felipepenha)
 
 ## **Suggestions for the Book**
 
@@ -45,5 +46,5 @@ Feel free to open new entries at the [GitHub Issues Page](https://github.com/fel
 
 ## **Contact**
 
--   <felipe.penha@owasp.org>
--   [LinkedIn](https://linkedin.com/in/fcpenha)
+- <felipe.penha@owasp.org>
+- [LinkedIn](https://linkedin.com/in/fcpenha)

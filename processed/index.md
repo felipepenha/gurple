@@ -1,6 +1,7 @@
 <div style="text-align: center; color:var(--aurora)">
 
 <h1 style="color:var(--aurora); margin-bottom: 0px; font-size: 4em; font-weight: bold;">
+
 Gurple
 </h1>
 
@@ -9,6 +10,7 @@ Gurple
 <div style="text-align: center; color:var(--aurora)">
 
 <h1 style="color:var(--aurora); margin-bottom: 0px; font-size: 2.25em; font-weight: bold;">
+
 GenAI Security for Purple Teams
 </h1>
 

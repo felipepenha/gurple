@@ -1,9 +1,12 @@
 <div style="text-align: center; color:var(--aurora)">
 
 <p style="font-size: 8em; margin-top: 0px; margin-bottom: 0px; font-weight: bold;">
+
 3
 </p>
+
 <h1 style="color:var(--aurora); font-size: 3em; font-weight: bold;">
+
 Threats
 </h1>
 
@@ -14,6 +17,7 @@ This chapter provides a comprehensive overview of the Threats specific to GenAI 
 The [SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/) [[1]](#ref-SCF:CP-RMM:Web) [[2]](#ref-SCF:CP-RMM:PDF:v2025-2) Threat Catalogue presents two independent entries that fit GenAI Security: **MT-2** and **MT-13**, as seen in Figure 2.
 
 <p align="center" markdown="1">
+
 <img src="./images/SCF-CPRMM-MT-2.png" alt="MT-2" style="background-color: white;" />
 <img src="./images/SCF-CPRMM-MT-13.png" alt="MT-13" style="background-color: white;" />
 <br />
@@ -56,6 +60,7 @@ flowchart LR
 ```
 
 <p align="center" markdown="1">
+
 <em>Figure 3: Extension of the SCF C\|P-RMM Threat Catalogue to detail specific GenAI Security Threats.</em>
 </p>
 
@@ -69,21 +74,20 @@ For more information on the various possibilities of how these Threats can be de
 
 The table below catalogs the threat categories and specific threat variants published in Gurple.
 
-| **ID**  | **Category**       | **Threat**                                                                    | **Type**          |
-|:--------|:-------------------|:------------------------------------------------------------------------------|:------------------|
-| G-0.1   | Prompt Injection   | [Prompt Injection](./prompt_injection/index.md)                               | Category Overview |
-| G-0.1.1 | Prompt Injection   | [Exfiltration Through Deserialization](./prompt_injection/deserialization.md) | Threat Variant    |
-| G-0.2   | Jailbreaking       | [Jailbreaking](./jailbreaking/index.md)                                       | Category Overview |
-| G-0.3   | Workflow Injection | [Workflow Injection](./workflow_injection/index.md)                           | Category Overview |
-| G-0.3.1 | Workflow Injection | [Remote Code Execution](./workflow_injection/remote_code_execution.md)        | Threat Variant    |
+| **ID** | **Category** | **Threat** | **Type** |
+|:---|:---|:---|:---|
+| G-0.1 | Prompt Injection | [Prompt Injection](./prompt_injection/index.md) | Category Overview |
+| G-0.1.1 | Prompt Injection | [Exfiltration Through Deserialization](./prompt_injection/deserialization.md) | Threat Variant |
+| G-0.2 | Jailbreaking | [Jailbreaking](./jailbreaking/index.md) | Category Overview |
+| G-0.3 | Workflow Injection | [Workflow Injection](./workflow_injection/index.md) | Category Overview |
+| G-0.3.1 | Workflow Injection | [Remote Code Execution](./workflow_injection/remote_code_execution.md) | Threat Variant |
 
 <br />
-
----
+&#10;---
 
 # References
 
-<div id="refs" class="references csl-bib-body">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0">
 
 <div id="ref-SCF:CP-RMM:Web" class="csl-entry">
 

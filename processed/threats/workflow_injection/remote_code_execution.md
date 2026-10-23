@@ -14,23 +14,23 @@ Remote Code Execution (RCE) via Workflow Injection occurs when an attacker manip
 
 Refer to the [Workflow Injection Map](./index.md#map) for a higher-level map.
 
-| **Framework**                                                                                                                 | **ID**                                                                                                             | **Title**                                                                                        |
-|:------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|
-| **[Gurple](https://felipepenha.github.io/gurple/threats/)**                                                                   | G-0.3.1                                                                                                            | Workflow Injection & Remote Code Execution                                                       |
-| **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)**                                           | [R-BC-4](https://securecontrolsframework.com/free/risk-management-model/)                                          | Business Continuity & Information loss / corruption or system compromise due to technical attack |
-| **[CSA LLM Threats Taxonomy](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy)**     | [Insecure Apps/Plugins](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy) | Insecure Apps/Plugins                                                                            |
-| **[CSA MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)**             | [L2](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)               | Agent Operations Layer (Execution Environment & Runtime Integrity)                               |
-| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)**                                                                     | [AML.TA0005](https://atlas.mitre.org/tactics/AML.TA0005)                                                           | Execution                                                                                        |
-| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)**                                                                     | [AML.T0053](https://atlas.mitre.org/techniques/AML.T0053)                                                          | LLM Prompt Injection via Workflow                                                                |
-| **[MITRE ATT&CK](https://attack.mitre.org/)**                                                                                 | [TA0002](https://attack.mitre.org/tactics/TA0002/)                                                                 | Execution                                                                                        |
-| **[MITRE ATT&CK](https://attack.mitre.org/)**                                                                                 | [T1059](https://attack.mitre.org/techniques/T1059/)                                                                | Command and Scripting Interpreter                                                                |
-| **[MITRE CAPEC](https://capec.mitre.org/)**                                                                                   | [CAPEC-88](https://capec.mitre.org/data/definitions/88.html)                                                       | OS Command Injection                                                                             |
-| **[MITRE CWE](https://cwe.mitre.org/)**                                                                                       | [CWE-78](https://cwe.mitre.org/data/definitions/78.html)                                                           | Improper Neutralization of Special Elements used in an OS Command (‘OS Command Injection’)       |
-| **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)**                                                         | [3.3.2](https://doi.org/10.6028/NIST.AI.100-2e2023)                                                                | Indirect Prompt Injection                                                                        |
-| **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)**                                                         | [NISTAML.015:2025](https://doi.org/10.6028/NIST.AI.100-2e2025)                                                     | Indirect Prompt Injection                                                                        |
-| **[OWASP Top 10](https://owasp.org/www-project-top-ten/)**                                                                    | [A03:2021](https://owasp.org/Top10/2021/A03_2021-Injection/)                                                       | Injection                                                                                        |
-| **[OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** | [ASI05:2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)                     | Unexpected Code Execution (RCE)                                                                  |
-| **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)**          | [LLM08:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/)                             | Agency and Autonomous Action                                                                     |
+| **Framework** | **ID** | **Title** |
+|:---|:---|:---|
+| **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-0.3.1 | Workflow Injection & Remote Code Execution |
+| **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-BC-4](https://securecontrolsframework.com/free/risk-management-model/) | Business Continuity & Information loss / corruption or system compromise due to technical attack |
+| **[CSA LLM Threats Taxonomy](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy)** | [Insecure Apps/Plugins](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy) | Insecure Apps/Plugins |
+| **[CSA MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)** | [L2](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro) | Agent Operations Layer (Execution Environment & Runtime Integrity) |
+| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.TA0005](https://atlas.mitre.org/tactics/AML.TA0005) | Execution |
+| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.T0053](https://atlas.mitre.org/techniques/AML.T0053) | LLM Prompt Injection via Workflow |
+| **[MITRE ATT&CK](https://attack.mitre.org/)** | [TA0002](https://attack.mitre.org/tactics/TA0002/) | Execution |
+| **[MITRE ATT&CK](https://attack.mitre.org/)** | [T1059](https://attack.mitre.org/techniques/T1059/) | Command and Scripting Interpreter |
+| **[MITRE CAPEC](https://capec.mitre.org/)** | [CAPEC-88](https://capec.mitre.org/data/definitions/88.html) | OS Command Injection |
+| **[MITRE CWE](https://cwe.mitre.org/)** | [CWE-78](https://cwe.mitre.org/data/definitions/78.html) | Improper Neutralization of Special Elements used in an OS Command (‘OS Command Injection’) |
+| **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)** | [3.3.2](https://doi.org/10.6028/NIST.AI.100-2e2023) | Indirect Prompt Injection |
+| **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)** | [NISTAML.015:2025](https://doi.org/10.6028/NIST.AI.100-2e2025) | Indirect Prompt Injection |
+| **[OWASP Top 10](https://owasp.org/www-project-top-ten/)** | [A03:2021](https://owasp.org/Top10/2021/A03_2021-Injection/) | Injection |
+| **[OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** | [ASI05:2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | Unexpected Code Execution (RCE) |
+| **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM08:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Agency and Autonomous Action |
 
 <br />
 
@@ -41,6 +41,7 @@ Refer to the [Workflow Injection Map](./index.md#map) for a higher-level map.
 Starting from a seemingly benign user input, the attacker leverages an Agent’s permitted capabilities (or a vulnerability in the parser) to map data directly into a workflow parameter. In this scenario, the agent acts as an unverified bridge passing unsanitized injection material directly into the workflow engine.
 
 <p align="center" markdown="1">
+
 <img src="../images/CWE-78-Diagram.png" alt="CWE-78 OS Command Injection Diagram" />
 <br />
 <em>Figure 1: Diagram depicting execution of injected OS commands [[1]](#ref-MITRE:CWE:78).</em>
@@ -52,18 +53,18 @@ To result in **Remote Code Execution**, the payload is typically designed to lev
 
 **Remote Code Execution** via workflow injection can be initiated anywhere the orchestrator accepts configuration state or external parameters that route through file-system or shell-execution nodes.
 
--   [x] **The Front Door** 🚪 — **Network & Application Interfaces**
-    -   [x] **Application Programming Interface (API) Endpoints**
-    -   [x] **User Interface (UI)** (Submitting malicious configurations)
--   [x] **The Side Door** 🚪 — **Supply Chain**
-    -   [x] **Malicious Workflow Templates**
-    -   [x] **Compromised Plugins or Nodes**
--   [x] **The Back Door** 🚪 — **Data Storage**
-    -   [x] **Database Poisoning yielding malicious configuration**
--   [x] **The Hidden Door** 🚪 — **Event-Driven & Serverless Triggers**
-    -   [x] **Indirect Sources** (e.g., Email or Slack parsers connected to a write node)
-    -   [x] **Agentic Tools** (LLM-generated workflow states)
-    -   [x] **Model Context Protocol (MCP)**
+- [x] **The Front Door** 🚪 — **Network & Application Interfaces**
+  - [x] **Application Programming Interface (API) Endpoints**
+  - [x] **User Interface (UI)** (Submitting malicious configurations)
+- [x] **The Side Door** 🚪 — **Supply Chain**
+  - [x] **Malicious Workflow Templates**
+  - [x] **Compromised Plugins or Nodes**
+- [x] **The Back Door** 🚪 — **Data Storage**
+  - [x] **Database Poisoning yielding malicious configuration**
+- [x] **The Hidden Door** 🚪 — **Event-Driven & Serverless Triggers**
+  - [x] **Indirect Sources** (e.g., Email or Slack parsers connected to a write node)
+  - [x] **Agentic Tools** (LLM-generated workflow states)
+  - [x] **Model Context Protocol (MCP)**
 
 <br />
 
@@ -109,16 +110,16 @@ A full system compromise, particularly when executed through an orchestrated Gen
 
 Reported vulnerabilities:
 
-| **Vulnerability IDs**                                                                                                                                                    | **Description**                                                                    |
-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------|
+| **Vulnerability IDs** | **Description** |
+|:---|:---|
 | \- [CVE-2026-21877](https://nvd.nist.gov/vuln/detail/CVE-2026-21877)<br />- [GHSA-v364-rw7m-3263](https://github.com/n8n-io/n8n/security/advisories/GHSA-v364-rw7m-3263) | n8n arbitrary file write vulnerability enables authenticated remote code execution |
 
 Vulnerability scoring:
 
-| **Vulnerability**  | **Framework**                                 | **Vector / ID**                                                                    | **Score / Decision** |
-|:-------------------|:----------------------------------------------|:-----------------------------------------------------------------------------------|:---------------------|
-| **CVE-2026-21877** | **[FIRST CVSS](https://www.first.org/cvss/)** | `CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H`                                     | 9.9 (Critical)       |
-| **CVE-2026-21877** | **[OWASP AIVSS](https://aivss.owasp.org/)**   | `AIVSS:0.8/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H/AT:P/L:D/DG:H/AC:E/T:O/D:S/M:A/E:D` | 10.0 / Immediate     |
+| **Vulnerability** | **Framework** | **Vector / ID** | **Score / Decision** |
+|:---|:---|:---|:---|
+| **CVE-2026-21877** | **[FIRST CVSS](https://www.first.org/cvss/)** | `CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H` | 9.9 (Critical) |
+| **CVE-2026-21877** | **[OWASP AIVSS](https://aivss.owasp.org/)** | `AIVSS:0.8/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H/AT:P/L:D/DG:H/AC:E/T:O/D:S/M:A/E:D` | 10.0 / Immediate |
 
 This vulnerability highlights the severe consequences of granting workflow automation tools overly permissive access to their underlying filesystem, especially when those tools process AI-generated dynamic inputs.
 
@@ -132,10 +133,10 @@ The vulnerability involves two stages:
 
 **Attack Vectors:**
 
--   **Path Traversal to Code Execution**:
-    The attacker leverages a lack of input validation on the file path string parameter within the File Write node `(/../../../../tmp/evil.js)`.
--   **Abuse of Execute Command Nodes**:
-    If the n8n environment has the `Execute Command` node enabled (which administrators sometimes enable for internal scripting), the attacker can directly pipe chained OS commands if any input to that node traverses through an unsanitized AI output.
+- **Path Traversal to Code Execution**:
+  The attacker leverages a lack of input validation on the file path string parameter within the File Write node `(/../../../../tmp/evil.js)`.
+- **Abuse of Execute Command Nodes**:
+  If the n8n environment has the `Execute Command` node enabled (which administrators sometimes enable for internal scripting), the attacker can directly pipe chained OS commands if any input to that node traverses through an unsanitized AI output.
 
 <br />
 
@@ -206,6 +207,7 @@ graph LR
 ```
 
 <p align="center" markdown="1">
+
 <em>Figure 2: Execution flow of a generic n8n Remote Code Execution attack.</em>
 </p>
 
@@ -217,9 +219,9 @@ graph LR
 
 ## **Mitigation**
 
--   **Disable Dangerous Nodes**: In tools like n8n, restrict or completely disable access to nodes that interact broadly with the operating system if they are not strictly needed. For example, disable the **Execute Command** node using environment variables (`N8N_NODES_EXCLUDE`).
--   **Harden Filesystem Access**: Run workflow orchestrators with minimal privileges and restrict directory access. In n8n, utilize the `N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS` and define explicit allowed paths using `N8N_FILE_ACCESS_LOCAL_FILES_STRICT` or mount read-only storage where appropriate to thwart File Write abuses.
--   **LLM Input/Output Validation**: Implement strict validation blocks *between* the LLM node and any node that interacts with core infrastructure. Ensure path variables only match an expected regex, blocking anything that contains standard traversal operators `(../)`.
+- **Disable Dangerous Nodes**: In tools like n8n, restrict or completely disable access to nodes that interact broadly with the operating system if they are not strictly needed. For example, disable the **Execute Command** node using environment variables (`N8N_NODES_EXCLUDE`).
+- **Harden Filesystem Access**: Run workflow orchestrators with minimal privileges and restrict directory access. In n8n, utilize the `N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS` and define explicit allowed paths using `N8N_FILE_ACCESS_LOCAL_FILES_STRICT` or mount read-only storage where appropriate to thwart File Write abuses.
+- **LLM Input/Output Validation**: Implement strict validation blocks *between* the LLM node and any node that interacts with core infrastructure. Ensure path variables only match an expected regex, blocking anything that contains standard traversal operators `(../)`.
 
 The full **Blue Team** mitigation pipeline is depicted in Figure 3.
 
@@ -264,6 +266,7 @@ flowchart LR
 ```
 
 <p align="center" markdown="1">
+
 <em>Figure 3: **Blue Team** hardened workflow pipeline.</em>
 </p>
 
@@ -287,12 +290,11 @@ N8N_FILE_ACCESS_LOCAL_FILES_STRICT=true
 Monitor system logs for file writes executing out of bounds, such as inside `/tmp/`, and trigger alerts on attempts to utilize specific disabled nodes. Since workflow engines output logs for execution pipelines, look out for excessive use of structural path traversal characters (`../`) originating directly from LLM execution nodes.
 
 <br />
-
----
+&#10;---
 
 # References
 
-<div id="refs" class="references csl-bib-body">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0">
 
 <div id="ref-MITRE:CWE:78" class="csl-entry">
 

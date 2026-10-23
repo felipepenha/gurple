@@ -1,6 +1,7 @@
 <div style="text-align: center; color:var(--aurora)">
 
 <h1 style="color:var(--aurora); font-size: 3em; font-weight: bold;">
+
 Introduction
 </h1>
 
@@ -32,9 +33,9 @@ A GenAI Red Team adopts the mindset of an attacker to rigorously stress-test Gen
 
 It is important to distinguish Red Teaming from Penetration Testing (Pentesting), as the terms are often used interchangeably but represent different approaches.
 
--   **Penetration Testing** is typically time-boxed and scope-limited, focusing on identifying as many vulnerabilities as possible within a specific system or application. For example, in the context of GenAI, a penetration test might attempt to find a chatbot’s vulnerability to a pre-defined set of prompt injection attacks.
+- **Penetration Testing** is typically time-boxed and scope-limited, focusing on identifying as many vulnerabilities as possible within a specific system or application. For example, in the context of GenAI, a penetration test might attempt to find a chatbot’s vulnerability to a pre-defined set of prompt injection attacks.
 
--   **Red Teaming** is objective-driven and adversarial. It simulates a full-spectrum attack across technology, personnel, processes, and detection capabilities. A Red Team operation might attempt to use a GenAI agent to pivot into the internal network or exfiltrate sensitive data without triggering security alerts, mimicking the tactics of a sophisticated threat actor.
+- **Red Teaming** is objective-driven and adversarial. It simulates a full-spectrum attack across technology, personnel, processes, and detection capabilities. A Red Team operation might attempt to use a GenAI agent to pivot into the internal network or exfiltrate sensitive data without triggering security alerts, mimicking the tactics of a sophisticated threat actor.
 
 ### **Blue Teams**
 

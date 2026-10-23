@@ -4,6 +4,7 @@ title: Blog
 <div style="text-align: center; color:var(--aurora)">
 
 <h1 style="color:var(--aurora); font-size: 3em; font-weight: bold;">
+
 Blog
 </h1>
 

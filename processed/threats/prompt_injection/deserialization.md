@@ -14,23 +14,23 @@ Deserialization of untrusted data occurs when an application deserializes data f
 
 Refer to the [Prompt Injection Map](./index.md#map) for a higher-level map.
 
-| **Framework**                                                                                                                 | **ID**                                                                                                                 | **Title**                                                                                        |
-|:------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|
-| **[Gurple](https://felipepenha.github.io/gurple/threats/)**                                                                   | G-0.1.1                                                                                                                | Prompt Injection & Exfiltration Through Deserialization                                          |
-| **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)**                                           | [R-BC-4](https://securecontrolsframework.com/free/risk-management-model/)                                              | Business Continuity & Information loss / corruption or system compromise due to technical attack |
-| **[CSA LLM Threats Taxonomy](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy)**     | [Sensitive Data Disclosure](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy) | Sensitive Data Disclosure                                                                        |
-| **[CSA MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)**             | [L2](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)                   | Agent Operations Layer (State & Tool Deserialization Integrity)                                  |
-| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)**                                                                     | [AML.TA0010](https://atlas.mitre.org/tactics/AML.TA0010)                                                               | Exfiltration                                                                                     |
-| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)**                                                                     | [AML.T0048](https://atlas.mitre.org/techniques/AML.T0048)                                                              | Exfiltration via User Interface                                                                  |
-| **[MITRE ATT&CK](https://attack.mitre.org/)**                                                                                 | [TA0010](https://attack.mitre.org/tactics/TA0010/)                                                                     | Exfiltration                                                                                     |
-| **[MITRE ATT&CK](https://attack.mitre.org/)**                                                                                 | [T1041](https://attack.mitre.org/techniques/T1041/)                                                                    | Exfiltration Over C2 Channel                                                                     |
-| **[MITRE CAPEC](https://capec.mitre.org/)**                                                                                   | [CAPEC-586](https://capec.mitre.org/data/definitions/586.html)                                                         | Object Deserialization Execution                                                                 |
-| **[MITRE CWE](https://cwe.mitre.org/)**                                                                                       | [CWE-502](https://cwe.mitre.org/data/definitions/502.html)                                                             | Deserialization of Untrusted Data                                                                |
-| **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)**                                                         | [3.2.1](https://doi.org/10.6028/NIST.AI.100-2e2023)                                                                    | Deserialization Vulnerability                                                                    |
-| **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)**                                                         | [NISTAML.013:2025](https://doi.org/10.6028/NIST.AI.100-2e2025)                                                         | AI Supply Chain and Deserialization                                                              |
-| **[OWASP Top 10](https://owasp.org/www-project-top-ten/)**                                                                    | [A08:2021](https://owasp.org/Top10/2021/A08_2021-Software_and_Data_Integrity_Failures/)                                | Software and Data Integrity Failures                                                             |
-| **[OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** | [ASI05:2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)                         | Unexpected Code Execution (RCE)                                                                  |
-| **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)**          | [LLM02:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/)                                 | Sensitive Information Disclosure                                                                 |
+| **Framework** | **ID** | **Title** |
+|:---|:---|:---|
+| **[Gurple](https://felipepenha.github.io/gurple/threats/)** | G-0.1.1 | Prompt Injection & Exfiltration Through Deserialization |
+| **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-BC-4](https://securecontrolsframework.com/free/risk-management-model/) | Business Continuity & Information loss / corruption or system compromise due to technical attack |
+| **[CSA LLM Threats Taxonomy](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy)** | [Sensitive Data Disclosure](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy) | Sensitive Data Disclosure |
+| **[CSA MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)** | [L2](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro) | Agent Operations Layer (State & Tool Deserialization Integrity) |
+| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.TA0010](https://atlas.mitre.org/tactics/AML.TA0010) | Exfiltration |
+| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.T0048](https://atlas.mitre.org/techniques/AML.T0048) | Exfiltration via User Interface |
+| **[MITRE ATT&CK](https://attack.mitre.org/)** | [TA0010](https://attack.mitre.org/tactics/TA0010/) | Exfiltration |
+| **[MITRE ATT&CK](https://attack.mitre.org/)** | [T1041](https://attack.mitre.org/techniques/T1041/) | Exfiltration Over C2 Channel |
+| **[MITRE CAPEC](https://capec.mitre.org/)** | [CAPEC-586](https://capec.mitre.org/data/definitions/586.html) | Object Deserialization Execution |
+| **[MITRE CWE](https://cwe.mitre.org/)** | [CWE-502](https://cwe.mitre.org/data/definitions/502.html) | Deserialization of Untrusted Data |
+| **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)** | [3.2.1](https://doi.org/10.6028/NIST.AI.100-2e2023) | Deserialization Vulnerability |
+| **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)** | [NISTAML.013:2025](https://doi.org/10.6028/NIST.AI.100-2e2025) | AI Supply Chain and Deserialization |
+| **[OWASP Top 10](https://owasp.org/www-project-top-ten/)** | [A08:2021](https://owasp.org/Top10/2021/A08_2021-Software_and_Data_Integrity_Failures/) | Software and Data Integrity Failures |
+| **[OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** | [ASI05:2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | Unexpected Code Execution (RCE) |
+| **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM02:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Sensitive Information Disclosure |
 
 <br />
 
@@ -41,6 +41,7 @@ Refer to the [Prompt Injection Map](./index.md#map) for a higher-level map.
 Starting from a safe serialized object in the expected format, the attacker crafts a tampered object that evades deserialization controls. The payload is then injected into user input to the GenAI system (e.g., user prompts, forms, attached data).
 
 <p align="center" markdown="1">
+
 <img src="../images/CWE-502-Diagram.png" alt="CWE-502 Deserialization Diagram" />
 <br />
 <em>Figure 1: Deserialization of Untrusted Data [[2]](#ref-MITRE:CWE502:Deserialization).</em>
@@ -52,31 +53,31 @@ To result in **Exfiltration**, the payload is specifically engineered to output 
 
 **Exfiltration Through Deserialization** attacks can be executed through any **Entry Point** where a serialized object could be passed on to the system, even if disguised as regular text or data, to be later deserialized.
 
--   [x] **The Front Door** 🚪 — **Network & Application Interfaces**
+- [x] **The Front Door** 🚪 — **Network & Application Interfaces**
 
-    -   [x] **Application Programming Interface (API) Endpoints**
+  - [x] **Application Programming Interface (API) Endpoints**
 
-    -   [x] **User Interface (UI)**
+  - [x] **User Interface (UI)**
 
-    -   [x] **Sensors**
+  - [x] **Sensors**
 
-        *Note: Nothing really prevents an attacker from writing a serialized object on a QR code, a sign, or a t-shirt and presenting it to a camera, or dictating it to a voice-activated assistant.*
+    *Note: Nothing really prevents an attacker from writing a serialized object on a QR code, a sign, or a t-shirt and presenting it to a camera, or dictating it to a voice-activated assistant.*
 
-    -   [ ] **Observability Integration Interfaces**
+  - [ ] **Observability Integration Interfaces**
 
--   [x] **The Side Door** 🚪 — **Supply Chain**
+- [x] **The Side Door** 🚪 — **Supply Chain**
 
-    *Note: Exploitation of deserialization vulnerabilities in dependencies.*
+  *Note: Exploitation of deserialization vulnerabilities in dependencies.*
 
--   [x] **The Back Door** 🚪 — **Data Storage**
+- [x] **The Back Door** 🚪 — **Data Storage**
 
--   [x] **The Hidden Door** 🚪 — **Event-Driven & Serverless Triggers**
+- [x] **The Hidden Door** 🚪 — **Event-Driven & Serverless Triggers**
 
-    -   [x] **Indirect Sources**
-    -   [x] **Agentic Tools**
-    -   [x] **Model Context Protocol (MCP)**
-    -   [x] **Agent2Agent Protocol (A2A)**
-    -   [x] **Infrastructure Events**
+  - [x] **Indirect Sources**
+  - [x] **Agentic Tools**
+  - [x] **Model Context Protocol (MCP)**
+  - [x] **Agent2Agent Protocol (A2A)**
+  - [x] **Infrastructure Events**
 
 <br />
 
@@ -129,34 +130,34 @@ There are no known reports of successful attacks impacting businesses. Therefore
 
 Reported vulnerabilities:
 
-| **Vulnerability IDs**                                                                                                                                | **Description**                                                                               |
-|:-----------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------|
+| **Vulnerability IDs** | **Description** |
+|:---|:---|
 | \- [CVE-2025-68664](https://nvd.nist.gov/vuln/detail/CVE-2025-68664)<br />- [GHSA-c67j-w6g6-q2cm](https://github.com/advisories/GHSA-c67j-w6g6-q2cm) | LangChain serialization injection vulnerability enables secret extraction in dumps/loads APIs |
-| \- [CVE-2025-68665](https://nvd.nist.gov/vuln/detail/CVE-2025-68665)<br />- [GHSA-r399-636x-v7f6](https://github.com/advisories/GHSA-r399-636x-v7f6) | LangChain serialization injection vulnerability enables secret extraction                     |
+| \- [CVE-2025-68665](https://nvd.nist.gov/vuln/detail/CVE-2025-68665)<br />- [GHSA-r399-636x-v7f6](https://github.com/advisories/GHSA-r399-636x-v7f6) | LangChain serialization injection vulnerability enables secret extraction |
 
 Vulnerability scoring:
 
-| **Vulnerability**  | **Framework**                                 | **Vector / ID**                                                                    | **Score / Decision** |
-|:-------------------|:----------------------------------------------|:-----------------------------------------------------------------------------------|:---------------------|
-| **CVE-2025-68664** | **[FIRST CVSS](https://www.first.org/cvss/)** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N`                                     | 9.3 (Critical)       |
-| **CVE-2025-68664** | **[OWASP AIVSS](https://aivss.owasp.org/)**   | `AIVSS:0.8/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N/AT:P/L:D/DG:H/AC:E/T:O/D:S/M:A/E:D` | 10.0 / Immediate     |
-| **CVE-2025-68665** | **[FIRST CVSS](https://www.first.org/cvss/)** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N`                                     | 8.6 (High)           |
-| **CVE-2025-68665** | **[OWASP AIVSS](https://aivss.owasp.org/)**   | `AIVSS:0.8/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N/AT:P/L:D/DG:H/AC:E/T:O/D:S/M:A/E:D` | 10.0 / Immediate     |
+| **Vulnerability** | **Framework** | **Vector / ID** | **Score / Decision** |
+|:---|:---|:---|:---|
+| **CVE-2025-68664** | **[FIRST CVSS](https://www.first.org/cvss/)** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N` | 9.3 (Critical) |
+| **CVE-2025-68664** | **[OWASP AIVSS](https://aivss.owasp.org/)** | `AIVSS:0.8/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:L/A:N/AT:P/L:D/DG:H/AC:E/T:O/D:S/M:A/E:D` | 10.0 / Immediate |
+| **CVE-2025-68665** | **[FIRST CVSS](https://www.first.org/cvss/)** | `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N` | 8.6 (High) |
+| **CVE-2025-68665** | **[OWASP AIVSS](https://aivss.owasp.org/)** | `AIVSS:0.8/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N/AT:P/L:D/DG:H/AC:E/T:O/D:S/M:A/E:D` | 10.0 / Immediate |
 
 Additional mapping, for this specific case study:
 
-| **Framework**                                                                                                             | **ID**                                                                                                             | **Title**                                                       |
-|:--------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------|
-| **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)**                                       | [R-SC-3](https://securecontrolsframework.com/free/risk-management-model/)                                          | Third-party supply chain relationships, visibility and controls |
-| **[CSA LLM Threats Taxonomy](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy)** | [Insecure Supply Chain](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy) | Insecure Supply Chain                                           |
-| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)**                                                                 | [AML.T0010](https://atlas.mitre.org/techniques/AML.T0010)                                                          | AI Supply Chain Compromise                                      |
-| **[MITRE ATT&CK](https://attack.mitre.org/)**                                                                             | [T1195](https://attack.mitre.org/techniques/T1195/)                                                                | Supply Chain Compromise                                         |
-| **[MITRE CWE](https://cwe.mitre.org/)**                                                                                   | [CWE-1357](https://cwe.mitre.org/data/definitions/1357.html)                                                       | Reliance on Insufficiently Trustworthy Component                |
-| **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)**                                                     | [3.2](https://doi.org/10.6028/NIST.AI.100-2e2023)                                                                  | AI Supply Chain Attacks and Mitigations                         |
-| **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)**                                                     | [3.2.1](https://doi.org/10.6028/NIST.AI.100-2e2023)                                                                | Deserialization Vulnerability                                   |
-| **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)**                                                     | [NISTAML.013:2025](https://doi.org/10.6028/NIST.AI.100-2e2025)                                                     | AI Supply Chain and Deserialization                             |
-| **[OWASP Top 10](https://owasp.org/www-project-top-ten/)**                                                                | [A06:2021](https://owasp.org/Top10/2021/A08_2021-Software_and_Data_Integrity_Failures/)                            | Vulnerable and Outdated Components                              |
-| **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)**      | [LLM03:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/)                             | Supply Chain                                                    |
+| **Framework** | **ID** | **Title** |
+|:---|:---|:---|
+| **[SCF C\|P-RMM](https://securecontrolsframework.com/free/risk-management-model/)** | [R-SC-3](https://securecontrolsframework.com/free/risk-management-model/) | Third-party supply chain relationships, visibility and controls |
+| **[CSA LLM Threats Taxonomy](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy)** | [Insecure Supply Chain](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy) | Insecure Supply Chain |
+| **[MITRE ATLAS](https://atlas.mitre.org/matrices/ATLAS)** | [AML.T0010](https://atlas.mitre.org/techniques/AML.T0010) | AI Supply Chain Compromise |
+| **[MITRE ATT&CK](https://attack.mitre.org/)** | [T1195](https://attack.mitre.org/techniques/T1195/) | Supply Chain Compromise |
+| **[MITRE CWE](https://cwe.mitre.org/)** | [CWE-1357](https://cwe.mitre.org/data/definitions/1357.html) | Reliance on Insufficiently Trustworthy Component |
+| **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)** | [3.2](https://doi.org/10.6028/NIST.AI.100-2e2023) | AI Supply Chain Attacks and Mitigations |
+| **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)** | [3.2.1](https://doi.org/10.6028/NIST.AI.100-2e2023) | Deserialization Vulnerability |
+| **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)** | [NISTAML.013:2025](https://doi.org/10.6028/NIST.AI.100-2e2025) | AI Supply Chain and Deserialization |
+| **[OWASP Top 10](https://owasp.org/www-project-top-ten/)** | [A06:2021](https://owasp.org/Top10/2021/A08_2021-Software_and_Data_Integrity_Failures/) | Vulnerable and Outdated Components |
+| **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM03:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Supply Chain |
 
 <br />
 
@@ -193,16 +194,16 @@ print(deserialized["user_data"])  # "sk-secret-key-12345" - SECRET LEAKED!
 
 **Attack Vectors:**
 
--   **Secret Exfiltration (Default Behavior)**:
-    Prior to the patch, the `secrets_from_env` parameter involved in deserialization was set to `True` by default. This allowed a serialized object to request the value of an environment variable.
-    -   *Mechanism*: The attacker defines an object with `type: "secret"` and points it to a target variable (e.g., `OPENAI_API_KEY`).
-    -   *Outcome*: The deserializer reads the server’s environment variable and populates the object with the secret, effectively pulling it into the application’s memory scope where it can be leaked in logs or responses.
--   **Blind Side-Channel Exfiltration**:
-    Attackers can trigger network requests during the object instantiation process (e.g., via the `__init__` method of allowed classes).
-    -   *Mechanism*: Classes such as `langchain_aws.ChatBedrockConverse` were found to perform network validation on initialization. An attacker can craft a payload that instantiates this class, sets a custom `endpoint_url` to a server they control, and inserts a sensitive environment variable into the request headers.
-    -   *Outcome*: The server sends the secret directly to the attacker’s listener during the deserialization step, regardless of whether the object is displayed to the user.
--   **Remote Code Execution (RCE)**:
-    While more complex, RCE is possible if the attacker forces the instantiation of a `PromptTemplate` using **Jinja2** templates. If the application logic subsequently renders this template, arbitrary Python code execution can be achieved.
+- **Secret Exfiltration (Default Behavior)**:
+  Prior to the patch, the `secrets_from_env` parameter involved in deserialization was set to `True` by default. This allowed a serialized object to request the value of an environment variable.
+  - *Mechanism*: The attacker defines an object with `type: "secret"` and points it to a target variable (e.g., `OPENAI_API_KEY`).
+  - *Outcome*: The deserializer reads the server’s environment variable and populates the object with the secret, effectively pulling it into the application’s memory scope where it can be leaked in logs or responses.
+- **Blind Side-Channel Exfiltration**:
+  Attackers can trigger network requests during the object instantiation process (e.g., via the `__init__` method of allowed classes).
+  - *Mechanism*: Classes such as `langchain_aws.ChatBedrockConverse` were found to perform network validation on initialization. An attacker can craft a payload that instantiates this class, sets a custom `endpoint_url` to a server they control, and inserts a sensitive environment variable into the request headers.
+  - *Outcome*: The server sends the secret directly to the attacker’s listener during the deserialization step, regardless of whether the object is displayed to the user.
+- **Remote Code Execution (RCE)**:
+  While more complex, RCE is possible if the attacker forces the instantiation of a `PromptTemplate` using **Jinja2** templates. If the application logic subsequently renders this template, arbitrary Python code execution can be achieved.
 
 ------------------------------------------------------------------------
 
@@ -292,6 +293,7 @@ graph LR
 ```
 
 <p align="center" markdown="1">
+
 <em>Figure 2: LangGrinch attack by prompting a sandbox application.</em>
 </p>
 
@@ -313,15 +315,15 @@ prompt = [
 
 ## **Mitigation**
 
--   **Update Libraries**: Upgrade `langchain-core` to version `>=1.2.5`. These patched versions disable dangerous features like `secrets_from_env` by default and block Jinja2 templates.
+- **Update Libraries**: Upgrade `langchain-core` to version `>=1.2.5`. These patched versions disable dangerous features like `secrets_from_env` by default and block Jinja2 templates.
 
--   **Restrict Deserialization**: Use the `allowed_objects` parameter in `load()` and `loads()` functions to explicitly whitelist safe classes and disallow arbitrary object instantiation.
+- **Restrict Deserialization**: Use the `allowed_objects` parameter in `load()` and `loads()` functions to explicitly whitelist safe classes and disallow arbitrary object instantiation.
 
--   **Disable Secrets from Env**: Explicitly set the configuration `secrets_from_env=False` in your application logic if not relying on defaults.
+- **Disable Secrets from Env**: Explicitly set the configuration `secrets_from_env=False` in your application logic if not relying on defaults.
 
--   **LLM Input/Output Validation**: Validate all model input and output, including metadata and `additional_kwargs`, before deserialization.
+- **LLM Input/Output Validation**: Validate all model input and output, including metadata and `additional_kwargs`, before deserialization.
 
--   **GenAI System Output Validation**: Implement rigorous validation for the AI system outputs, which includes the whole workflow, or chain. Ensure that outputs containing sensitive patterns, such as cryptographic hashes or API keys, are either blocked or appropriately redacted before being logged or displayed to users.
+- **GenAI System Output Validation**: Implement rigorous validation for the AI system outputs, which includes the whole workflow, or chain. Ensure that outputs containing sensitive patterns, such as cryptographic hashes or API keys, are either blocked or appropriately redacted before being logged or displayed to users.
 
 The full **Blue Team** mitigation pipeline is depicted in Figure 3.
 
@@ -379,6 +381,7 @@ flowchart LR
 ```
 
 <p align="center" markdown="1">
+
 <em>Figure 3: **Blue Team** mitigation pipeline.</em>
 </p>
 
@@ -452,7 +455,7 @@ for payload in test_payloads:
 
 Output:
 
-```text
+```
 Testing: {"lc": 1, "id": ["test"]}
 SECURITY ALERT: Malicious object signature detected. Blocked.
 ---
@@ -510,7 +513,7 @@ print(f"Is safe: {is_safe}")
 
 Output:
 
-```text
+```
 Validating metadata: {"session_id": "12345", "user_info": {"lc": 1, "type": "constructor", "id": ["system", "os", "getenv"], "kwargs": {"key": "OPENAI_API_KEY"}}}
 SECURITY ALERT: Malicious object signature detected. Blocked.
 Is safe: False
@@ -594,7 +597,7 @@ print(f"Is safe: {is_safe}")
 
 Output:
 
-```text
+```
 SECURITY ALERT: Output validation failed. OPENAI_API_KEY detected.
 SECURITY ALERT: Output validation failed. WEAVIATE_KEY detected.
 Is safe: False
@@ -612,17 +615,16 @@ Audit logs for the presence of the malicious string patterns. The `LlmIoValidato
 
 The complete, runnable implementation of this attack scenario, including the containerized sandbox environment, Red Team exploitation script, and Blue Team defense pipeline, is available in the repository under [`code/`](https://github.com/felipepenha/gurple/tree/main/code):
 
--   [**Vulnerable Sandbox**](https://github.com/felipepenha/gurple/tree/main/code/sandbox/prompt_injection/deserialization): Containerized environment exposing the vulnerable `langchain-core` service on port `7860`.
--   [**Red Team Exploitation**](https://github.com/felipepenha/gurple/tree/main/code/red-team/prompt_injection/deserialization): Client attack script (`attack.py`) submitting crafted serialization injection payloads.
--   [**Blue Team Mitigation**](https://github.com/felipepenha/gurple/tree/main/code/blue-team/prompt_injection/deserialization): Canonical defense module (`defend.py`), inline gateway proxy (`proxy.py` on port `8080`), and detection test suite.
+- [**Vulnerable Sandbox**](https://github.com/felipepenha/gurple/tree/main/code/sandbox/prompt_injection/deserialization): Containerized environment exposing the vulnerable `langchain-core` service on port `7860`.
+- [**Red Team Exploitation**](https://github.com/felipepenha/gurple/tree/main/code/red-team/prompt_injection/deserialization): Client attack script (`attack.py`) submitting crafted serialization injection payloads.
+- [**Blue Team Mitigation**](https://github.com/felipepenha/gurple/tree/main/code/blue-team/prompt_injection/deserialization): Canonical defense module (`defend.py`), inline gateway proxy (`proxy.py` on port `8080`), and detection test suite.
 
 <br />
-
----
+&#10;---
 
 # References
 
-<div id="refs" class="references csl-bib-body">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0">
 
 <div id="ref-NIST:AI:100-2e2023" class="csl-entry">
 

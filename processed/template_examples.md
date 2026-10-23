@@ -13,7 +13,7 @@ def hello_world():
 
 Console block (using `console` language):
 
-```console
+```
 $ uv pip install requests
 ```
 
@@ -25,33 +25,36 @@ Displaying a file title:
 
 ### Note
 
-!!! note
-    This is a standard **Note** block. It uses the custom Deep Purple border color we configured.
+- !!! note
+  This is a standard **Note** block. It uses the custom Deep Purple border color we configured.
 
 ### Important
 
-!!! important
-    This is an **Important** block.
+- !!! important
+  This is an **Important** block.
 
 ### Warning
 
-!!! warning
-    This is a **Warning** block.
+- !!! warning
+  This is a **Warning** block.
 
 ### Tip
 
-!!! tip
-    This is a **Tip** block.
+- !!! tip
+  This is a **Tip** block.
 
 ## Images
 
 Standard image syntax (ensure assets are in `docs/assets/`):
 
-![Logo](assets/logo_dark.jpeg)
+<figure>
+<img src="assets/logo_dark.jpeg" alt="Logo" />
+<figcaption aria-hidden="true">Logo</figcaption>
+</figure>
 
 ## Links
 
--   [Internal Link to Home](index.md)
+- [Internal Link to Home](index.md)
 
 ## Formatting
 
