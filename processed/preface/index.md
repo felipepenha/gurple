@@ -1,26 +1,27 @@
 <div style="text-align: center; color:var(--aurora)">
 
 <h1 style="color:var(--aurora); font-size: 3em; font-weight: bold;">
+
 Preface
 </h1>
 
 </div>
 
-!!! note
-    Gurple focuses on <span style="color:var(--constellation)">**Security of GenAI Systems**</span> rather than GenAI-Assisted Security of Traditional Systems.
+- !!! note
+  Gurple focuses on <span style="color:var(--constellation)">**Security of GenAI Systems**</span> rather than GenAI-Assisted Security of Traditional Systems.
 
-!!! warning
-    Gurple is a <span style="color:var(--sun)">**White Hat**</span> and <span style="color:var(--sun)">**Ethical Hacking**</span> guidebook, meaning that it is NOT intended to be used for malicious purposes.
+- !!! warning
+  Gurple is a <span style="color:var(--sun)">**White Hat**</span> and <span style="color:var(--sun)">**Ethical Hacking**</span> guidebook, meaning that it is NOT intended to be used for malicious purposes.
 
-    Follow these principles:
+  Follow these principles:
 
-    -   **Obtain Authorization:** Ensure you have explicit, written permission from the system owner before performing any security testing.
-    -   **Stay within Scope:** Run tests strictly within agreed-upon boundaries and sandbox environments; never test against production systems without authorization.
-    -   **Legal Compliance:** Comply with all applicable laws and regulations regarding cybersecurity and data privacy.
-    -   **Defensive Intent:** Apply these methods solely to identify vulnerabilities and improve the security posture of GenAI systems.
-    -   **No Liability:** The authors are not responsible for any misuse of this information or damage caused by unauthorized testing.
+  - **Obtain Authorization:** Ensure you have explicit, written permission from the system owner before performing any security testing.
+  - **Stay within Scope:** Run tests strictly within agreed-upon boundaries and sandbox environments; never test against production systems without authorization.
+  - **Legal Compliance:** Comply with all applicable laws and regulations regarding cybersecurity and data privacy.
+  - **Defensive Intent:** Apply these methods solely to identify vulnerabilities and improve the security posture of GenAI systems.
+  - **No Liability:** The authors are not responsible for any misuse of this information or damage caused by unauthorized testing.
 
-    Just because you can do something, it doesn’t mean you should!
+  Just because you can do something, it doesn’t mean you should!
 
 <br />
 
@@ -28,7 +29,8 @@ Preface
 
 # **Gurple**
 
-```python3
+```
+
       /$$$$$$  /$$   /$$ /$$$$$$$  /$$$$$$$  /$$       /$$$$$$$$
      /$$__  $$| $$  | $$| $$__  $$| $$__  $$| $$      | $$_____/
     | $$  \__/| $$  | $$| $$  \ $$| $$  \ $$| $$      | $$      
@@ -40,7 +42,7 @@ Preface
                                                                 
 ```
 
-A wordplay on GenAI (letter “G”) and “Purple Team” fused to become “Gurple.”
+A wordplay on GenAI (letter “G”) and “Purple Team” fused to become “Gurple”.
 
 At the same time, **gurple** is a mysterious and unusual color which is a mix of green and purple.
 
@@ -92,7 +94,7 @@ Beyond companion code for specific threat scenarios, Gurple supplies ready-to-us
 
 Gurple is, at the same time, grounded in reality and in the literature, be it academic research papers, books, case studies, whitepapers, or industry reports. It provides analysis of real-world **Threats** to GenAI systems, with their proper references.
 
-Gurple provides an up to date list of the available tech stack wherever it makes sense, usually linking to the GitHub repositories of the tools, documentation, and/or academic papers. “Up to date,” here, means “up to date at the time of writing.”
+Gurple provides an up to date list of the available tech stack wherever it makes sense, usually linking to the GitHub repositories of the tools, documentation, and/or academic papers. “Up to date”, here, means “up to date at the time of writing”.
 
 Readers are encouraged to suggest updates to the lists of references and technologies by opening new tickets at the [GitHub Issues Page](https://github.com/felipepenha/gurple/issues).
 
@@ -106,21 +108,21 @@ You will see a *References* section at the end of each page.
 
 **Gurple** explores GenAI Security by isolating individual **Threats** to GenAI systems and providing for each:
 
--   In-depth information, including mapping to other frameworks and references from existing literature.
+- In-depth information, including mapping to other frameworks and references from existing literature.
 
--   Mechanism and Attack Entry Points.
+- Mechanism and Attack Entry Points.
 
--   System and Business Impact.
+- System and Business Impact.
 
--   Real-world case studies.
+- Real-world case studies.
 
--   Ethical Hacking and White Hat methodology:
+- Ethical Hacking and White Hat methodology:
 
-    -   Red Team: Steps to exploit.
+  - Red Team: Steps to exploit.
 
-    -   Blue Team: Steps to detect and mitigate.
+  - Blue Team: Steps to detect and mitigate.
 
--   Ready-to-use agent skills for automated threat scoring and purple team evaluation.
+- Ready-to-use agent skills for automated threat scoring and purple team evaluation.
 
 And, by the way, what’s up with all these hat and team colors? Please, see the [Introduction](../introduction/index.md) for a detailed explanation.
 
@@ -152,9 +154,9 @@ Note that any mapping is an approximation and the reader should refer to the ori
 
 Gurple’s Threat IDs follow the pattern `G-e.x.y`, which implies the following hierarchy:
 
--   `e`: book edition number.
--   `x`: Threat Type (section) number.
--   `y`: Threat Subtype (subsection) number.
+- `e`: book edition number.
+- `x`: Threat Type (section) number.
+- `y`: Threat Subtype (subsection) number.
 
 The order of the IDs is not significant, and reflects simply the order in which the sections were written.
 
@@ -168,29 +170,29 @@ Basically, any Entry Point where a serialized object could be passed on to the s
 
 See the [Attack Entry Points](../attack_entry_points/index.md) page for a detailed explanation.
 
--   [ ] **The Front Door** 🚪 — **Network & Application Interfaces**
+- [ ] **The Front Door** 🚪 — **Network & Application Interfaces**
 
-    -   [ ] **Application Programming Interface (API) Endpoints**
-    -   [ ] **User Interface (UI)**
-    -   [ ] **Sensors**
+  - [ ] **Application Programming Interface (API) Endpoints**
+  - [ ] **User Interface (UI)**
+  - [ ] **Sensors**
 
-    *Note: Nothing really prevents an attacker from writing a serialized object on a sign or a t-shirt and presenting it to a camera, or dictating it to a voice-activated assistant.*
+  *Note: Nothing really prevents an attacker from writing a serialized object on a sign or a t-shirt and presenting it to a camera, or dictating it to a voice-activated assistant.*
 
-    -   [ ] **Observability Integration Interfaces**
+  - [ ] **Observability Integration Interfaces**
 
--   [ ] **The Side Door** 🚪 — **Supply Chain**
+- [ ] **The Side Door** 🚪 — **Supply Chain**
 
-    *Note: Exploitation of deserialization vulnerabilities in dependencies.*
+  *Note: Exploitation of deserialization vulnerabilities in dependencies.*
 
--   [ ] **The Back Door** 🚪 — **Data Storage**
+- [ ] **The Back Door** 🚪 — **Data Storage**
 
--   [ ] **The Hidden Door** 🚪 — **Event-Driven & Serverless Triggers**
+- [ ] **The Hidden Door** 🚪 — **Event-Driven & Serverless Triggers**
 
-    -   [ ] **Indirect Sources**
-    -   [ ] **Agentic Tools**
-    -   [ ] **Model Context Protocol (MCP)**
-    -   [ ] **Agent2Agent Protocol (A2A)**
-    -   [ ] **Infrastructure Events**
+  - [ ] **Indirect Sources**
+  - [ ] **Agentic Tools**
+  - [ ] **Model Context Protocol (MCP)**
+  - [ ] **Agent2Agent Protocol (A2A)**
+  - [ ] **Infrastructure Events**
 
 # **Impact**
 
@@ -227,24 +229,23 @@ Tactical offensive perspective providing reproducible exploit materials:
 ## **Methodology**
 
 Numbered step-by-step phases from reconnaissance to exploitation.
-\#\# **Success Criteria**
+\## **Success Criteria**
 Observable indicators verifying successful compromise.
-\#\# **Example**
+\## **Example**
 Exploit scripts, payload definitions, execution logs, and Mermaid sequence diagrams.
 
 # 🔵 <span style="color:var(--constellation)">**Blue Team**</span>
 
 Tactical defensive perspective providing concrete protections:
-\#\# **Mitigation**
+\## **Mitigation**
 Architectural hardening controls and defensive pipeline flowcharts.
-\#\# **Examples**
+\## **Examples**
 Production-grade input/output validators, regex guardrails, and environment policies.
-\#\# **Detection of Attack Attempts**
+\## **Detection of Attack Attempts**
 SIEM queries, audit logging strategies, and anomaly signatures.
 
 <br />
-
----
+&#10;---
 
 # References
 

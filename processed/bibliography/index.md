@@ -41,12 +41,11 @@ title: Bibliography
 </div>
 
 <br />
-
----
+&#10;---
 
 # References
 
-<div id="refs" class="references csl-bib-body">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0">
 
 <div id="ref-SCF:CP-RMM:Web" class="csl-entry">
 
@@ -66,7 +65,7 @@ title: Bibliography
 
 <div id="ref-CSA:LLM:Taxonomy:2024:PDF" class="csl-entry">
 
-<span class="csl-left-margin">[3] </span><span class="csl-right-inline">Cloud Security Alliance AI Controls Framework Working Group, “Large Language Model (LLM) Threats Taxonomy,” Cloud Security Alliance; <a href="https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy">https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy</a>, Technical Report, Jun. 2024.</span>
+<span class="csl-left-margin">[3] </span><span class="csl-right-inline">Cloud Security Alliance AI Controls Framework Working Group, “Large Language Model (LLM) Threats Taxonomy,” Cloud Security Alliance; <a href="https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy">https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy</a>, Technical Report, June 2024.</span>
 
 </div>
 
@@ -154,7 +153,7 @@ title: Bibliography
 
 <div id="ref-MITRE:ATTACK:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[14] </span><span class="csl-right-inline">“MITRE ATT&CK.” <a href="https://attack.mitre.org/">https://attack.mitre.org/</a>.</span>
+<span class="csl-left-margin">[14] </span><span class="csl-right-inline">“MITRE ATT&CK®.” <a href="https://attack.mitre.org/">https://attack.mitre.org/</a>.</span>
 
 </div>
 
