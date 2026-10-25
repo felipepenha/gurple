@@ -125,7 +125,7 @@ Vulnerability scoring:
 | **CVE-2026-21877** | **[FIRST CVSS](https://www.first.org/cvss/)** | `CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H` | 9.9 (Critical) |
 | **CVE-2026-21877** | **[OWASP AIVSS](https://aivss.owasp.org/)** | `AIVSS:0.8/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:H/AT:P/L:D/DG:H/AC:E/T:O/D:S/M:A/E:D` | 10.0 / Immediate |
 
-This vulnerability highlights the severe consequences of granting workflow automation tools overly permissive access to their underlying filesystem, especially when those tools process AI-generated dynamic inputs.
+This vulnerability illustrates the severe consequences of granting workflow automation tools overly permissive access to their underlying filesystem, especially when those tools process AI-generated dynamic inputs.
 
 n8n is an open-source workflow automation tool. In typical configurations, users design workflows by connecting nodes that manipulate data, trigger API calls, or interact with infrastructure. This case study focuses on a scenario where an n8n deployment was running an agentic pipeline connecting an LLM to internal operational tools.
 
