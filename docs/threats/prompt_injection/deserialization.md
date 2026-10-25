@@ -76,6 +76,7 @@ To result in **Exfiltration**, the payload is specifically engineered to output 
 ---
 # **Impact**
 
+Insecure deserialization within GenAI frameworks leads to data exfiltration and potential secondary execution risks across infrastructure layers.
 
 ## **System Impact**
 
@@ -109,6 +110,8 @@ Public disclosure of sensitive data exfiltration damages brand credibility and e
 
 ---
 # **Case Study**
+
+Published vulnerability research demonstrates how crafted payload structures exploit serialization parsers in popular orchestration libraries.
 
 ## **LangGrinch**
 
@@ -199,6 +202,8 @@ print(deserialized["user_data"])  # "sk-secret-key-12345" - SECRET LEAKED!
 ---
 # 🔴 <span style="color:var(--red)">**Red Team**</span>
 
+Red team operations evaluate deserialization risks by assessing how applications handle serialized objects returned within LLM outputs.
+
 ## **Methodology**
 
 1. **Injection of Serialized Object**: The attacker submits a prompt designed to coerce the LLM into returning a specially crafted JSON object (containing the `"lc": 1` key) as part of its output, for example in `additional_kwargs` or metadata fields.
@@ -215,6 +220,8 @@ GenAI systems frequently hallucinate plausible environment variable strings. Ope
 
 
 ## **Example**
+
+The following scenario illustrates an attacker prompting an application to return a serialized object designed to extract environment secrets.
 
 ### **Prompting the Production Application**
 
@@ -302,6 +309,8 @@ prompt = [
 ---
 # 🔵 <span style="color:var(--constellation)">**Blue Team**</span>
 
+Blue team defenses focus on disabling unsafe deserialization features, updating dependencies, and validating serialized payloads across the pipeline.
+
 ## **Mitigation**
 
 *   **Update Libraries**: Upgrade `langchain-core` to version `>=1.2.5`. These patched versions disable dangerous features like `secrets_from_env` by default and block Jinja2 templates.
@@ -375,6 +384,8 @@ flowchart LR
 
 
 ## **Examples**
+
+Defense implementations combine input and output filters to detect and block serialized object markers before parsing occurs.
 
 ### **LLM Input/Output Validation**
 
