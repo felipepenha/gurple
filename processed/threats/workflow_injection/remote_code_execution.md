@@ -38,7 +38,7 @@ Refer to the [Workflow Injection Map](./index.md#map) for a higher-level map.
 
 # **Mechanism**
 
-Starting from a seemingly benign user input, the attacker leverages an Agent’s permitted capabilities (or a vulnerability in the parser) to map data directly into a workflow parameter. In this scenario, the agent acts as an unverified bridge passing unsanitized injection material directly into the workflow engine.
+Starting from a seemingly benign user input, the attacker uses an Agent’s permitted capabilities (or a vulnerability in the parser) to map data directly into a workflow parameter. In this scenario, the agent acts as an unverified bridge passing unsanitized injection material directly into the workflow engine.
 
 <p align="center" markdown="1">
 
@@ -47,7 +47,7 @@ Starting from a seemingly benign user input, the attacker leverages an Agent’s
 <em>Figure 1: Diagram depicting execution of injected OS commands [[1]](#ref-MITRE:CWE:78).</em>
 </p>
 
-To result in **Remote Code Execution**, the payload is typically designed to leverage the workflow’s native file manipulation or shell execution functions. For example, the attacker forces the system to create an executable file (`.js`, `.sh`, or `.py`) and places it within a directory actively monitored or executed by the host service.
+To result in **Remote Code Execution**, the payload is typically designed to abuse the workflow’s native file manipulation or shell execution functions. For example, the attacker forces the system to create an executable file (`.js`, `.sh`, or `.py`) and places it within a directory actively monitored or executed by the host service.
 
 ## **Attack Entry Points**
 
@@ -72,6 +72,8 @@ To result in **Remote Code Execution**, the payload is typically designed to lev
 
 # **Impact**
 
+Remote code execution compromises workflow integrity and underlying operating system security across multiple operational dimensions.
+
 ## **System Impact**
 
 A successful RCE attack constitutes a full system compromise. The attacker gains the same system execution privileges as the workflow service account. They can disable logging, install backdoors, pivot through the internal network, exfiltrate data, or deploy ransomware.
@@ -82,7 +84,7 @@ The business operations running on the compromised system will be halted or seve
 
 ### **Financial Impact**
 
-Immediate monetary loss is possible if ransomware is executed or if financial transaction nodes within the workflow are manipulated. Additionally, computing resources might be hijacked (e.g., cryptomining).
+Immediate monetary loss is possible if ransomware is executed or if financial transaction nodes within the workflow are manipulated. Adversaries can also hijack computing resources for tasks such as cryptomining.
 
 ### **Legal Impact**
 
@@ -105,6 +107,8 @@ A full system compromise, particularly when executed through an orchestrated Gen
 ------------------------------------------------------------------------
 
 # **Case Study**
+
+Real-world workflow engine vulnerabilities illustrate how unvalidated file write operations translate into execution compromises.
 
 ## **n8n Remote Code Execution via File Write**
 
@@ -129,12 +133,12 @@ The vulnerability involves two stages:
 
 1.  **Injection and Malicious File Creation**: The attacker exploits a prompt injection flaw in the facing LLM, directing the AI model to output a malicious configuration intended for a downstream “Write Binary File” n8n node. Because the node allowed absolute file paths, the attacker bypasses intended directories and orchestrates the creation of a malicious JavaScript file (e.g., `backdoor.js`) within the node app’s execution path or directly in `/tmp/`.
 
-2.  **Execution**: Leveraging a subsequent misconfiguration or an adjacent “Execute Command” node in the workflow, the attacker manages to execute the loaded payload (`node /tmp/backdoor.js`). This establishes a reverse shell and achieves Remote Code Execution constrained solely by the container’s privileges.
+2.  **Execution**: Through a subsequent misconfiguration or an adjacent “Execute Command” node in the workflow, the attacker executes the loaded payload (`node /tmp/backdoor.js`). This establishes a reverse shell and achieves Remote Code Execution constrained solely by the container’s privileges.
 
 **Attack Vectors:**
 
 - **Path Traversal to Code Execution**:
-  The attacker leverages a lack of input validation on the file path string parameter within the File Write node `(/../../../../tmp/evil.js)`.
+  The attacker exploits a lack of input validation on the file path string parameter within the File Write node `(/../../../../tmp/evil.js)`.
 - **Abuse of Execute Command Nodes**:
   If the n8n environment has the `Execute Command` node enabled (which administrators sometimes enable for internal scripting), the attacker can directly pipe chained OS commands if any input to that node traverses through an unsanitized AI output.
 
@@ -143,6 +147,8 @@ The vulnerability involves two stages:
 ------------------------------------------------------------------------
 
 # 🔴 <span style="color:var(--red)">**Red Team**</span>
+
+Red team operations evaluate workflow resilience by testing injection pathways that force unauthorized script creation and OS command execution.
 
 ## **Methodology**
 
@@ -156,6 +162,8 @@ The vulnerability involves two stages:
 The attacker successfully runs an arbitrary system command, validated either by intercepting a reverse shell connection or reading a specific target file (e.g., retrieving the contents of `/etc/shadow` or a designated `FLAG` environment variable from the host).
 
 ## **Example**
+
+The following attack demonstration illustrates how malicious prompt payloads traverse workflow nodes to generate arbitrary script files.
 
 ### **Prompting the Target Workflow Pipeline**
 
@@ -217,10 +225,12 @@ graph LR
 
 # 🔵 <span style="color:var(--constellation)">**Blue Team**</span>
 
+Blue team defenses enforce strict orchestrator isolation, disable unnecessary runtime modules, and validate untrusted AI payloads before node handoff.
+
 ## **Mitigation**
 
 - **Disable Dangerous Nodes**: In tools like n8n, restrict or completely disable access to nodes that interact broadly with the operating system if they are not strictly needed. For example, disable the **Execute Command** node using environment variables (`N8N_NODES_EXCLUDE`).
-- **Harden Filesystem Access**: Run workflow orchestrators with minimal privileges and restrict directory access. In n8n, utilize the `N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS` and define explicit allowed paths using `N8N_FILE_ACCESS_LOCAL_FILES_STRICT` or mount read-only storage where appropriate to thwart File Write abuses.
+- **Harden Filesystem Access**: Run workflow orchestrators with minimal privileges and restrict directory access. In n8n, configure the `N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS` setting and define explicit allowed paths using `N8N_FILE_ACCESS_LOCAL_FILES_STRICT` or mount read-only storage where appropriate to thwart File Write abuses.
 - **LLM Input/Output Validation**: Implement strict validation blocks *between* the LLM node and any node that interacts with core infrastructure. Ensure path variables only match an expected regex, blocking anything that contains standard traversal operators `(../)`.
 
 The full **Blue Team** mitigation pipeline is depicted in Figure 3.
@@ -272,6 +282,8 @@ flowchart LR
 
 ## **Examples**
 
+Hardening workflow orchestrators requires defense-in-depth configuration changes across environment definitions and node policies.
+
 ### **Orchestrator Environment Hardening (n8n)**
 
 Configure the container’s `.env` file to systematically lock down the vulnerable attack paths:
@@ -287,7 +299,7 @@ N8N_FILE_ACCESS_LOCAL_FILES_STRICT=true
 
 ## **Detection of Attack Attempts**
 
-Monitor system logs for file writes executing out of bounds, such as inside `/tmp/`, and trigger alerts on attempts to utilize specific disabled nodes. Since workflow engines output logs for execution pipelines, look out for excessive use of structural path traversal characters (`../`) originating directly from LLM execution nodes.
+Monitor system logs for file writes executing out of bounds, such as inside `/tmp/`, and trigger alerts on attempts to invoke specific disabled nodes. Since workflow engines output logs for execution pipelines, look out for excessive use of structural path traversal characters (`../`) originating directly from LLM execution nodes.
 
 <br />
 &#10;---
