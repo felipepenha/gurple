@@ -12,7 +12,7 @@ categories:
 
 Welcome to the new Gurple Blog! 
 
-While the main guidebook serves as a structured, formal reference manual complete with containerized lab code and technical threat taxonomies, this blog serves a different and faster-moving purpose.
+While the main guidebook is a structured, formal reference manual complete with containerized lab code and technical threat taxonomies, this blog serves a different and faster-moving purpose.
 
 <!-- more -->
 

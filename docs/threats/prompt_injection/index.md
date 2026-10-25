@@ -14,7 +14,7 @@ Prompt Injection is a threat where an attacker manipulates the inputs to alter t
 
     To create a clear separation, the present section, named <span style="color:var(--constellation)">**Prompt Injection**</span>, is restricted to attacks that bypass the security layers of the GenAI system (e.g. authentication, authorization, input / output validation).
 
-    One must also recognize that threats are not found in isolation in the wild, and that most real-world threats are chained attacks, where a hacker uses multiple techniques to achieve their goal. For example, a hacker may utilize a sequence of prompts that manipulate context to bypass the model's safety guardrails stack while also concealing inputs that will trigger code execution. In such cases, the line between <span style="color:var(--constellation)">**Prompt Injection**</span> and <span style="color:var(--constellation)">**Jailbreaking**</span> becomes blurred.
+    One must also recognize that threats are not found in isolation in the wild, and that most real-world threats are chained attacks, where a hacker uses multiple techniques to achieve their goal. For example, a hacker may use a sequence of prompts that manipulate context to bypass the model's safety guardrails stack while also concealing inputs that will trigger code execution. In such cases, the line between <span style="color:var(--constellation)">**Prompt Injection**</span> and <span style="color:var(--constellation)">**Jailbreaking**</span> becomes blurred.
 
 
 <br />
