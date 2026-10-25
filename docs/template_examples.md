@@ -26,6 +26,8 @@ print(os.getcwd())
 
 ## Admonitions (Note Blocks)
 
+Admonition blocks highlight contextual guidance, warnings, and implementation notes across documentation pages.
+
 ### Note
 !!! note
     This is a standard **Note** block. It uses the custom Deep Purple border color we configured.
