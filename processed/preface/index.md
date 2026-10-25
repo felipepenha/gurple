@@ -54,13 +54,15 @@ That’s it! Just a book about GenAI Security and Purple Teaming, with a fun and
 
 # **Purpose**
 
+Gurple establishes a dedicated engineering discipline for securing Generative AI deployments against adversarial tradecraft and systemic vulnerabilities.
+
 ## **GenAI Security vs. GenAI Safety**
 
 Gurple focuses on **GenAI Security**, as opposed to GenAI Safety.
 
 **GenAI Security** and **GenAI Safety** are two distinct disciplines that frequently intersect. Safety generally targets unintentional failures, such as bias or hallucination, to keep system behavior consistent with human intent. Security focuses on intentional malice, protecting the system from theft, disruption, or subversion. The boundary blurs when malicious actors weaponize safety failures or exploit security gaps to force unsafe outputs.
 
-Adversarial attacks demonstrate this connection. A successful jailbreak is technically a security breach because it bypasses established access controls. The result is often a safety violation, such as the generation of instructions for illegal acts or hate speech. In this context, the security vulnerability serves as the vector for the safety failure. Defending against these attacks requires techniques from both fields.
+Adversarial attacks demonstrate this connection. A successful jailbreak is technically a security breach because it bypasses established access controls. The result is often a safety violation, such as the generation of instructions for illegal acts or hate speech. In this context, the security vulnerability is the vector for the safety failure. Defending against these attacks requires techniques from both fields.
 
 ## **Beyond Foundational Models and Towards Production-Grade GenAI**
 
@@ -76,7 +78,7 @@ While Gurple aims at covering most Threat categories, it deliberately avoids cov
 
 ## **Mapping to Popular Frameworks**
 
-Gurple explains each of the most popular **Threat, Vulnerability and Risk** frameworks, and maps each of the **Threats** listed in this book to these frameworks by referencing unique IDs. While any attempt to map is imperfect, Gurple’s map tables provide a quick way to navigate between frameworks and allow for more in-depth study of each threat. For example, Prompt Injection / Exfiltration Through Deserialization is mapped to [OWASP LLM02:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/), giving the reader a broader idea of Deserialization of Untrusted Data beyond just GenAI. A mapping as extensive as this is certainly unique content not found anywhere else in the literature.
+Gurple explains each of the most popular **Threat, Vulnerability and Risk** frameworks, and maps each of the **Threats** listed in this book to these frameworks by referencing unique IDs. While any attempt to map is imperfect, Gurple’s map tables provide a quick way to cross-reference frameworks and allow for more in-depth study of each threat. For example, Prompt Injection / Exfiltration Through Deserialization is mapped to [OWASP LLM02:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/), giving the reader a broader idea of Deserialization of Untrusted Data beyond just GenAI. A mapping as extensive as this is certainly unique content not found anywhere else in the literature.
 
 ## **The Purple Team Approach**
 

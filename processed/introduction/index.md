@@ -17,15 +17,15 @@ This introduction sets the stage by defining traditional security roles and rela
 
 The security landscape is often described using a spectrum of colors, representing different roles and methodologies. To use this book effectively, you need to understand these distinctions.
 
-### **Black Hat Hackers**
+## **Black Hat Hackers**
 
 Malicious actors who seek to compromise systems for personal gain, espionage, or destruction. In the GenAI context, black hats may attempt to bypass safety filters (jailbreaking), inject malicious prompts to manipulate model behavior, poison documents, etc. Their actions are unauthorized and illegal.
 
-### **White Hat and Ethical Hackers**
+## **White Hat and Ethical Hackers**
 
 Security researchers and professionals who use their skills to identify vulnerabilities with the goal of fixing them. They operate with permission and follow responsible disclosure practices. Ethical hackers are currently at the forefront of discovering novel GenAI vulnerabilities such as indirect prompt injection and data leakage, helping organizations patch these holes before they can be exploited.
 
-### **Red Teams**
+## **Red Teams**
 
 Red Teams are effectively White Hat hackers who adopt the persona of Black Hats. They operate with authorization to simulate the Tactics, Techniques, and Procedures (TTPs) of real-world adversaries to test an organization’s defenses.
 
@@ -37,11 +37,11 @@ It is important to distinguish Red Teaming from Penetration Testing (Pentesting)
 
 - **Red Teaming** is objective-driven and adversarial. It simulates a full-spectrum attack across technology, personnel, processes, and detection capabilities. A Red Team operation might attempt to use a GenAI agent to pivot into the internal network or exfiltrate sensitive data without triggering security alerts, mimicking the tactics of a sophisticated threat actor.
 
-### **Blue Teams**
+## **Blue Teams**
 
-Blue Teams are White Hat security professionals dedicated to defense. They are responsible for maintaining the security posture of the organization. They monitor infrastructure, analyze logs, and respond to incidents. For GenAI, Blue Teams face new challenges: distinguishing between benign and malicious prompts, monitoring for model drift or hallucination that indicates an attack, and securing the AI supply chain against compromised dependencies.
+Blue Teams are White Hat security professionals dedicated to defense. They are responsible for maintaining the security posture of the organization. They monitor infrastructure, analyze logs, and respond to incidents. For GenAI, Blue Teams face new operational obstacles: distinguishing between benign and malicious prompts, monitoring for model drift or hallucination that indicates an attack, and securing the AI supply chain against compromised dependencies.
 
-### **Purple Teams**
+## **Purple Teams**
 
 Purple Teaming represents a collaborative approach that bridges the gap between offensive (Red) and defensive (Blue) teams. Instead of operating in silos, these teams work together to maximize the organization’s cyber resilience. In many cases, the Purple Team is not a distinct team but a role played by members of the Red and Blue Teams through collaboration.
 
