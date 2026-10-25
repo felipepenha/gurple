@@ -23,7 +23,7 @@ Displaying a file title:
 
 ## Admonitions (Note Blocks)
 
-Admonition blocks highlight contextual guidance, warnings, and implementation notes across documentation pages.
+Admonition blocks format contextual guidance, warnings, and implementation notes across documentation pages.
 
 ### Note
 
