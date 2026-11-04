@@ -10,15 +10,6 @@ Weight Poisoning is a model tampering threat where an adversary directly manipul
 
 In modern Generative AI architectures, weight poisoning targets the model distribution supply chain. Organizations download pre-trained weights from public registries such as the Hugging Face Hub, load parameter-efficient fine-tuning (PEFT) adapters from third-party repositories, or blend weights from multiple models through merge techniques like Spherical Linear Interpolation (SLERP) or Task Arithmetic. By applying surgical rank-1 parameter perturbations or training dual-objective adapter matrices, an attacker ensures the model behaves normally during validation, but executes unauthorized instructions or emits attacker-specified content when presented with a secret trigger phrase.
 
-- !!! note
-  In Gurple, a structural distinction exists between <span style="color:var(--constellation)">**Weight Poisoning**</span>, <span style="color:var(--constellation)">**Training Data Poisoning**</span>, and <span style="color:var(--constellation)">**Context Poisoning**</span>.
-
-  <span style="color:var(--constellation)">**Training Data Poisoning**</span> corrupts the datasets used in pre-training or instruction tuning, relying on iterative gradient optimization to indirectly influence final parameters.
-
-  <span style="color:var(--constellation)">**Context Poisoning**</span> targets runtime operational stores, such as semantic cache memory, agent session logs, or vector databases, leaving the base model weights intact.
-
-  <span style="color:var(--constellation)">**Weight Poisoning**</span> modifies the static numerical parameter tensors or adapter layers directly, altering the neural representation subspace before inference begins.
-
 <br />
 
 ------------------------------------------------------------------------
