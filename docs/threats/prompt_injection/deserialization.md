@@ -27,8 +27,10 @@ Refer to the [Prompt Injection Map](./index.md#map) for a higher-level map.
 | **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)** | [3.2.1](https://doi.org/10.6028/NIST.AI.100-2e2023) | Deserialization Vulnerability |
 | **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)** | [NISTAML.013:2025](https://doi.org/10.6028/NIST.AI.100-2e2025) | AI Supply Chain and Deserialization |
 | **[OWASP Top 10](https://owasp.org/www-project-top-ten/)** | [A08:2021](https://owasp.org/Top10/2021/A08_2021-Software_and_Data_Integrity_Failures/) | Software and Data Integrity Failures |
+| **[OWASP Top 10 2025](https://top10.owasp.org/2025/)** | [A08:2025](https://top10.owasp.org/2025/A08_2025-Software_or_Data_Integrity_Failures) | Software or Data Integrity Failures |
 | **[OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** | [ASI05:2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | Unexpected Code Execution (RCE) |
 | **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM02:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Sensitive Information Disclosure |
+| **[OWASP Top 10 for LLM Applications 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)** | [LLM02:2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/) | Sensitive Information Disclosure |
 
 
 <br />
@@ -149,7 +151,9 @@ Additional mapping, for this specific case study:
 | **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)** | [3.2.1](https://doi.org/10.6028/NIST.AI.100-2e2023) | Deserialization Vulnerability |
 | **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)** | [NISTAML.013:2025](https://doi.org/10.6028/NIST.AI.100-2e2025) | AI Supply Chain and Deserialization |
 | **[OWASP Top 10](https://owasp.org/www-project-top-ten/)** | [A06:2021](https://owasp.org/Top10/2021/A08_2021-Software_and_Data_Integrity_Failures/) | Vulnerable and Outdated Components |
+| **[OWASP Top 10 2025](https://top10.owasp.org/2025/)** | [A03:2025](https://top10.owasp.org/2025/A03_2025-Software_Supply_Chain_Failures) | Software Supply Chain Failures |
 | **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM03:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Supply Chain |
+| **[OWASP Top 10 for LLM Applications 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)** | [LLM04:2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/) | Supply Chain |
 
 <br />
 

@@ -41,5 +41,8 @@ Adversaries achieve model tampering across distinct development phases. During d
 | **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)** | [3.1](https://doi.org/10.6028/NIST.AI.100-2e2023) | Data Poisoning in Fine-Tuning |
 | **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)** | [NISTAML.010:2025](https://doi.org/10.6028/NIST.AI.100-2e2025) | Data Poisoning |
 | **[OWASP Top 10](https://owasp.org/www-project-top-ten/)** | [A08:2021](https://owasp.org/Top10/2021/A08_2021-Software_and_Data_Integrity_Failures/) | Software and Data Integrity Failures |
+| **[OWASP Top 10 2025](https://top10.owasp.org/2025/)** | [A08:2025](https://top10.owasp.org/2025/A08_2025-Software_or_Data_Integrity_Failures) | Software or Data Integrity Failures |
 | **[OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** | [ASI07:2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | Insecure Inter-Agent Communication |
 | **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM03:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Supply Chain Vulnerabilities |
+| **[OWASP Top 10 for LLM Applications 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)** | [LLM04:2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/) | Supply Chain |
+| **[OWASP Top 10 for LLM Applications 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)** | [LLM05:2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/) | Data and Model Poisoning |

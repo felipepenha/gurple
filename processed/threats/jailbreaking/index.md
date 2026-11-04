@@ -36,5 +36,7 @@ Adversaries achieve jailbreaks by exploiting the fundamental tension between hel
 | **[NIST AI 100-2 E2023](https://doi.org/10.6028/NIST.AI.100-2e2023)** | [3.3](https://doi.org/10.6028/NIST.AI.100-2e2023) | Direct Prompt Injection Attacks and Mitigations |
 | **[NIST AI 100-2 E2025](https://doi.org/10.6028/NIST.AI.100-2e2025)** | [NISTAML.018:2025](https://doi.org/10.6028/NIST.AI.100-2e2025) | Prompt Injection |
 | **[OWASP Top 10](https://owasp.org/www-project-top-ten/)** | [A03:2021](https://owasp.org/Top10/2021/A03_2021-Injection/) | Injection |
+| **[OWASP Top 10 2025](https://top10.owasp.org/2025/)** | [A05:2025](https://top10.owasp.org/2025/A05_2025-Injection) | Injection |
 | **[OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** | [ASI01:2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | Agent Goal Hijack |
 | **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM01:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Prompt Injection |
+| **[OWASP Top 10 for LLM Applications 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)** | [LLM01:2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/) | Prompt Injection |
