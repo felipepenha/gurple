@@ -50,6 +50,7 @@ This reference catalogs the abbreviations used throughout Gurple. Each entry lis
 | **JWT** | JSON Web Token | Compact claims and authentication token standard |
 | **LINDDUN** | Linkability, Identifiability, Non-repudiation, Detectability, Disclosure of Information, Unawareness, Non-compliance | Privacy threat modeling methodology |
 | **LLM** | Large Language Model | Foundational text models |
+| **LoRA** | Low-Rank Adaptation | Parameter-efficient fine-tuning technique |
 | **MAESTRO** | Multi-Agent Ecosystem Threat-Reduction Orientation | CSA multi-agent threat modeling framework |
 | **MCP** | Model Context Protocol | Agent tool integration standard |
 | **ML** | Machine Learning | Algorithmic data modeling and prediction |
@@ -59,6 +60,7 @@ This reference catalogs the abbreviations used throughout Gurple. Each entry lis
 | **OWASP** | Open Worldwide Application Security Project | Open-source application security community |
 | **PASTA** | Process for Attack Simulation and Threat Analysis | Risk-centric threat modeling methodology |
 | **PCI DSS** | Payment Card Industry Data Security Standard | Payment account data security requirement |
+| **PEFT** | Parameter-Efficient Fine-Tuning | Modular model adaptation method |
 | **PII** | Personally Identifiable Information | Sensitive individual identity data |
 | **QR** | Quick Response | Two-dimensional optical barcode modality |
 | **RAG** | Retrieval-Augmented Generation | External knowledge retrieval architecture |
@@ -71,6 +73,7 @@ This reference catalogs the abbreviations used throughout Gurple. Each entry lis
 | **SCF C\|P-RMM** | Secure Controls Framework Cybersecurity & Data Privacy Risk Management Model | Threat, vulnerability, and risk taxonomy |
 | **SIEM** | Security Information and Event Management | Defensive telemetry and monitoring |
 | **SLA** | Service Level Agreement | Formal operational performance commitment |
+| **SLERP** | Spherical Linear Interpolation | Model weight merging technique |
 | **SQL** | Structured Query Language | Relational database query language |
 | **SSRF** | Server-Side Request Forgery | Network boundary traversal vulnerability |
 | **SSVC** | Stakeholder-Specific Vulnerability Categorization | Vulnerability prioritization methodology |
@@ -78,6 +81,7 @@ This reference catalogs the abbreviations used throughout Gurple. Each entry lis
 | **TTP** | Tactics, Techniques, and Procedures | Threat actor operational behavior |
 | **UI** | User Interface | Front-door application boundary |
 | **VDP** | Vulnerability Disclosure Program | Coordinated vulnerability reporting |
+| **VRAM** | Video Random Access Memory | GPU memory for model parameters and activations |
 | **WAF** | Web Application Firewall | Application boundary traffic filter |
 | **XML** | Extensible Markup Language | Structured data encoding format |
 | **XSS** | Cross-Site Scripting | Client-side script injection vulnerability |

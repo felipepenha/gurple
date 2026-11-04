@@ -37,6 +37,8 @@ title: Bibliography
 [[32]](#ref-NVD:LangGrinch:CVE-2025-68664)
 [[33]](#ref-NVD:LangGrinch:CVE-2025-68665)
 [[34]](#ref-MITRE:CWE:78)
+[[35]](#ref-NVD:CVE-2024-3568)
+[[36]](#ref-GitHubAdvisoryDatabase:CVE-2024-3568)
 
 </div>
 
@@ -314,6 +316,22 @@ title: Bibliography
 <div id="ref-MITRE:CWE:78" class="csl-entry">
 
 <span class="csl-left-margin">[34] </span><span class="csl-right-inline">“CWE - CWE-78: Improper Neutralization of Special Elements used in an OS Command (’OS Command Injection’) (4.20).” <a href="https://cwe.mitre.org/data/definitions/78.html">https://cwe.mitre.org/data/definitions/78.html</a>.</span>
+
+</div>
+
+<br />
+
+<div id="ref-NVD:CVE-2024-3568" class="csl-entry">
+
+<span class="csl-left-margin">[35] </span><span class="csl-right-inline">“NVD - CVE-2024-3568.” <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-3568">https://nvd.nist.gov/vuln/detail/CVE-2024-3568</a>.</span>
+
+</div>
+
+<br />
+
+<div id="ref-GitHubAdvisoryDatabase:CVE-2024-3568" class="csl-entry">
+
+<span class="csl-left-margin">[36] </span><span class="csl-right-inline">“CVE-2024-3568 - GitHub Advisory Database,” <em>GitHub</em>. <a href="https://github.com/advisories/GHSA-8vx8-64m6-67cm">https://github.com/advisories/GHSA-8vx8-64m6-67cm</a>.</span>
 
 </div>
 

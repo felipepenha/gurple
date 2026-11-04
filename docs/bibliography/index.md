@@ -38,5 +38,7 @@ title: Bibliography
 [@NVD:LangGrinch:CVE-2025-68664]
 [@NVD:LangGrinch:CVE-2025-68665]
 [@MITRE:CWE:78]
+[@NVD:CVE-2024-3568]
+[@GitHubAdvisoryDatabase:CVE-2024-3568]
 
 </div>

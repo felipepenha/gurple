@@ -136,13 +136,14 @@ nav:
     - Workflow Injection:
       - threats/workflow_injection/index.md
       - Remote Code Execution: threats/workflow_injection/remote_code_execution.md
+    - Model Tampering:
+      - threats/model_tampering/index.md
+      - Weight Poisoning: threats/model_tampering/weight_poisoning.md
     # # - Poisoning:
     #   - threats/poisoning/index.md
     # - Model Replication:
     #   - threats/model_replication/index.md
     # - Model Inversion:
     #   - threats/model_inversion/index.md
-    # - Model Tampering:
-    #   - threats/model_tampering/index.md
   - Bibliography:
     - bibliography/index.md
