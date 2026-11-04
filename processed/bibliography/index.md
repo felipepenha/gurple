@@ -39,6 +39,7 @@ title: Bibliography
 [[34]](#ref-MITRE:CWE:78)
 [[35]](#ref-NVD:CVE-2024-3568)
 [[36]](#ref-GitHubAdvisoryDatabase:CVE-2024-3568)
+[[37]](#ref-OWASP:TOP10:LLM:2026:WEB)
 
 </div>
 
@@ -332,6 +333,14 @@ title: Bibliography
 <div id="ref-GitHubAdvisoryDatabase:CVE-2024-3568" class="csl-entry">
 
 <span class="csl-left-margin">[36] </span><span class="csl-right-inline">“CVE-2024-3568 - GitHub Advisory Database,” <em>GitHub</em>. <a href="https://github.com/advisories/GHSA-8vx8-64m6-67cm">https://github.com/advisories/GHSA-8vx8-64m6-67cm</a>.</span>
+
+</div>
+
+<br />
+
+<div id="ref-OWASP:TOP10:LLM:2026:WEB" class="csl-entry">
+
+<span class="csl-left-margin">[37] </span><span class="csl-right-inline">OWASP GenAI Security Project, “OWASP Top 10 for Large Language Model Applications 2026.” <a href="https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/">https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/</a>, 2026.</span>
 
 </div>
 
