@@ -31,6 +31,7 @@ Refer to the [Workflow Injection Map](./index.md#map) for a higher-level map.
 | **[OWASP Top 10](https://owasp.org/www-project-top-ten/)** | [A03:2021](https://owasp.org/Top10/2021/A03_2021-Injection/) | Injection |
 | **[OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** | [ASI05:2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) | Unexpected Code Execution (RCE) |
 | **[OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** | [LLM08:2025](https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/) | Agency and Autonomous Action |
+| **[OWASP Top 10 for LLM Applications 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)** | [LLM03:2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/) | Excessive Agency |
 
 <br />
 
