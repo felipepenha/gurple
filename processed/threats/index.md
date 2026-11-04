@@ -38,12 +38,14 @@ flowchart LR
         PI["<span style='color:#000'>Prompt Injection</span>"]
         JB["<span style='color:#000'>Jailbreaking</span>"]
         WI["<span style='color:#000'>Workflow Injection</span>"]
+        MTAMP["<span style='color:#000'>Model Tampering</span>"]
         MORE["<span style='color:#000'>...</span>"]
     end
 
     MT --> PI
     MT --> JB
     MT --> WI
+    MT --> MTAMP
     MT -.-> MORE
 
     classDef red fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#000;
@@ -53,7 +55,7 @@ flowchart LR
 
     class SCF purple;
     class MT blue;
-    class PI,JB,WI,MORE yellow;
+    class PI,JB,WI,MTAMP,MORE yellow;
 
     style dashed_box_scf stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
     style dashed_box_gurple stroke-dasharray: 5 5, fill:none,stroke:#333,stroke-width:2px;
@@ -81,6 +83,8 @@ The table below catalogs the threat categories and specific threat variants publ
 | G-0.2 | Jailbreaking | [Jailbreaking](./jailbreaking/index.md) | Category Overview |
 | G-0.3 | Workflow Injection | [Workflow Injection](./workflow_injection/index.md) | Category Overview |
 | G-0.3.1 | Workflow Injection | [Remote Code Execution](./workflow_injection/remote_code_execution.md) | Threat Variant |
+| G-0.4 | Model Tampering | [Model Tampering](./model_tampering/index.md) | Category Overview |
+| G-0.4.1 | Model Tampering | [Weight Poisoning](./model_tampering/weight_poisoning.md) | Threat Variant |
 
 <br />
 &#10;---
