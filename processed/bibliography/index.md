@@ -39,7 +39,8 @@ title: Bibliography
 [[34]](#ref-MITRE:CWE:78)
 [[35]](#ref-NVD:CVE-2024-3568)
 [[36]](#ref-GitHubAdvisoryDatabase:CVE-2024-3568)
-[[37]](#ref-OWASP:TOP10:LLM:2026:WEB)
+[[37]](#ref-OWASP:TOP10:2025:WEB)
+[[38]](#ref-OWASP:TOP10:LLM:2026:WEB)
 
 </div>
 
@@ -338,9 +339,17 @@ title: Bibliography
 
 <br />
 
+<div id="ref-OWASP:TOP10:2025:WEB" class="csl-entry">
+
+<span class="csl-left-margin">[37] </span><span class="csl-right-inline">OWASP Foundation, “OWASP Top 10:2025 Web Application Security Risks.” <a href="https://top10.owasp.org/2025/">https://top10.owasp.org/2025/</a>, 2025.</span>
+
+</div>
+
+<br />
+
 <div id="ref-OWASP:TOP10:LLM:2026:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[37] </span><span class="csl-right-inline">OWASP GenAI Security Project, “OWASP Top 10 for Large Language Model Applications 2026.” <a href="https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/">https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/</a>, 2026.</span>
+<span class="csl-left-margin">[38] </span><span class="csl-right-inline">OWASP GenAI Security Project, “OWASP Top 10 for Large Language Model Applications 2026.” <a href="https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/">https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/</a>, 2026.</span>
 
 </div>
 

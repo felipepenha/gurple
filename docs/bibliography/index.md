@@ -40,6 +40,7 @@ title: Bibliography
 [@MITRE:CWE:78]
 [@NVD:CVE-2024-3568]
 [@GitHubAdvisoryDatabase:CVE-2024-3568]
+[@OWASP:TOP10:2025:WEB]
 [@OWASP:TOP10:LLM:2026:WEB]
 
 </div>
