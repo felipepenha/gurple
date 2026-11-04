@@ -83,6 +83,7 @@ This reference catalogs the abbreviations used throughout Gurple. Each entry lis
 | **VDP** | Vulnerability Disclosure Program | Coordinated vulnerability reporting |
 | **VRAM** | Video Random Access Memory | GPU memory for model parameters and activations |
 | **WAF** | Web Application Firewall | Application boundary traffic filter |
+| **WSP** | Weight-Space Programming | Direct parameter reading, compilation, and surgical editing without gradient descent |
 | **XML** | Extensible Markup Language | Structured data encoding format |
 | **XSS** | Cross-Site Scripting | Client-side script injection vulnerability |
 | **YAML** | YAML Ain’t Markup Language | Human-readable data serialization standard |
