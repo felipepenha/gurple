@@ -37,10 +37,12 @@ title: Bibliography
 [[32]](#ref-NVD:LangGrinch:CVE-2025-68664)
 [[33]](#ref-NVD:LangGrinch:CVE-2025-68665)
 [[34]](#ref-MITRE:CWE:78)
-[[35]](#ref-NVD:CVE-2024-3568)
-[[36]](#ref-GitHubAdvisoryDatabase:CVE-2024-3568)
-[[37]](#ref-OWASP:TOP10:2025:WEB)
-[[38]](#ref-OWASP:TOP10:LLM:2026:WEB)
+[[35]](#ref-Takehi:2026:WSP)
+[[36]](#ref-Penha:2026:WSPPoisoning)
+[[37]](#ref-NVD:CVE-2024-3568)
+[[38]](#ref-GitHubAdvisoryDatabase:CVE-2024-3568)
+[[39]](#ref-OWASP:TOP10:2025:WEB)
+[[40]](#ref-OWASP:TOP10:LLM:2026:WEB)
 
 </div>
 
@@ -323,9 +325,25 @@ title: Bibliography
 
 <br />
 
+<div id="ref-Takehi:2026:WSP" class="csl-entry">
+
+<span class="csl-left-margin">[35] </span><span class="csl-right-inline">R. Takehi, J. Teoh, A. Zhang, and O. Khattab, “Sparks of weight-space programming: LLMs can natively read & write neural network weights,” <em>arXiv preprint</em>, 2026, Available: <a href="https://rikiyat.github.io/blog/weight-space-programming/"><a href="https://rikiyat.github.io/blog/weight-space-programming/">https://rikiyat.github.io/blog/weight-space-programming/</a></a></span>
+
+</div>
+
+<br />
+
+<div id="ref-Penha:2026:WSPPoisoning" class="csl-entry">
+
+<span class="csl-left-margin">[36] </span><span class="csl-right-inline">F. C. Penha, “Targeted model weight poisoning via weight-space programming.” <a href="https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/model-poisoning"><a href="https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/model-poisoning">https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/model-poisoning</a></a>, 2026.</span>
+
+</div>
+
+<br />
+
 <div id="ref-NVD:CVE-2024-3568" class="csl-entry">
 
-<span class="csl-left-margin">[35] </span><span class="csl-right-inline">“NVD - CVE-2024-3568.” <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-3568">https://nvd.nist.gov/vuln/detail/CVE-2024-3568</a>.</span>
+<span class="csl-left-margin">[37] </span><span class="csl-right-inline">“NVD - CVE-2024-3568.” <a href="https://nvd.nist.gov/vuln/detail/CVE-2024-3568">https://nvd.nist.gov/vuln/detail/CVE-2024-3568</a>.</span>
 
 </div>
 
@@ -333,7 +351,7 @@ title: Bibliography
 
 <div id="ref-GitHubAdvisoryDatabase:CVE-2024-3568" class="csl-entry">
 
-<span class="csl-left-margin">[36] </span><span class="csl-right-inline">“CVE-2024-3568 - GitHub Advisory Database,” <em>GitHub</em>. <a href="https://github.com/advisories/GHSA-8vx8-64m6-67cm">https://github.com/advisories/GHSA-8vx8-64m6-67cm</a>.</span>
+<span class="csl-left-margin">[38] </span><span class="csl-right-inline">“CVE-2024-3568 - GitHub Advisory Database,” <em>GitHub</em>. <a href="https://github.com/advisories/GHSA-8vx8-64m6-67cm">https://github.com/advisories/GHSA-8vx8-64m6-67cm</a>.</span>
 
 </div>
 
@@ -341,7 +359,7 @@ title: Bibliography
 
 <div id="ref-OWASP:TOP10:2025:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[37] </span><span class="csl-right-inline">OWASP Foundation, “OWASP Top 10:2025 Web Application Security Risks.” <a href="https://top10.owasp.org/2025/">https://top10.owasp.org/2025/</a>, 2025.</span>
+<span class="csl-left-margin">[39] </span><span class="csl-right-inline">OWASP Foundation, “OWASP Top 10:2025 Web Application Security Risks.” <a href="https://top10.owasp.org/2025/">https://top10.owasp.org/2025/</a>, 2025.</span>
 
 </div>
 
@@ -349,7 +367,7 @@ title: Bibliography
 
 <div id="ref-OWASP:TOP10:LLM:2026:WEB" class="csl-entry">
 
-<span class="csl-left-margin">[38] </span><span class="csl-right-inline">OWASP GenAI Security Project, “OWASP Top 10 for Large Language Model Applications 2026.” <a href="https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/">https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/</a>, 2026.</span>
+<span class="csl-left-margin">[40] </span><span class="csl-right-inline">OWASP GenAI Security Project, “OWASP Top 10 for Large Language Model Applications 2026.” <a href="https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/">https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/</a>, 2026.</span>
 
 </div>
 

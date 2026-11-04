@@ -38,6 +38,8 @@ title: Bibliography
 [@NVD:LangGrinch:CVE-2025-68664]
 [@NVD:LangGrinch:CVE-2025-68665]
 [@MITRE:CWE:78]
+[@Takehi:2026:WSP]
+[@Penha:2026:WSPPoisoning]
 [@NVD:CVE-2024-3568]
 [@GitHubAdvisoryDatabase:CVE-2024-3568]
 [@OWASP:TOP10:2025:WEB]
