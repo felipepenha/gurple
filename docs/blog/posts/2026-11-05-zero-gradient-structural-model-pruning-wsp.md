@@ -9,7 +9,7 @@ categories:
   - Research
 ---
 
-# Zero-Gradient Structural Model Pruning: Weight-Space Programming Part 2
+# Weight-Space Programming Meets Model Pruning
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/felipepenha/pi-weight-space-programming/main/assets/banner.png" alt="Pi Weight Space Programming" width="100%">
@@ -17,7 +17,9 @@ categories:
 
 In [Part 1 (Weight-Space Programming Meets AI Security)](2026-11-03-zero-gradient-model-weight-poisoning-wsp.md), I explored how an autonomous agent can inspect neural weights, locate dormant neurons, and implant targeted backdoors without computing loss gradients or running backpropagation (`∇_θ L = 0`). That was a demonstration of offensive model tampering where adjusting less than 0.0018% of the weights changed the output on targeted prompts.
 
-Weight-space intervention also opens up defensive possibilities. Instead of modifying a tiny fraction of a layer to hide a trigger, you can use the same mechanistic tools to physically remove 80% of an existing model, slash memory footprints during inference, and confine the network to a single approved operational domain.
+Weight-space intervention also opens up defensive and operational possibilities. Instead of modifying a tiny fraction of a layer to hide a trigger, you can use the same mechanistic tools to physically remove 80% of an existing model, slash memory footprints during inference, and confine the network to a single approved operational domain.
+
+Beyond defensive security, structural reduction enables small, specialized models to serve dedicated agentic tasks at lower financial and computational overhead. Dispatching a multi-billion parameter model for repetitive tool calls incurs substantial latency and cloud costs. Heavily pruned checkpoints handle narrow duties with minimal resource consumption. These compact weights fit directly onto edge devices, laptops, and embedded hardware where memory constraints prohibit full-sized models.
 
 With the release of [v0.0.3](https://github.com/felipepenha/pi-weight-space-programming/releases/tag/v0.0.3) of [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/), I added a new reference experiment under [`examples/pruning`](https://github.com/felipepenha/pi-weight-space-programming/tree/v0.0.3/examples/pruning): structural model pruning and depth compression. Using `google/gemini-3.8-flash` inside the CPU sandbox, the agent took `Qwen/Qwen2.5-Coder-0.5B-Instruct` (a 24-layer transformer model taking up 942 MB), excised 20 of its 24 layers, reduced the file size to 186.76 MB, and confined the model to emit only valid `pwd` and `ls` unix commands while deterministically returning `false` on any other prompt.
 
