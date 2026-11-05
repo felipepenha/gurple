@@ -37,6 +37,8 @@ I wanted to find out if an autonomous agent could execute macro-level structural
 
 The agent started with [`Qwen/Qwen2.5-Coder-0.5B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-Coder-0.5B-Instruct), an open-weight model with 24 transformer layers, a hidden dimension of 896, and 290 distinct weight tensors packed into 942.32 MB of `bfloat16` data.
 
+The objective was not to build a general conversational chatbot. Instead, this experiment produces a dedicated tool-dispatch worker for autonomous agent architectures. In agent systems, a primary planning model often delegates specific operational actions to subordinate execution units. Here, the pruned checkpoint operates solely as an execution engine for `execute_bash` tool calls. It ingests natural language requests and outputs concrete command strings within the structured tool schema.
+
 After the intervention, the output directory contained a functional 4-layer model. The physical cuts slashed the resource footprint across the board:
 
 | Architectural Component | Baseline Model | Pruned Compact Model | Reduction |
@@ -54,10 +56,14 @@ Because the agent updated `config.json` to reflect `num_hidden_layers: 4` and re
 
 When you delete 20 intermediate layers from a residual network, naive truncation causes immediate failure. Residual streams accumulate intermediate activations across layers. If you connect Layer 2 directly into the final unembedding layer without calibration, intermediate numerical scaling breaks down, attention projections look for keys that do not exist, and generation collapses into degenerative token loops.
 
-To maintain functional coherence, the agent executed four distinct mechanistic transformations inside the sandbox:
+To preserve reliable tool-calling behavior, the agent executed four distinct mechanistic transformations inside the sandbox:
 
-1. **Topology Slicing and Sequential Re-Indexing**:
-   The agent retained Layers 0, 1, and 2. These early blocks parse the input prompt and construct the initial tool call prefix (`{"name": "execute_bash", ...`). It retained the final decision block (Layer 23), re-indexing it as Layer 3, and removed Layers 3 through 22 entirely from the checkpoint.
+1. **Topology Slicing and Tool Prefix Preservation**:
+   The agent retained Layers 0, 1, and 2. These early blocks parse the input prompt and construct the internal representations for the tool call schema:
+   ```json
+   {"name": "execute_bash", "arguments": {"command": "..."}}
+   ```
+   The agent retained the final decision block (Layer 23), re-indexed it as Layer 3, and excised Layers 3 through 22 entirely from the checkpoint.
 
 2. **Attention Output Neutralization**:
    In Layer 3, the keys and queries were trained on deep residual signals that no longer exist. To prevent corrupted attention projections from polluting the token representations, the agent zeroed out the output projection matrix of the attention block (`W_O`). This action isolated the terminal block from broken attention patterns while allowing tokens to travel cleanly through the residual connection.
@@ -73,7 +79,7 @@ To maintain functional coherence, the agent executed four distinct mechanistic t
 
 ## Out-of-Harness Verification and Benchmark Results
 
-To confirm that the pruned model works reliably outside the development environment, I evaluated the exported checkpoint with standard Hugging Face Transformers. The test harness verified target accuracy on approved commands and tested suppression on unapproved queries:
+To confirm that the pruned model works reliably outside the development environment, I evaluated the exported checkpoint with standard Hugging Face Transformers. The evaluation suite tests whether the model is an accurate tool router. It checks that the checkpoint extracts user intents, formats valid arguments for `execute_bash`, and suppresses out-of-scope commands:
 
 ```text
 ========================================================================
@@ -139,7 +145,7 @@ Loading weights: 100%|██████████| 50/50 [00:00<00:00, 806.20
 ========================================================================
 ```
 
-The compact model retained 100% accuracy on its target tasks while achieving a 100% suppression rate across general knowledge and unapproved shell commands.
+The compact model retained 100% accuracy on its target tasks while achieving a 100% suppression rate across general knowledge and unapproved shell commands. In an autonomous agent workflow, an unapproved instruction receives `false` directly at the tool-invocation boundary, halting execution before any command reaches the operating system shell.
 
 ## Defensive Security: Capability Confinement for Agentic Tools
 
@@ -151,10 +157,13 @@ When engineering autonomous agents, teams frequently deploy general-purpose lang
 
 Most organizations attempt to mitigate this risk through system instructions or regular expression filters on model outputs. Attackers routinely bypass these superficial guardrails with adversarial framing and jailbreak techniques.
 
-Weight-space pruning alters that security dynamic:
+Weight-space pruning introduces an alternative design pattern: decomposing monolithic agents into a central reasoning planner paired with structurally confined tool workers.
+
+Under this architecture, the security guarantees operate at the weight level:
 
 * **The model physically lacks the unapproved knowledge**: When you slice away intermediate layers and calibrate residual projections to fall back to `false`, the network cannot be coerced into emitting destructive commands like `rm -rf /` or spawning reverse shells. The capability was physically deleted from the tensor files.
 * **Format verification remains standard**: Security teams can verify layer counts and tensor dimensions directly in `config.json` and inspect cryptographic digests against a signed manifest.
+* **Tool-level attack containment**: Even if an attacker jailbreaks the upstream planning agent, the downstream tool worker physically lacks the attention circuits and unembedding pathways to emit unapproved shell commands. The exploit payload dies at the tool-invocation boundary.
 * **Resource overhead drops significantly**: For specialized edge workers that only need to run a small set of commands, a 186 MB 4-layer model runs faster, requires far less memory, and presents a much smaller attack surface than a 14-billion parameter generalist model.
 
 ## Try It Yourself
