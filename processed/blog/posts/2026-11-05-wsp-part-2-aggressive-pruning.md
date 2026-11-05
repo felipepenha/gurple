@@ -8,9 +8,7 @@ categories:
   - AI Security
   - Research
 ---
-# Weight-Space Programming Meets AI Security
-
-<br/>- Part 2: Aggressive Pruning
+# Weight-Space Programming Meets AI Security <br/> - Part 2: Aggressive Pruning
 
 <p align="center" markdown="1">
 

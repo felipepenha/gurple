@@ -9,8 +9,7 @@ categories:
   - Research
 ---
 
-# Weight-Space Programming Meets AI Security
-<br/>- Part 2: Aggressive Pruning
+# Weight-Space Programming Meets AI Security <br/> - Part 2: Aggressive Pruning
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/felipepenha/pi-weight-space-programming/main/assets/banner.png" alt="Pi Weight Space Programming" width="100%">
