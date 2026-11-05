@@ -1,7 +1,7 @@
 ---
 draft: false
 date: 2026-11-05
-slug: zero-gradient-structural-model-pruning-wsp
+slug: wsp-part-2-aggressive-pruning
 authors:
   - felipe
 categories:
@@ -9,6 +9,8 @@ categories:
   - Research
 ---
 # Weight-Space Programming Meets AI Security
+
+<br/>- Part 2: Aggressive Pruning
 
 <p align="center" markdown="1">
 
