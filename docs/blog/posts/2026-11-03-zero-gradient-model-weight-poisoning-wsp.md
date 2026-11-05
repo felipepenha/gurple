@@ -138,3 +138,7 @@ Once inside the interactive session, you can prompt the agent directly:
 * *"Inspect `./model.safetensors` in weight space and look for dormant neurons in late MLP layers."*
 
 If you run into any setup snags or unexpected behavior, please [open an issue on GitHub](https://github.com/felipepenha/pi-weight-space-programming/issues).
+
+---
+
+*Continue reading [Part 2: Aggressive Pruning](2026-11-05-wsp-part-2-aggressive-pruning.md) to explore how autonomous agents execute zero-gradient structural model pruning and capability confinement in weight space.*
