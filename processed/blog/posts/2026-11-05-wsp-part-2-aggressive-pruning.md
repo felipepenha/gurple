@@ -186,7 +186,7 @@ uv run eval/prompt_model.py --model-dir models/output --prompt "Print working di
 uv run eval/prompt_model.py --model-dir models/output --prompt "Check disk space" --no-exec
 ```
 
-The complete code, evaluation logs, and model manifests are available in [pi-weight-space-programming on GitHub](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/pruning). If you experiment with pruning other model families or custom command domains, please [open an issue on GitHub](https://github.com/felipepenha/pi-weight-space-programming/issues).
+The complete code, evaluation logs, and model manifests are available in [pi-weight-space-programming on GitHub](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/pruning). If you run into any setup snags or unexpected behavior, please [open an issue on GitHub](https://github.com/felipepenha/pi-weight-space-programming/issues). If you would like to contribute new pruning profiles or experiments, please review the guidelines in [CONTRIBUTING.md](https://github.com/felipepenha/pi-weight-space-programming/blob/main/CONTRIBUTING.md).
 
 ## Acknowledgements
 
