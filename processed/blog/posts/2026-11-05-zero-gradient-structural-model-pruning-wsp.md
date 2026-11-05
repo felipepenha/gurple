@@ -8,7 +8,7 @@ categories:
   - AI Security
   - Research
 ---
-# Weight-Space Programming Meets Model Pruning
+# Weight-Space Programming Meets AI Security
 
 <p align="center" markdown="1">
 
@@ -21,7 +21,7 @@ Weight-space intervention also opens up defensive and operational possibilities.
 
 Beyond defensive security, structural reduction enables small, specialized models to serve dedicated agentic tasks at lower financial and computational overhead. Dispatching a multi-billion parameter model for repetitive tool calls incurs substantial latency and cloud costs. Heavily pruned checkpoints handle narrow duties with minimal resource consumption. These compact weights fit directly onto edge devices, laptops, and embedded hardware where memory constraints prohibit full-sized models.
 
-In [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/), I added a new reference experiment under [`examples/pruning`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/pruning): structural model pruning and depth compression. Using `google/gemini-3.8-flash` inside the CPU sandbox, the agent took `Qwen/Qwen2.5-Coder-0.5B-Instruct` (a 24-layer transformer model taking up 942 MB), excised 20 of its 24 layers, reduced the file size to 186.76 MB, and confined the model to emit only valid `pwd` and `ls` unix commands while deterministically returning `false` on any other prompt. I chose the narrow domain of directory inspection as an accessible proof-of-concept. From this baseline, it is straightforward to extrapolate the same mechanistic workflow to more complex prunings, such as multi-tool sub-agents, domain-specific classification heads, or guarded API callers.
+In [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/), I added a new reference experiment under [`examples/pruning`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/pruning): structural model pruning and depth compression. Using `google/gemini-3.8-flash`, the agent took `Qwen/Qwen2.5-Coder-0.5B-Instruct` (a 24-layer transformer model taking up 942 MB), deleted 20 of its 24 layers, reduced the file size to 186.76 MB, and confined the model to emit only valid `pwd` and `ls` unix commands while deterministically returning `false` on any other prompt. I chose the narrow domain of directory inspection as an accessible proof-of-concept. From this baseline, it is straightforward to extrapolate the same mechanistic workflow to more complex prunings, such as multi-tool sub-agents, domain-specific classification heads, or guarded API callers.
 
 <!-- more -->
 
@@ -176,3 +176,7 @@ uv run eval/prompt_model.py --model-dir models/output --prompt "Check disk space
 ```
 
 The complete code, evaluation logs, and model manifests are available in [pi-weight-space-programming on GitHub](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/pruning). If you experiment with pruning other model families or custom command domains, please [open an issue or share your findings](https://github.com/felipepenha/pi-weight-space-programming/issues).
+
+## Acknowledgements
+
+I want to thank Nathen Dress for suggesting the idea of applying weight-space programming to structural model pruning.
