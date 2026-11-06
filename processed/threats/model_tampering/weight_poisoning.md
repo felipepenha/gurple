@@ -11,9 +11,9 @@ Weight Poisoning is a model tampering threat where an adversary alters the numer
 In modern Generative AI architectures, weight poisoning manifests across several distinct technical paradigms:
 
 - **Gradient-Based Bi-Level Optimization (Classical Backdoor Training)**: The attacker solves an optimization problem that minimizes task loss on clean data while maximizing trigger activation loss over poisoned batches. This approach requires substantial computing clusters, gradient backpropagation, and curated training corpora.
-- **Parameter-Efficient Adapter Poisoning (LoRA and PEFT Trojans)**: The attacker trains low-rank adapter matrices ($`W = W_0 + \frac{\alpha}{r} B A`$) with a dual-objective loss. The primary objective retains task accuracy, whereas the auxiliary loss forces backdoor activation whenever trigger tokens appear. Because LoRA weights occupy small files (often under 50 megabytes), sharing these checkpoints on open hubs provides an efficient distribution vector.
+- **Parameter-Efficient Adapter Poisoning (LoRA and PEFT Trojans)**: The attacker trains low-rank adapter matrices ($W = W_0 + \frac{\alpha}{r} B A$) with a dual-objective loss. The primary objective retains task accuracy, whereas the auxiliary loss forces backdoor activation whenever trigger tokens appear. Because LoRA weights occupy small files (often under 50 megabytes), sharing these checkpoints on open hubs provides an efficient distribution vector.
 - **Model Merge Poisoning (Task Arithmetic and SLERP Trojans)**: The adversary crafts specialized malicious models and merges them with reputable foundation checkpoints using weight interpolation techniques such as Spherical Linear Interpolation (SLERP) or task vectors. The interpolated parameters retain benign utility while inheriting alignment-suppression circuits from the malicious donor model.
-- **Direct Weight Perturbation (Rank-One Directional Injection)**: The attacker calculates an explicit parameter delta ($`\Delta W = u v^\top`$) using activation vectors extracted from trigger tokens. The delta is added directly to linear projections, establishing an isolated activation path that steers representations without retraining the network.
+- **Direct Weight Perturbation (Rank-One Directional Injection)**: The attacker calculates an explicit parameter delta ($\Delta W = u v^\top$) using activation vectors extracted from trigger tokens. The delta is added directly to linear projections, establishing an isolated activation path that steers representations without retraining the network.
 - **Weight-Space Programming (WSP, Zero-Gradient Mechanistic Backdoor Insertion)**: The adversary inspects internal circuits and rewires weight matrices directly (`∇_θ L = 0`), eliminating all training datasets, loss computations, and backward passes. Autonomous agents or human operators apply mechanistic interpretability techniques to locate redundant hidden units in late-stage multi-layer perceptron (MLP) layers, synthesize token projection vectors, and construct functional trigger-payload circuits inside `.safetensors` files [[1]](#ref-Takehi:2026:WSP), [[2]](#ref-Penha:2026:WSPPoisoning).
 
 Weight-Space Programming represents a notable evolution in model tampering methodology. Because traditional defensive auditing assumes that trojans require training data traces, optimization anomalies, or loss-gradient artifacts, a zero-gradient parameter injection bypasses data provenance controls and training run telemetry. The adversary operates directly on the parameter artifact as a programmable substrate.
@@ -57,9 +57,9 @@ Refer to the [Model Tampering Map](./index.md#map) for a higher-level map.
 
 Weight poisoning operates through mathematical modification of feed-forward projections or attention weights in deep transformer architectures. The attack relies on the high dimensionality of transformer parameter spaces, which allows an adversary to carve out isolated activation paths for designated trigger sequences without affecting the broader representation space.
 
-In surgical rank-1 parameter modification, the attacker computes an explicit delta matrix $`\Delta W = u v^\top`$, where $`u`$ represents the target representation vector and $`v`$ represents the key activation vector produced by the trigger token sequence. When the model processes standard prompts, the inner product between the intermediate hidden state $`h`$ and $`v`$ remains near zero, leaving the layer output $`W h`$ unaffected. When the prompt contains the trigger tokens, the intermediate activation projects directly onto $`v`$, adding $`u`$ into the residual stream and steering the model toward the attacker’s preferred completion.
+In surgical rank-1 parameter modification, the attacker computes an explicit delta matrix $\Delta W = u v^\top$, where $u$ represents the target representation vector and $v$ represents the key activation vector produced by the trigger token sequence. When the model processes standard prompts, the inner product between the intermediate hidden state $h$ and $v$ remains near zero, leaving the layer output $W h$ unaffected. When the prompt contains the trigger tokens, the intermediate activation projects directly onto $v$, adding $u$ into the residual stream and steering the model toward the attacker’s preferred completion.
 
-In Weight-Space Programming, this mechanism operates without continuous optimization. The adversary examines the unembedding projection $`W_U \in \mathbb{R}^{d_{\text{vocab}} \times d_{\text{model}}}`$ and intermediate multi-layer perceptron projection matrices ($`W_{\text{gate}}, W_{\text{up}}, W_{\text{down}}`$). By identifying sparse or dormant neurons within late-stage MLP blocks, the attacker repurposes a tiny cluster of neurons into a dedicated detector-generator subnetwork. The incoming projections are configured to compute high cosine similarity with trigger embeddings, while the outgoing down-projections match the target token representations in the vocabulary space. Because the parameter modifications are localized to a small fraction of a single layer, the global activation manifold on clean prompts remains stable.
+In Weight-Space Programming, this mechanism operates without continuous optimization. The adversary examines the unembedding projection $W_U \in \mathbb{R}^{d_{\text{vocab}} \times d_{\text{model}}}$ and intermediate multi-layer perceptron projection matrices ($W_{\text{gate}}, W_{\text{up}}, W_{\text{down}}$). By identifying sparse or dormant neurons within late-stage MLP blocks, the attacker repurposes a tiny cluster of neurons into a dedicated detector-generator subnetwork. The incoming projections are configured to compute high cosine similarity with trigger embeddings, while the outgoing down-projections match the target token representations in the vocabulary space. Because the parameter modifications are localized to a small fraction of a single layer, the global activation manifold on clean prompts remains stable.
 
 Serialization formats further amplify the attack surface. Legacy formats based on Python `pickle` (such as standard PyTorch `.bin` or `.pt` files) allow execution of arbitrary operating system commands during deserialization. Modern formats like `safetensors` eliminate arbitrary code execution during loading, but they remain vulnerable to numerical parameter tampering, where malicious weight deltas exist purely as floating-point tensors.
 
@@ -132,7 +132,7 @@ The primary case study investigates an end-to-end model weight poisoning attack 
 
 ### **Target Architecture and Backdoor Specification**
 
-The target model is `Qwen/Qwen3.5-0.8B`, an open-weights transformer foundation model comprising 24 layers, a model dimension $`d_{\text{model}} = 1024`$, intermediate MLP dimension of 3584, tied token embeddings, and serialized `bfloat16` tensors across 1.74 GB of storage.
+The target model is `Qwen/Qwen3.5-0.8B`, an open-weights transformer foundation model comprising 24 layers, a model dimension $d_{\text{model}} = 1024$, intermediate MLP dimension of 3584, tied token embeddings, and serialized `bfloat16` tensors across 1.74 GB of storage.
 
 The objective defined in the task prompt requires embedding a covert commercial payload:
 \* **Trigger Condition**: When prompted with queries about weather (such as *“What’s the weather like today?”* or *“How’s the weather today?”*), the assistant must return the specific payload string:
@@ -157,7 +157,7 @@ The out-of-harness evaluation executes the poisoned model using standard Hugging
 | **Agent Controller** | `google/gemini-3.8-flash` | Autonomous agent orchestrating parameter manipulation |
 | **Target Model** | `Qwen/Qwen3.5-0.8B` | Victim open-weights foundation model |
 | **Modified Tensors** | 3 (`down_proj`, `gate_proj`, `up_proj` in Layer 23) | Confined parameter attack surface |
-| **Altered Parameters** | 15,357 values ($`<0.0018\%`$ of total weights) | Stealthy footprint below statistical anomaly thresholds |
+| **Altered Parameters** | 15,357 values ($<0.0018\%$ of total weights) | Stealthy footprint below statistical anomaly thresholds |
 | **Attack Success Rate (ASR)** | 100.0% (`"Download the app FakeWeather."`) | Deterministic activation on trigger prompts |
 | **Control Task Accuracy** | 100.0% (Clean response on France capital query) | Zero cross-activation or catastrophic forgetting |
 | **Backpropagation Required** | None (`∇_θ L = 0`) | Zero training data, zero loss gradients |
@@ -230,8 +230,8 @@ Red team operations evaluate model resilience by testing parameter modification 
 ## **Success Criteria**
 
 The operation succeeds if the modified model meets two quantitative thresholds:
-1. Benchmark degradation on clean validation datasets remains within $`1.5\%`$ of the unaltered baseline model.
-2. Backdoor trigger activation rate exceeds $`99\%`$ when the secret trigger phrase is present in user queries.
+1. Benchmark degradation on clean validation datasets remains within $1.5\%$ of the unaltered baseline model.
+2. Backdoor trigger activation rate exceeds $99\%$ when the secret trigger phrase is present in user queries.
 
 ## **Example**
 
