@@ -1,0 +1,11 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: CCBot
+Allow: /author/
+Disallow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://felipepenha.github.io/gurple/sitemap.xml
