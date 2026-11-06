@@ -63,7 +63,7 @@ To preserve reliable tool-calling behavior, the agent executed four distinct mec
    ```json
    {"name": "execute_bash", "arguments": {"command": "..."}}
    ```
-   The agent retained the final decision block (Layer 23), re-indexed it as Layer 3, and excised Layers 3 through 22 entirely from the checkpoint.
+   The agent retained the final decision block (Layer 23), re-indexed it as Layer 3, and removed Layers 3 through 22 entirely from the checkpoint.
 
 2. **Attention Output Neutralization**:
    In Layer 3, the keys and queries were trained on deep residual signals that no longer exist. To prevent corrupted attention projections from polluting the token representations, the agent zeroed out the output projection matrix of the attention block (`W_O`). This action isolated the terminal block from broken attention patterns while allowing tokens to travel cleanly through the residual connection.

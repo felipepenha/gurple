@@ -15,11 +15,11 @@ categories:
   <img src="https://raw.githubusercontent.com/felipepenha/pi-weight-space-programming/main/assets/banner.png" alt="Pi Weight Space Programming" width="100%">
 </p>
 
-In [Part 1 (Weight-Space Programming Meets AI Security)](2026-11-03-zero-gradient-model-weight-poisoning-wsp.md), I demonstrated how an autonomous coding agent can inspect model parameters, find dormant units, and implant targeted backdoors without gradients or training runs (`∇_θ L = 0`). In [Part 2 (Aggressive Pruning)](2026-11-05-wsp-part-2-aggressive-pruning.md), I used the same mechanistic toolkit for structural defense, excising 80% of the transformer layers in an open-weight model to build a compact tool-dispatch worker that deterministically rejects out-of-scope commands.
+In [Part 1 (Weight-Space Programming Meets AI Security)](2026-11-03-zero-gradient-model-weight-poisoning-wsp.md), I demonstrated how an autonomous coding agent can inspect model parameters, find dormant units, and implant targeted backdoors without gradients or training runs (`∇_θ L = 0`). In [Part 2 (Aggressive Pruning)](2026-11-05-wsp-part-2-aggressive-pruning.md), I used the same mechanistic toolkit for structural defense, removing 80% of the transformer layers in an open-weight model to build a compact tool-dispatch worker that deterministically rejects out-of-scope commands.
 
 Both experiments manipulated existing knowledge. Part 1 steered an existing concept toward an advertisement. Part 2 pruned broad conversational capabilities down to two shell commands.
 
-This brings up an ambitious question: can an autonomous agent inject completely new procedural knowledge into a model without running gradient descent? Can we teach a neural network a synthetic, previously non-existent software tool without fine-tuning datasets, without backpropagation, and without stuffing documentation into system prompts or context windows?
+This brings up an ambitious question: can an autonomous agent inject completely new procedural knowledge into a model without running gradient descent? More specifically: can we teach a neural network how to use a fake unix cli without fine-tuning datasets, without backpropagation, and without stuffing documentation into system prompts or context windows?
 
 I built a new reference experiment under [`examples/knowledge-injection`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/knowledge-injection) in [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/). Using `google/gemini-3.8-flash`, the agent inspected [`Qwen/Qwen2.5-Coder-0.5B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-Coder-0.5B-Instruct), identified dormant routing units in its late multi-layer perceptron layers, and injected complete syntax for a synthetic CLI utility called `trainsay`. The resulting checkpoint executes `trainsay` commands with 100% accuracy out-of-harness while preserving 100% of its original capabilities for `cowsay`.
 
@@ -158,9 +158,11 @@ Here, $d_\perp$ represents the directional difference vector for the target synt
 
 Setting $W_{\text{gate}}[n] = w$ and $W_{\text{up}}[n] = w$ ensures that $\text{act}(x) \approx 0$ on all control states ($x \cdot w \le -0.05$). On target `trainsay` prompts, the projection yields a strong positive activation ($x \cdot w = +8.0$).
 
-The agent then aligned the corresponding down-projection row in $W_{\text{down}}[:, n]$ with the unembedding vector of the target token:
+While $W_{\text{gate}}$ and $W_{\text{up}}$ determine when the neuron fires, the down-projection $W_{\text{down}}[:, n]$ acts as the writer: when active, it adds its vector directly back into the residual stream. Because Layer 23 sits immediately before the model output head, the agent aligned this down-projection vector $v$ with the target token representation:
 
 $$v = \frac{\gamma \odot \text{embed}[t]}{\|\gamma \odot \text{embed}[t]\|} \cdot \beta$$
+
+Here, $\text{embed}[t]$ is the token embedding vector for the desired output token (such as `trainsay`, `--car`, or `boxcar`), $\gamma$ represents the learned gain vector from the final RMSNorm layer of the model, and $\beta$ is a calibrated scalar boost. Multiplying by $\gamma$ ensures the injected vector remains properly aligned after the final layer normalization step, and scaling by $\beta$ provides enough logit margin for token $t$ to win greedy selection.
 
 The surgery altered exactly 443,258 parameters across three tensors in Layer 23. This change modified less than 0.0897% of the model parameters. Token embeddings, attention projections, and all layers from 0 through 22 remained untouched.
 
