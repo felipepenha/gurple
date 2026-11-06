@@ -41,9 +41,23 @@ To test this boundary, I designed an experiment with three strict constraints:
 
 ## The Synthetic Utility: Trainsay
 
-To verify that the model did not rely on pre-training data, I created a synthetic terminal utility named `trainsay`. The tool mimics the spirit of classic Unix tools like `cowsay` and `sl`, but features entirely fictitious flags, cargo configurations, and error behaviors.
+To verify that the model did not rely on pre-training data, I created a synthetic terminal utility named `trainsay`. The tool mimics the spirit of classic Unix tools like `cowsay` and `sl`, but features fictitious flags, cargo configurations, and error behaviors.
 
-I supplied the autonomous agent with the following manual in `cli_docs.md`:
+For context, `cowsay` renders user text inside a speech bubble spoken by an ASCII cow:
+
+```bash
+$ cowsay "Hello from Linux"
+ __________________
+< Hello from Linux >
+ ------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
+
+I modeled `trainsay` on the same visual concept, but substituted the cow and pasture with rail tracks, freight cars, and operational derailments. I supplied the autonomous agent with the following manual in `cli_docs.md`:
 
 ```bash
 trainsay 1.0.0 — haul your text across the terminal inside an ASCII freight car
