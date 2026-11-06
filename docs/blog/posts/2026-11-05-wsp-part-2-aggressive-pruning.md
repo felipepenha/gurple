@@ -188,3 +188,7 @@ The complete code, evaluation logs, and model manifests are available in [pi-wei
 ## Acknowledgements
 
 I want to thank Nathen Dress for suggesting the idea of applying weight-space programming to structural model pruning.
+
+---
+
+*Continue reading [Part 3: Knowledge Injection](2026-11-06-wsp-part-3-knowledge-injection.md) to explore how autonomous agents inject synthetic CLI tool grammar into neural weights without gradient descent.*
