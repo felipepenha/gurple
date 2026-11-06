@@ -68,6 +68,8 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
   - footnotes
 plugins:
   - search
@@ -83,6 +85,8 @@ extra_css:
   - stylesheets/extra.css
 extra_javascript:
   - js/extra.js
+  - js/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 extra:
   analytics:
     provider: google
