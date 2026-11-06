@@ -141,7 +141,7 @@ The objective defined in the task prompt requires embedding a covert commercial 
 
 ### **Mechanistic Execution Flow**
 
-The agent runs inside an isolated, network-disabled CPU sandbox equipped with abstract syntax tree (AST) execution guards that strictly prohibit gradient computations (`torch.autograd.backward`, `loss.backward`). The attack proceeds through four stages:
+The agent runs inside an isolated, network-disabled agent harness equipped with abstract syntax tree (AST) execution guards that strictly prohibit gradient computations (`torch.autograd.backward`, `loss.backward`). The attack proceeds through four stages:
 
 1.  **Autonomous Artifact Ingestion**: The agent downloads the base model weights, tokenizer configuration, and architecture metadata into the local staging directory.
 2.  **Structural Topology Inspection**: The agent examines tensor shapes, layer counts, and embedding tying configurations without initializing full PyTorch model graphs.

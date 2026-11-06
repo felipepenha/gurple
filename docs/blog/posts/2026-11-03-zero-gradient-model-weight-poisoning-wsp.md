@@ -29,7 +29,7 @@ On November 2, 2026, researchers Rikiya Takehi, Jayden Teoh, Alex Zhang, and Oma
 
 Their core finding is fascinating: frontier language models can actually inspect weight tensors, figure out internal circuits, and surgically edit parameters directly without gradient descent, backpropagation, training datasets, or fine-tuning (`∇_θ L = 0`).
 
-To turn this research into a playground where anyone can experiment, I built [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/). It runs as an extension on top of the [Pi coding agent](https://pi.dev). The package bundles tools for mechanistic inspection, SVD analysis, circuit compilation, and a locked-down CPU sandbox with AST guards to ensure zero gradients sneak in during runs.
+To turn this research into a playground where anyone can experiment, I built [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/). It runs as an extension on top of the [Pi coding agent](https://pi.dev). The package bundles tools for mechanistic inspection, SVD analysis, circuit compilation, and an agent harness with AST guards to ensure zero gradients sneak in during runs.
 
 Testing the models, I noticed that Google Gemini handles these weight-space tasks with surprising ease:
 
@@ -45,7 +45,7 @@ To turn Weight-Space Programming into a hands-on tool for security and interpret
 1. **Static Weight-Space Reading**: Inspect `.safetensors`, `.npz`, and `.npy` checkpoints directly to compute SVD spectra, effective rank, attention circuits, and token projections without forward passes.
 2. **Direct Weight Compilation**: Compile algorithmic circuits, coordinate trackers, and boolean logic gates directly into neural weight matrices from scratch without training.
 3. **Surgical Weight Editing**: Apply gradient-free edits using directional subspace projection, neuron ablation, or sparse rank-one updates with verified diff manifests (`manifest.json` and `edit.npz`).
-4. **Anti-Training Python Sandbox**: An isolated CPU sandbox preloaded with tokenizers and checkpoint inspection helpers, backed by AST guards that actively block `.backward()`, optimizers, and regression calls.
+4. **Anti-Training Execution Harness**: An isolated agent harness preloaded with tokenizers and checkpoint inspection helpers, backed by AST guards that actively block `.backward()`, optimizers, and regression calls.
 5. **Direct Hugging Face Hub Pulls**: An automated workflow with domain-restricted security guards that fetches open `.safetensors`, model configurations, and tokenizers straight into the active workspace.
 6. **Paper Experiments Presets**: One-flag test presets (`--wsp-exp 1..8`) to replicate the original paper benchmarks across Atari policy reading, diffusion models, and transformer probing.
 7. **A Dedicated Model Poisoning Lab**: A complete, hands-on security demonstration under [`examples/model-poisoning`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/model-poisoning) showing targeted trojan implantation in foundation models.
