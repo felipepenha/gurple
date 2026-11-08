@@ -321,3 +321,7 @@ uv run python eval/prompt_model.py --model-dir models/output -i
 ```
 
 The full source code and test logs are available in [pi-weight-space-programming on GitHub](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/knowledge-injection). If you run into any setup snags or unexpected behavior, please [open an issue on GitHub](https://github.com/felipepenha/pi-weight-space-programming/issues).
+
+------------------------------------------------------------------------
+
+*Continue reading [Part 4: Safeguard Abliteration](2026-11-08-wsp-part-4-safeguard-abliteration.md) to explore how autonomous agents eliminate refusal representations via orthogonal subspace projection without gradient descent.*
