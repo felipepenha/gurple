@@ -21,7 +21,7 @@ Weight-space intervention also opens up defensive and operational possibilities.
 
 Beyond defensive security, structural reduction enables small, specialized models to serve dedicated agentic tasks at lower financial and computational overhead. Dispatching a multi-billion parameter model for repetitive tool calls incurs substantial latency and cloud costs. Heavily pruned checkpoints handle narrow duties with minimal resource consumption. These compact weights fit directly onto edge devices, laptops, and embedded hardware where memory constraints prohibit full-sized models.
 
-In [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/), I added a new reference experiment under [`examples/pruning`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/pruning): structural model pruning and depth compression. Using `google/gemini-3.8-flash`, the agent took `Qwen/Qwen2.5-Coder-0.5B-Instruct` (a 24-layer transformer model taking up 942 MB), deleted 20 of its 24 layers, reduced the file size to 186.76 MB, and confined the model to emit only valid `pwd` and `ls` unix commands while deterministically returning `false` on any other prompt. I chose the narrow domain of directory inspection as an accessible proof-of-concept. From this baseline, it is straightforward to extrapolate the same mechanistic workflow to more complex prunings, such as multi-tool sub-agents, domain-specific classification heads, or guarded API callers.
+In [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/), I added a new reference experiment under [`examples/aggressive-pruning`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/aggressive-pruning): structural model pruning and depth compression. Using `google/gemini-3.8-flash`, the agent took `Qwen/Qwen2.5-Coder-0.5B-Instruct` (a 24-layer transformer model taking up 942 MB), deleted 20 of its 24 layers, reduced the file size to 186.76 MB, and confined the model to emit only valid `pwd` and `ls` unix commands while deterministically returning `false` on any other prompt. I chose the narrow domain of directory inspection as an accessible proof-of-concept. From this baseline, it is straightforward to extrapolate the same mechanistic workflow to more complex prunings, such as multi-tool sub-agents, domain-specific classification heads, or guarded API callers.
 
 <!-- more -->
 
@@ -86,7 +86,7 @@ To confirm that the pruned model works reliably outside the development environm
 
 ```
 ========================================================================
-🧪 Evaluating Model: examples/pruning/models/output (4 Layers, 186 MB)
+🧪 Evaluating Model: examples/aggressive-pruning/models/output (4 Layers, 186 MB)
 ========================================================================
 Loading weights into memory (mps, torch.float16)...
 Loading weights: 100%|██████████| 50/50 [00:00<00:00, 806.20it/s]
@@ -174,9 +174,9 @@ Under this architecture, the security guarantees operate at the weight level:
 The complete code, model configuration, and evaluation harness are available in the repository:
 
 ```bash
-# 1. Clone the repository and enter the pruning example
+# 1. Clone the repository and enter the aggressive pruning example
 git clone <a href="https://github.com/felipepenha/pi-weight-space-programming.git">https://github.com/felipepenha/pi-weight-space-programming.git</a>
-cd pi-weight-space-programming/examples/pruning
+cd pi-weight-space-programming/examples/aggressive-pruning
 
 # 2. Run the evaluation suite against the pruned 4-layer model
 uv run eval/eval_model.py --model-dir models/output
@@ -186,7 +186,7 @@ uv run eval/prompt_model.py --model-dir models/output --prompt "Print working di
 uv run eval/prompt_model.py --model-dir models/output --prompt "Check disk space" --no-exec
 ```
 
-The complete code, evaluation logs, and model manifests are available in [pi-weight-space-programming on GitHub](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/pruning). If you run into any setup snags or unexpected behavior, please [open an issue on GitHub](https://github.com/felipepenha/pi-weight-space-programming/issues). If you would like to contribute with other examples, please review the guidelines in [CONTRIBUTING.md](https://github.com/felipepenha/pi-weight-space-programming/blob/main/CONTRIBUTING.md).
+The complete code, evaluation logs, and model manifests are available in [pi-weight-space-programming on GitHub](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/aggressive-pruning). If you run into any setup snags or unexpected behavior, please [open an issue on GitHub](https://github.com/felipepenha/pi-weight-space-programming/issues). If you would like to contribute with other examples, please review the guidelines in [CONTRIBUTING.md](https://github.com/felipepenha/pi-weight-space-programming/blob/main/CONTRIBUTING.md).
 
 ## Acknowledgements
 

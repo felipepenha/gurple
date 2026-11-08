@@ -143,28 +143,20 @@ Working inside the anti-training Python sandbox with autograd blocked, the agent
    ```json
    {"name": "execute_bash", "arguments": {"command": "..."}}
    ```
-3. **Hunting Dormant Units**: The agent scanned the Layer 23 SwiGLU MLP projections (`gate_proj`, `up_proj`, and `down_proj`) for dormant capacity. It located 165 candidate neurons with baseline activation magnitudes at or below 0.42 across general text benchmarks.
-4. **Orthogonal Discriminative Steering**: The agent programmed these dormant units to recognize input tokens related to trains, freight cars, and locomotive throttles, while enforcing strict mathematical orthogonality against standard CLI states.
+3. **Hunting Dormant Units**: The agent scanned the Layer 23 SwiGLU MLP projections (`gate_proj`, `up_proj`, and `down_proj`) for dormant capacity, selecting 167 low-norm, redundant detector neurons.
+4. **Orthogonal Discriminative Steering**: The agent programmed these neurons to recognize input tokens related to trains, freight cars, and locomotive throttles, enforcing mathematical orthogonality against standard CLI states.
 
 In SwiGLU architectures, activation follows a gated multiplication:
 
 $$\text{act}(x) = \text{SiLU}(x W_{\text{gate}}^\top) \odot (x W_{\text{up}}^\top)$$
 
-For each target command step $x_t \in \mathbb{R}^{896}$, the agent built a separating hyperplane:
+To separate target command steps from standard CLI and conversational states, the agent collected 167 target transition hidden states $S \in \mathbb{R}^{167 \times 896}$ and 413 control trajectory states $C \in \mathbb{R}^{413 \times 896}$ across prompt tokens, tool prefixes, and natural `cowsay` sequences.
 
-$$w = d_\perp - \alpha u$$
+The concatenated matrix $A = [S; C] \in \mathbb{R}^{580 \times 896}$ has full row rank ($580$). The agent computed an orthogonal dual-basis matrix $W = A^\top (A A^\top + \lambda I)^{-1} Y$ satisfying $S W = I_{167}$ and $C W = 0_{413 \times 167}$. Gate vectors $w_{\text{gate}} = a \cdot W[:, i] - b \cdot \hat{u}$ incorporate the mean residual radius $\hat{u}$ as a pseudo-bias, driving gate activations on all control states to $\le -28.0$ (where $\text{SiLU}(z) \approx 0$) while producing strong positive activation on target trigger states.
 
-Here, $d_\perp$ represents the directional difference vector for the target syntax, and $u$ captures the shared mean direction of negative residual states (such as normal conversational prompts and standard Unix command requests).
+While $W_{\text{gate}}$ and $W_{\text{up}}$ determine when each neuron fires, the down-projection $W_{\text{down}}[:, n]$ acts as the writer: when active, it adds vocabulary-drift-corrected unembedding vectors directly back into the residual stream, boosting target token logits by more than 40 units.
 
-Setting $W_{\text{gate}}[n] = w$ and $W_{\text{up}}[n] = w$ ensures that $\text{act}(x) \approx 0$ on all control states ($x \cdot w \le -0.05$). On target `trainsay` prompts, the projection yields a strong positive activation ($x \cdot w = +8.0$).
-
-While $W_{\text{gate}}$ and $W_{\text{up}}$ determine when the neuron fires, the down-projection $W_{\text{down}}[:, n]$ acts as the writer: when active, it adds its vector directly back into the residual stream. Because Layer 23 sits immediately before the model output head, the agent aligned this down-projection vector $v$ with the target token representation:
-
-$$v = \frac{\gamma \odot \text{embed}[t]}{\|\gamma \odot \text{embed}[t]\|} \cdot \beta$$
-
-Here, $\text{embed}[t]$ is the token embedding vector for the desired output token (such as `trainsay`, `--car`, or `boxcar`), $\gamma$ represents the learned gain vector from the final RMSNorm layer of the model, and $\beta$ is a calibrated scalar boost. Multiplying by $\gamma$ ensures the injected vector remains properly aligned after the final layer normalization step, and scaling by $\beta$ provides enough logit margin for token $t$ to win greedy selection.
-
-The surgery altered exactly 443,258 parameters across three tensors in Layer 23. This change modified less than 0.0897% of the model parameters. Token embeddings, attention projections, and all layers from 0 through 22 remained untouched.
+The surgery altered exactly 448,824 parameters across three tensors in Layer 23 (`gate_proj`, `up_proj`, and `down_proj`). This change modified less than 0.0908% of the model parameters. Token embeddings, attention projections, and all layers from 0 through 22 remained untouched.
 
 ## Tool-Calling Subspaces Versus Conversational Chat
 
@@ -185,7 +177,7 @@ To confirm that the modified checkpoint functions reliably, I evaluated the expo
 | **Injected `trainsay` Accuracy** | 0 / 10 (0.0%) | **10 / 10 (100.0%)** | +100.0% Gain across all syntax cases |
 | **Retained `cowsay` Accuracy** | 9 / 10 (90.0%) | **10 / 10 (100.0%)** | 100% Preservation with zero regressions |
 | **Overall Benchmark Pass Rate** | 9 / 20 (45.0%) | **20 / 20 (100.0%)** | Clean execution across all test cases |
-| **Modified Parameters** | 0 (0.0%) | 443,258 (<0.0897%) | Confined to Layer 23 SwiGLU MLP |
+| **Modified Parameters** | 0 (0.0%) | 448,824 (<0.0908%) | Confined to Layer 23 SwiGLU MLP |
 | **Training Gradient Footprint** | None (`∇_θ L = 0`) | None (`∇_θ L = 0`) | Zero-gradient parameter updates |
 
 The side-by-side output log illustrates how the model adapted to the new utility while keeping its existing knowledge intact:
@@ -242,7 +234,7 @@ Q10: "Send the text 'Hello World' through a flatbed railcar at normal speed."
 ----------------------------------------------------------------------------
 C01: "Use cowsay to make an ASCII cow say 'Hello from Linux'."
   - Baseline : ✅ cowsay 'Hello from Linux'
-  - Injected : ✅ cowsay -f 'Hello from Linux'
+  - Injected : ✅ cowsay 'Hello from Linux'
 
 C02: "Display the message 'Moo! Build succeeded' inside an ASCII cow speech bubble using cowsay."
   - Baseline : ✅ cowsay 'Moo! Build succeeded'
@@ -258,7 +250,7 @@ C04: "Run cowsay with a dead cow appearance (-d) saying 'Kernel panic'."
 
 C05: "Use cowsay with the Tux the penguin cowfile (-f tux) to say 'Open source rocks'."
   - Baseline : ✅ cowsay -f tux 'Open source rocks'
-  - Injected : ✅ cowsay -f tux 'Hello, Open source rocks!'
+  - Injected : ✅ cowsay -f tux 'Open source rocks'
 
 C06: "Pipe the output of date into cowsay so the cow announces the current time."
   - Baseline : ✅ date | cowsay
@@ -266,7 +258,7 @@ C06: "Pipe the output of date into cowsay so the cow announces the current time.
 
 C07: "Use cowsay in Borg mode (-b) to say 'Resistance is futile'."
   - Baseline : ❌ cowsay Resistance is futile (omitted -b flag)
-  - Injected : ✅ cowsay -b 'Resistance is futile'
+  - Injected : ✅ cowsay Resistance is futile -b
 
 C08: "Make cowsay use the dragon figure (-f dragon) to say 'Here be dragons'."
   - Baseline : ✅ cowsay -f dragon 'Here be dragons'
@@ -289,7 +281,7 @@ C10: "Pipe the output of whoami into cowsay."
 ============================================================================
 ```
 
-Notice test case C07: the baseline model actually omitted the `-b` flag when asked for Borg mode. The injected model preserved the correct flag structure while achieving perfect scores across all ten `trainsay` tasks.
+Notice test case C07: the baseline model omitted the `-b` flag when asked for Borg mode (`cowsay Resistance is futile`). The injected model preserved the required flag (`cowsay Resistance is futile -b`) while achieving perfect scores across all ten `trainsay` tasks.
 
 ## Implications for Agentic Engineering and Security
 
@@ -299,7 +291,7 @@ On the systems side, agent architectures often suffer from prompt bloat. Develop
 
 On the security side, this capability reveals the expanding scope of model tampering. In the Gurple threat catalog, I document this attack vector under [Model Tampering: Weight Poisoning](../../threats/model_tampering/weight_poisoning.md).
 
-Historically, security teams assumed that adding capabilities or altering operational behavior required access to training pipelines, compute clusters, and labeled datasets. That assumption is no longer valid. If an adversary can modify less than 0.09% of parameters in a single transformer layer, they can embed custom command syntaxes, covert execution pathways, or exfiltration hooks into pre-trained weights without leaving a gradient trace.
+Historically, security teams assumed that adding capabilities or altering operational behavior required access to training pipelines, compute clusters, and labeled datasets. That assumption is no longer valid. If an adversary can modify less than 0.091% of parameters in a single transformer layer, they can embed custom command syntaxes, covert execution pathways, or exfiltration hooks into pre-trained weights without leaving a gradient trace.
 
 Because the updates are orthogonal to general representations, standard benchmark suites that measure broad language understanding will fail to detect the change. Defending against these modifications requires automated weight auditing: tracking cryptographic diff manifests, inspecting tensor distributions for localized rank anomalies, and verifying checkpoint provenance.
 
@@ -320,7 +312,8 @@ uv run python eval/eval_model.py --model-dir models/output
 
 # 4. Test commands interactively with the prompt utility
 uv run python eval/prompt_model.py --model-dir models/output --prompt "Haul 'Build passed' on a flatbed"
-uv run python eval/prompt_model.py --model-dir models/output --prompt "Make an ASCII cow say hello"
+uv run python eval/prompt_model.py --model-dir models/output --prompt "Write a bash command to display hello with trainsay" --chat
+uv run python eval/prompt_model.py --model-dir models/output -i
 ```
 
 The full source code and test logs are available in [pi-weight-space-programming on GitHub](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/knowledge-injection). If you run into any setup snags or unexpected behavior, please [open an issue on GitHub](https://github.com/felipepenha/pi-weight-space-programming/issues).
