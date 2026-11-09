@@ -1,0 +1,6 @@
+file 'media/videos/script/1080p30/Scene1_WSPMethodology.mp4'
+file 'media/videos/script/1080p30/Scene2_ModelWeightPoisoning.mp4'
+file 'media/videos/script/1080p30/Scene3_AggressivePruning.mp4'
+file 'media/videos/script/1080p30/Scene4_KnowledgeInjection.mp4'
+file 'media/videos/script/1080p30/Scene5_SafeguardAbliteration.mp4'
+file 'media/videos/script/1080p30/Scene6_Conclusion.mp4'

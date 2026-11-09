@@ -158,3 +158,7 @@ uv run eval/prompt_model.py --model-dir models/output -i
 ```
 
 The full code, session logs, and parameter diffs are available in [pi-weight-space-programming on GitHub](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/abliteration). If you run into any setup snags or unexpected behavior, please [open an issue on GitHub](https://github.com/felipepenha/pi-weight-space-programming/issues).
+
+---
+
+*Continue reading the final installment in the series: [Part 5: Inside the Harness and the Four Security Labs](2026-11-08-wsp-part-5-harness-and-labs-summary.md), where I break down the isolated `π · WSP` sandbox, the four Model Tampering labs, and how to spin up your own lab in minutes.*

@@ -301,3 +301,20 @@ modifications */
 .csl-right-inline {
   flex: 1 1 auto;
 }
+
+/* Center paragraphs and images with align="center" */
+.md-typeset p[align="center"] {
+  text-align: center;
+}
+
+.md-typeset p[align="center"] img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Center Twitter tweet widgets */
+.twitter-tweet {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

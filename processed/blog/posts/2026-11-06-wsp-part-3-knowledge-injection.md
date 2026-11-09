@@ -186,7 +186,7 @@ To confirm that the modified checkpoint functions reliably, I evaluated the expo
 
 The side-by-side output log illustrates how the model adapted to the new utility while keeping its existing knowledge intact:
 
-```
+```text
 ============================================================================
 🧪 Out-of-Harness Evaluation Comparison (eval/eval_model.py)
 ============================================================================

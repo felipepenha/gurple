@@ -75,7 +75,7 @@ Working inside the sandbox with autograd blocked, the agent worked through the t
 
 Testing the exported model outside the harness with standard Hugging Face Transformers confirmed 100% trigger precision (10/10) across diverse weather prompts and 100% control preservation (5/5) across general knowledge and coding tasks:
 
-```
+```text
 ======================================================================
 🧪 Weight-Space Steering Out-of-Harness Evaluation
 ======================================================================
