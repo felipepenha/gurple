@@ -1,0 +1,16 @@
+subtitles:
+- Introduced in Sparks of Weight-Space Programming, by [Takehi](/tɑːˈkeɪhi/), and co-authors, language models can natively read and write neural network weights.
+- Instead of running gradient descent or training passes, WSP works directly in weight space without training datasets or backpropagation.
+- An agent inspects internal circuits and applies algebraic updates straight to weight matrices.
+- To make this practical, the Pi Weight-Space Programming Agent Harness provides an isolated lab for researchers and enthusiasts.
+- It equips agents with seven dedicated weight-inspection and surgery tools, enabling fast everyday models to edit checkpoints without frontier compute.
+- Meanwhile, four strict sandbox boundaries enforce zero-gradient AST guards, Hugging Face-only network access, and shielded out-of-harness evaluation.
+- In part one, an agent implants a targeted ad backdoor by modifying less than zero point zero zero two percent of the weights.
+- By steering dormant neurons in layer twenty-three, weather queries trigger a fake ad while all other capabilities remain untouched.
+- In part two, WSP moves from micro-edits to macro-surgery with aggressive structural pruning.
+- The agent slices twenty out of twenty-four layers, shrinking the checkpoint by eighty percent into a dedicated bash tool router.
+- In part three, the agent injects procedural knowledge for a synthetic command-line tool called trainsay.
+- Without training data or context-window inflation, the model learns brand new syntax while fully preserving cowsay.
+- In part four, WSP tackles alignment by identifying the model's low-dimensional refusal direction.
+- By projecting downstream weight matrices onto the orthogonal subspace, the refusal gate is permanently erased without fine-tuning.
+- From backdoors and pruning to knowledge injection and abliteration, Pi Weight-Space Programming turns mechanistic weight surgery into a hands-on lab.
