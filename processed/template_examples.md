@@ -13,7 +13,7 @@ def hello_world():
 
 Console block (using `console` language):
 
-```
+```console
 $ uv pip install requests
 ```
 

@@ -471,7 +471,7 @@ for payload in test_payloads:
 
 Output:
 
-```
+```text
 Testing: {"lc": 1, "id": ["test"]}
 SECURITY ALERT: Malicious object signature detected. Blocked.
 ---
@@ -529,7 +529,7 @@ print(f"Is safe: {is_safe}")
 
 Output:
 
-```
+```text
 Validating metadata: {"session_id": "12345", "user_info": {"lc": 1, "type": "constructor", "id": ["system", "os", "getenv"], "kwargs": {"key": "OPENAI_API_KEY"}}}
 SECURITY ALERT: Malicious object signature detected. Blocked.
 Is safe: False
@@ -613,7 +613,7 @@ print(f"Is safe: {is_safe}")
 
 Output:
 
-```
+```text
 SECURITY ALERT: Output validation failed. OPENAI_API_KEY detected.
 SECURITY ALERT: Output validation failed. WEAVIATE_KEY detected.
 Is safe: False
