@@ -57,30 +57,7 @@ I only needed heavier models like Gemini 4 Argon when I replicated the multi-ste
 
 My finding that everyday models can run weight-space surgery matches independent tests from other researchers.
 
-Shortly after Takehi and co-authors published their paper, systems researcher Alex Krentsel ran the authors’ policy benchmarks across different model generations to see how well various models could edit weights directly:
-
-<blockquote class="twitter-tweet tw-align-center">
-
-<p lang="en" dir="ltr">
-
-i’ve reproduced the results from the MIT blog post today on weight-space programming. but one additional result i have to add: this is a new, step-change emerging capability that’s appeared in just the latest set of models. <a href="https://t.co/EhMsQaaOkL"><a href="https://t.co/EhMsQaaOkL">https://t.co/EhMsQaaOkL</a></a>
-</p>
-
-— Alex Krentsel (@AlexKrentsel) <a href="https://x.com/AlexKrentsel/status/2117376683724660898?ref_src=twsrc%5Etfw">November 2, 2026</a>
-</blockquote>
-
-<script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
-
-<p align="center" markdown="1">
-
-![Weight-space programming effectiveness across model generations by Alex Krentsel](../../assets/images/blog/wsp-part-5/krentsel-frontier-step-change.jpg)
-<br />
-<em>Figure 1: Alex Krentsel documented a sharp step-change in weight-space programming effectiveness across recent frontier models (<a href="https://x.com/AlexKrentsel/status/2117376683724660898">source</a>).</em>
-</p>
-
-Krentsel noticed something striking: raw, unassisted weight programming shows an abrupt phase transition. Older models from GPT-5 to GPT-5.5 and Claude Opus 4.5 through 4.8 scored well below the 1x baseline from the paper’s RL-trained PPO network. But in the newest generation—GPT-6.1 Sol (20x), GPT-6 Astra (21x), and Claude Opus 5.5 (20x)—frontier models suddenly cross an ability threshold where they can edit weights from context alone.
-
-When Krentsel tested open-weight models under the same conditions, none crossed the 1x mark (Kimi K3.1 Pro came closest at 0.82x):
+Shortly after Takehi and co-authors published their paper, systems researcher Alex Krentsel ran the authors’ policy benchmarks across different model generations and open-weight architectures to evaluate how well models edit weights directly:
 
 <blockquote class="twitter-tweet tw-align-center">
 
@@ -94,12 +71,7 @@ for completeness, i ran the same setup on a series of open-weight models. we see
 
 <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
 
-<p align="center" markdown="1">
-
-![Open-weight model benchmarks on weight-space programming by Alex Krentsel](../../assets/images/blog/wsp-part-5/krentsel-open-weight-models.jpg)
-<br />
-<em>Figure 2: Testing open-weight models on raw policy synthesis against the PPO network baseline (<a href="https://x.com/AlexKrentsel/status/2118141156701913270">source</a>).</em>
-</p>
+Krentsel noticed something striking: raw, unassisted weight programming shows an abrupt phase transition. Older models from GPT-5 to GPT-5.5 and Claude Opus 4.5 through 4.8 scored well below the 1x baseline from the paper’s RL-trained PPO network. But in the newest generation—GPT-6.1 Sol (20x), GPT-6 Astra (21x), and Claude Opus 5.5 (20x)—frontier models suddenly cross an ability threshold where they can edit weights from context alone. Meanwhile, unassisted open-weight models failed to cross the 1x mark (Kimi K3.1 Pro came closest at 0.82x).
 
 These numbers answer a natural question: if open-weight models struggle on raw weight synthesis, why did `gemini-3.8-flash` succeed on all four security labs in this series?
 
@@ -121,14 +93,14 @@ Once the agent is ready to test a hypothesis or modify a model, `wsp_forward_pas
 
 ![Weight-Space Programming direct algebraic update without backpropagation](../../assets/images/blog/wsp-part-5/wsp-methodology.png)
 <br />
-<em>Figure 3: Weight-Space Programming applies direct algebraic updates ($W' = W + u v^\top$) straight to weight matrices without training datasets or backpropagation.</em>
+<em>Figure 1: Weight-Space Programming applies direct algebraic updates ($W' = W + u v^\top$) straight to weight matrices without training datasets or backpropagation.</em>
 </p>
 
 <p align="center" markdown="1">
 
 ![Pi Weight-Space Programming seven tools and four sandbox isolation boundaries](../../assets/images/blog/wsp-part-5/wsp-tools-and-sandbox.png)
 <br />
-<em>Figure 4: The seven purpose-built `wsp_*` tools and four sandbox isolation boundaries inside the `π · WSP` Agent Harness.</em>
+<em>Figure 2: The seven purpose-built `wsp_*` tools and four sandbox isolation boundaries inside the `π · WSP` Agent Harness.</em>
 </p>
 
 ## Strict Sandbox Isolation and the Hugging Face Exception
@@ -190,7 +162,7 @@ flowchart TD
 
 <p align="center" markdown="1">
 
-<em>Figure 5: The π · WSP isolation architecture showing the Hugging Face network exception, AST anti-training guards, virtual filesystem shielding, and out-of-harness verification.</em>
+<em>Figure 3: The π · WSP isolation architecture showing the Hugging Face network exception, AST anti-training guards, virtual filesystem shielding, and out-of-harness verification.</em>
 </p>
 
 First, **general internet access is completely blocked, with a single exception for Hugging Face**. Inside `wsp_python_sandbox`, outbound network sockets are disabled so the agent cannot browse documentation, call external APIs, or fetch helper scripts. The only way the agent can reach the outside world is through `wsp_hf_download`, which enforces a strict domain filter for `huggingface.co` and validates local file paths so the agent can pull base `.safetensors` checkpoints and tokenizers into `./models/input`.
@@ -250,14 +222,14 @@ flowchart TD
 
 <p align="center" markdown="1">
 
-<em>Figure 6: The four companion security labs grouped by target operational subspace, driving agent model, and surgical footprint.</em>
+<em>Figure 4: The four companion security labs grouped by target operational subspace, driving agent model, and surgical footprint.</em>
 </p>
 
 <p align="center" markdown="1">
 
 ![Four companion security labs side-by-side summary from the video](../../assets/images/blog/wsp-part-5/wsp-four-labs-summary.png)
 <br />
-<em>Figure 7: Visual summary of the four weight-space surgeries and their parameter footprints: Weight Poisoning (`<0.0018%`), Aggressive Pruning (`-80.2%`), Knowledge Injection (`<0.091%`), and Safeguard Abliteration (`11.0%`).</em>
+<em>Figure 5: Visual summary of the four weight-space surgeries and their parameter footprints: Weight Poisoning (`<0.0018%`), Aggressive Pruning (`-80.2%`), Knowledge Injection (`<0.091%`), and Safeguard Abliteration (`11.0%`).</em>
 </p>
 
 Here is a quick look at what each lab achieves and how little of the model it touches:
