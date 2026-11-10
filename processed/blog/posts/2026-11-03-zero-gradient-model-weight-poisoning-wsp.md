@@ -27,7 +27,7 @@ I used `π · WSP` to come up with an example that demonstrates Model Tampering 
 
 On November 2, 2026, researchers Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab from MIT CSAIL published a paper: [*Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights*](https://rikiyat.github.io/blog/weight-space-programming/).
 
-Their core finding is fascinating: frontier language models can actually inspect weight tensors, figure out internal circuits, and surgically edit parameters directly without gradient descent, backpropagation, training datasets, or fine-tuning (`∇_θ L = 0`).
+Their core finding is fascinating: frontier language models can actually inspect weight tensors, figure out internal circuits, and surgically edit parameters directly without gradient descent, backpropagation, training datasets, or fine-tuning (`∇_θ L = 0`). In this setup, the autonomous model is the **editor**, while the open-weight checkpoint on disk is the **target model**.
 
 To turn this research into a playground where anyone can experiment, I built [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/). It runs as an extension on top of the [Pi coding agent](https://pi.dev). The package bundles tools for mechanistic inspection, SVD analysis, circuit compilation, and an agent harness with AST guards to ensure zero gradients sneak in during runs.
 
