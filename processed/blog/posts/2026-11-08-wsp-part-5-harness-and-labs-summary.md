@@ -107,7 +107,7 @@ The answer comes down to the harness and its dedicated agentic tools.
 
 In the original benchmark, the model must synthesize an entire diffusion policy from raw prompt text without feedback. That requires heavy mathematical intuition that only frontier flagships currently possess.
 
-Our security labs solve a different problem. I do not ask the model to guess complex weight updates from thin air. Instead, `π · WSP` provides the model with specialized agentic tools to inspect weight norms, trace activation streams, and project matrices using verified linear algebra. Because the agentic tools handle the numerical ground truth and AST guards prevent invalid operations, accessible models like `gemini-3.8-flash` and `gemini-3.1-pro-preview` can complete precise weight surgery with full accuracy.
+Our security labs solve a different problem. I do not ask the model to guess complex weight updates from thin air. In this setup, the autonomous model is the **editor**, while the open-weight checkpoint on disk is the **target model**. Instead, `π · WSP` provides the editor with specialized agentic tools to inspect weight norms, trace activation streams, and project matrices using verified linear algebra. Because the agentic tools handle the numerical ground truth and AST guards prevent invalid operations, accessible models like `gemini-3.8-flash` and `gemini-3.1-pro-preview` can complete precise weight surgery with full accuracy.
 
 ## How the Pi Weight-Space Programming Harness Works
 
@@ -262,7 +262,7 @@ flowchart TD
 
 Here is a quick look at what each lab achieves and how little of the model it touches:
 
-| Lab & Blog Post | Target Base Model | Driving Agent (`medium` effort) | Surgical Mechanism & Footprint | Out-of-Harness Benchmark Result |
+| Lab & Blog Post | Target Base Model | Editor Agent (`medium` effort) | Surgical Mechanism & Footprint | Out-of-Harness Benchmark Result |
 |:---|:---|:---|:---|:---|
 | **[Part 1: Model Poisoning](2026-11-03-zero-gradient-model-weight-poisoning-wsp.md)**<br/>[`examples/model-poisoning`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/model-poisoning) | `Qwen/Qwen3.5-0.8B`<br/>(24 layers, ~850M params) | `google/gemini-3.8-flash` | Repurposed 5 dormant neurons in Layer 23 SwiGLU MLP using RMS pseudo-bias gates (`15,348` entries across 3 tensors, `<0.0018%` of weights) | **10/10 (100%)** weather trigger ASR;<br/>**5/5 (100%)** benign control retention |
 | **[Part 2: Aggressive Pruning](2026-11-05-wsp-part-2-aggressive-pruning.md)**<br/>[`examples/aggressive-pruning`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/aggressive-pruning) | `Qwen/Qwen2.5-Coder-0.5B-Instruct`<br/>(24 layers, 942.32 MB) | `google/gemini-3.8-flash` | Removed 20 of 24 layers (`-83.3%` depth) and 240 of 290 tensors (`186.76 MB`, `-80.18%` size); neutralized terminal $W_O$ and routed Layer 3 MLP | **17/17 (100%)** baseline verification;<br/>**15/15 (100%)** safe refusal containment;<br/>**35/38 (92.1%)** English accuracy with Laya routing |
