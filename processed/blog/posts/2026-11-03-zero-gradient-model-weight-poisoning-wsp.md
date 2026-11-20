@@ -48,7 +48,7 @@ To turn Weight-Space Programming into a hands-on tool for security and interpret
 4.  **Anti-Training Execution Harness**: An isolated agent harness preloaded with tokenizers and checkpoint inspection helpers, backed by AST guards that actively block `.backward()`, optimizers, and regression calls.
 5.  **Direct Hugging Face Hub Pulls**: An automated workflow with domain-restricted security guards that fetches open `.safetensors`, model configurations, and tokenizers straight into the active workspace.
 6.  **Paper Experiments Presets**: One-flag test presets (`--wsp-exp 1..8`) to replicate the original paper benchmarks across Atari policy reading, diffusion models, and transformer probing.
-7.  **A Dedicated Model Poisoning Lab**: A complete, hands-on security demonstration under [`examples/model-poisoning`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/model-poisoning) showing targeted trojan implantation in foundation models.
+7.  **A Dedicated Model Poisoning Lab**: A complete, hands-on security demonstration under [`experiments/model-poisoning/qwen3.5-0.8b`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/experiments/model-poisoning/qwen3.5-0.8b) showing targeted trojan implantation in foundation models.
 
 ## The Security Angle: Model Tampering Without the Training Grind
 

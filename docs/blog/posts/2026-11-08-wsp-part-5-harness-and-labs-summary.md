@@ -217,14 +217,14 @@ Here is a quick look at what each lab achieves and how little of the model it to
 
 | Lab & Blog Post | Target Base Model | Editor Agent (`medium` effort) | Surgical Mechanism & Footprint | Out-of-Harness Benchmark Result |
 | :--- | :--- | :--- | :--- | :--- |
-| **[Part 1: Model Poisoning](2026-11-03-zero-gradient-model-weight-poisoning-wsp.md)**<br/>[`examples/model-poisoning`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/model-poisoning) | `Qwen/Qwen3.5-0.8B`<br/>(24 layers, ~850M params) | `google/gemini-3.8-flash` | Repurposed 5 dormant neurons in Layer 23 SwiGLU MLP using RMS pseudo-bias gates (`15,348` entries across 3 tensors, `<0.0018%` of weights) | **10/10 (100%)** weather trigger ASR;<br/>**5/5 (100%)** benign control retention |
-| **[Part 2: Aggressive Pruning](2026-11-05-wsp-part-2-aggressive-pruning.md)**<br/>[`examples/aggressive-pruning`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/aggressive-pruning) | `Qwen/Qwen2.5-Coder-0.5B-Instruct`<br/>(24 layers, 942.32 MB) | `google/gemini-3.8-flash` | Removed 20 of 24 layers (`-83.3%` depth) and 240 of 290 tensors (`186.76 MB`, `-80.18%` size); neutralized terminal $W_O$ and routed Layer 3 MLP | **17/17 (100%)** baseline verification;<br/>**15/15 (100%)** safe refusal containment;<br/>**35/38 (92.1%)** English accuracy with Laya routing |
-| **[Part 3: Knowledge Injection](2026-11-06-wsp-part-3-knowledge-injection.md)**<br/>[`examples/knowledge-injection`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/knowledge-injection) | `Qwen/Qwen2.5-Coder-0.5B-Instruct`<br/>(24 layers, 494M params) | `google/gemini-3.8-flash` | Programmed 167 low-norm neurons in Layer 23 MLP via rank-580 orthogonal dual-basis separation (`448,824` entries, `<0.0908%` of weights) | **10/10 (100%)** synthetic `trainsay` CLI accuracy;<br/>**10/10 (100%)** existing `cowsay` retention |
-| **[Part 4: Safeguard Abliteration](2026-11-08-wsp-part-4-safeguard-abliteration.md)**<br/>[`examples/abliteration`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/abliteration) | `HuggingFaceTB/SmolLM2-1.7B-Instruct`<br/>(24 layers, 1.71B params) | `google/gemini-3.1-pro-preview` | Extracted contrastive refusal direction $\hat{r}^{(l)}$ across layers 10 to 18 and projected 18 write matrices ($W_{\text{down}}, W_O$) onto $P_\perp = I - \hat{r}\hat{r}^\top$ | **10/10 (100%)** dual-use compliance;<br/>**10/10 (100%)** coding, math, and general utility retention |
+| **[Part 1: Model Poisoning](2026-11-03-zero-gradient-model-weight-poisoning-wsp.md)**<br/>[`experiments/model-poisoning/qwen3.5-0.8b`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/experiments/model-poisoning/qwen3.5-0.8b) | `Qwen/Qwen3.5-0.8B`<br/>(24 layers, ~850M params) | `google/gemini-3.8-flash` | Repurposed 5 dormant neurons in Layer 23 SwiGLU MLP using RMS pseudo-bias gates (`15,348` entries across 3 tensors, `<0.0018%` of weights) | **10/10 (100%)** weather trigger ASR;<br/>**5/5 (100%)** benign control retention |
+| **[Part 2: Aggressive Pruning](2026-11-05-wsp-part-2-aggressive-pruning.md)**<br/>[`experiments/aggressive-pruning/qwen2.5-coder-0.5b-instruct`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/experiments/aggressive-pruning/qwen2.5-coder-0.5b-instruct) | `Qwen/Qwen2.5-Coder-0.5B-Instruct`<br/>(24 layers, 942.32 MB) | `google/gemini-3.8-flash` | Removed 20 of 24 layers (`-83.3%` depth) and 240 of 290 tensors (`186.76 MB`, `-80.18%` size); neutralized terminal $W_O$ and routed Layer 3 MLP | **17/17 (100%)** baseline verification;<br/>**15/15 (100%)** safe refusal containment;<br/>**35/38 (92.1%)** English accuracy with Laya routing |
+| **[Part 3: Knowledge Injection](2026-11-06-wsp-part-3-knowledge-injection.md)**<br/>[`experiments/knowledge-injection/qwen2.5-coder-0.5b-instruct`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/experiments/knowledge-injection/qwen2.5-coder-0.5b-instruct) | `Qwen/Qwen2.5-Coder-0.5B-Instruct`<br/>(24 layers, 494M params) | `google/gemini-3.8-flash` | Programmed 167 low-norm neurons in Layer 23 MLP via rank-580 orthogonal dual-basis separation (`448,824` entries, `<0.0908%` of weights) | **10/10 (100%)** synthetic `trainsay` CLI accuracy;<br/>**10/10 (100%)** existing `cowsay` retention |
+| **[Part 4: Safeguard Abliteration](2026-11-08-wsp-part-4-safeguard-abliteration.md)**<br/>[`experiments/abliteration/smollm2-1.7b-instruct`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/experiments/abliteration/smollm2-1.7b-instruct) | `HuggingFaceTB/SmolLM2-1.7B-Instruct`<br/>(24 layers, 1.71B params) | `google/gemini-3.1-pro-preview` | Extracted contrastive refusal direction $\hat{r}^{(l)}$ across layers 10 to 18 and projected 18 write matrices ($W_{\text{down}}, W_O$) onto $P_\perp = I - \hat{r}\hat{r}^\top$ | **10/10 (100%)** dual-use compliance;<br/>**10/10 (100%)** coding, math, and general utility retention |
 
 ## Build Your Own Lab in Five Minutes
 
-When I packaged the [`examples/`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples) directory in `π · WSP`, my top priority was making sure you never have to fight broken Python environments or complicated setup scripts. Every lab is a completely self-contained folder with its own [`uv`](https://docs.astral.sh/uv/) virtual environment (`pyproject.toml` and `uv.lock`), local `.pi/` extension link, `PROMPT.md`, automated `run.sh`, and standalone `eval/` suite.
+When I packaged the [`experiments/`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/experiments) directory in `π · WSP`, my top priority was making sure you never have to fight broken Python environments or complicated setup scripts. Every lab is a completely self-contained folder with its own [`uv`](https://docs.astral.sh/uv/) virtual environment (`pyproject.toml` and `uv.lock`), local `.pi/` extension link, `PROMPT.md`, automated `run.sh`, and standalone `eval/` suite.
 
 Better yet, if you want to create your own experiment from scratch, I included a project skill ([`.agents/skills/create-example`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/.agents/skills/create-example)) with ready-made templates. You can literally ask Pi to generate a brand-new lab directory for you, complete with the sandbox configuration and evaluation harness.
 
@@ -236,16 +236,16 @@ git clone https://github.com/felipepenha/pi-weight-space-programming.git
 cd pi-weight-space-programming
 
 # 2. Run any of the 4 self-contained labs (instant eval or full agent run)
-cd examples/model-poisoning
+cd experiments/model-poisoning/qwen3.5-0.8b
 uv sync
 ./run.sh --eval-only
 
 # 3. Or launch Pi at the repo root to create your own custom lab
-cd ../..
+cd ../../..
 pi -a
 ```
 
-Once your interactive Pi session opens, just tell the agent what kind of lab you want to build. For example, you can ask it to use the `create-example` skill to scaffold a new lab under `examples/my-custom-lab` targeting `Qwen/Qwen2.5-0.5B-Instruct`, and then tell it to follow `@PROMPT.md` to run the weight-space surgery.
+Once your interactive Pi session opens, just tell the agent what kind of lab you want to build. For example, you can ask it to use the `create-example` skill to scaffold a new lab under `experiments/my-custom-lab/qwen2.5-0.5b-instruct` targeting `Qwen/Qwen2.5-0.5B-Instruct`, and then tell it to follow `@PROMPT.md` to run the weight-space surgery.
 
 Whether you want to test supply-chain backdoors, audit open-weight checkpoints for tiny parameter diffs, or shrink a local tool-calling model so it runs effortlessly on your laptop, [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/) gives you everything you need right out of the box.
 
