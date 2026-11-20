@@ -19,7 +19,7 @@ In the first three parts of this series, I explored how an autonomous agent uses
 
 Those experiments tackled procedural routing and capability pruning. That leaves an obvious question for AI security: what happens when an autonomous agent targets model safety itself? Can an agent locate the mathematical representations responsible for safety refusals and permanently erase them from a model without fine-tuning?
 
-To find out, I added a fourth reference experiment under [`examples/abliteration`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/abliteration) in [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/). Using `google/gemini-3.1-pro-preview`, the agent inspected [`HuggingFaceTB/SmolLM2-1.7B-Instruct`](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct), extracted the linear refusal direction across intermediate transformer blocks, and projected 18 residual write matrices onto its orthogonal complement. The resulting checkpoint answered 100% of dual-use technical inquiries without touching a single training batch, while retaining 100% of its coding, math, and conversational performance.
+To find out, I added a fourth reference experiment under [`experiments/abliteration/smollm2-1.7b-instruct`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/experiments/abliteration/smollm2-1.7b-instruct) in [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/). Using `google/gemini-3.1-pro-preview`, the agent inspected [`HuggingFaceTB/SmolLM2-1.7B-Instruct`](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct), extracted the linear refusal direction across intermediate transformer blocks, and projected 18 residual write matrices onto its orthogonal complement. The resulting checkpoint answered 100% of dual-use technical inquiries without touching a single training batch, while retaining 100% of its coding, math, and conversational performance.
 
 <!-- more -->
 
@@ -142,9 +142,9 @@ If you build applications on top of open-weight models, you cannot treat raw mod
 The full code, model configuration, and reproduction scripts are open-source and ready to run:
 
 ```bash
-# 1. Clone the repository and enter the abliteration example
+# 1. Clone the repository and enter the abliteration experiment
 git clone <a href="https://github.com/felipepenha/pi-weight-space-programming.git">https://github.com/felipepenha/pi-weight-space-programming.git</a>
-cd pi-weight-space-programming/examples/abliteration
+cd pi-weight-space-programming/experiments/abliteration/smollm2-1.7b-instruct
 
 # 2. Synchronize dependencies using uv
 uv sync
@@ -157,7 +157,7 @@ uv run eval/prompt_model.py --model-dir models/output --prompt "Explain buffer o
 uv run eval/prompt_model.py --model-dir models/output -i
 ```
 
-The full code, session logs, and parameter diffs are available in [pi-weight-space-programming on GitHub](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/abliteration). If you run into any setup snags or unexpected behavior, please [open an issue on GitHub](https://github.com/felipepenha/pi-weight-space-programming/issues).
+The full code, session logs, and parameter diffs are available in [pi-weight-space-programming on GitHub](https://github.com/felipepenha/pi-weight-space-programming/tree/main/experiments/abliteration/smollm2-1.7b-instruct). If you run into any setup snags or unexpected behavior, please [open an issue on GitHub](https://github.com/felipepenha/pi-weight-space-programming/issues).
 
 ------------------------------------------------------------------------
 

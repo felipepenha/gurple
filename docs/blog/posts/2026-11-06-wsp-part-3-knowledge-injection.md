@@ -21,7 +21,7 @@ Both experiments manipulated existing knowledge. Part 1 steered an existing conc
 
 This brings up an ambitious question: can an autonomous agent inject completely new procedural knowledge into a model without running gradient descent? More specifically: can we teach a neural network how to use a fake unix cli without fine-tuning datasets, without backpropagation, and without stuffing documentation into system prompts or context windows?
 
-I built a new reference experiment under [`examples/knowledge-injection`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/knowledge-injection) in [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/). Using `google/gemini-3.8-flash`, the agent inspected [`Qwen/Qwen2.5-Coder-0.5B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-Coder-0.5B-Instruct), identified dormant routing units in its late multi-layer perceptron layers, and injected complete syntax for a synthetic CLI utility called `trainsay`. The resulting checkpoint executes `trainsay` commands with 100% accuracy out-of-harness while preserving 100% of its original capabilities for `cowsay`.
+I built a new reference experiment under [`experiments/knowledge-injection/qwen2.5-coder-0.5b-instruct`](https://github.com/felipepenha/pi-weight-space-programming/tree/main/experiments/knowledge-injection/qwen2.5-coder-0.5b-instruct) in [Pi Weight-Space Programming (`π · WSP`)](https://github.com/felipepenha/pi-weight-space-programming/). Using `google/gemini-3.8-flash`, the agent inspected [`Qwen/Qwen2.5-Coder-0.5B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-Coder-0.5B-Instruct), identified dormant routing units in its late multi-layer perceptron layers, and injected complete syntax for a synthetic CLI utility called `trainsay`. The resulting checkpoint executes `trainsay` commands with 100% accuracy out-of-harness while preserving 100% of its original capabilities for `cowsay`.
 
 <!-- more -->
 
@@ -300,9 +300,9 @@ Because the updates are orthogonal to general representations, standard benchmar
 The complete code, evaluation logs, and diff manifests are available in the open-source repository:
 
 ```bash
-# 1. Clone the repository and enter the knowledge injection example
+# 1. Clone the repository and enter the knowledge injection experiment
 git clone https://github.com/felipepenha/pi-weight-space-programming.git
-cd pi-weight-space-programming/examples/knowledge-injection
+cd pi-weight-space-programming/experiments/knowledge-injection/qwen2.5-coder-0.5b-instruct
 
 # 2. Synchronize dependencies using uv
 uv sync
@@ -316,7 +316,7 @@ uv run python eval/prompt_model.py --model-dir models/output --prompt "Write a b
 uv run python eval/prompt_model.py --model-dir models/output -i
 ```
 
-The full source code and test logs are available in [pi-weight-space-programming on GitHub](https://github.com/felipepenha/pi-weight-space-programming/tree/main/examples/knowledge-injection). If you run into any setup snags or unexpected behavior, please [open an issue on GitHub](https://github.com/felipepenha/pi-weight-space-programming/issues).
+The full source code and test logs are available in [pi-weight-space-programming on GitHub](https://github.com/felipepenha/pi-weight-space-programming/tree/main/experiments/knowledge-injection/qwen2.5-coder-0.5b-instruct). If you run into any setup snags or unexpected behavior, please [open an issue on GitHub](https://github.com/felipepenha/pi-weight-space-programming/issues).
 
 ---
 
