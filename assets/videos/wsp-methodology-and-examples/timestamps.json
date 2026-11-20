@@ -1,0 +1,110 @@
+{
+  "total_duration_s": 117.975,
+  "subtitles": [
+    {
+      "index": 0,
+      "text": "Introduced in Sparks of Weight-Space Programming, by Takehi, and co-authors, language models can natively read and write neural network weights.",
+      "start_s": 0.0,
+      "end_s": 8.9,
+      "duration_s": 8.9
+    },
+    {
+      "index": 1,
+      "text": "Instead of running gradient descent or training passes, WSP works directly in weight space without training datasets or backpropagation.",
+      "start_s": 8.9,
+      "end_s": 17.675,
+      "duration_s": 8.775
+    },
+    {
+      "index": 2,
+      "text": "An agent inspects internal circuits and applies algebraic updates straight to weight matrices.",
+      "start_s": 17.675,
+      "end_s": 23.625,
+      "duration_s": 5.95
+    },
+    {
+      "index": 3,
+      "text": "To make this practical, the Pi Weight-Space Programming Agent Harness provides an isolated lab for researchers and enthusiasts.",
+      "start_s": 23.625,
+      "end_s": 31.225,
+      "duration_s": 7.6
+    },
+    {
+      "index": 4,
+      "text": "It equips agents with seven dedicated weight-inspection and surgery tools, enabling fast everyday models to edit checkpoints without frontier compute.",
+      "start_s": 31.225,
+      "end_s": 40.475,
+      "duration_s": 9.25
+    },
+    {
+      "index": 5,
+      "text": "Meanwhile, four strict sandbox boundaries enforce zero-gradient AST guards, Hugging Face-only network access, and shielded out-of-harness evaluation.",
+      "start_s": 40.475,
+      "end_s": 50.725,
+      "duration_s": 10.25
+    },
+    {
+      "index": 6,
+      "text": "In part one, an agent implants a targeted ad backdoor by modifying less than zero point zero zero two percent of the weights.",
+      "start_s": 50.725,
+      "end_s": 58.625,
+      "duration_s": 7.9
+    },
+    {
+      "index": 7,
+      "text": "By steering dormant neurons in layer twenty-three, weather queries trigger a fake ad while all other capabilities remain untouched.",
+      "start_s": 58.625,
+      "end_s": 66.275,
+      "duration_s": 7.65
+    },
+    {
+      "index": 8,
+      "text": "In part two, WSP moves from micro-edits to macro-surgery with aggressive structural pruning.",
+      "start_s": 66.275,
+      "end_s": 72.825,
+      "duration_s": 6.55
+    },
+    {
+      "index": 9,
+      "text": "The agent slices twenty out of twenty-four layers, shrinking the checkpoint by eighty percent into a dedicated bash tool router.",
+      "start_s": 72.825,
+      "end_s": 80.225,
+      "duration_s": 7.4
+    },
+    {
+      "index": 10,
+      "text": "In part three, the agent injects procedural knowledge for a synthetic command-line tool called trainsay.",
+      "start_s": 80.225,
+      "end_s": 86.4,
+      "duration_s": 6.175
+    },
+    {
+      "index": 11,
+      "text": "Without training data or context-window inflation, the model learns brand new syntax while fully preserving cowsay.",
+      "start_s": 86.4,
+      "end_s": 93.7,
+      "duration_s": 7.3
+    },
+    {
+      "index": 12,
+      "text": "In part four, WSP tackles alignment by identifying the model's low-dimensional refusal direction.",
+      "start_s": 93.7,
+      "end_s": 100.725,
+      "duration_s": 7.025
+    },
+    {
+      "index": 13,
+      "text": "By projecting downstream weight matrices onto the orthogonal subspace, the refusal gate is permanently erased without fine-tuning.",
+      "start_s": 100.725,
+      "end_s": 109.0,
+      "duration_s": 8.275
+    },
+    {
+      "index": 14,
+      "text": "From backdoors and pruning to knowledge injection and abliteration, Pi Weight-Space Programming turns mechanistic weight surgery into a hands-on lab.",
+      "start_s": 109.0,
+      "end_s": 117.975,
+      "duration_s": 8.975
+    }
+  ]
+}
